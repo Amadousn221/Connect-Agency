@@ -29,30 +29,33 @@
         "tagline": "Shopify, Odoo & Python",
         "shopify": "Shopify",
         "odoo": "Odoo",
+        "nextjs": "Next.js / React",
         "python": "Python",
-        "vuejs": "Vue.js",
-        "pwa": "Progressive Web App"
+        "pwa": "Progressive Web App (PWA)"
       },
       "marketing": {
         "title": "Marketing Digital",
         "tagline": "SEO, publicité & CRM",
         "seo": "SEO",
         "pub": "Publicité en ligne",
-        "crm": "CRM Marketing"
+        "crm": "CRM Marketing",
+        "emailMarketing": "Email Marketing"
       },
       "conseil": {
         "title": "Conseil",
         "tagline": "Stratégie, transform. & IA",
         "strategie": "Stratégie digitale",
         "transformation": "Transformation digitale",
-        "ia": "Intelligence artificielle"
+        "ia": "Intelligence artificielle",
+        "uxDesign": "UX Design"
       },
       "automatisation": {
         "title": "Automatisation",
         "tagline": "Workflows n8n & sync Odoo",
         "sync": "Synchronisation site ↔ Odoo",
         "n8n": "Workflows n8n",
-        "autoMarketing": "Automatisations marketing"
+        "autoMarketing": "Automatisations marketing",
+        "agentsIa": "Agents IA"
       }
     },
 

@@ -52,7 +52,7 @@
   --tracking-wider: 0.08em;
 
   /* Layout */
-  --header-height: 72px;
+  --header-height: 64px;
   --container-max: 1280px;
   --container-pad: clamp(1rem, 5vw, 3rem);
 
