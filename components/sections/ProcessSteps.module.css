@@ -1,0 +1,154 @@
+/* =========================================
+   ProcessSteps — Connect Web
+   4 étapes numérotées, ligne connectrice desktop
+   Pas de cards/shadow — typo + cercles uniquement
+   ========================================= */
+
+.section {
+  padding: var(--space-24) 0;
+  background-color: var(--color-bg);
+}
+
+/* ── Container ── */
+.container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+/* ── Section header — même pattern que ObjectivesGrid ── */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  max-width: 560px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3125rem 0.875rem;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 25%, transparent);
+  border-radius: var(--radius-full);
+  background-color: color-mix(in srgb, var(--color-accent) 6%, transparent);
+}
+
+.title {
+  font-size: clamp(var(--text-3xl), 4vw, var(--text-5xl));
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: var(--leading-tight);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.subtitle {
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* ── Steps grid — mobile: stacked, desktop: 4 colonnes ── */
+.steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-10);
+  position: relative; /* anchor for .connector */
+}
+
+@media (min-width: 768px) {
+  .steps {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-8);
+  }
+}
+
+/* ── Connecting line — desktop only ──
+   Positionnée au centre vertical des cercles (top = moitié de 40px)
+   z-index 0 : derrière les cercles (z-index 1) ── */
+.connector {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .connector {
+    display: block;
+    position: absolute;
+    top: 19px; /* center of 38px circle */
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: var(--color-border);
+    z-index: 0;
+  }
+}
+
+/* ── Individual step ── */
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* ── Circle wrapper — isolates z-index from connector ── */
+.circleWrapper {
+  position: relative;
+  z-index: 1; /* above the connector line */
+  width: fit-content;
+}
+
+/* ── Number circle ── */
+.circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6875rem; /* 11px */
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
+/* ── Step title ── */
+.stepTitle {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: var(--leading-snug);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.period {
+  color: var(--color-accent);
+}
+
+/* ── Step description ── */
+.stepDesc {
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .circle {
+    transition: none;
+  }
+}

@@ -147,6 +147,32 @@
     }
   },
 
+  "processSteps": {
+    "eyebrow": "Our Process",
+    "title": "How we work with you",
+    "subtitle": "A transparent process, designed for remote collaboration — Dakar, France, or anywhere.",
+    "step1": {
+      "num": "01",
+      "title": "Audit",
+      "desc": "We analyse your business, current tools and objectives."
+    },
+    "step2": {
+      "num": "02",
+      "title": "Proposal",
+      "desc": "We provide a clear solution: scope, stack, timeline, budget."
+    },
+    "step3": {
+      "num": "03",
+      "title": "Build",
+      "desc": "We build — website, Odoo integration, automations — with regular checkpoints."
+    },
+    "step4": {
+      "num": "04",
+      "title": "Launch",
+      "desc": "Go live, team training, and ongoing support."
+    }
+  },
+
   "techStack": {
     "headline": "The same tools as large organisations, at the service of your project."
   },

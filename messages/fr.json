@@ -147,6 +147,32 @@
     }
   },
 
+  "processSteps": {
+    "eyebrow": "Notre Process",
+    "title": "Comment on travaille avec vous",
+    "subtitle": "Un process transparent, pensé pour collaborer à distance — Dakar, France, ou ailleurs.",
+    "step1": {
+      "num": "01",
+      "title": "Audit",
+      "desc": "On analyse votre activité, vos outils actuels et vos objectifs."
+    },
+    "step2": {
+      "num": "02",
+      "title": "Proposition",
+      "desc": "On vous propose une solution claire : périmètre, stack, délais, budget."
+    },
+    "step3": {
+      "num": "03",
+      "title": "Build",
+      "desc": "On construit — site, intégration Odoo, automatisations — avec des points d'étape réguliers."
+    },
+    "step4": {
+      "num": "04",
+      "title": "Launch",
+      "desc": "Mise en ligne, formation de vos équipes, et support continu."
+    }
+  },
+
   "techStack": {
     "headline": "Les mêmes outils que les grandes structures, au service de votre projet."
   },
