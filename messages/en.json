@@ -1,0 +1,15 @@
+{
+  "nav": {
+    "expertises": "Expertise",
+    "vosEnjeux": "Your Challenges",
+    "portfolio": "Portfolio",
+    "agence": "Agency",
+    "contact": "Contact",
+    "auditGratuit": "Free Audit"
+  },
+  "footer": {
+    "tagline": "Full-service digital agency — Dakar & France",
+    "contact": "contact@connect-web.com",
+    "rights": "All rights reserved"
+  }
+}
