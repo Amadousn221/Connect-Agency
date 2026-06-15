@@ -5,11 +5,34 @@
 /* ── Desktop grids ── */
 .expertisesGrid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: var(--space-4);
+  /* Col 1 plus large (Création 9 items) — cols 2/3 égales */
+  grid-template-columns: 1.45fr 1fr 1fr;
+  gap: var(--space-5);
   padding: var(--space-5) var(--container-pad) var(--space-5);
   max-width: var(--container-max);
   margin-inline: auto;
+}
+
+/* Wrapper flex-column pour empiler 2 expertises dans une colonne */
+.expertisesCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* 2e expertise d'une colonne : séparée par un filet et un espace */
+.colStacked {
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+/* Mini-grid 2 colonnes pour les 9 items de Création */
+.itemGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: var(--space-3);
+  row-gap: 0;
 }
 
 .enjeuxGrid {

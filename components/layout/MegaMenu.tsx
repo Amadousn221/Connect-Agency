@@ -269,55 +269,107 @@ export default function MegaMenu({ type, locale, mobile = false }: MegaMenuProps
 
   /* ── EXPERTISES ── */
   if (type === 'expertises') {
-    return (
-      <div className={mobile ? styles.mobileGrid : styles.expertisesGrid}>
-        {EXPERTISES_COLS.map((col) => {
-          const key = col.key as ExpertiseKey;
-          return (
-            <div key={key} className={styles.col}>
 
-              {/* Column header — icon box + title + tagline */}
-              <Link href={`${prefix}${col.href}`} className={styles.colHeader}>
-                <span className={styles.colIconBox}>
-                  {EXPERTISE_COL_ICONS[key]}
-                </span>
-                <div className={styles.colMeta}>
-                  <span className={styles.colName}>
-                    {t(`megaExpertises.${key}.title`)}
-                    <span className={styles.period} aria-hidden="true">.</span>
-                  </span>
-                  {!mobile && (
-                    <span className={styles.colTagline}>
-                      {t(`megaExpertises.${key}.tagline`)}
+    /* Mobile: liste plate des 5 sections */
+    if (mobile) {
+      return (
+        <div className={styles.mobileGrid}>
+          {EXPERTISES_COLS.map((col) => {
+            const key = col.key as ExpertiseKey;
+            return (
+              <div key={key} className={styles.col}>
+                <Link href={`${prefix}${col.href}`} className={styles.colHeader}>
+                  <span className={styles.colIconBox}>{EXPERTISE_COL_ICONS[key]}</span>
+                  <div className={styles.colMeta}>
+                    <span className={styles.colName}>
+                      {t(`megaExpertises.${key}.title`)}
+                      <span className={styles.period} aria-hidden="true">.</span>
                     </span>
-                  )}
-                </div>
-              </Link>
+                  </div>
+                </Link>
+                <div className={styles.colDivider} aria-hidden="true" />
+                <ul className={styles.list}>
+                  {col.items.map((item) => (
+                    <li key={item.key}>
+                      <Link href={`${prefix}${item.href}`} className={styles.item}>
+                        <span>{t(`megaExpertises.${key}.${item.key}`)}</span>
+                        <ArrowIcon />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
+        </div>
+      );
+    }
 
-              <div className={styles.colDivider} aria-hidden="true" />
-
-              <ul className={styles.list}>
-                {col.items.map((item) => (
-                  <li key={item.key}>
-                    <Link href={`${prefix}${item.href}`} className={styles.item}>
-                      <span>{t(`megaExpertises.${key}.${item.key}`)}</span>
-                      <ArrowIcon />
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+    /* Desktop: 3 colonnes groupées — helper inline */
+    const renderSection = (
+      col: (typeof EXPERTISES_COLS)[number],
+      useItemGrid = false,
+    ) => {
+      const key = col.key as ExpertiseKey;
+      return (
+        <div className={styles.col}>
+          <Link href={`${prefix}${col.href}`} className={styles.colHeader}>
+            <span className={styles.colIconBox}>{EXPERTISE_COL_ICONS[key]}</span>
+            <div className={styles.colMeta}>
+              <span className={styles.colName}>
+                {t(`megaExpertises.${key}.title`)}
+                <span className={styles.period} aria-hidden="true">.</span>
+              </span>
+              <span className={styles.colTagline}>
+                {t(`megaExpertises.${key}.tagline`)}
+              </span>
             </div>
-          );
-        })}
+          </Link>
+          <div className={styles.colDivider} aria-hidden="true" />
+          <ul className={useItemGrid ? styles.itemGrid : styles.list}>
+            {col.items.map((item) => (
+              <li key={item.key}>
+                <Link href={`${prefix}${item.href}`} className={styles.item}>
+                  <span>{t(`megaExpertises.${key}.${item.key}`)}</span>
+                  <ArrowIcon />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      );
+    };
 
-        {!mobile && (
-          <div className={styles.ctaRow}>
-            <Link href={`${prefix}/portfolio`} className={styles.ctaLink}>
-              {t('voirRealisations')}
-              <CtaArrow />
-            </Link>
+    return (
+      <div className={styles.expertisesGrid}>
+
+        {/* Col 1 — Création : items en mini-grid 2 colonnes */}
+        <div className={styles.expertisesCol}>
+          {renderSection(EXPERTISES_COLS[0], true)}
+        </div>
+
+        {/* Col 2 — Développement + Marketing Digital */}
+        <div className={styles.expertisesCol}>
+          {renderSection(EXPERTISES_COLS[1])}
+          <div className={styles.colStacked}>
+            {renderSection(EXPERTISES_COLS[2])}
           </div>
-        )}
+        </div>
+
+        {/* Col 3 — Conseil + Automatisation */}
+        <div className={styles.expertisesCol}>
+          {renderSection(EXPERTISES_COLS[3])}
+          <div className={styles.colStacked}>
+            {renderSection(EXPERTISES_COLS[4])}
+          </div>
+        </div>
+
+        <div className={styles.ctaRow}>
+          <Link href={`${prefix}/portfolio`} className={styles.ctaLink}>
+            {t('voirRealisations')}
+            <CtaArrow />
+          </Link>
+        </div>
       </div>
     );
   }
