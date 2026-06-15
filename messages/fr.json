@@ -173,6 +173,13 @@
     }
   },
 
+  "aboutTeaser": {
+    "eyebrow": "L'Agence",
+    "title": "Rencontrez-nous",
+    "body": "Connect Web est née à Dakar avec une conviction simple : une agence digitale doit être jugée sur les résultats qu'elle génère, pas sur le nombre de mots-clés sur sa page d'accueil. On combine expertise technique — Odoo, e-commerce, automatisation — et connaissance du terrain, au Sénégal comme en France, pour construire des systèmes qui font vraiment tourner votre activité.",
+    "cta": "Découvrir l'agence"
+  },
+
   "techStack": {
     "headline": "Les mêmes outils que les grandes structures, au service de votre projet."
   },

@@ -173,6 +173,13 @@
     }
   },
 
+  "aboutTeaser": {
+    "eyebrow": "The Agency",
+    "title": "Get to know us",
+    "body": "Connect Web was founded in Dakar on a simple belief: a digital agency should be judged by the results it delivers, not by the buzzwords on its homepage. We combine technical expertise — Odoo, e-commerce, automation — with on-the-ground knowledge, in Senegal and in France, to build systems that actually run your business.",
+    "cta": "Discover the agency"
+  },
+
   "techStack": {
     "headline": "The same tools as large organisations, at the service of your project."
   },
