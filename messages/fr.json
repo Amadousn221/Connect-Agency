@@ -124,5 +124,43 @@
       "desc": "Workflows n8n, automatisations marketing, reporting automatique — récupérez du temps chaque jour.",
       "href": "/expertises/automatisation"
     }
+  },
+
+  "expertisesSection": {
+    "eyebrow": "Nos Expertises",
+    "titleLine1": "5 piliers.",
+    "titleLine2": "Un seul partenaire.",
+    "subtitle": "Une approche complète pour concevoir, développer, marketer, conseiller et automatiser votre présence digitale.",
+    "discover": "Découvrir",
+    "creation": {
+      "title": "Création",
+      "desc": "Sites vitrines, e-commerce, plateformes sectorielles, logiciels métier — nous concevons des interfaces qui convertissent.",
+      "tags": "Sites vitrines, E-commerce, Marketplace, SaaS, Logiciels métier",
+      "href": "/expertises/creation"
+    },
+    "dev": {
+      "title": "Développement sur-mesure",
+      "desc": "Shopify, Odoo, Python, Vue.js — des solutions techniques construites pour durer et s'intégrer parfaitement à votre écosystème.",
+      "tags": "Shopify, Odoo, Python, Vue.js, PWA",
+      "href": "/expertises/developpement-sur-mesure"
+    },
+    "marketing": {
+      "title": "Marketing Digital",
+      "desc": "SEO, publicité en ligne, CRM Marketing — votre visibilité et vos leads, pilotés avec précision.",
+      "tags": "SEO, Publicité en ligne, CRM Marketing",
+      "href": "/expertises/marketing-digital"
+    },
+    "conseil": {
+      "title": "Conseil",
+      "desc": "Stratégie digitale, transformation digitale, intelligence artificielle — nous vous guidons à chaque étape de votre évolution.",
+      "tags": "Stratégie digitale, Transformation digitale, IA",
+      "href": "/expertises/conseil"
+    },
+    "automatisation": {
+      "title": "Automatisation",
+      "desc": "Synchronisation Odoo, workflows n8n, automatisations marketing — récupérez du temps et réduisez l'erreur humaine.",
+      "tags": "Sync site ↔ Odoo, Workflows n8n, Auto marketing",
+      "href": "/expertises/automatisation"
+    }
   }
 }

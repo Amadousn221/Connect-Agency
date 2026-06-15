@@ -124,5 +124,43 @@
       "desc": "n8n workflows, marketing automations, automatic reporting — reclaim time every day.",
       "href": "/expertises/automatisation"
     }
+  },
+
+  "expertisesSection": {
+    "eyebrow": "Our Expertise",
+    "titleLine1": "5 pillars.",
+    "titleLine2": "One partner.",
+    "subtitle": "A complete approach to design, develop, market, consult and automate your digital presence.",
+    "discover": "Discover",
+    "creation": {
+      "title": "Creation",
+      "desc": "Showcase sites, e-commerce, sector platforms, business software — we design interfaces built to convert.",
+      "tags": "Showcase sites, E-commerce, Marketplace, SaaS, Business software",
+      "href": "/expertises/creation"
+    },
+    "dev": {
+      "title": "Custom development",
+      "desc": "Shopify, Odoo, Python, Vue.js — technical solutions built to last and integrate seamlessly into your ecosystem.",
+      "tags": "Shopify, Odoo, Python, Vue.js, PWA",
+      "href": "/expertises/developpement-sur-mesure"
+    },
+    "marketing": {
+      "title": "Digital Marketing",
+      "desc": "SEO, online advertising, CRM Marketing — your visibility and leads, driven with precision.",
+      "tags": "SEO, Online advertising, CRM Marketing",
+      "href": "/expertises/marketing-digital"
+    },
+    "conseil": {
+      "title": "Consulting",
+      "desc": "Digital strategy, transformation, artificial intelligence — we guide you at every step of your growth.",
+      "tags": "Digital strategy, Digital transformation, AI",
+      "href": "/expertises/conseil"
+    },
+    "automatisation": {
+      "title": "Automation",
+      "desc": "Odoo sync, n8n workflows, marketing automations — reclaim time and reduce human error.",
+      "tags": "Site ↔ Odoo sync, n8n workflows, Marketing auto",
+      "href": "/expertises/automatisation"
+    }
   }
 }
