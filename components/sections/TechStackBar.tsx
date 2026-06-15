@@ -31,7 +31,11 @@ export default function TechStackBar() {
         </p>
         <div className="flex flex-wrap justify-center gap-2.5">
           {TECHS.map((tech) => (
-            <Badge key={tech} variant="outline" className="px-3 py-1 text-xs h-auto">
+            <Badge
+              key={tech}
+              variant="outline"
+              className="px-3 py-1.5 h-auto text-xs font-medium rounded-full bg-background border-border text-muted-foreground"
+            >
               {tech}
             </Badge>
           ))}
