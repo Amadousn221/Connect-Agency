@@ -1,7 +1,9 @@
+import ObjectivesGrid from '@/components/sections/ObjectivesGrid';
+
 export default function HomePage() {
   return (
     <main>
-      <p>Connect Web — à venir</p>
+      <ObjectivesGrid />
     </main>
   );
 }

@@ -87,5 +87,42 @@
     "heroSubline": "Connect Web designs, builds and automates your digital systems — websites, e-commerce, business software, and sector solutions for retail, restaurants and real estate.",
     "heroCta": "Request my free audit",
     "heroCtaSecondary": "See our work"
+  },
+
+  "objectives": {
+    "eyebrow": "Your goals",
+    "title": "What is your objective?",
+    "subtitle": "We design and automate your digital stack — from creation to automation — to deliver measurable results.",
+    "cta": "Explore",
+    "lancer": {
+      "title": "Launch a product or brand",
+      "desc": "Showcase sites, e-commerce, SaaS — we build your digital presence from the ground up, solidly.",
+      "href": "/expertises/creation"
+    },
+    "visibilite": {
+      "title": "Grow your visibility",
+      "desc": "SEO, online advertising, content strategy — your brand visible exactly where your customers are searching.",
+      "href": "/expertises/marketing-digital"
+    },
+    "leads": {
+      "title": "Generate qualified leads",
+      "desc": "CRM Marketing, automated sequences, smart forms — more contacts, better conversion.",
+      "href": "/expertises/marketing-digital/crm-marketing"
+    },
+    "vendre": {
+      "title": "Sell online",
+      "desc": "Stores connected to Odoo, Shopify or WooCommerce — your sales synchronised in real time.",
+      "href": "/expertises/creation/sites-ecommerce"
+    },
+    "donnees": {
+      "title": "Centralise your data",
+      "desc": "Odoo Community ERP/CRM integration — stock, sales and customers in one unified system.",
+      "href": "/expertises/creation/integration-erp-crm"
+    },
+    "processus": {
+      "title": "Improve your processes",
+      "desc": "n8n workflows, marketing automations, automatic reporting — reclaim time every day.",
+      "href": "/expertises/automatisation"
+    }
   }
 }

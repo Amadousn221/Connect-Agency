@@ -87,5 +87,42 @@
     "heroSubline": "Connect Web conçoit, développe et automatise vos systèmes digitaux — sites, e-commerce, logiciels métier, et solutions sectorielles pour le commerce, la restauration et l'immobilier.",
     "heroCta": "Demander mon audit gratuit",
     "heroCtaSecondary": "Voir nos réalisations"
+  },
+
+  "objectives": {
+    "eyebrow": "Vos objectifs",
+    "title": "Quel est votre objectif ?",
+    "subtitle": "Nous concevons et automatisons votre stack digital — de la création à l'automatisation — pour atteindre vos résultats.",
+    "cta": "Explorer",
+    "lancer": {
+      "title": "Lancer un produit ou une marque",
+      "desc": "Sites vitrines, e-commerce, SaaS — nous construisons votre présence digitale de zéro, solidement.",
+      "href": "/expertises/creation"
+    },
+    "visibilite": {
+      "title": "Développer votre visibilité",
+      "desc": "SEO, publicité en ligne, stratégie de contenu — votre marque visible exactement là où vos clients cherchent.",
+      "href": "/expertises/marketing-digital"
+    },
+    "leads": {
+      "title": "Collecter des leads qualifiés",
+      "desc": "CRM Marketing, séquences automatisées, formulaires intelligents — plus de contacts, meilleure conversion.",
+      "href": "/expertises/marketing-digital/crm-marketing"
+    },
+    "vendre": {
+      "title": "Vendre en ligne",
+      "desc": "Boutiques connectées à Odoo, Shopify ou WooCommerce — votre vente synchronisée en temps réel.",
+      "href": "/expertises/creation/sites-ecommerce"
+    },
+    "donnees": {
+      "title": "Centraliser vos données",
+      "desc": "Intégration ERP/CRM Odoo Community — stock, ventes et clients dans un seul système unifié.",
+      "href": "/expertises/creation/integration-erp-crm"
+    },
+    "processus": {
+      "title": "Améliorer vos processus",
+      "desc": "Workflows n8n, automatisations marketing, reporting automatique — récupérez du temps chaque jour.",
+      "href": "/expertises/automatisation"
+    }
   }
 }
