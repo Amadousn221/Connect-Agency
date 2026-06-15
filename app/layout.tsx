@@ -16,11 +16,16 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   const locale = headersList.get('x-locale') ?? 'fr';
 
   return (
-    <html lang={locale} data-theme="dark" className={geist.variable}>
+    <html
+      lang={locale}
+      data-theme="dark"
+      className={geist.variable}
+      suppressHydrationWarning
+    >
       <head>
         <script dangerouslySetInnerHTML={{ __html: ANTI_FOUC }} />
       </head>
-      <body>{children}</body>
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }
