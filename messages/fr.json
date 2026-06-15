@@ -2,14 +2,90 @@
   "nav": {
     "expertises": "Expertises",
     "vosEnjeux": "Vos Enjeux",
-    "portfolio": "Portfolio",
-    "agence": "Agence",
-    "contact": "Contact",
-    "auditGratuit": "Audit Gratuit"
+    "agence": "L'Agence",
+    "ressources": "Ressources",
+    "auditGratuit": "Audit Gratuit",
+    "voirRealisations": "Voir nos réalisations",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "switchTheme": "Changer le thème",
+
+    "megaExpertises": {
+      "creation": {
+        "title": "Création",
+        "sitesVitrines": "Sites vitrines",
+        "sitesEcommerce": "Sites Ecommerce",
+        "marketplace": "Marketplace",
+        "sitesImmobiliers": "Sites immobiliers",
+        "sitesRestaurant": "Sites Restaurant",
+        "applicationSaas": "Application SaaS",
+        "logicielsMétier": "Logiciels métier",
+        "integrationErpCrm": "Intégration ERP/CRM",
+        "extranetIntranet": "Extranet / Intranet"
+      },
+      "dev": {
+        "title": "Développement sur-mesure",
+        "shopify": "Shopify",
+        "odoo": "Odoo",
+        "python": "Python",
+        "vuejs": "Vue.js",
+        "pwa": "Progressive Web App"
+      },
+      "marketing": {
+        "title": "Marketing Digital",
+        "seo": "SEO",
+        "pub": "Publicité en ligne",
+        "crm": "CRM Marketing"
+      },
+      "conseil": {
+        "title": "Conseil",
+        "strategie": "Stratégie digitale",
+        "transformation": "Transformation digitale",
+        "ia": "Intelligence artificielle"
+      },
+      "automatisation": {
+        "title": "Automatisation",
+        "sync": "Synchronisation site ↔ Odoo",
+        "n8n": "Workflows n8n",
+        "autoMarketing": "Automatisations marketing"
+      }
+    },
+
+    "megaVosEnjeux": {
+      "objectifs": {
+        "title": "Objectifs",
+        "lancer": "Lancer un produit ou une marque",
+        "visibilite": "Développer sa visibilité",
+        "leads": "Collecter des leads",
+        "vendre": "Vendre en ligne",
+        "donnees": "Centraliser mes données",
+        "processus": "Améliorer mes processus"
+      },
+      "secteur": {
+        "title": "Votre secteur",
+        "ecommerce": "E-commerce",
+        "restaurant": "Restaurant",
+        "immobilier": "Immobilier",
+        "saas": "SaaS",
+        "b2b": "B2B",
+        "b2c": "B2C"
+      },
+      "former": {
+        "title": "Se former"
+      }
+    }
   },
+
   "footer": {
     "tagline": "Agence digitale complète — Dakar & France",
     "contact": "contact@connect-web.com",
     "rights": "Tous droits réservés"
+  },
+
+  "home": {
+    "heroHeadline": "Votre stack digital, pensé pour croître.",
+    "heroSubline": "Connect Web conçoit, développe et automatise vos systèmes digitaux — sites, e-commerce, logiciels métier, et solutions sectorielles pour le commerce, la restauration et l'immobilier.",
+    "heroCta": "Demander mon audit gratuit",
+    "heroCtaSecondary": "Voir nos réalisations"
   }
 }

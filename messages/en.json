@@ -2,14 +2,90 @@
   "nav": {
     "expertises": "Expertise",
     "vosEnjeux": "Your Challenges",
-    "portfolio": "Portfolio",
     "agence": "Agency",
-    "contact": "Contact",
-    "auditGratuit": "Free Audit"
+    "ressources": "Resources",
+    "auditGratuit": "Free Audit",
+    "voirRealisations": "See our work",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "switchTheme": "Toggle theme",
+
+    "megaExpertises": {
+      "creation": {
+        "title": "Creation",
+        "sitesVitrines": "Showcase websites",
+        "sitesEcommerce": "E-commerce sites",
+        "marketplace": "Marketplace",
+        "sitesImmobiliers": "Real estate websites",
+        "sitesRestaurant": "Restaurant websites",
+        "applicationSaas": "SaaS applications",
+        "logicielsMétier": "Business software",
+        "integrationErpCrm": "ERP/CRM integration",
+        "extranetIntranet": "Extranet / Intranet"
+      },
+      "dev": {
+        "title": "Custom development",
+        "shopify": "Shopify",
+        "odoo": "Odoo",
+        "python": "Python",
+        "vuejs": "Vue.js",
+        "pwa": "Progressive Web App"
+      },
+      "marketing": {
+        "title": "Digital Marketing",
+        "seo": "SEO",
+        "pub": "Online advertising",
+        "crm": "CRM Marketing"
+      },
+      "conseil": {
+        "title": "Consulting",
+        "strategie": "Digital strategy",
+        "transformation": "Digital transformation",
+        "ia": "Artificial intelligence"
+      },
+      "automatisation": {
+        "title": "Automation",
+        "sync": "Site ↔ Odoo sync",
+        "n8n": "n8n workflows",
+        "autoMarketing": "Marketing automations"
+      }
+    },
+
+    "megaVosEnjeux": {
+      "objectifs": {
+        "title": "Goals",
+        "lancer": "Launch a product or brand",
+        "visibilite": "Grow your visibility",
+        "leads": "Generate leads",
+        "vendre": "Sell online",
+        "donnees": "Centralise your data",
+        "processus": "Improve your processes"
+      },
+      "secteur": {
+        "title": "Your industry",
+        "ecommerce": "E-commerce",
+        "restaurant": "Restaurant",
+        "immobilier": "Real estate",
+        "saas": "SaaS",
+        "b2b": "B2B",
+        "b2c": "B2C"
+      },
+      "former": {
+        "title": "Training"
+      }
+    }
   },
+
   "footer": {
     "tagline": "Full-service digital agency — Dakar & France",
     "contact": "contact@connect-web.com",
     "rights": "All rights reserved"
+  },
+
+  "home": {
+    "heroHeadline": "Your digital stack, built to scale.",
+    "heroSubline": "Connect Web designs, builds and automates your digital systems — websites, e-commerce, business software, and sector solutions for retail, restaurants and real estate.",
+    "heroCta": "Request my free audit",
+    "heroCtaSecondary": "See our work"
   }
 }
