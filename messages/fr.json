@@ -13,6 +13,7 @@
     "megaExpertises": {
       "creation": {
         "title": "Création",
+        "tagline": "Sites, e-commerce & logiciels",
         "sitesVitrines": "Sites vitrines",
         "sitesEcommerce": "Sites Ecommerce",
         "marketplace": "Marketplace",
@@ -25,6 +26,7 @@
       },
       "dev": {
         "title": "Développement sur-mesure",
+        "tagline": "Shopify, Odoo & Python",
         "shopify": "Shopify",
         "odoo": "Odoo",
         "python": "Python",
@@ -33,18 +35,21 @@
       },
       "marketing": {
         "title": "Marketing Digital",
+        "tagline": "SEO, publicité & CRM",
         "seo": "SEO",
         "pub": "Publicité en ligne",
         "crm": "CRM Marketing"
       },
       "conseil": {
         "title": "Conseil",
+        "tagline": "Stratégie, transform. & IA",
         "strategie": "Stratégie digitale",
         "transformation": "Transformation digitale",
         "ia": "Intelligence artificielle"
       },
       "automatisation": {
         "title": "Automatisation",
+        "tagline": "Workflows n8n & sync Odoo",
         "sync": "Synchronisation site ↔ Odoo",
         "n8n": "Workflows n8n",
         "autoMarketing": "Automatisations marketing"
@@ -55,20 +60,32 @@
       "objectifs": {
         "title": "Objectifs",
         "lancer": "Lancer un produit ou une marque",
+        "lancerDesc": "Sites vitrines, e-commerce & SaaS",
         "visibilite": "Développer sa visibilité",
+        "visibiliteDesc": "SEO, publicité & stratégie de contenu",
         "leads": "Collecter des leads",
+        "leadsDesc": "CRM Marketing & séquences auto",
         "vendre": "Vendre en ligne",
+        "vendreDesc": "Odoo, Shopify & WooCommerce",
         "donnees": "Centraliser mes données",
-        "processus": "Améliorer mes processus"
+        "donneesDesc": "ERP / CRM Odoo Community",
+        "processus": "Améliorer mes processus",
+        "processusDesc": "n8n, reporting & workflows"
       },
       "secteur": {
         "title": "Votre secteur",
         "ecommerce": "E-commerce",
+        "ecommerceDesc": "Boutiques & marketplaces",
         "restaurant": "Restaurant",
+        "restaurantDesc": "Commande, résa & fidélité",
         "immobilier": "Immobilier",
+        "immobilierDesc": "Portails & gestion de biens",
         "saas": "SaaS",
+        "saasDesc": "Plateformes & applications",
         "b2b": "B2B",
-        "b2c": "B2C"
+        "b2bDesc": "Génération de leads & conseil",
+        "b2c": "B2C",
+        "b2cDesc": "Visibilité & conversion"
       },
       "former": {
         "title": "Se former"
@@ -83,9 +100,10 @@
   },
 
   "home": {
+    "heroBadge": "Agence digitale — Dakar & France",
     "heroHeadline": "Votre stack digital, pensé pour croître.",
-    "heroSubline": "Connect Web conçoit, développe et automatise vos systèmes digitaux — sites, e-commerce, logiciels métier, et solutions sectorielles pour le commerce, la restauration et l'immobilier.",
-    "heroCta": "Demander mon audit gratuit",
+    "heroSubline": "Connect Web conçoit, développe et automatise vos systèmes digitaux — sites web, e-commerce, Odoo Community et solutions sectorielles pour le commerce, la restauration et l'immobilier.",
+    "heroCta": "Demander un audit gratuit",
     "heroCtaSecondary": "Voir nos réalisations"
   },
 

@@ -13,6 +13,7 @@
     "megaExpertises": {
       "creation": {
         "title": "Creation",
+        "tagline": "Websites, e-commerce & software",
         "sitesVitrines": "Showcase websites",
         "sitesEcommerce": "E-commerce sites",
         "marketplace": "Marketplace",
@@ -25,6 +26,7 @@
       },
       "dev": {
         "title": "Custom development",
+        "tagline": "Shopify, Odoo & Python",
         "shopify": "Shopify",
         "odoo": "Odoo",
         "python": "Python",
@@ -33,18 +35,21 @@
       },
       "marketing": {
         "title": "Digital Marketing",
+        "tagline": "SEO, advertising & CRM",
         "seo": "SEO",
         "pub": "Online advertising",
         "crm": "CRM Marketing"
       },
       "conseil": {
         "title": "Consulting",
+        "tagline": "Strategy, transform. & AI",
         "strategie": "Digital strategy",
         "transformation": "Digital transformation",
         "ia": "Artificial intelligence"
       },
       "automatisation": {
         "title": "Automation",
+        "tagline": "n8n workflows & Odoo sync",
         "sync": "Site ↔ Odoo sync",
         "n8n": "n8n workflows",
         "autoMarketing": "Marketing automations"
@@ -55,20 +60,32 @@
       "objectifs": {
         "title": "Goals",
         "lancer": "Launch a product or brand",
+        "lancerDesc": "Showcase sites, e-commerce & SaaS",
         "visibilite": "Grow your visibility",
+        "visibiliteDesc": "SEO, advertising & content strategy",
         "leads": "Generate leads",
+        "leadsDesc": "CRM Marketing & automated sequences",
         "vendre": "Sell online",
+        "vendreDesc": "Odoo, Shopify & WooCommerce",
         "donnees": "Centralise your data",
-        "processus": "Improve your processes"
+        "donneesDesc": "Odoo Community ERP / CRM",
+        "processus": "Improve your processes",
+        "processusDesc": "n8n, reporting & workflows"
       },
       "secteur": {
         "title": "Your industry",
         "ecommerce": "E-commerce",
+        "ecommerceDesc": "Online stores & marketplaces",
         "restaurant": "Restaurant",
+        "restaurantDesc": "Ordering, booking & loyalty",
         "immobilier": "Real estate",
+        "immobilierDesc": "Portals & property management",
         "saas": "SaaS",
+        "saasDesc": "Platforms & applications",
         "b2b": "B2B",
-        "b2c": "B2C"
+        "b2bDesc": "Lead generation & strategy",
+        "b2c": "B2C",
+        "b2cDesc": "Visibility & conversion"
       },
       "former": {
         "title": "Training"
@@ -83,9 +100,10 @@
   },
 
   "home": {
+    "heroBadge": "Digital agency — Dakar & France",
     "heroHeadline": "Your digital stack, built to scale.",
-    "heroSubline": "Connect Web designs, builds and automates your digital systems — websites, e-commerce, business software, and sector solutions for retail, restaurants and real estate.",
-    "heroCta": "Request my free audit",
+    "heroSubline": "Connect Web designs, builds and automates your digital systems — websites, e-commerce, Odoo Community and sector solutions for retail, restaurants and real estate.",
+    "heroCta": "Request a free audit",
     "heroCtaSecondary": "See our work"
   },
 
