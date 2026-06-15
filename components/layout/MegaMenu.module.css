@@ -1,13 +1,13 @@
 /* =========================================
-   MegaMenu — Connect Web Premium (Reverb-inspired)
+   MegaMenu — Connect Web Premium Compact
    ========================================= */
 
 /* ── Desktop grids ── */
 .expertisesGrid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: var(--space-6);
-  padding: var(--space-8) var(--container-pad) var(--space-10);
+  gap: var(--space-4);
+  padding: var(--space-5) var(--container-pad) var(--space-5);
   max-width: var(--container-max);
   margin-inline: auto;
 }
@@ -15,8 +15,8 @@
 .enjeuxGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-10);
-  padding: var(--space-8) var(--container-pad) var(--space-10);
+  gap: var(--space-6);
+  padding: var(--space-5) var(--container-pad) var(--space-5);
   max-width: var(--container-max);
   margin-inline: auto;
 }
@@ -25,18 +25,18 @@
 .col {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  gap: var(--space-2);
 }
 
-/* ── Column header — Reverb style (icon box + meta) ── */
+/* ── Column header — icon box + meta ── */
 .colHeader {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
+  gap: var(--space-2);
   text-decoration: none;
   border-radius: var(--radius-md);
-  padding: var(--space-2);
-  margin: calc(-1 * var(--space-2));
+  padding: var(--space-1);
+  margin: calc(-1 * var(--space-1));
   transition: background-color var(--transition-fast);
 }
 
@@ -44,14 +44,15 @@
   background-color: var(--color-bg-secondary);
 }
 
+/* Icon box — 26px (raffiné, pas encombrant) */
 .colIconBox {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  width: 34px;
-  height: 34px;
-  border-radius: var(--radius-md);
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-sm);
   background-color: var(--color-bg-secondary);
   border: 1px solid var(--color-border);
   color: var(--color-text-secondary);
@@ -70,15 +71,16 @@
 .colMeta {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
   min-width: 0;
 }
 
+/* Column name — légèrement plus compact */
 .colName {
-  font-size: var(--text-sm);
+  font-size: 0.8125rem;
   font-weight: 700;
   color: var(--color-text-primary);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
   line-height: 1.2;
   white-space: nowrap;
   overflow: hidden;
@@ -90,29 +92,31 @@
   color: var(--color-accent);
 }
 
+/* Tagline minuscule — ton editorial */
 .colTagline {
-  font-size: 0.6875rem;
+  font-size: 0.625rem;
   color: var(--color-text-muted);
   line-height: 1.3;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  letter-spacing: 0.02em;
 }
 
-/* ── Divider ── */
+/* ── Divider — fil ultra-fin ── */
 .colDivider {
   height: 1px;
   background-color: var(--color-border);
-  margin: var(--space-1) 0;
+  margin: 2px 0;
 }
 
-/* ── VOS ENJEUX — column title (p, not a link) ── */
+/* ── VOS ENJEUX — column title ── */
 .colTitle {
   font-size: var(--text-xs);
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
-  color: var(--color-text-primary);
+  color: var(--color-text-secondary);
   line-height: 1;
 }
 
@@ -123,18 +127,18 @@
   gap: 0;
 }
 
-/* ── Expertise sub-item ── */
+/* ── Expertise sub-item — compact mais lisible ── */
 .item {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--space-2);
-  padding: 0.375rem var(--space-2);
+  padding: 0.28rem var(--space-2);
   margin-inline: calc(-1 * var(--space-2));
-  font-size: var(--text-sm);
+  font-size: 0.8125rem;
   color: var(--color-text-secondary);
   text-decoration: none;
-  line-height: var(--leading-snug);
+  line-height: 1.45;
   border-radius: var(--radius-sm);
   transition:
     color var(--transition-fast),
@@ -146,7 +150,7 @@
   background-color: var(--color-bg-secondary);
 }
 
-/* Arrow icon — hidden, slides in on hover */
+/* Arrow — slide depuis la gauche */
 .itemArrow {
   flex-shrink: 0;
   opacity: 0;
@@ -162,76 +166,15 @@
   transform: translateX(0);
 }
 
-/* ── VOS ENJEUX items with icon ── */
-.enjeuxItem {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  padding: 0.4375rem var(--space-2);
-  margin-inline: calc(-1 * var(--space-2));
-  text-decoration: none;
-  border-radius: var(--radius-md);
-  transition: background-color var(--transition-fast);
-}
-
-.enjeuxItem:hover {
-  background-color: var(--color-bg-secondary);
-}
-
-.enjeuxIconBox {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  width: 26px;
-  height: 26px;
-  border-radius: var(--radius-sm);
-  background-color: var(--color-bg-secondary);
-  border: 1px solid var(--color-border);
-  color: var(--color-text-secondary);
-  transition:
-    background-color var(--transition-fast),
-    border-color var(--transition-fast),
-    color var(--transition-fast);
-}
-
-.enjeuxItem:hover .enjeuxIconBox {
-  background-color: var(--color-accent-subtle);
-  border-color: var(--color-accent);
-  color: var(--color-accent);
-}
-
-.enjeuxText {
-  flex: 1;
-  font-size: var(--text-sm);
-  color: var(--color-text-secondary);
-  line-height: var(--leading-snug);
-  transition: color var(--transition-fast);
-}
-
-.enjeuxItem:hover .enjeuxText {
-  color: var(--color-text-primary);
-}
-
-.enjeuxItem .itemArrow {
-  opacity: 0;
-  transform: translateX(-4px);
-}
-
-.enjeuxItem:hover .itemArrow {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* ── VOS ENJEUX — Reverb card items (desktop) ── */
+/* ── VOS ENJEUX — Reverb card (desktop) ── */
 .enjeuxCard {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
-  padding: var(--space-3) var(--space-3);
-  margin-inline: calc(-1 * var(--space-3));
+  gap: var(--space-2);
+  padding: 0.375rem var(--space-2);
+  margin-inline: calc(-1 * var(--space-2));
   text-decoration: none;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   transition: background-color var(--transition-fast);
 }
 
@@ -239,15 +182,16 @@
   background-color: var(--color-bg-secondary);
 }
 
+/* Icon 28px — équilibré avec la typographie */
 .enjeuxCardIcon {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  width: 36px;
-  height: 36px;
-  border-radius: var(--radius-md);
-  background-color: var(--color-bg-tertiary);
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-bg-secondary);
   border: 1px solid var(--color-border);
   color: var(--color-text-secondary);
   transition:
@@ -267,14 +211,14 @@
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
 }
 
 .enjeuxCardTitle {
-  font-size: var(--text-sm);
+  font-size: 0.8125rem;
   font-weight: 600;
   color: var(--color-text-primary);
-  line-height: var(--leading-snug);
+  line-height: 1.3;
   letter-spacing: -0.01em;
   transition: color var(--transition-fast);
 }
@@ -282,13 +226,13 @@
 .enjeuxCardDesc {
   font-size: 0.6875rem;
   color: var(--color-text-muted);
-  line-height: 1.4;
+  line-height: 1.35;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-/* Arrow for enjeux cards */
+/* Arrow pour les cartes */
 .cardArrow {
   flex-shrink: 0;
   opacity: 0;
@@ -308,18 +252,19 @@
 
 /* ── Empty column placeholder ── */
 .empty {
-  font-size: var(--text-sm);
+  font-size: var(--text-xs);
   color: var(--color-text-muted);
   font-style: italic;
+  line-height: 1.5;
 }
 
-/* ── CTA row ── */
+/* ── CTA row — compact, flush avec le contenu ── */
 .ctaRow {
   grid-column: 1 / -1;
   display: flex;
   justify-content: flex-end;
-  padding-top: var(--space-5);
-  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  margin-top: var(--space-2);
   border-top: 1px solid var(--color-border);
 }
 
@@ -327,7 +272,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  padding: 0.5rem 1.375rem;
+  padding: 0.4375rem 1.125rem;
   font-size: var(--text-xs);
   font-weight: 700;
   letter-spacing: 0.07em;
@@ -350,21 +295,25 @@
   box-shadow: 0 0 0 3px var(--color-accent-subtle);
 }
 
+/* ── Anciens helpers (enjeux legacy — non utilisés desktop) ── */
+.enjeuxItem { display: none; }
+.enjeuxIconBox { display: none; }
+.enjeuxText { display: none; }
+
 /* ── Mobile grid ── */
 .mobileGrid {
   display: flex;
   flex-direction: column;
-  gap: var(--space-6);
+  gap: var(--space-5);
 }
 
 .mobileGrid .col {
-  gap: var(--space-2);
+  gap: var(--space-1);
 }
 
 .mobileGrid .colTitle {
   font-size: var(--text-xs);
   padding-bottom: var(--space-2);
-  margin-bottom: var(--space-1);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -393,7 +342,6 @@
 
 .mobileGrid .item:hover {
   background-color: transparent;
-  padding-left: 0;
 }
 
 .mobileGrid .itemArrow {
@@ -401,6 +349,7 @@
   transform: none;
 }
 
+/* Mobile — cartes Reverb cachées, links simples utilisés */
 .mobileGrid .enjeuxCard {
-  display: none; /* mobile uses .item text links instead */
+  display: none;
 }
