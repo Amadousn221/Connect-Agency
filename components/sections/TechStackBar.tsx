@@ -1,7 +1,8 @@
-import { useTranslations } from 'next-intl';
-import { Badge } from '@/components/ui/badge';
+'use client';
 
-/* Tech names are proper nouns — same in FR and EN */
+import { useTranslations } from 'next-intl';
+import styles from './TechStackBar.module.css';
+
 const TECHS = [
   'WordPress',
   'Shopify',
@@ -18,26 +19,16 @@ export default function TechStackBar() {
   const t = useTranslations('techStack');
 
   return (
-    <section
-      className="py-12 bg-muted border-y border-border"
-      aria-labelledby="tech-stack-label"
-    >
-      <div className="mx-auto max-w-[var(--container-max)] px-[var(--container-pad)] text-center">
-        <p
-          id="tech-stack-label"
-          className="text-sm font-medium text-muted-foreground mb-6 max-w-xl mx-auto leading-relaxed"
-        >
+    <section className={styles.section} aria-labelledby="tech-stack-label">
+      <div className={styles.container}>
+        <p id="tech-stack-label" className={styles.headline}>
           {t('headline')}
         </p>
-        <div className="flex flex-wrap justify-center gap-2.5">
+        <div className={styles.badges}>
           {TECHS.map((tech) => (
-            <Badge
-              key={tech}
-              variant="outline"
-              className="px-3 py-1.5 h-auto text-xs font-medium rounded-full bg-background border-border text-muted-foreground"
-            >
+            <span key={tech} className={styles.badge}>
               {tech}
-            </Badge>
+            </span>
           ))}
         </div>
       </div>
