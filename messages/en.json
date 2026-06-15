@@ -147,6 +147,33 @@
     }
   },
 
+  "solutions": {
+    "eyebrow": "Sector Solutions",
+    "title": "Solutions built for your industry.",
+    "subtitle": "Turnkey systems combining website, Odoo management and automation — for retail, restaurants and real estate.",
+    "ecommerce": {
+      "secteur": "E-commerce",
+      "title": "Ecommerce Sites",
+      "desc": "Your store, connected to your operations.",
+      "cta": "Launch my store",
+      "href": "/expertises/creation/sites-ecommerce"
+    },
+    "restaurant": {
+      "secteur": "Restaurant",
+      "title": "Restaurant Sites",
+      "desc": "On-site reservations, simplified. Sales tracked in real time.",
+      "cta": "Digitise my service",
+      "href": "/expertises/creation/sites-restaurant"
+    },
+    "immobilier": {
+      "secteur": "Real Estate",
+      "title": "Real Estate Sites",
+      "desc": "Your properties, showcased. Your bookings, online.",
+      "cta": "Showcase my properties",
+      "href": "/expertises/creation/sites-immobiliers"
+    }
+  },
+
   "expertisesSection": {
     "eyebrow": "Our Expertise",
     "titleLine1": "5 pillars.",

@@ -147,6 +147,33 @@
     }
   },
 
+  "solutions": {
+    "eyebrow": "Solutions Sectorielles",
+    "title": "Des solutions pensées pour votre secteur.",
+    "subtitle": "Des systèmes clé-en-main combinant site, gestion Odoo et automatisation — pour le commerce, la restauration et l'immobilier.",
+    "ecommerce": {
+      "secteur": "E-commerce",
+      "title": "Sites Ecommerce",
+      "desc": "Votre boutique, connectée à votre gestion.",
+      "cta": "Lancer ma boutique",
+      "href": "/expertises/creation/sites-ecommerce"
+    },
+    "restaurant": {
+      "secteur": "Restauration",
+      "title": "Sites Restaurant",
+      "desc": "Vos réservations sur place, simplifiées. Vos ventes, suivies en direct.",
+      "cta": "Digitaliser mon service",
+      "href": "/expertises/creation/sites-restaurant"
+    },
+    "immobilier": {
+      "secteur": "Immobilier",
+      "title": "Sites Immobiliers",
+      "desc": "Vos biens, mis en avant. Vos réservations, en ligne.",
+      "cta": "Valoriser mes biens",
+      "href": "/expertises/creation/sites-immobiliers"
+    }
+  },
+
   "expertisesSection": {
     "eyebrow": "Nos Expertises",
     "titleLine1": "5 piliers.",
