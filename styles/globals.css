@@ -1,10 +1,17 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* Dark mode driven by data-theme attribute — matches our ThemeToggle + anti-FOUC */
+@custom-variant dark (&:is([data-theme="dark"] *));
+
 /* ==============================================
    CONNECT WEB — Design System Tokens v1
    palette Connect Web : rouge/orange sur dark navy
    Source : CONNECTWEB_DESIGN_SYSTEM_V1_NAV_UPDATE.md
    ============================================== */
 
-/* ===== Typo ===== */
+/* ===== Connect Web custom tokens + shadcn light mode ===== */
 :root {
   --font-sans: 'Geist', system-ui, sans-serif;
 
@@ -38,18 +45,11 @@
   --leading-tight:  1.25;
   --leading-snug:   1.375;
   --leading-normal: 1.6;
+  --leading-relaxed: 1.7;
 
   /* Letter spacing */
   --tracking-wide:  0.05em;
   --tracking-wider: 0.08em;
-
-  /* Border radius */
-  --radius-sm:   0.25rem;
-  --radius-md:   0.5rem;
-  --radius-lg:   0.75rem;
-  --radius-xl:   1rem;
-  --radius-2xl:  1.5rem;
-  --radius-full: 9999px;
 
   /* Layout */
   --header-height: 72px;
@@ -61,6 +61,40 @@
   --transition-base:   250ms ease;
   --transition-slow:   400ms ease;
   --transition-spring: 350ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ── shadcn/ui tokens — LIGHT MODE — Connect Web palette ── */
+  --background:                  #FFFFFF;
+  --foreground:                  #0F172A;
+  --card:                        #FFFFFF;
+  --card-foreground:             #0F172A;
+  --popover:                     #FFFFFF;
+  --popover-foreground:          #0F172A;
+  --primary:                     #FA0E1F;
+  --primary-foreground:          #FFFFFF;
+  --secondary:                   #F5F5F5;
+  --secondary-foreground:        #0F172A;
+  --muted:                       #F5F5F5;
+  --muted-foreground:            #475569;
+  --accent:                      #FF4002;
+  --accent-foreground:           #FFFFFF;
+  --destructive:                 #DC2626;
+  --border:                      #E2E8F0;
+  --input:                       #E2E8F0;
+  --ring:                        #FA0E1F;
+  --chart-1:                     #FA0E1F;
+  --chart-2:                     #FF4002;
+  --chart-3:                     #475569;
+  --chart-4:                     #0F172A;
+  --chart-5:                     #94A3B8;
+  --radius:                      0.5rem;
+  --sidebar:                     #F5F5F5;
+  --sidebar-foreground:          #0F172A;
+  --sidebar-primary:             #FA0E1F;
+  --sidebar-primary-foreground:  #FFFFFF;
+  --sidebar-accent:              #FF4002;
+  --sidebar-accent-foreground:   #FFFFFF;
+  --sidebar-border:              #E2E8F0;
+  --sidebar-ring:                #FA0E1F;
 }
 
 /* ===== Light theme (default) ===== */
@@ -94,8 +128,9 @@
   --navbar-border: #E2E8F0;
 }
 
-/* ===== Dark theme ===== */
+/* ===== Dark theme — Connect Web + shadcn dark tokens ===== */
 [data-theme="dark"] {
+  /* Connect Web color vars */
   --color-bg:              #0A0F1E;
   --color-bg-secondary:    #0D1117;
   --color-bg-tertiary:     #111827;
@@ -122,6 +157,39 @@
   --navbar-bg:     rgba(10, 15, 30, 0.90);
   --navbar-blur:   blur(12px);
   --navbar-border: #1E293B;
+
+  /* shadcn/ui tokens — DARK MODE — Connect Web dark palette */
+  --background:                  #0A0F1E;
+  --foreground:                  #F1F5F9;
+  --card:                        #111827;
+  --card-foreground:             #F1F5F9;
+  --popover:                     #111827;
+  --popover-foreground:          #F1F5F9;
+  --primary:                     #FA0E1F;
+  --primary-foreground:          #FFFFFF;
+  --secondary:                   #111827;
+  --secondary-foreground:        #F1F5F9;
+  --muted:                       #0D1117;
+  --muted-foreground:            #94A3B8;
+  --accent:                      #FF4002;
+  --accent-foreground:           #FFFFFF;
+  --destructive:                 #EF4444;
+  --border:                      #1E293B;
+  --input:                       #1E293B;
+  --ring:                        #FA0E1F;
+  --chart-1:                     #FA0E1F;
+  --chart-2:                     #FF4002;
+  --chart-3:                     #94A3B8;
+  --chart-4:                     #F1F5F9;
+  --chart-5:                     #475569;
+  --sidebar:                     #0D1117;
+  --sidebar-foreground:          #F1F5F9;
+  --sidebar-primary:             #FA0E1F;
+  --sidebar-primary-foreground:  #FFFFFF;
+  --sidebar-accent:              #FF4002;
+  --sidebar-accent-foreground:   #FFFFFF;
+  --sidebar-border:              #1E293B;
+  --sidebar-ring:                #FA0E1F;
 }
 
 /* ===== Reset & base ===== */
@@ -181,7 +249,7 @@ button {
 
 ul, ol { list-style: none; }
 
-/* ===== Utilitaires globaux ===== */
+/* ===== Global utilities ===== */
 .container {
   width: 100%;
   max-width: var(--container-max);
@@ -189,7 +257,6 @@ ul, ol { list-style: none; }
   padding-inline: var(--container-pad);
 }
 
-/* CTA pill bouton primaire */
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -234,4 +301,72 @@ ul, ol { list-style: none; }
 .btn-outline:hover {
   border-color: var(--color-accent);
   color: var(--color-accent);
+}
+
+/* ===== shadcn @theme inline — Tailwind v4 color mappings ===== */
+@theme inline {
+  --font-heading: var(--font-sans);
+  --font-sans: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm:  calc(var(--radius) * 0.5);
+  --radius-md:  calc(var(--radius) * 0.8);
+  --radius-lg:  var(--radius);
+  --radius-xl:  calc(var(--radius) * 1.5);
+  --radius-2xl: calc(var(--radius) * 2.0);
+  --radius-3xl: calc(var(--radius) * 2.5);
+  --radius-4xl: calc(var(--radius) * 3.0);
+}
+
+/* ===== Override Connect Web radius tokens after @theme inline ===== */
+/* Tailwind v4 @theme inline would override :root — we redeclare here to win */
+:root {
+  --radius-sm:   0.25rem;
+  --radius-md:   0.5rem;
+  --radius-lg:   0.75rem;
+  --radius-xl:   1rem;
+  --radius-2xl:  1.5rem;
+  --radius-full: 9999px;
+}
+
+/* ===== shadcn @layer base — border + font defaults ===== */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
 }
