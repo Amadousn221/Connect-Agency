@@ -173,6 +173,13 @@
     }
   },
 
+  "resourcesTeaser": {
+    "eyebrow": "À lire",
+    "title": "Nos ressources",
+    "sub": "Conseils et guides pratiques pour digitaliser votre activité — boutique, restaurant, immobilier.",
+    "cta": "Voir toutes les ressources"
+  },
+
   "aboutTeaser": {
     "eyebrow": "L'Agence",
     "title": "Rencontrez-nous",

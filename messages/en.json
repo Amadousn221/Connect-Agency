@@ -173,6 +173,13 @@
     }
   },
 
+  "resourcesTeaser": {
+    "eyebrow": "Read",
+    "title": "Resources",
+    "sub": "Practical tips and guides to digitalise your business — retail, restaurants, real estate.",
+    "cta": "See all resources"
+  },
+
   "aboutTeaser": {
     "eyebrow": "The Agency",
     "title": "Get to know us",
