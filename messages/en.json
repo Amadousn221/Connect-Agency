@@ -147,6 +147,10 @@
     }
   },
 
+  "techStack": {
+    "headline": "The same tools as large organisations, at the service of your project."
+  },
+
   "solutions": {
     "eyebrow": "Sector Solutions",
     "title": "Solutions built for your industry.",

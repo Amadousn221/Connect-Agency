@@ -147,6 +147,10 @@
     }
   },
 
+  "techStack": {
+    "headline": "Les mêmes outils que les grandes structures, au service de votre projet."
+  },
+
   "solutions": {
     "eyebrow": "Solutions Sectorielles",
     "title": "Des solutions pensées pour votre secteur.",
