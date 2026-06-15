@@ -52,7 +52,7 @@
   --radius-full: 9999px;
 
   /* Layout */
-  --header-height: 64px;
+  --header-height: 72px;
   --container-max: 1280px;
   --container-pad: clamp(1rem, 5vw, 3rem);
 

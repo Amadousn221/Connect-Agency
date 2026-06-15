@@ -7,6 +7,25 @@ import ThemeToggle from './ThemeToggle';
 import MegaMenu from './MegaMenu';
 import styles from './Header.module.css';
 
+const ChevronIcon = ({ className }: { className?: string }) => (
+  <svg
+    className={className}
+    width="9"
+    height="9"
+    viewBox="0 0 9 9"
+    fill="none"
+    aria-hidden="true"
+  >
+    <path
+      d="M1 2.5L4.5 6.5L8 2.5"
+      stroke="currentColor"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
 export default function Header() {
   const t = useTranslations('nav');
   const locale = useLocale();
@@ -15,8 +34,8 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileSection, setMobileSection] = useState<string | null>(null);
 
-  const toggleMobileSection = (key: string) =>
-    setMobileSection((prev) => (prev === key ? null : key));
+  const toggleSection = (key: string) =>
+    setMobileSection((p) => (p === key ? null : key));
 
   const closeMobile = () => {
     setMobileOpen(false);
@@ -27,43 +46,56 @@ export default function Header() {
     <>
       <header className={styles.header}>
         <div className={styles.inner}>
+
           {/* ── Logo ── */}
           <Link href={prefix} className={styles.logo} onClick={closeMobile}>
-            <span className={styles.logoConnect}>Connect</span>
-            <span className={styles.logoWeb}>Web</span>
+            <span className={styles.logoMark}>
+              Connect<span className={styles.logoAccent}>Web</span>
+              <span className={styles.logoPeriod}>.</span>
+            </span>
+            <span className={styles.logoTagline}>
+              {locale === 'fr'
+                ? 'Votre stack digital, pensé pour croître'
+                : 'Your digital stack, built to scale'}
+            </span>
           </Link>
 
-          {/* ── Desktop nav ── */}
+          {/* ── Desktop nav (centred) ── */}
           <nav className={styles.nav} aria-label="Navigation principale">
 
             {/* EXPERTISES */}
             <div className={styles.navItem}>
-              <button className={styles.navTrigger} aria-haspopup="true">
+              <button
+                className={styles.navTrigger}
+                aria-haspopup="true"
+              >
                 {t('expertises')}
-                <svg className={styles.chevron} width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
-                  <path d="M1.5 3.5L5 7L8.5 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+                <ChevronIcon className={styles.chevron} />
               </button>
-              {/* Mega-menu — shown via CSS :hover on parent .navItem */}
-              <div className={styles.megaPanel} role="region" aria-label={t('expertises')}>
-                <div className={styles.megaPanelInner}>
-                  <MegaMenu type="expertises" locale={locale} />
-                </div>
+              <div
+                className={styles.megaPanel}
+                role="region"
+                aria-label={t('expertises')}
+              >
+                <MegaMenu type="expertises" locale={locale} />
               </div>
             </div>
 
             {/* VOS ENJEUX */}
             <div className={styles.navItem}>
-              <button className={styles.navTrigger} aria-haspopup="true">
+              <button
+                className={styles.navTrigger}
+                aria-haspopup="true"
+              >
                 {t('vosEnjeux')}
-                <svg className={styles.chevron} width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
-                  <path d="M1.5 3.5L5 7L8.5 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+                <ChevronIcon className={styles.chevron} />
               </button>
-              <div className={styles.megaPanel} role="region" aria-label={t('vosEnjeux')}>
-                <div className={styles.megaPanelInner}>
-                  <MegaMenu type="vosEnjeux" locale={locale} />
-                </div>
+              <div
+                className={styles.megaPanel}
+                role="region"
+                aria-label={t('vosEnjeux')}
+              >
+                <MegaMenu type="vosEnjeux" locale={locale} />
               </div>
             </div>
 
@@ -78,7 +110,10 @@ export default function Header() {
           {/* ── Actions ── */}
           <div className={styles.actions}>
             <ThemeToggle />
-            <Link href={`${prefix}/audit-gratuit`} className={styles.ctaButton}>
+            <Link
+              href={`${prefix}/audit-gratuit`}
+              className={styles.ctaButton}
+            >
               {t('auditGratuit')}
             </Link>
 
@@ -97,69 +132,74 @@ export default function Header() {
         </div>
       </header>
 
-      {/* ── Mobile drawer (outside header so it scrolls properly) ── */}
+      {/* ── Mobile drawer ── */}
       <div
         className={`${styles.mobileDrawer} ${mobileOpen ? styles.mobileDrawerOpen : ''}`}
         aria-hidden={!mobileOpen}
         inert={!mobileOpen}
       >
         <nav aria-label="Menu mobile">
-
-          {/* EXPERTISES accordion */}
+          {/* Expertises */}
           <div className={styles.mobileSection}>
             <button
-              className={styles.mobileSectionTrigger}
-              onClick={() => toggleMobileSection('expertises')}
+              className={styles.mobileTrigger}
+              onClick={() => toggleSection('expertises')}
               aria-expanded={mobileSection === 'expertises'}
             >
               {t('expertises')}
-              <svg
-                className={`${styles.chevron} ${mobileSection === 'expertises' ? styles.chevronUp : ''}`}
-                width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"
-              >
-                <path d="M1.5 3.5L5 7L8.5 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+              <ChevronIcon
+                className={`${styles.chevron} ${
+                  mobileSection === 'expertises' ? styles.chevronUp : ''
+                }`}
+              />
             </button>
             {mobileSection === 'expertises' && (
-              <div className={styles.mobileSubContent}>
+              <div className={styles.mobileSub}>
                 <MegaMenu type="expertises" locale={locale} mobile />
               </div>
             )}
           </div>
 
-          {/* VOS ENJEUX accordion */}
+          {/* Vos Enjeux */}
           <div className={styles.mobileSection}>
             <button
-              className={styles.mobileSectionTrigger}
-              onClick={() => toggleMobileSection('vosEnjeux')}
+              className={styles.mobileTrigger}
+              onClick={() => toggleSection('vosEnjeux')}
               aria-expanded={mobileSection === 'vosEnjeux'}
             >
               {t('vosEnjeux')}
-              <svg
-                className={`${styles.chevron} ${mobileSection === 'vosEnjeux' ? styles.chevronUp : ''}`}
-                width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"
-              >
-                <path d="M1.5 3.5L5 7L8.5 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+              <ChevronIcon
+                className={`${styles.chevron} ${
+                  mobileSection === 'vosEnjeux' ? styles.chevronUp : ''
+                }`}
+              />
             </button>
             {mobileSection === 'vosEnjeux' && (
-              <div className={styles.mobileSubContent}>
+              <div className={styles.mobileSub}>
                 <MegaMenu type="vosEnjeux" locale={locale} mobile />
               </div>
             )}
           </div>
 
-          <Link href={`${prefix}/agence`} className={styles.mobileLink} onClick={closeMobile}>
+          <Link
+            href={`${prefix}/agence`}
+            className={styles.mobileLink}
+            onClick={closeMobile}
+          >
             {t('agence')}
           </Link>
-          <Link href={`${prefix}/ressources`} className={styles.mobileLink} onClick={closeMobile}>
+          <Link
+            href={`${prefix}/ressources`}
+            className={styles.mobileLink}
+            onClick={closeMobile}
+          >
             {t('ressources')}
           </Link>
 
-          <div className={styles.mobileBottom}>
+          <div className={styles.mobileFooter}>
             <Link
               href={`${prefix}/audit-gratuit`}
-              className={styles.mobileCtaButton}
+              className={styles.mobileCta}
               onClick={closeMobile}
             >
               {t('auditGratuit')}
@@ -169,10 +209,10 @@ export default function Header() {
         </nav>
       </div>
 
-      {/* Overlay */}
+      {/* Scrim */}
       {mobileOpen && (
         <div
-          className={styles.overlay}
+          className={styles.scrim}
           onClick={closeMobile}
           aria-hidden="true"
         />
