@@ -1,5 +1,9 @@
+"use client";
+
 import Link from "next/link";
+import { motion, useReducedMotion } from "framer-motion";
 import type { Projet } from "@/types/content";
+import { staggerContainer, staggerItem } from "@/components/motion/Reveal";
 
 interface ProjectsGridProps {
   projets: Projet[];
@@ -7,14 +11,16 @@ interface ProjectsGridProps {
 }
 
 export default function ProjectsGrid({ projets, emptyMessage }: ProjectsGridProps) {
+  const reduceMotion = useReducedMotion();
+
   if (projets.length === 0) {
     return (
-      <div className="rounded-2xl border border-dashed border-border bg-[var(--color-bg-subtle)] px-8 py-16 text-center">
+      <div className="rounded-2xl border border-dashed border-border bg-[var(--color-bg-subtle)] px-6 py-16 text-center sm:px-8">
         <p className="text-muted-foreground">
           {emptyMessage ??
             "Nos réalisations arrivent bientôt. En attendant, contactez-nous : on vous montre volontiers des exemples de projets."}
         </p>
-        <Link href="/nous-joindre" className="btn-primary mt-6 inline-flex">
+        <Link href="/nous-joindre" className="btn-primary mt-6 inline-flex min-h-11 justify-center">
           Nous joindre
         </Link>
       </div>
@@ -22,12 +28,22 @@ export default function ProjectsGrid({ projets, emptyMessage }: ProjectsGridProp
   }
 
   return (
-    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <motion.div
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, margin: "-100px" }}
+      variants={staggerContainer(0.1)}
+      className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+    >
       {projets.map((p) => (
-        <article key={p.slug} className="rounded-2xl border border-border bg-card p-6">
-          <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-            {p.secteur}
-          </p>
+        <motion.article
+          key={p.slug}
+          variants={staggerItem(reduceMotion ?? false)}
+          whileHover={reduceMotion ? undefined : { y: -2 }}
+          transition={{ duration: 0.2 }}
+          className="rounded-2xl border border-border bg-card p-6 transition-colors duration-200 hover:border-[var(--color-border-strong)]"
+        >
+          <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{p.secteur}</p>
           <h3 className="mt-2 text-lg font-semibold text-foreground">{p.nom}</h3>
           <p className="mt-2 text-sm text-muted-foreground">{p.resume}</p>
           {p.resultats.length > 0 && (
@@ -44,13 +60,13 @@ export default function ProjectsGrid({ projets, emptyMessage }: ProjectsGridProp
               href={p.lien}
               target="_blank"
               rel="noreferrer noopener"
-              className="mt-4 inline-flex text-sm font-medium text-primary hover:underline"
+              className="mt-4 inline-flex min-h-11 items-center text-sm font-medium text-primary hover:underline"
             >
               Voir le projet →
             </a>
           )}
-        </article>
+        </motion.article>
       ))}
-    </div>
+    </motion.div>
   );
 }

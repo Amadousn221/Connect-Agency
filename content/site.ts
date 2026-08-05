@@ -55,19 +55,17 @@ export const PROCESSUS_STANDARD = [
   {
     etape: "Étape 1",
     titre: "Découverte & stratégie",
-    description: "Nous analysons vos objectifs et proposons un plan clair.",
+    description: "On comprend votre activité et vos objectifs, puis on propose un plan d'action clair.",
   },
   {
     etape: "Étape 2",
     titre: "Design & développement",
-    description:
-      "Nous concevons et construisons, en vous montrant l'avancement à chaque étape.",
+    description: "On conçoit et on construit, en vous montrant l'avancement à chaque étape.",
   },
   {
     etape: "Étape 3",
-    titre: "Lancement & soutien",
-    description:
-      "Nous mettons en ligne, formons votre équipe et restons disponibles pour la suite.",
+    titre: "Lancement & suivi",
+    description: "On met en ligne, on forme votre équipe, et on reste disponible pour la suite.",
   },
 ];
 
