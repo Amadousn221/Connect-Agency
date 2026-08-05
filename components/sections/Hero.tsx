@@ -1,86 +1,42 @@
-'use client';
+import Link from "next/link";
+import type { ReactNode } from "react";
+import type { Cta } from "@/types/content";
 
-import { useEffect, useRef } from 'react';
-import Link from 'next/link';
-import { useTranslations, useLocale } from 'next-intl';
-import styles from './Hero.module.css';
+interface HeroProps {
+  eyebrow: string;
+  h1: ReactNode;
+  chapo: string;
+  ctas: Cta[];
+}
 
-export default function Hero() {
-  const t = useTranslations('home');
-  const locale = useLocale();
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const onScroll = () => {
-      const y = window.scrollY;
-      section.style.setProperty('--hero-parallax-y', `${y * 0.35}px`);
-    };
-
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if (!mq.matches) {
-      window.addEventListener('scroll', onScroll, { passive: true });
-    }
-
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
+export default function Hero({ eyebrow, h1, chapo, ctas }: HeroProps) {
   return (
-    <section
-      ref={sectionRef}
-      className={styles.hero}
-      data-theme="dark"
-      aria-label="Hero"
-    >
-      {/* Background orbs */}
-      <div className={styles.orb1} aria-hidden="true" />
-      <div className={styles.orb2} aria-hidden="true" />
-      <div className={styles.grid} aria-hidden="true" />
+    <section className="relative overflow-hidden">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-[-10rem] h-[36rem] bg-[radial-gradient(60%_60%_at_50%_0%,color-mix(in_oklch,var(--primary),transparent_82%),transparent_70%)]"
+      />
+      <div className="container relative py-20 sm:py-28">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="eyebrow justify-center">{eyebrow}</p>
+          <h1 className="mt-5 text-balance text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl">
+            {h1}
+          </h1>
+          <p className="mx-auto mt-6 max-w-xl text-balance text-lg text-muted-foreground">{chapo}</p>
 
-      <div className={styles.inner}>
-        {/* Badge */}
-        <div className={styles.badge} aria-hidden="true">
-          <span className={styles.badgeDot} />
-          {t('heroBadge')}
-        </div>
-
-        {/* Headline */}
-        <h1 className={styles.headline}>
-          {t('heroHeadline')}
-        </h1>
-
-        {/* Subline */}
-        <p className={styles.subline}>
-          {t('heroSubline')}
-        </p>
-
-        {/* CTAs */}
-        <div className={styles.ctas}>
-          <Link
-            href={`/${locale}/audit-gratuit`}
-            className={styles.ctaPrimary}
-          >
-            {t('heroCta')}
-            <span className={styles.ctaArrow} aria-hidden="true">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </span>
-          </Link>
-
-          <Link
-            href={`/${locale}/portfolio`}
-            className={styles.ctaSecondary}
-          >
-            {t('heroCtaSecondary')}
-          </Link>
+          <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
+            {ctas.map((cta, i) => (
+              <Link
+                key={cta.href + cta.label}
+                href={cta.href}
+                className={i === 0 ? "btn-primary" : "btn-outline"}
+              >
+                {cta.label}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
-
-      {/* Bottom fade */}
-      <div className={styles.bottomFade} aria-hidden="true" />
     </section>
   );
 }

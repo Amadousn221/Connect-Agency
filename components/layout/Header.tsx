@@ -1,269 +1,191 @@
-'use client';
+"use client";
 
-import { useState, useRef, useEffect, useCallback } from 'react';
-import Link from 'next/link';
-import { useTranslations, useLocale } from 'next-intl';
-import ThemeToggle from './ThemeToggle';
-import MegaMenu from './MegaMenu';
-import styles from './Header.module.css';
-
-type MenuKey = 'expertises' | 'vosEnjeux';
-
-const ChevronIcon = ({ className }: { className?: string }) => (
-  <svg
-    className={className}
-    width="10" height="10"
-    viewBox="0 0 10 10"
-    fill="none"
-    aria-hidden="true"
-  >
-    <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
-
-const LogoMark = () => (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" className={styles.logoIcon}>
-    <rect x="2" y="2" width="7" height="7" rx="1.5" fill="var(--color-accent)"/>
-    <rect x="11" y="2" width="7" height="7" rx="1.5" fill="var(--color-accent)" opacity=".4"/>
-    <rect x="2" y="11" width="7" height="7" rx="1.5" fill="var(--color-accent)" opacity=".4"/>
-    <rect x="11" y="11" width="7" height="7" rx="1.5" fill="var(--color-accent)"/>
-  </svg>
-);
+import { useCallback, useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { Phone, Menu, X, ChevronDown } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
+import MegaMenu from "./MegaMenu";
+import { NAV_LINKS } from "@/content/nav";
+import { SITE } from "@/content/site";
+import { useContactModal } from "./ContactModalProvider";
+import { cn } from "@/lib/utils";
 
 export default function Header() {
-  const t = useTranslations('nav');
-  const locale = useLocale();
-  const prefix = `/${locale}`;
-
-  /* ── Desktop mega-menu state ── */
-  const [openMenu, setOpenMenu] = useState<MenuKey | null>(null);
+  const { open } = useContactModal();
+  const [servicesOpen, setServicesOpen] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
-  const openNav = useCallback((key: MenuKey) => {
+  const openServices = useCallback(() => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
-    setOpenMenu(key);
+    setServicesOpen(true);
   }, []);
 
   const scheduleClose = useCallback(() => {
-    closeTimer.current = setTimeout(() => setOpenMenu(null), 150);
+    closeTimer.current = setTimeout(() => setServicesOpen(false), 150);
   }, []);
 
   const cancelClose = useCallback(() => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
   }, []);
 
-  /* ── Mobile drawer state ── */
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobileSection, setMobileSection] = useState<string | null>(null);
-
-  const toggleSection = (key: string) =>
-    setMobileSection((p) => (p === key ? null : key));
-
-  const closeMobile = () => {
-    setMobileOpen(false);
-    setMobileSection(null);
-  };
-
-  /* ── Keyboard: Escape closes any open menu ── */
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        setOpenMenu(null);
-        closeMobile();
+      if (e.key === "Escape") {
+        setServicesOpen(false);
+        setMobileOpen(false);
       }
     };
-    document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
   }, []);
 
-  /* ── Cleanup timer on unmount ── */
-  useEffect(() => () => {
-    if (closeTimer.current) clearTimeout(closeTimer.current);
-  }, []);
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
 
   return (
     <>
-      <header className={styles.header}>
-        <div className={styles.inner}>
-
-          {/* ── Logo ── */}
-          <Link href={prefix} className={styles.logo} onClick={closeMobile}>
-            <LogoMark />
-            <span className={styles.logoText}>
-              <span className={styles.logoMark}>
-                Connect<span className={styles.logoAccent}>Web</span><span className={styles.logoPeriod}>.</span>
-              </span>
-              <span className={styles.logoTagline}>
-                {locale === 'fr'
-                  ? 'Votre stack digital, pensé pour croître'
-                  : 'Your digital stack, built to scale'}
-              </span>
+      <header className="sticky top-0 z-40 border-b border-[var(--navbar-border)] bg-[var(--navbar-bg)] backdrop-blur-md">
+        <div className="container flex h-[var(--header-height)] items-center justify-between gap-6">
+          <Link href="/" className="flex items-center gap-2 shrink-0" onClick={() => setMobileOpen(false)}>
+            <svg width="22" height="22" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <rect x="2" y="2" width="7" height="7" rx="1.5" fill="var(--primary)" />
+              <rect x="11" y="2" width="7" height="7" rx="1.5" fill="var(--primary)" opacity=".4" />
+              <rect x="2" y="11" width="7" height="7" rx="1.5" fill="var(--primary)" opacity=".4" />
+              <rect x="11" y="11" width="7" height="7" rx="1.5" fill="var(--primary)" />
+            </svg>
+            <span className="text-lg font-semibold tracking-tight text-foreground">
+              Connect<span className="text-primary">Web</span>
             </span>
           </Link>
 
-          {/* ── Desktop nav ── */}
-          <nav className={styles.nav} aria-label={locale === 'fr' ? 'Navigation principale' : 'Main navigation'}>
+          <nav aria-label="Navigation principale" className="hidden items-center gap-1 lg:flex">
+            <Link href="/" className="rounded-full px-3.5 py-2 text-sm font-medium text-foreground/90 transition-colors hover:text-primary">
+              Accueil
+            </Link>
 
-            {/* EXPERTISES — full-width panel */}
             <div
-              className={styles.navItem}
-              onMouseEnter={() => openNav('expertises')}
+              className="relative"
+              onMouseEnter={openServices}
               onMouseLeave={scheduleClose}
             >
               <button
-                className={styles.navTrigger}
+                className="flex items-center gap-1 rounded-full px-3.5 py-2 text-sm font-medium text-foreground/90 transition-colors hover:text-primary"
                 aria-haspopup="true"
-                aria-expanded={openMenu === 'expertises'}
-                onFocus={() => openNav('expertises')}
+                aria-expanded={servicesOpen}
+                onFocus={openServices}
                 onBlur={scheduleClose}
               >
-                {t('expertises')}
-                <ChevronIcon
-                  className={`${styles.chevron} ${openMenu === 'expertises' ? styles.chevronUp : ''}`}
-                />
+                Services
+                <ChevronDown className={cn("size-3.5 transition-transform", servicesOpen && "rotate-180")} />
               </button>
 
               <div
-                className={`${styles.megaPanel} ${openMenu === 'expertises' ? styles.megaPanelOpen : ''}`}
-                role="region"
-                aria-label={t('expertises')}
+                className={cn(
+                  "absolute left-1/2 top-full w-[min(680px,90vw)] -translate-x-1/2 pt-3 transition-all duration-200",
+                  servicesOpen ? "pointer-events-auto translate-y-0 opacity-100" : "pointer-events-none -translate-y-1 opacity-0"
+                )}
                 onMouseEnter={cancelClose}
                 onMouseLeave={scheduleClose}
               >
-                <MegaMenu type="expertises" locale={locale} />
+                <div className="rounded-2xl border border-border bg-card p-6 shadow-2xl">
+                  <MegaMenu onNavigate={() => setServicesOpen(false)} />
+                </div>
               </div>
             </div>
 
-            {/* VOS ENJEUX — floating centered panel */}
-            <div
-              className={`${styles.navItem} ${styles.navItemFloat}`}
-              onMouseEnter={() => openNav('vosEnjeux')}
-              onMouseLeave={scheduleClose}
-            >
-              <button
-                className={styles.navTrigger}
-                aria-haspopup="true"
-                aria-expanded={openMenu === 'vosEnjeux'}
-                onFocus={() => openNav('vosEnjeux')}
-                onBlur={scheduleClose}
+            {NAV_LINKS.filter((l) => l.href !== "/").map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="rounded-full px-3.5 py-2 text-sm font-medium text-foreground/90 transition-colors hover:text-primary"
               >
-                {t('vosEnjeux')}
-                <ChevronIcon
-                  className={`${styles.chevron} ${openMenu === 'vosEnjeux' ? styles.chevronUp : ''}`}
-                />
-              </button>
-
-              <div
-                className={`${styles.megaPanel} ${styles.megaPanelFloat} ${openMenu === 'vosEnjeux' ? styles.megaPanelOpen : ''}`}
-                role="region"
-                aria-label={t('vosEnjeux')}
-                onMouseEnter={cancelClose}
-                onMouseLeave={scheduleClose}
-              >
-                <MegaMenu type="vosEnjeux" locale={locale} />
-              </div>
-            </div>
-
-            <Link href={`${prefix}/agence`} className={styles.navLink}>
-              {t('agence')}
-            </Link>
-            <Link href={`${prefix}/ressources`} className={styles.navLink}>
-              {t('ressources')}
-            </Link>
+                {link.label}
+              </Link>
+            ))}
           </nav>
 
-          {/* ── Actions ── */}
-          <div className={styles.actions}>
+          <div className="flex items-center gap-3">
+            <a
+              href={SITE.coordonnees.telephoneHref}
+              className="hidden items-center gap-2 rounded-full border border-border px-3.5 py-2 text-sm font-medium text-foreground/90 transition-colors hover:border-primary hover:text-primary xl:flex"
+            >
+              <Phone className="size-3.5" />
+              {SITE.coordonnees.telephone}
+            </a>
+
             <ThemeToggle />
 
-            <Link
-              href={`${prefix}/audit-gratuit`}
-              className={styles.ctaButton}
-            >
-              {t('auditGratuit')}
-            </Link>
+            <button onClick={open} className="btn-primary hidden sm:inline-flex">
+              {SITE.ctaPrimaire}
+            </button>
 
-            {/* Hamburger */}
             <button
-              className={`${styles.hamburger} ${mobileOpen ? styles.hamburgerOpen : ''}`}
               onClick={() => setMobileOpen((o) => !o)}
-              aria-label={mobileOpen ? t('closeMenu') : t('openMenu')}
+              className="flex size-9 items-center justify-center rounded-full text-foreground lg:hidden"
+              aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
               aria-expanded={mobileOpen}
               aria-controls="mobile-drawer"
             >
-              <span className={styles.bar} />
-              <span className={styles.bar} />
-              <span className={styles.bar} />
+              {mobileOpen ? <X className="size-5" /> : <Menu className="size-5" />}
             </button>
           </div>
         </div>
       </header>
 
-      {/* ── Mobile drawer ── */}
       <div
         id="mobile-drawer"
-        className={`${styles.mobileDrawer} ${mobileOpen ? styles.mobileDrawerOpen : ''}`}
+        className={cn(
+          "fixed inset-x-0 top-[var(--header-height)] z-30 h-[calc(100dvh-var(--header-height))] overflow-y-auto bg-background transition-transform duration-300 lg:hidden",
+          mobileOpen ? "translate-x-0" : "translate-x-full"
+        )}
         aria-hidden={!mobileOpen}
         inert={!mobileOpen}
       >
-        <nav aria-label={locale === 'fr' ? 'Menu mobile' : 'Mobile menu'}>
-
-          <div className={styles.mobileSection}>
-            <button
-              className={styles.mobileTrigger}
-              onClick={() => toggleSection('expertises')}
-              aria-expanded={mobileSection === 'expertises'}
-            >
-              {t('expertises')}
-              <ChevronIcon className={`${styles.chevron} ${mobileSection === 'expertises' ? styles.chevronUp : ''}`} />
-            </button>
-            {mobileSection === 'expertises' && (
-              <div className={styles.mobileSub}>
-                <MegaMenu type="expertises" locale={locale} mobile />
-              </div>
-            )}
-          </div>
-
-          <div className={styles.mobileSection}>
-            <button
-              className={styles.mobileTrigger}
-              onClick={() => toggleSection('vosEnjeux')}
-              aria-expanded={mobileSection === 'vosEnjeux'}
-            >
-              {t('vosEnjeux')}
-              <ChevronIcon className={`${styles.chevron} ${mobileSection === 'vosEnjeux' ? styles.chevronUp : ''}`} />
-            </button>
-            {mobileSection === 'vosEnjeux' && (
-              <div className={styles.mobileSub}>
-                <MegaMenu type="vosEnjeux" locale={locale} mobile />
-              </div>
-            )}
-          </div>
-
-          <Link href={`${prefix}/agence`} className={styles.mobileLink} onClick={closeMobile}>
-            {t('agence')}
-          </Link>
-          <Link href={`${prefix}/ressources`} className={styles.mobileLink} onClick={closeMobile}>
-            {t('ressources')}
+        <nav aria-label="Menu mobile" className="container flex flex-col gap-1 py-6">
+          <Link href="/" onClick={() => setMobileOpen(false)} className="rounded-lg px-3 py-3 text-base font-medium text-foreground">
+            Accueil
           </Link>
 
-          <div className={styles.mobileFooter}>
-            <Link href={`${prefix}/audit-gratuit`} className={styles.mobileCta} onClick={closeMobile}>
-              {t('auditGratuit')}
+          <div className="px-3 py-3">
+            <p className="text-base font-medium text-foreground">Services</p>
+            <div className="mt-4">
+              <MegaMenu onNavigate={() => setMobileOpen(false)} />
+            </div>
+          </div>
+
+          {NAV_LINKS.filter((l) => l.href !== "/").map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setMobileOpen(false)}
+              className="rounded-lg px-3 py-3 text-base font-medium text-foreground"
+            >
+              {link.label}
             </Link>
-            <ThemeToggle />
+          ))}
+
+          <div className="mt-4 flex flex-col gap-3 border-t border-border px-3 pt-6">
+            <a href={SITE.coordonnees.telephoneHref} className="flex items-center gap-2 text-sm text-muted-foreground">
+              <Phone className="size-4" />
+              {SITE.coordonnees.telephone}
+            </a>
+            <button
+              onClick={() => {
+                setMobileOpen(false);
+                open();
+              }}
+              className="btn-primary justify-center"
+            >
+              {SITE.ctaPrimaire}
+            </button>
           </div>
         </nav>
       </div>
-
-      {/* Scrim */}
-      {mobileOpen && (
-        <div
-          className={styles.scrim}
-          onClick={closeMobile}
-          aria-hidden="true"
-        />
-      )}
     </>
   );
 }
