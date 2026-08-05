@@ -4,11 +4,15 @@ import ContactForm from "./ContactForm";
 
 export default function CtaBand() {
   return (
-    <section className="border-t border-border bg-[var(--color-bg-subtle)] py-20 sm:py-28">
-      <div className="container grid gap-12 lg:grid-cols-2 lg:items-center">
+    <section className="relative overflow-hidden border-t border-border bg-[var(--color-bg-subtle)] py-[clamp(4rem,10vw,8rem)]">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 h-64 bg-[radial-gradient(60%_100%_at_20%_0%,color-mix(in_oklch,var(--primary),transparent_88%),transparent_70%)]"
+      />
+      <div className="container relative grid gap-12 lg:grid-cols-2 lg:items-center">
         <div>
           <p className="eyebrow">● PARLONS-EN</p>
-          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+          <h2 className="mt-4 text-[clamp(1.75rem,3vw,2.5rem)] font-semibold tracking-tight text-foreground">
             Discutons de votre projet.
           </h2>
           <p className="mt-4 max-w-md text-muted-foreground">
@@ -17,11 +21,17 @@ export default function CtaBand() {
           </p>
 
           <div className="mt-6 flex flex-col gap-3">
-            <a href={`mailto:${SITE.coordonnees.email}`} className="flex items-center gap-2.5 text-sm text-foreground/90 hover:text-primary">
+            <a
+              href={`mailto:${SITE.coordonnees.email}`}
+              className="flex min-h-11 items-center gap-2.5 text-sm text-foreground/90 transition-colors hover:text-primary"
+            >
               <Mail className="size-4" />
               {SITE.coordonnees.email}
             </a>
-            <a href={SITE.coordonnees.telephoneHref} className="flex items-center gap-2.5 text-sm text-foreground/90 hover:text-primary">
+            <a
+              href={SITE.coordonnees.telephoneHref}
+              className="flex min-h-11 items-center gap-2.5 text-sm text-foreground/90 transition-colors hover:text-primary"
+            >
               <Phone className="size-4" />
               {SITE.coordonnees.telephone}
             </a>

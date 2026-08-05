@@ -1,10 +1,11 @@
 export const HOME_BENTO = [
   {
-    href: "/services/marketing-generation-prospects",
-    titre: "Marketing & génération de prospects",
+    href: "/services/crm-erp-integrations",
+    titre: "CRM, ERP & intégrations",
     corps:
-      "SEO, campagnes Google Ads, réseaux sociaux et emailing de masse qui génèrent de vrais prospects et de vraies conversions. Chaque franc compte.",
-    taille: "sm" as const,
+      "Odoo, HubSpot, Mailchimp, Klaviyo : vos outils reliés en un seul système de vente. Vous arrêtez de ressaisir, l'information circule.",
+    taille: "lg" as const,
+    accent: true,
   },
   {
     href: "/services/sites-web-ecommerce",
@@ -13,19 +14,18 @@ export const HOME_BENTO = [
     taille: "lg" as const,
   },
   {
+    href: "/services/marketing-generation-prospects",
+    titre: "Marketing & génération de prospects",
+    corps:
+      "SEO, campagnes Google Ads, réseaux sociaux et emailing de masse qui génèrent de vrais prospects et de vraies conversions. Chaque franc compte.",
+    taille: "sm" as const,
+  },
+  {
     href: "/services/logiciels-applications-web",
     titre: "Logiciels & applications web",
     corps:
       "Plateformes sur mesure, outils internes et API conçus autour de vos processus réels.",
     taille: "sm" as const,
-  },
-  {
-    href: "/services/crm-erp-integrations",
-    titre: "CRM, ERP & intégrations",
-    corps:
-      "Odoo, HubSpot, Mailchimp, Klaviyo : vos outils reliés en un seul système de vente. Vous arrêtez de ressaisir, l'information circule.",
-    taille: "lg" as const,
-    accent: true,
   },
   {
     href: "/services/ia-automatisation",

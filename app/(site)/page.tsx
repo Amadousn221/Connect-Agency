@@ -21,7 +21,12 @@ export default function HomePage() {
       <JsonLd data={faqPageJsonLd(faqAccueil)} />
       <Hero
         eyebrow="● AGENCE DIGITALE — DAKAR"
-        h1="Nous concevons les outils numériques qui soutiennent votre entreprise."
+        h1={
+          <>
+            Nous concevons les <span className="text-primary">outils numériques</span> qui soutiennent votre
+            entreprise.
+          </>
+        }
         chapo="IA, logiciels, automatisation, marketing, CRM/ERP et sites web sous un même toit. Une seule équipe qui accompagne votre projet de la conception au lancement."
         ctas={[
           { label: "Parlez-nous de votre projet", href: "/nous-joindre" },
@@ -33,16 +38,16 @@ export default function HomePage() {
       <Manifesto />
       <ConversationCta />
 
-      <section className="border-t border-border py-20 sm:py-28">
+      <section className="border-t border-border py-[clamp(4rem,10vw,8rem)]">
         <div className="container">
-          <div className="flex flex-wrap items-end justify-between gap-4">
+          <div className="flex flex-col items-start gap-4 sm:flex-row sm:flex-wrap sm:items-end sm:justify-between">
             <div>
               <p className="eyebrow">● RÉALISATIONS</p>
-              <h2 className="mt-4 max-w-xl text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+              <h2 className="mt-4 max-w-xl text-[clamp(1.75rem,3vw,2.5rem)] font-semibold tracking-tight text-foreground">
                 Nos réalisations.
               </h2>
             </div>
-            <Link href="/realisations" className="btn-outline">
+            <Link href="/realisations" className="btn-outline min-h-11 w-full justify-center sm:w-auto">
               Voir plus de projets
             </Link>
           </div>
