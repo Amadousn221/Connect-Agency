@@ -1,6 +1,7 @@
 import { Mail, Phone } from "lucide-react";
 import { SITE } from "@/content/site";
 import ContactForm from "./ContactForm";
+import Reveal from "@/components/motion/Reveal";
 
 export default function CtaBand() {
   return (
@@ -9,7 +10,7 @@ export default function CtaBand() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 h-64 bg-[radial-gradient(60%_100%_at_20%_0%,color-mix(in_oklch,var(--primary),transparent_88%),transparent_70%)]"
       />
-      <div className="container relative grid gap-12 lg:grid-cols-2 lg:items-center">
+      <Reveal className="container relative grid gap-12 lg:grid-cols-2 lg:items-center">
         <div>
           <p className="eyebrow">● PARLONS-EN</p>
           <h2 className="mt-4 text-[clamp(1.75rem,3vw,2.5rem)] font-semibold tracking-tight text-foreground">
@@ -41,7 +42,7 @@ export default function CtaBand() {
         <div className="rounded-2xl border border-border bg-card p-6 sm:p-8">
           <ContactForm variant="compact" title="" />
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

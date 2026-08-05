@@ -1,10 +1,11 @@
 import { MANIFESTE } from "@/content/home";
+import Reveal from "@/components/motion/Reveal";
 
 export default function Manifesto() {
   return (
     <section className="border-y border-border bg-[var(--color-bg-subtle)] py-[clamp(4rem,10vw,8rem)]">
       <div className="container">
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal className="mx-auto max-w-2xl text-center">
           <p className="eyebrow justify-center">{MANIFESTE.eyebrow}</p>
           <h2 className="mt-4 text-balance text-[clamp(1.75rem,3vw,2.5rem)] font-semibold tracking-tight text-foreground">
             {MANIFESTE.titre}
@@ -25,7 +26,7 @@ export default function Manifesto() {
               </span>
             ))}
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

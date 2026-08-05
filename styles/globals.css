@@ -193,6 +193,20 @@ ul, ol { list-style: none; }
   }
 }
 
+/* ===== Marquee (LogoMarquee) ===== */
+@theme {
+  --animate-marquee: marquee 28s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
 /* ===== shadcn @theme inline — Tailwind v4 color mappings ===== */
 @theme inline {
   --font-heading: var(--font-sans);

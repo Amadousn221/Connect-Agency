@@ -1,18 +1,26 @@
+"use client";
+
 import Link from "next/link";
-import { ArrowRight, Boxes, Globe, Megaphone, Code2, Sparkles, Compass, type LucideIcon } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
+import { ArrowRight, Blocks, Globe, TrendingUp, Code2, Sparkles, Lightbulb, type LucideIcon } from "lucide-react";
 import { HOME_BENTO } from "@/content/home";
 import { cn } from "@/lib/utils";
+import { staggerContainer, staggerItem } from "@/components/motion/Reveal";
+
+const MotionLink = motion.create(Link);
 
 const ICONS: Record<string, LucideIcon> = {
-  "/services/crm-erp-integrations": Boxes,
+  "/services/crm-erp-integrations": Blocks,
+  "/services/marketing-generation-prospects": TrendingUp,
   "/services/sites-web-ecommerce": Globe,
-  "/services/marketing-generation-prospects": Megaphone,
   "/services/logiciels-applications-web": Code2,
   "/services/ia-automatisation": Sparkles,
-  "/services/conseil-strategie": Compass,
+  "/services/conseil-strategie": Lightbulb,
 };
 
 export default function BentoServices() {
+  const reduceMotion = useReducedMotion();
+
   return (
     <section className="py-[clamp(4rem,10vw,8rem)]">
       <div className="container">
@@ -21,7 +29,13 @@ export default function BentoServices() {
           Ce que nous faisons.
         </h2>
 
-        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-12">
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer(0.1)}
+          className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-12"
+        >
           {HOME_BENTO.map((card, i) => {
             const Icon = ICONS[card.href] ?? Globe;
             const mesh =
@@ -30,14 +44,19 @@ export default function BentoServices() {
                 : "radial-gradient(120%_100%_at_100%_0%,color-mix(in_oklch,var(--accent),transparent_92%),transparent_60%)";
 
             return (
-              <Link
+              <MotionLink
                 key={card.href}
                 href={card.href}
-                style={{ animationDelay: `${i * 60}ms`, backgroundImage: mesh }}
+                variants={staggerItem(reduceMotion ?? false)}
+                whileHover={reduceMotion ? undefined : { scale: 1.01, y: -2 }}
+                transition={{ duration: 0.2 }}
+                style={{ backgroundImage: mesh }}
                 className={cn(
-                  "group relative flex min-h-[168px] flex-col justify-between overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-200 animate-in fade-in slide-in-from-bottom-2 fill-mode-both",
-                  "hover:-translate-y-0.5 hover:border-[var(--color-border-strong)] hover:shadow-[0_0_0_1px_color-mix(in_oklch,var(--primary),transparent_65%),0_16px_40px_-16px_color-mix(in_oklch,var(--primary),transparent_55%)]",
-                  card.taille === "lg" ? "sm:col-span-2 lg:col-span-6 lg:min-h-[220px]" : "lg:col-span-3",
+                  "group relative flex min-h-[168px] flex-col justify-between overflow-hidden rounded-2xl border border-border bg-card p-6 transition-[border-color,box-shadow] duration-200",
+                  "hover:border-[var(--color-border-strong)] hover:shadow-[0_0_30px_color-mix(in_oklch,var(--primary),transparent_65%)]",
+                  card.taille === "feature" && "sm:col-span-2 lg:col-span-12 lg:min-h-[200px]",
+                  card.taille === "lg" && "sm:col-span-2 lg:col-span-8",
+                  card.taille === "sm" && "lg:col-span-4",
                   card.accent && "border-primary/25"
                 )}
               >
@@ -50,10 +69,10 @@ export default function BentoServices() {
                   En savoir plus
                   <ArrowRight className="size-3.5 transition-transform duration-200 group-hover:translate-x-1" />
                 </span>
-              </Link>
+              </MotionLink>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

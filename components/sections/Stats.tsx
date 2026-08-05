@@ -1,4 +1,49 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import { animate, useInView, useReducedMotion } from "framer-motion";
 import type { Stat } from "@/types/content";
+import Reveal from "@/components/motion/Reveal";
+
+function CountUp({ value }: { value: string }) {
+  const match = value.match(/^(\d+(?:[.,]\d+)?)(.*)$/);
+  const ref = useRef<HTMLParagraphElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const reduceMotion = useReducedMotion();
+  const [display, setDisplay] = useState(0);
+
+  useEffect(() => {
+    if (!match || !isInView || reduceMotion) return;
+    const target = parseFloat(match[1].replace(",", "."));
+    const decimals = match[1].includes(".") || match[1].includes(",") ? 1 : 0;
+
+    const controls = animate(0, target, {
+      duration: 2,
+      ease: [0.22, 1, 0.36, 1],
+      onUpdate: (v) => setDisplay(Number(v.toFixed(decimals))),
+    });
+    return () => controls.stop();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isInView, reduceMotion]);
+
+  if (!match) {
+    return (
+      <p ref={ref} className="text-[clamp(2rem,4vw,2.5rem)] font-semibold tracking-tight text-primary">
+        {value}
+      </p>
+    );
+  }
+
+  const suffix = match[2];
+  const shown = reduceMotion || isInView ? (reduceMotion ? match[1] : display) : 0;
+
+  return (
+    <p ref={ref} className="text-[clamp(2rem,4vw,2.5rem)] font-semibold tracking-tight text-primary">
+      {shown}
+      {suffix}
+    </p>
+  );
+}
 
 export default function Stats({ stats }: { stats: Stat[] }) {
   if (stats.length === 0) return null;
@@ -11,15 +56,15 @@ export default function Stats({ stats }: { stats: Stat[] }) {
           Les chiffres derrière notre travail.
         </h2>
 
-        <div className="mt-10 grid grid-cols-1 divide-y divide-border sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+        <Reveal className="mt-10 grid grid-cols-1 divide-y divide-border sm:grid-cols-3 sm:divide-x sm:divide-y-0">
           {stats.map((s) => (
             <div key={s.label} className="py-6 first:pt-0 sm:px-8 sm:py-0 sm:first:pl-0 sm:last:pr-0">
-              <p className="text-[clamp(2rem,4vw,2.5rem)] font-semibold tracking-tight text-primary">{s.valeur}</p>
+              <CountUp value={s.valeur} />
               <p className="mt-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">{s.label}</p>
               <p className="mt-1 text-sm text-muted-foreground">{s.description}</p>
             </div>
           ))}
-        </div>
+        </Reveal>
       </div>
     </section>
   );

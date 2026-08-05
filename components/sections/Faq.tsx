@@ -1,6 +1,7 @@
 import { Accordion } from "@base-ui/react/accordion";
 import { ChevronDown } from "lucide-react";
 import type { FaqItem } from "@/types/content";
+import Reveal from "@/components/motion/Reveal";
 
 interface FaqProps {
   items: FaqItem[];
@@ -13,7 +14,7 @@ export default function Faq({ items, titre = "Foire aux questions." }: FaqProps)
   return (
     <section className="py-[clamp(4rem,10vw,8rem)]">
       <div className="container">
-        <div className="mx-auto max-w-2xl">
+        <Reveal className="mx-auto max-w-2xl">
           <p className="eyebrow">● FAQ</p>
           <h2 className="mt-4 text-[clamp(1.75rem,3vw,2.5rem)] font-semibold tracking-tight text-foreground">
             {titre}
@@ -34,7 +35,7 @@ export default function Faq({ items, titre = "Foire aux questions." }: FaqProps)
               </Accordion.Item>
             ))}
           </Accordion.Root>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

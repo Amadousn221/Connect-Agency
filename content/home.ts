@@ -4,20 +4,20 @@ export const HOME_BENTO = [
     titre: "CRM, ERP & intégrations",
     corps:
       "Odoo, HubSpot, Mailchimp, Klaviyo : vos outils reliés en un seul système de vente. Vous arrêtez de ressaisir, l'information circule.",
-    taille: "lg" as const,
+    taille: "feature" as const,
     accent: true,
-  },
-  {
-    href: "/services/sites-web-ecommerce",
-    titre: "Sites web & plateformes",
-    corps: "Des sites rapides conçus pour générer des conversions.",
-    taille: "lg" as const,
   },
   {
     href: "/services/marketing-generation-prospects",
     titre: "Marketing & génération de prospects",
     corps:
       "SEO, campagnes Google Ads, réseaux sociaux et emailing de masse qui génèrent de vrais prospects et de vraies conversions. Chaque franc compte.",
+    taille: "lg" as const,
+  },
+  {
+    href: "/services/sites-web-ecommerce",
+    titre: "Sites web & plateformes",
+    corps: "Des sites rapides conçus pour générer des conversions.",
     taille: "sm" as const,
   },
   {
@@ -38,7 +38,7 @@ export const HOME_BENTO = [
     href: "/services/conseil-strategie",
     titre: "Conseil & stratégie",
     corps:
-      "Vous ne savez pas par où commencer ? Nous analysons votre entreprise et vous proposons un plan d'action, classé par priorité.",
+      "Vous ne savez pas par où commencer ? On analyse votre entreprise et on propose un plan d'action priorisé.",
     taille: "sm" as const,
   },
 ];
@@ -50,19 +50,12 @@ export const MANIFESTE = {
     "La plupart des agences numériques livrent une solution puis passent à autre chose. Nous, on demeure présents à chaque étape.",
     "À partir de là, on met en place ce qu'il faut pour vous rapprocher de votre objectif. Parfois c'est un site. Parfois un système d'automatisation. Le plus souvent, c'est une combinaison des deux : un portail client, une campagne de prospection, ou un outil qui libère votre équipe des tâches répétitives.",
   ],
-  tags: [
-    "Sites web",
-    "Développement",
-    "Automatisation",
-    "Intelligence artificielle",
-    "CRM & ERP",
-    "Acquisition de clients",
-  ],
+  tags: ["Sites web", "E-commerce", "Automatisation", "Intelligence artificielle", "CRM & ERP", "Acquisition"],
 };
 
 export const CONVERSATION = {
   titre: "Chaque projet commence par une conversation.",
   corps:
-    "Réservez un échange avec notre équipe. Nous ferons le point sur votre situation et vous aiderons à clarifier la prochaine étape.",
+    "Réservons un appel de découverte. On fait le point sur votre situation et on clarifie la prochaine étape — sans engagement.",
   cta: { label: "Nous joindre", href: "/nous-joindre" },
 };
