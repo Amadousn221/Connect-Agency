@@ -52,7 +52,7 @@ export default function PolitiqueConfidentialitePage() {
   return (
     <section className="py-20 sm:py-28">
       <div className="container max-w-3xl">
-        <p className="eyebrow">● VIE PRIVÉE</p>
+        <p className="eyebrow">VIE PRIVÉE</p>
         <h1 className="mt-4 text-4xl font-semibold tracking-tight text-foreground">
           Politique de confidentialité
         </h1>

@@ -10,7 +10,7 @@ export default function MentionsLegalesPage() {
   return (
     <section className="py-20 sm:py-28">
       <div className="container max-w-3xl">
-        <p className="eyebrow">● INFORMATIONS LÉGALES</p>
+        <p className="eyebrow">INFORMATIONS LÉGALES</p>
         <h1 className="mt-4 text-4xl font-semibold tracking-tight text-foreground">Mentions légales</h1>
 
         <div className="mt-10 flex flex-col gap-8 text-sm leading-relaxed text-muted-foreground">

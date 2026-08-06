@@ -4,7 +4,7 @@ export const SERVICES: ServiceContent[] = [
   {
     slug: "sites-web-ecommerce",
     pilier: "Sites web & e-commerce",
-    eyebrow: "● SITES WEB & E-COMMERCE",
+    eyebrow: "SITES WEB & E-COMMERCE",
     h1: "Conception et développement de sites web à Dakar et partout au Sénégal.",
     chapo:
       "Que ce soit pour un premier site ou une refonte complète, nous concevons des sites qui continuent de générer des résultats bien après leur mise en ligne.",
@@ -93,7 +93,7 @@ export const SERVICES: ServiceContent[] = [
   {
     slug: "logiciels-applications-web",
     pilier: "Logiciels & applications web",
-    eyebrow: "● LOGICIELS & APPLICATIONS WEB",
+    eyebrow: "LOGICIELS & APPLICATIONS WEB",
     h1: "Logiciels et applications web sur mesure.",
     chapo:
       "Applications métier, portails clients, outils internes et API — développés autour de vos processus réels, pas l'inverse.",
@@ -156,7 +156,7 @@ export const SERVICES: ServiceContent[] = [
   {
     slug: "ia-automatisation",
     pilier: "IA & automatisation",
-    eyebrow: "● IA & AUTOMATISATION",
+    eyebrow: "IA & AUTOMATISATION",
     h1: "Intelligence artificielle et automatisation.",
     chapo:
       "Automatisez les tâches qui ralentissent votre équipe : réceptionniste IA, bots d'assistance et flux de travail automatisés. L'IA au service de résultats concrets.",
@@ -218,7 +218,7 @@ export const SERVICES: ServiceContent[] = [
   {
     slug: "crm-erp-integrations",
     pilier: "CRM, ERP & intégrations",
-    eyebrow: "● CRM, ERP & INTÉGRATIONS",
+    eyebrow: "CRM, ERP & INTÉGRATIONS",
     h1: "Vos outils, enfin connectés en un seul système de vente.",
     chapo:
       "Odoo, HubSpot, Mailchimp, Klaviyo — on relie votre site, votre boutique, votre CRM et votre gestion pour que l'information circule et que rien ne se perde.",
@@ -291,7 +291,7 @@ export const SERVICES: ServiceContent[] = [
   {
     slug: "marketing-generation-prospects",
     pilier: "Marketing & génération de prospects",
-    eyebrow: "● MARKETING & GÉNÉRATION DE PROSPECTS",
+    eyebrow: "MARKETING & GÉNÉRATION DE PROSPECTS",
     h1: "Marketing et génération de prospects.",
     chapo:
       "SEO, campagnes Google Ads, réseaux sociaux et emailing de masse qui génèrent de vrais prospects et de vraies conversions. Chaque franc compte.",
@@ -353,7 +353,7 @@ export const SERVICES: ServiceContent[] = [
   {
     slug: "conseil-strategie",
     pilier: "Conseil & stratégie",
-    eyebrow: "● CONSEIL & STRATÉGIE",
+    eyebrow: "CONSEIL & STRATÉGIE",
     h1: "Conseil & stratégie.",
     chapo:
       "Vous ne savez pas par où commencer ? Nous analysons votre entreprise et vous proposons un plan d'action, classé par priorité selon les actions à plus fort impact.",

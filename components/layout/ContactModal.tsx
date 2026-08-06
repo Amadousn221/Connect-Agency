@@ -14,12 +14,13 @@ export default function ContactModal({ isOpen, onOpenChange }: ContactModalProps
       <Dialog.Portal>
         <Dialog.Backdrop className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:animate-in data-[state=open]:fade-in-0" />
         <Dialog.Popup className="fixed left-1/2 top-1/2 z-50 w-[calc(100%-2rem)] max-w-md -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-border bg-card p-6 shadow-2xl outline-none sm:p-8">
-          <Dialog.Title className="text-2xl font-semibold text-foreground">
+          <p className="eyebrow">Nouveau projet</p>
+          <Dialog.Title className="mt-2.5 text-2xl font-semibold text-foreground">
             Une discussion s&apos;impose !
           </Dialog.Title>
-          <Dialog.Description className="mt-2 text-sm text-muted-foreground">
-            Avez-vous un projet que vous aimeriez réaliser ? Remplissez le formulaire et nous vous
-            recontacterons dans les prochaines 24 heures ouvrables.
+          <Dialog.Description className="no-justify mt-2 text-sm text-muted-foreground">
+            Avez-vous un projet que vous aimeriez réaliser ? Remplissez le formulaire et nous vous recontacterons
+            dans les 24 heures ouvrables.
           </Dialog.Description>
 
           <div className="mt-6">

@@ -1,5 +1,5 @@
 import { Accordion } from "@base-ui/react/accordion";
-import { ChevronDown } from "lucide-react";
+import { Plus } from "lucide-react";
 import type { FaqItem } from "@/types/content";
 import Reveal from "@/components/motion/Reveal";
 
@@ -15,7 +15,7 @@ export default function Faq({ items, titre = "Foire aux questions." }: FaqProps)
     <section className="py-[clamp(4rem,10vw,8rem)]">
       <div className="container">
         <Reveal className="mx-auto max-w-2xl">
-          <p className="eyebrow">● FAQ</p>
+          <p className="eyebrow">FAQ</p>
           <h2 className="mt-4 text-[clamp(1.75rem,3vw,2.5rem)] font-semibold tracking-tight text-foreground">
             {titre}
           </h2>
@@ -24,9 +24,9 @@ export default function Faq({ items, titre = "Foire aux questions." }: FaqProps)
             {items.map((item, i) => (
               <Accordion.Item key={item.question} value={i} className="py-1">
                 <Accordion.Header>
-                  <Accordion.Trigger className="group flex min-h-11 w-full items-center justify-between gap-4 rounded-lg px-2 py-4 text-left text-base font-medium text-foreground transition-colors -mx-2 hover:bg-[var(--color-bg-subtle)]">
+                  <Accordion.Trigger className="group flex min-h-11 w-full items-center justify-between gap-4 rounded-lg px-2 py-4 text-left font-[family-name:var(--font-display)] text-base font-semibold text-foreground transition-colors -mx-2 hover:bg-[var(--color-bg-subtle)]">
                     {item.question}
-                    <ChevronDown className="size-4 shrink-0 text-muted-foreground transition-transform duration-200 group-data-[panel-open]:rotate-180" />
+                    <Plus className="size-[18px] shrink-0 text-primary transition-transform duration-[250ms] group-data-[panel-open]:rotate-45" />
                   </Accordion.Trigger>
                 </Accordion.Header>
                 <Accordion.Panel className="overflow-hidden px-2 text-sm leading-relaxed text-muted-foreground transition-[height] duration-200 ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">

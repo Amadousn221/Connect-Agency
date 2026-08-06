@@ -22,7 +22,8 @@ export default function HomePage() {
     <>
       <JsonLd data={faqPageJsonLd(faqAccueil)} />
       <Hero
-        eyebrow="● AGENCE DIGITALE — DAKAR"
+        mosaic
+        eyebrow="Agence digitale — Dakar"
         h1={
           <>
             Nous concevons les <span className="text-primary">outils numériques</span> qui soutiennent votre
@@ -34,6 +35,7 @@ export default function HomePage() {
           { label: "Parlez-nous de votre projet", href: "/nous-joindre" },
           { label: SITE.ctaSecondaire, href: "/realisations" },
         ]}
+        meta={["Réponse sous 24 h", "Devis gratuit", "Vos accès vous appartiennent"]}
       />
 
       <LogoMarquee />
@@ -45,7 +47,7 @@ export default function HomePage() {
         <div className="container">
           <Reveal className="flex flex-col items-start gap-4 sm:flex-row sm:flex-wrap sm:items-end sm:justify-between">
             <div>
-              <p className="eyebrow">● RÉALISATIONS</p>
+              <p className="eyebrow">RÉALISATIONS</p>
               <h2 className="mt-4 max-w-xl text-[clamp(1.75rem,3vw,2.5rem)] font-semibold tracking-tight text-foreground">
                 Quelques projets récents que vous reconnaîtrez peut-être.
               </h2>
