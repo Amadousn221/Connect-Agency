@@ -55,7 +55,7 @@ export default function HomePage() {
             </Link>
           </Reveal>
 
-          <ProjectsGrid projets={PROJETS.slice(0, 6)} />
+          <ProjectsGrid projets={PROJETS.slice(0, 3)} />
         </div>
       </section>
 

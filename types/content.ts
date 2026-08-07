@@ -69,6 +69,12 @@ export interface Projet {
   services: string[];
   lien?: string;
   publie: boolean;
+  /** Ordre d'affichage dans la grille. */
+  ordre?: number;
+  /** Capture cadrée à fournir : /realisations/<slug>.jpg. Tant qu'absente, on rend le dégradé placeholder. */
+  couverture?: string;
+  /** Dégradé de couverture provisoire (repris de la maquette), en attendant le visuel réel. */
+  gradient?: string;
 }
 
 export interface Client {
