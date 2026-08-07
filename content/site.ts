@@ -54,17 +54,17 @@ export const SECTEURS = [
 
 export const PROCESSUS_STANDARD = [
   {
-    etape: "Étape 1",
+    etape: "Étape 01",
     titre: "Découverte & stratégie",
     description: "On comprend votre activité et vos objectifs, puis on propose un plan d'action clair.",
   },
   {
-    etape: "Étape 2",
+    etape: "Étape 02",
     titre: "Design & développement",
     description: "On conçoit et on construit, en vous montrant l'avancement à chaque étape.",
   },
   {
-    etape: "Étape 3",
+    etape: "Étape 03",
     titre: "Lancement & suivi",
     description: "On met en ligne, on forme votre équipe, et on reste disponible pour la suite.",
   },

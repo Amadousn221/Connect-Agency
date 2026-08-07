@@ -32,7 +32,7 @@ export default function HomePage() {
         }
         chapo="IA, logiciels, automatisation, marketing, CRM/ERP et sites web sous un même toit. Une seule équipe qui accompagne votre projet de la conception au lancement."
         ctas={[
-          { label: "Parlez-nous de votre projet", href: "/nous-joindre" },
+          { label: "Parlez-nous de votre projet", href: "/nous-joindre", modal: true },
           { label: SITE.ctaSecondaire, href: "/realisations" },
         ]}
         meta={["Réponse sous 24 h", "Devis gratuit", "Vos accès vous appartiennent"]}
@@ -43,23 +43,19 @@ export default function HomePage() {
       <Manifesto />
       <ConversationCta />
 
-      <section className="border-t border-border py-[clamp(4rem,10vw,8rem)]">
+      <section className="section pt-0" id="realisations">
         <div className="container">
-          <Reveal className="flex flex-col items-start gap-4 sm:flex-row sm:flex-wrap sm:items-end sm:justify-between">
-            <div>
-              <p className="eyebrow">RÉALISATIONS</p>
-              <h2 className="mt-4 max-w-xl text-[clamp(1.75rem,3vw,2.5rem)] font-semibold tracking-tight text-foreground">
-                Quelques projets récents que vous reconnaîtrez peut-être.
-              </h2>
+          <Reveal className="mb-[clamp(2rem,3.5vw,3.25rem)] flex flex-wrap items-end justify-between gap-4">
+            <div className="grid max-w-[34rem] gap-[0.85rem]">
+              <p className="eyebrow">Réalisations</p>
+              <h2 className="text-foreground">Quelques projets récents que vous reconnaîtrez peut-être.</h2>
             </div>
-            <Link href="/realisations" className="btn-outline min-h-11 w-full justify-center sm:w-auto">
+            <Link href="/realisations" className="btn-outline min-h-10 px-[1.05rem] text-[0.86rem]">
               Voir tous les projets →
             </Link>
           </Reveal>
 
-          <div className="mt-10">
-            <ProjectsGrid projets={PROJETS.slice(0, 6)} />
-          </div>
+          <ProjectsGrid projets={PROJETS.slice(0, 6)} />
         </div>
       </section>
 

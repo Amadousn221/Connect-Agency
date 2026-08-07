@@ -2,9 +2,11 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { Phone, Menu, X, ChevronDown } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { Phone, Menu, ChevronDown } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 import MegaMenu from "./MegaMenu";
+import MobileMenu from "./MobileMenu";
 import Logo from "./Logo";
 import { NAV_LINKS } from "@/content/nav";
 import { SITE } from "@/content/site";
@@ -13,179 +15,153 @@ import { cn } from "@/lib/utils";
 
 export default function Header() {
   const { open } = useContactModal();
+  const pathname = usePathname();
   const [servicesOpen, setServicesOpen] = useState(false);
-  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const headerRef = useRef<HTMLElement>(null);
 
   const openServices = useCallback(() => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
     setServicesOpen(true);
   }, []);
 
+  // 140 ms de délai avant fermeture, comme dans la maquette.
   const scheduleClose = useCallback(() => {
-    closeTimer.current = setTimeout(() => setServicesOpen(false), 150);
-  }, []);
-
-  const cancelClose = useCallback(() => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
+    closeTimer.current = setTimeout(() => setServicesOpen(false), 140);
   }, []);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        setServicesOpen(false);
-        setMobileOpen(false);
-      }
+      if (e.key === "Escape") setServicesOpen(false);
     };
-    document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
-  }, []);
+    const onClick = (e: MouseEvent) => {
+      if (headerRef.current && !headerRef.current.contains(e.target as Node)) setServicesOpen(false);
+    };
+    const onScroll = () => setScrolled(window.scrollY > 8);
 
-  useEffect(() => {
-    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    document.addEventListener("keydown", onKey);
+    document.addEventListener("click", onClick);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
     return () => {
-      document.body.style.overflow = "";
+      document.removeEventListener("keydown", onKey);
+      document.removeEventListener("click", onClick);
+      window.removeEventListener("scroll", onScroll);
     };
-  }, [mobileOpen]);
+  }, []);
 
   return (
     <>
-      <header className="sticky top-0 z-40 border-b border-[var(--navbar-border)] bg-[var(--navbar-bg)] backdrop-blur-md">
-        <div className="container flex h-[var(--header-height)] items-center justify-between gap-6">
-          <Link href="/" aria-label="Connect Web, accueil" onClick={() => setMobileOpen(false)}>
+      <header
+        ref={headerRef}
+        onMouseLeave={scheduleClose}
+        className={cn(
+          "sticky top-0 z-100 border-b border-[var(--navbar-border)] bg-[var(--navbar-bg)] backdrop-blur-[14px] transition-shadow duration-300",
+          scrolled && "shadow-[var(--shadow-md)]"
+        )}
+      >
+        <div className="container flex h-[var(--header-height)] items-center gap-4">
+          <Link href="/" aria-label="Connect Web, accueil">
             <Logo />
           </Link>
 
-          <nav aria-label="Navigation principale" className="hidden items-center gap-1 lg:flex">
-            <Link href="/" className="rounded-full px-3.5 py-2 text-sm font-medium text-foreground/90 transition-colors hover:text-primary">
+          <nav
+            aria-label="Navigation principale"
+            className="mx-auto hidden items-center gap-[0.15rem] min-[1080px]:flex"
+          >
+            <Link
+              href="/"
+              aria-current={pathname === "/" ? "page" : undefined}
+              className="relative rounded-[var(--radius-sm)] px-[0.8rem] py-2 text-[0.92rem] text-muted-foreground transition-colors hover:bg-[var(--color-bg-subtle)] hover:text-foreground aria-[current=page]:text-foreground aria-[current=page]:after:absolute aria-[current=page]:after:inset-x-[0.8rem] aria-[current=page]:after:-bottom-[0.35rem] aria-[current=page]:after:h-0.5 aria-[current=page]:after:bg-[var(--brand-accent-raw)] aria-[current=page]:after:content-['']"
+            >
               Accueil
             </Link>
 
-            <div
-              className="relative"
+            <button
+              type="button"
+              aria-expanded={servicesOpen}
+              aria-controls="megamenu"
               onMouseEnter={openServices}
-              onMouseLeave={scheduleClose}
+              onFocus={openServices}
+              onClick={() => setServicesOpen((o) => !o)}
+              className="flex items-center gap-[0.3rem] rounded-[var(--radius-sm)] px-[0.8rem] py-2 text-[0.92rem] text-muted-foreground transition-colors hover:bg-[var(--color-bg-subtle)] hover:text-foreground"
             >
-              <button
-                className="flex items-center gap-1 rounded-full px-3.5 py-2 text-sm font-medium text-foreground/90 transition-colors hover:text-primary"
-                aria-haspopup="true"
-                aria-expanded={servicesOpen}
-                onFocus={openServices}
-                onBlur={scheduleClose}
-              >
-                Services
-                <ChevronDown className={cn("size-3.5 transition-transform", servicesOpen && "rotate-180")} />
-              </button>
-
-              <div
-                className={cn(
-                  "absolute left-1/2 top-full w-[min(680px,90vw)] -translate-x-1/2 pt-3 transition-all duration-200",
-                  servicesOpen ? "pointer-events-auto translate-y-0 opacity-100" : "pointer-events-none -translate-y-1 opacity-0"
-                )}
-                onMouseEnter={cancelClose}
-                onMouseLeave={scheduleClose}
-              >
-                <div className="rounded-2xl border border-border bg-card p-6 shadow-2xl">
-                  <MegaMenu onNavigate={() => setServicesOpen(false)} />
-                </div>
-              </div>
-            </div>
+              Services
+              <ChevronDown
+                className={cn("size-[13px] transition-transform duration-200", servicesOpen && "rotate-180")}
+                aria-hidden="true"
+              />
+            </button>
 
             {NAV_LINKS.filter((l) => l.href !== "/").map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-full px-3.5 py-2 text-sm font-medium text-foreground/90 transition-colors hover:text-primary"
+                aria-current={pathname === link.href ? "page" : undefined}
+                className="relative rounded-[var(--radius-sm)] px-[0.8rem] py-2 text-[0.92rem] text-muted-foreground transition-colors hover:bg-[var(--color-bg-subtle)] hover:text-foreground aria-[current=page]:text-foreground aria-[current=page]:after:absolute aria-[current=page]:after:inset-x-[0.8rem] aria-[current=page]:after:-bottom-[0.35rem] aria-[current=page]:after:h-0.5 aria-[current=page]:after:bg-[var(--brand-accent-raw)] aria-[current=page]:after:content-['']"
               >
                 {link.label}
               </Link>
             ))}
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="ml-auto flex items-center gap-2 min-[1080px]:ml-0">
             <a
               href={SITE.coordonnees.telephoneHref}
-              className="hidden items-center gap-2 rounded-full border border-border px-3.5 py-2 text-sm font-medium text-foreground/90 transition-colors hover:border-primary hover:text-primary xl:flex"
+              className="hidden items-center gap-[0.4rem] rounded-full border border-border px-[0.85rem] py-[0.45rem] font-[family-name:var(--font-mono)] text-[0.82rem] text-muted-foreground transition-colors hover:text-foreground min-[1280px]:inline-flex"
             >
-              <Phone className="size-3.5" />
+              <Phone className="size-[13px]" aria-hidden="true" />
               {SITE.coordonnees.telephone}
             </a>
 
             <button
               type="button"
-              className="hidden items-center gap-1 rounded-full border border-border px-2.5 py-2 font-[family-name:var(--font-mono)] text-[0.76rem] text-muted-foreground 2xl:inline-flex"
+              className="hidden gap-[0.3rem] rounded-full border border-border px-[0.65rem] py-2 font-[family-name:var(--font-mono)] text-[0.76rem] text-[var(--color-text-subtle)] min-[1280px]:inline-flex"
             >
               FR <span className="opacity-50">/ EN</span>
             </button>
 
             <ThemeToggle />
 
-            <button onClick={open} className="btn-primary hidden sm:inline-flex">
+            <button
+              type="button"
+              onClick={open}
+              className="btn-primary hidden min-h-10 px-[1.05rem] text-[0.86rem] sm:inline-flex"
+            >
               {SITE.ctaPrimaire}
             </button>
 
             <button
-              onClick={() => setMobileOpen((o) => !o)}
-              className="flex size-9 items-center justify-center rounded-full text-foreground lg:hidden"
-              aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
+              type="button"
+              onClick={() => setMobileOpen(true)}
+              aria-label="Ouvrir le menu"
               aria-expanded={mobileOpen}
-              aria-controls="mobile-drawer"
+              aria-controls="mobile-menu"
+              className="grid size-11 place-items-center rounded-full border border-border text-muted-foreground transition-colors hover:bg-[var(--color-bg-subtle)] hover:text-foreground min-[1080px]:hidden"
             >
-              {mobileOpen ? <X className="size-5" /> : <Menu className="size-5" />}
+              <Menu className="size-5" />
             </button>
           </div>
         </div>
+
+        {/* Méga-menu ancré au header → toujours centré viewport, jamais coupé */}
+        <div
+          id="megamenu"
+          inert={!servicesOpen}
+          onMouseEnter={openServices}
+          className={cn(
+            "absolute top-full left-1/2 w-[min(1140px,calc(100vw_-_2rem))] -translate-x-1/2 rounded-b-[var(--radius-lg)] border border-t-0 border-border bg-card p-[1.6rem] shadow-[var(--shadow-md)] transition-[opacity,transform,visibility] duration-200",
+            servicesOpen ? "visible translate-y-0 opacity-100" : "invisible translate-y-[6px] opacity-0"
+          )}
+        >
+          <MegaMenu onNavigate={() => setServicesOpen(false)} />
+        </div>
       </header>
 
-      <div
-        id="mobile-drawer"
-        className={cn(
-          "fixed inset-x-0 top-[var(--header-height)] z-30 h-[calc(100dvh-var(--header-height))] overflow-y-auto bg-background transition-transform duration-300 lg:hidden",
-          mobileOpen ? "translate-x-0" : "translate-x-full"
-        )}
-        aria-hidden={!mobileOpen}
-        inert={!mobileOpen}
-      >
-        <nav aria-label="Menu mobile" className="container flex flex-col gap-1 py-6">
-          <Link href="/" onClick={() => setMobileOpen(false)} className="rounded-lg px-3 py-3 text-base font-medium text-foreground">
-            Accueil
-          </Link>
-
-          <div className="px-3 py-3">
-            <p className="text-base font-medium text-foreground">Services</p>
-            <div className="mt-4">
-              <MegaMenu onNavigate={() => setMobileOpen(false)} />
-            </div>
-          </div>
-
-          {NAV_LINKS.filter((l) => l.href !== "/").map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setMobileOpen(false)}
-              className="rounded-lg px-3 py-3 text-base font-medium text-foreground"
-            >
-              {link.label}
-            </Link>
-          ))}
-
-          <div className="mt-4 flex flex-col gap-3 border-t border-border px-3 pt-6">
-            <a href={SITE.coordonnees.telephoneHref} className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Phone className="size-4" />
-              {SITE.coordonnees.telephone} · {SITE.coordonnees.telephoneSecondaire}
-            </a>
-            <button
-              onClick={() => {
-                setMobileOpen(false);
-                open();
-              }}
-              className="btn-primary justify-center"
-            >
-              {SITE.ctaPrimaire}
-            </button>
-          </div>
-        </nav>
-      </div>
+      <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} onRequestQuote={open} />
     </>
   );
 }

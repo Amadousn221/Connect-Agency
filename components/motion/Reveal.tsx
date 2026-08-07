@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion, type Variants } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import type { ReactNode } from "react";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -12,17 +12,26 @@ interface RevealProps {
   as?: "div" | "section";
 }
 
+/**
+ * Équivalent de la classe `.reveal` + IntersectionObserver de la maquette :
+ * opacity 0 → 1 et y 16 → 0, 0.5 s ease-out, une seule fois, marge -60px.
+ *
+ * Le respect de `prefers-reduced-motion` est traité en CSS (`[data-reveal]`
+ * dans globals.css) et non en JS : brancher le rendu sur `useReducedMotion()`
+ * produirait un HTML serveur différent du client, et l'`opacity: 0` posé au
+ * SSR resterait figé après hydratation.
+ */
 export default function Reveal({ children, className, delay = 0, as = "div" }: RevealProps) {
-  const reduceMotion = useReducedMotion();
   const Component = as === "section" ? motion.section : motion.div;
 
   return (
     <Component
+      data-reveal=""
       className={className}
-      initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: reduceMotion ? 0.3 : 0.7, ease: EASE, delay }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.5, ease: "easeOut", delay }}
     >
       {children}
     </Component>
@@ -38,13 +47,13 @@ export function staggerContainer(stagger = 0.08, delayChildren = 0): Variants {
   };
 }
 
-export function staggerItem(reduceMotion?: boolean): Variants {
+export function staggerItem(): Variants {
   return {
-    hidden: reduceMotion ? { opacity: 0 } : { opacity: 0, y: 24 },
+    hidden: { opacity: 0, y: 16 },
     show: {
       opacity: 1,
       y: 0,
-      transition: { duration: reduceMotion ? 0.3 : 0.6, ease: EASE },
+      transition: { duration: 0.5, ease: "easeOut" },
     },
   };
 }

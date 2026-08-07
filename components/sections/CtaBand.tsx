@@ -17,12 +17,12 @@ const CONTACT_LINES = [
 
 export default function CtaBand() {
   return (
-    <section id="contact" className="relative overflow-hidden bg-[var(--color-bg-subtle)] py-[clamp(4rem,10vw,8rem)]">
+    <section id="contact" className="section section--subtle relative overflow-hidden">
       <div className="glow pointer-events-none absolute -top-[210px] -right-[120px] h-[400px] w-[560px] bg-[var(--glow-1)]" aria-hidden="true" />
       <Reveal className="container relative grid gap-12 lg:grid-cols-[1fr_1.05fr] lg:items-center lg:gap-16">
         <div>
           <p className="eyebrow">Parlons-en</p>
-          <h2 className="mt-3.5 text-[clamp(1.75rem,3vw,2.5rem)] font-semibold tracking-tight text-foreground">
+          <h2 className="mt-3.5 text-foreground">
             Discutons de votre projet.
           </h2>
           <p className="no-justify mt-4 max-w-md text-muted-foreground">

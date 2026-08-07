@@ -3,25 +3,20 @@ import Reveal from "@/components/motion/Reveal";
 
 export default function Manifesto() {
   return (
-    <section className="border-y border-border bg-[var(--color-bg-subtle)] py-[clamp(4rem,10vw,8rem)]">
-      <div className="container">
-        <Reveal className="mx-auto max-w-2xl text-center">
-          <p className="eyebrow justify-center">{MANIFESTE.eyebrow}</p>
-          <h2 className="mt-4 text-balance text-[clamp(1.75rem,3vw,2.5rem)] font-semibold tracking-tight text-foreground">
-            {MANIFESTE.titre}
-          </h2>
-          <div className="mt-6 flex flex-col gap-4 text-left text-[clamp(1.05rem,1.4vw,1.3rem)] leading-relaxed text-muted-foreground">
-            {MANIFESTE.paragraphes.map((p) => (
-              <p key={p}>{p}</p>
-            ))}
-          </div>
+    <section className="section section--subtle">
+      <div className="container grid gap-8 min-[900px]:grid-cols-[0.85fr_1.15fr] min-[900px]:gap-14">
+        <Reveal>
+          <p className="eyebrow">{MANIFESTE.eyebrow}</p>
+          <h2 className="mt-[0.85rem] text-foreground">{MANIFESTE.titre}</h2>
+        </Reveal>
 
-          <div className="mt-8 flex flex-wrap justify-center gap-2">
+        <Reveal delay={0.1}>
+          <p className="lead">{MANIFESTE.paragraphes[0]}</p>
+          <p className="mt-4 text-muted-foreground">{MANIFESTE.paragraphes[1]}</p>
+
+          <div className="mt-[1.9rem] flex flex-wrap gap-2">
             {MANIFESTE.tags.map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full border border-border bg-card px-3.5 py-1.5 text-xs font-medium text-muted-foreground"
-              >
+              <span key={tag} className="tag">
                 {tag}
               </span>
             ))}
