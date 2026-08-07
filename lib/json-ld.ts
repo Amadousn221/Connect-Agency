@@ -48,6 +48,27 @@ export function faqPageJsonLd(items: FaqItem[]) {
   };
 }
 
+export function collectionPageJsonLd(
+  projets: { nom: string; lien?: string; publie: boolean }[],
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Nos réalisations",
+    url: `${SITE_URL}/realisations`,
+    hasPart: projets
+      .filter((p) => p.publie)
+      .map((p) => ({
+        "@type": "CreativeWork",
+        name: p.nom,
+        // On n'inclut que les URLs publiques confirmées (pas les placeholders).
+        ...(p.lien && /^https?:\/\//.test(p.lien) && !p.lien.includes(".example")
+          ? { url: p.lien }
+          : {}),
+      })),
+  };
+}
+
 export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
   return {
     "@context": "https://schema.org",
