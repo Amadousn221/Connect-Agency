@@ -5,7 +5,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, Blocks, Globe, TrendingUp, Code2, Sparkles, Lightbulb, type LucideIcon } from "lucide-react";
 import { HOME_BENTO } from "@/content/home";
 import { cn } from "@/lib/utils";
-import { staggerContainer, staggerItem } from "@/components/motion/Reveal";
+import Reveal, { staggerContainer, staggerItem } from "@/components/motion/Reveal";
 
 const MotionLink = motion.create(Link);
 
@@ -22,23 +22,23 @@ export default function BentoServices() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="py-[clamp(4rem,10vw,8rem)]">
+    <section className="section pt-0" id="services">
       <div className="container">
-        <p className="eyebrow">Nos services</p>
-        <h2 className="mt-4 max-w-xl text-[clamp(1.75rem,3vw,2.5rem)] font-semibold tracking-tight text-foreground">
-          Ce que nous faisons.
-        </h2>
-        <p className="mt-3 max-w-xl text-sm text-muted-foreground sm:text-base">
-          Six piliers, une seule équipe. On peut n&apos;en activer qu&apos;un — ou les connecter tous en un système de
-          vente cohérent.
-        </p>
+        <Reveal className="section-header">
+          <p className="eyebrow">Nos services</p>
+          <h2 className="text-foreground">Ce que nous faisons.</h2>
+          <p className="text-muted-foreground">
+            Six piliers, une seule équipe. On peut n&apos;en activer qu&apos;un — ou les connecter tous en un système
+            de vente cohérent.
+          </p>
+        </Reveal>
 
         <motion.div
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={staggerContainer(0.1)}
-          className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
+          viewport={{ once: true, margin: "-60px" }}
+          variants={staggerContainer(0.06)}
+          className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
         >
           {HOME_BENTO.map((card, i) => {
             const Icon = ICONS[card.href] ?? Globe;
@@ -48,7 +48,7 @@ export default function BentoServices() {
               <MotionLink
                 key={card.href}
                 href={card.href}
-                variants={staggerItem(reduceMotion ?? false)}
+                data-reveal="" variants={staggerItem()}
                 whileHover={reduceMotion ? undefined : { scale: 1.01, y: -2 }}
                 transition={{ duration: 0.2 }}
                 className={cn(

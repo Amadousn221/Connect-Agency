@@ -4,19 +4,17 @@ import Reveal from "@/components/motion/Reveal";
 
 export default function ConversationCta() {
   return (
-    <section className="py-[clamp(4rem,10vw,8rem)]">
+    <section className="py-[clamp(44px,6vw,80px)]">
       <div className="container">
-        <Reveal className="relative mx-auto flex max-w-2xl flex-col items-center overflow-hidden rounded-2xl border border-[var(--color-border-strong)] bg-card px-6 py-12 text-center sm:px-8 sm:py-14">
+        <Reveal className="card relative grid justify-items-center gap-[0.9rem] p-[clamp(2rem,4.5vw,3.5rem)] text-center">
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-[radial-gradient(60%_100%_at_50%_0%,color-mix(in_oklch,var(--primary),transparent_88%),transparent_70%)]"
+            className="glow absolute -top-[190px] left-1/2 h-[340px] w-[520px] -translate-x-1/2 bg-[var(--glow-2)]"
           />
           <p className="eyebrow relative">{CONVERSATION.eyebrow}</p>
-          <h2 className="relative mt-3 text-balance text-[clamp(1.5rem,2.5vw,2rem)] font-semibold tracking-tight text-foreground">
-            {CONVERSATION.titre}
-          </h2>
-          <p className="is-center relative mt-4 max-w-md text-muted-foreground">{CONVERSATION.corps}</p>
-          <Link href={CONVERSATION.cta.href} className="btn-primary relative mt-7 min-h-11 w-full justify-center sm:w-auto">
+          <h2 className="relative max-w-[20ch] text-foreground">{CONVERSATION.titre}</h2>
+          <p className="lead is-center relative max-w-[54ch]">{CONVERSATION.corps}</p>
+          <Link href={CONVERSATION.cta.href} className="btn-outline relative">
             {CONVERSATION.cta.label}
           </Link>
         </Reveal>

@@ -13,7 +13,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="flex size-9 shrink-0 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+      className="grid size-11 shrink-0 place-items-center rounded-full border border-border text-muted-foreground transition-colors hover:bg-[var(--color-bg-subtle)] hover:text-foreground"
       aria-label="Changer de thème"
       title="Changer de thème"
     >

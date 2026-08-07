@@ -3,10 +3,11 @@
 import Link from "next/link";
 import { useRef, type ReactNode } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { Globe, Sparkles, Boxes, TrendingUp, Check } from "lucide-react";
+import { Globe, Sparkles, Boxes, TrendingUp, Check, ArrowRight } from "lucide-react";
 import type { Cta } from "@/types/content";
 import { cn } from "@/lib/utils";
 import { staggerContainer, staggerItem, EASE } from "@/components/motion/Reveal";
+import { useContactModal } from "@/components/layout/ContactModalProvider";
 import HeroMosaic from "./HeroMosaic";
 
 interface HeroProps {
@@ -31,13 +32,17 @@ const NETWORK_BG =
   "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 760' preserveAspectRatio='xMidYMid slice'%3E%3Cg stroke='%2318516E' stroke-width='1.6' fill='none' opacity='.85'%3E%3Cpath d='M-40 520 L180 380 L420 470 L640 300 L880 400 L1120 250 L1260 330'/%3E%3Cpath d='M-40 680 L180 380'/%3E%3Cpath d='M420 470 L380 720'/%3E%3Cpath d='M640 300 L700 80'/%3E%3Cpath d='M880 400 L960 660'/%3E%3Cpath d='M1120 250 L1060 50'/%3E%3Cpath d='M180 380 L640 300'/%3E%3Cpath d='M420 470 L880 400'/%3E%3Cpath d='M640 300 L1120 250'/%3E%3C/g%3E%3Cg fill='%23F1571A'%3E%3Ccircle cx='180' cy='380' r='7'/%3E%3Ccircle cx='640' cy='300' r='9'/%3E%3Ccircle cx='1120' cy='250' r='7'/%3E%3C/g%3E%3Cg fill='%2318516E'%3E%3Ccircle cx='420' cy='470' r='6'/%3E%3Ccircle cx='880' cy='400' r='6'/%3E%3Ccircle cx='700' cy='80' r='5'/%3E%3Ccircle cx='960' cy='660' r='6'/%3E%3Ccircle cx='380' cy='720' r='5'/%3E%3C/g%3E%3C/svg%3E\")";
 
 export default function Hero({ eyebrow, h1, chapo, ctas, mosaic = false, meta }: HeroProps) {
+  const { open: openModal } = useContactModal();
   const reduceMotion = useReducedMotion();
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end start"] });
   const parallaxY = useTransform(scrollYProgress, [0, 1], [0, reduceMotion ? 0 : 40]);
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="relative isolate overflow-hidden pt-[clamp(56px,7vw,86px)] pb-[clamp(56px,8vw,100px)]"
+    >
       {mosaic ? (
         <>
           <div
@@ -69,83 +74,88 @@ export default function Hero({ eyebrow, h1, chapo, ctas, mosaic = false, meta }:
         </>
       )}
 
-      <div className="container relative py-16 sm:py-20 lg:flex lg:min-h-[88vh] lg:items-center lg:py-28">
-        <motion.div
-          initial="hidden"
-          animate="show"
-          variants={staggerContainer(0.08)}
-          className="grid items-center gap-12 lg:grid-cols-[55%_45%] lg:gap-10"
-        >
-          <div className="text-center lg:text-left">
-            <motion.p variants={staggerItem(reduceMotion ?? false)} className="eyebrow justify-center lg:justify-start">
-              {eyebrow}
-            </motion.p>
-            <motion.h1
-              variants={staggerItem(reduceMotion ?? false)}
-              className="mt-5 text-balance text-[clamp(2.75rem,6vw,5.5rem)] leading-[1.05] font-semibold tracking-[-0.02em] text-foreground"
-            >
-              {h1}
-            </motion.h1>
-            <motion.p
-              variants={staggerItem(reduceMotion ?? false)}
-              className="mx-auto mt-6 max-w-xl text-balance text-[clamp(1.05rem,1.4vw,1.3rem)] text-muted-foreground lg:mx-0"
-            >
-              {chapo}
-            </motion.p>
+      <motion.div
+        initial="hidden"
+        animate="show"
+        variants={staggerContainer(0.08)}
+        className="container relative grid items-center gap-[clamp(2.5rem,4vw,3.5rem)] min-[980px]:grid-cols-[1.05fr_1fr]"
+      >
+        <div>
+          <motion.p data-reveal="" variants={staggerItem()} className="eyebrow">
+            {eyebrow}
+          </motion.p>
+          <motion.h1
+            data-reveal="" variants={staggerItem()}
+            className="mt-4 mb-[0.85rem] max-w-[16ch] text-foreground"
+          >
+            {h1}
+          </motion.h1>
+          <motion.p data-reveal="" variants={staggerItem()} className="lead max-w-[48ch]">
+            {chapo}
+          </motion.p>
 
-            <motion.div
-              variants={staggerItem(reduceMotion ?? false)}
-              className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center lg:justify-start"
-            >
-              {ctas.map((cta, i) => (
-                <Link
-                  key={cta.href + cta.label}
-                  href={cta.href}
-                  className={cn("min-h-11 justify-center", i === 0 ? "btn-primary" : "btn-outline")}
-                >
+          <motion.div
+            data-reveal="" variants={staggerItem()}
+            className="mt-[1.9rem] flex flex-wrap gap-[0.7rem]"
+          >
+            {ctas.map((cta, i) => {
+              const className = i === 0 ? "btn-primary" : "btn-outline";
+              const content = (
+                <>
                   {cta.label}
+                  {i === 0 && <ArrowRight className="size-4" aria-hidden="true" />}
+                </>
+              );
+
+              return cta.modal ? (
+                <button key={cta.label} type="button" onClick={openModal} className={className}>
+                  {content}
+                </button>
+              ) : (
+                <Link key={cta.href + cta.label} href={cta.href} className={className}>
+                  {content}
                 </Link>
+              );
+            })}
+          </motion.div>
+
+          {meta && meta.length > 0 && (
+            <motion.div
+              data-reveal="" variants={staggerItem()}
+              className="mt-8 flex flex-wrap gap-x-[1.1rem] gap-y-2 text-[0.84rem] text-[var(--color-text-subtle)]"
+            >
+              {meta.map((line) => (
+                <span key={line} className="inline-flex items-center gap-1.5">
+                  <Check className="size-3.5 text-primary" aria-hidden="true" />
+                  {line}
+                </span>
               ))}
             </motion.div>
+          )}
+        </div>
 
-            {meta && meta.length > 0 && (
-              <motion.div
-                variants={staggerItem(reduceMotion ?? false)}
-                className="mt-8 flex flex-wrap justify-center gap-x-4.5 gap-y-2 text-[0.84rem] text-muted-foreground lg:justify-start"
-              >
-                {meta.map((line) => (
-                  <span key={line} className="inline-flex items-center gap-1.5">
-                    <Check className="size-3.5 text-primary" aria-hidden="true" />
-                    {line}
-                  </span>
-                ))}
-              </motion.div>
-            )}
-          </div>
-
-          <motion.div variants={staggerItem(reduceMotion ?? false)} style={reduceMotion ? undefined : { y: parallaxY }}>
-            {mosaic ? (
-              <HeroMosaic />
-            ) : (
-              <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                {HERO_PILLARS.map(({ icon: Icon, label }, i) => (
-                  <motion.div
-                    key={label}
-                    whileHover={reduceMotion ? undefined : { y: -4, transition: { duration: 0.2, ease: EASE } }}
-                    className={cn(
-                      "group rounded-2xl border border-border bg-card p-5 transition-[border-color,box-shadow] duration-200 hover:border-primary/40 hover:shadow-[0_0_0_1px_color-mix(in_oklch,var(--primary),transparent_60%),0_12px_32px_-12px_color-mix(in_oklch,var(--primary),transparent_60%)]",
-                      i % 2 === 1 && "lg:translate-y-6"
-                    )}
-                  >
-                    <Icon className="size-5 text-primary transition-transform duration-200 group-hover:scale-110" />
-                    <p className="mt-3 text-sm font-medium text-foreground">{label}</p>
-                  </motion.div>
-                ))}
-              </div>
-            )}
-          </motion.div>
+        <motion.div data-reveal="" variants={staggerItem()} style={reduceMotion ? undefined : { y: parallaxY }}>
+          {mosaic ? (
+            <HeroMosaic />
+          ) : (
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
+              {HERO_PILLARS.map(({ icon: Icon, label }, i) => (
+                <motion.div
+                  key={label}
+                  whileHover={reduceMotion ? undefined : { y: -4, transition: { duration: 0.2, ease: EASE } }}
+                  className={cn(
+                    "group rounded-2xl border border-border bg-card p-5 transition-[border-color,box-shadow] duration-200 hover:border-primary/40 hover:shadow-[var(--shadow-glow)]",
+                    i % 2 === 1 && "lg:translate-y-6"
+                  )}
+                >
+                  <Icon className="size-5 text-primary transition-transform duration-200 group-hover:scale-110" />
+                  <p className="mt-3 text-sm font-medium text-foreground">{label}</p>
+                </motion.div>
+              ))}
+            </div>
+          )}
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }

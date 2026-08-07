@@ -40,7 +40,7 @@ export default function ProjectsGrid({ projets, emptyMessage }: ProjectsGridProp
         return (
           <motion.article
             key={p.slug}
-            variants={staggerItem(reduceMotion ?? false)}
+            data-reveal="" variants={staggerItem()}
             whileHover={reduceMotion ? undefined : { y: -2 }}
             transition={{ duration: 0.2 }}
             className="overflow-hidden rounded-2xl border border-border bg-card transition-colors duration-200 hover:border-[var(--color-border-strong)]"
