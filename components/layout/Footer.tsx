@@ -21,7 +21,7 @@ export default function Footer() {
       />
       <div className="container relative grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
         <div>
-          <Link href="/" aria-label="Connect Web, accueil" className="mb-3.5 inline-flex">
+          <Link href="/" className="mb-3.5 inline-flex">
             <Logo />
           </Link>
           <p className="no-justify max-w-[32ch] text-sm text-muted-foreground">

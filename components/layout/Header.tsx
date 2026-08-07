@@ -64,8 +64,8 @@ export default function Header() {
         )}
       >
         <div className="container flex h-[var(--header-height)] items-center gap-4">
-          <Link href="/" aria-label="Connect Web, accueil">
-            <Logo />
+          <Link href="/" className="shrink-0">
+            <Logo priority />
           </Link>
 
           <nav
