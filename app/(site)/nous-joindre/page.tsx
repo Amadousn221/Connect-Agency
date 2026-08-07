@@ -18,7 +18,7 @@ export default function NousJoindrePage() {
       />
       <div className="container relative grid gap-12 lg:grid-cols-2 lg:items-start">
         <div>
-          <p className="eyebrow">● NOUS JOINDRE</p>
+          <p className="eyebrow">NOUS JOINDRE</p>
           <h1 className="mt-4 text-balance text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
             Comment pouvons-nous vous aider aujourd&apos;hui ?
           </h1>

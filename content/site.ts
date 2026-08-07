@@ -2,28 +2,30 @@ import type { Stat } from "@/types/content";
 
 /**
  * Configuration centrale du site — coordonnées, réseaux, textes globaux.
- * TODO (client) : remplacer les valeurs marquées "à confirmer" par les vraies
- * données Connect Web avant mise en ligne. Aucun chiffre n'est inventé —
- * voir `stats` plus bas : le tableau reste vide tant qu'aucune vraie
- * statistique n'a été fournie (cf. débrief : "ne pas inventer de chiffres").
+ * Coordonnées et chiffres repris de la maquette v2 validée par le client
+ * (connect-web-accueil-v2.html). Seuls les réseaux sociaux restent en
+ * {{PLACEHOLDER}} tant que les liens n'ont pas été fournis.
  */
 export const SITE = {
   nom: "Connect Web",
   baseline: "Agence digitale",
   baselineLongue:
     "Nous concevons les outils numériques qui font vendre votre entreprise.",
+  domaine: "connect-web.tech",
 
   coordonnees: {
-    telephone: "+221 00 000 00 00", // TODO (client) : numéro réel
-    telephoneHref: "tel:+22100000000",
-    email: "bonjour@connectweb.sn", // TODO (client) : email réel
-    adresse: "Dakar, Sénégal", // TODO (client) : adresse complète
+    telephone: "77 900 62 82",
+    telephoneHref: "tel:+221779006282",
+    telephoneSecondaire: "78 343 82 49",
+    telephoneSecondaireHref: "tel:+221783438249",
+    email: "contact@connect-web.tech",
+    adresse: "G49 Scat Urbam, Dakar, Sénégal",
   },
 
   reseaux: [
-    { plateforme: "LinkedIn", url: "" }, // TODO (client)
-    { plateforme: "Instagram", url: "" }, // TODO (client)
-    { plateforme: "Facebook", url: "" }, // TODO (client)
+    { plateforme: "LinkedIn", url: "{{LINKEDIN}}" },
+    { plateforme: "Instagram", url: "{{INSTAGRAM}}" },
+    { plateforme: "Facebook", url: "{{FACEBOOK}}" },
   ],
 
   prenomContact: "Notre équipe", // TODO (client) : prénom de la personne qui répond
@@ -31,13 +33,12 @@ export const SITE = {
   ctaPrimaire: "Demander une soumission",
   ctaSecondaire: "Nos réalisations",
 
-  /**
-   * Statistiques réelles à afficher en section "chiffres". Vide par défaut :
-   * on n'affiche pas de faux chiffre. Ajouter ici une fois les vraies
-   * données disponibles, ex. :
-   * { valeur: "12+", label: "PROJETS", description: "Projets réalisés depuis 2023." }
-   */
-  stats: [] as Stat[],
+  /** Statistiques réelles fournies par le client (maquette v2). */
+  stats: [
+    { valeur: "20+", label: "Projets", description: "Livrés pour des entreprises au Sénégal et au-delà." },
+    { valeur: "10 jours", label: "Délai moyen", description: "Du feu vert à la première livraison." },
+    { valeur: "100%", label: "Satisfaction", description: "Clients satisfaits du résultat livré." },
+  ] as Stat[],
 } as const;
 
 export const SECTEURS = [

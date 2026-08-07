@@ -8,7 +8,7 @@ export default function RelatedServices({ services }: { services: RelatedService
   return (
     <section className="border-t border-border py-20 sm:py-28">
       <div className="container">
-        <p className="eyebrow">● POUR ALLER PLUS LOIN</p>
+        <p className="eyebrow">POUR ALLER PLUS LOIN</p>
         <h2 className="mt-4 max-w-xl text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
           Services connexes.
         </h2>

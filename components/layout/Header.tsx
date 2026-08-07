@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Phone, Menu, X, ChevronDown } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 import MegaMenu from "./MegaMenu";
+import Logo from "./Logo";
 import { NAV_LINKS } from "@/content/nav";
 import { SITE } from "@/content/site";
 import { useContactModal } from "./ContactModalProvider";
@@ -51,16 +52,8 @@ export default function Header() {
     <>
       <header className="sticky top-0 z-40 border-b border-[var(--navbar-border)] bg-[var(--navbar-bg)] backdrop-blur-md">
         <div className="container flex h-[var(--header-height)] items-center justify-between gap-6">
-          <Link href="/" className="flex items-center gap-2 shrink-0" onClick={() => setMobileOpen(false)}>
-            <svg width="22" height="22" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-              <rect x="2" y="2" width="7" height="7" rx="1.5" fill="var(--primary)" />
-              <rect x="11" y="2" width="7" height="7" rx="1.5" fill="var(--primary)" opacity=".4" />
-              <rect x="2" y="11" width="7" height="7" rx="1.5" fill="var(--primary)" opacity=".4" />
-              <rect x="11" y="11" width="7" height="7" rx="1.5" fill="var(--primary)" />
-            </svg>
-            <span className="text-lg font-semibold tracking-tight text-foreground">
-              Connect<span className="text-primary">Web</span>
-            </span>
+          <Link href="/" aria-label="Connect Web, accueil" onClick={() => setMobileOpen(false)}>
+            <Logo />
           </Link>
 
           <nav aria-label="Navigation principale" className="hidden items-center gap-1 lg:flex">
@@ -118,6 +111,13 @@ export default function Header() {
               {SITE.coordonnees.telephone}
             </a>
 
+            <button
+              type="button"
+              className="hidden items-center gap-1 rounded-full border border-border px-2.5 py-2 font-[family-name:var(--font-mono)] text-[0.76rem] text-muted-foreground 2xl:inline-flex"
+            >
+              FR <span className="opacity-50">/ EN</span>
+            </button>
+
             <ThemeToggle />
 
             <button onClick={open} className="btn-primary hidden sm:inline-flex">
@@ -172,7 +172,7 @@ export default function Header() {
           <div className="mt-4 flex flex-col gap-3 border-t border-border px-3 pt-6">
             <a href={SITE.coordonnees.telephoneHref} className="flex items-center gap-2 text-sm text-muted-foreground">
               <Phone className="size-4" />
-              {SITE.coordonnees.telephone}
+              {SITE.coordonnees.telephone} · {SITE.coordonnees.telephoneSecondaire}
             </a>
             <button
               onClick={() => {

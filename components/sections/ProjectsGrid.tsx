@@ -35,38 +35,62 @@ export default function ProjectsGrid({ projets, emptyMessage }: ProjectsGridProp
       variants={staggerContainer(0.1)}
       className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
     >
-      {projets.map((p) => (
-        <motion.article
-          key={p.slug}
-          variants={staggerItem(reduceMotion ?? false)}
-          whileHover={reduceMotion ? undefined : { y: -2 }}
-          transition={{ duration: 0.2 }}
-          className="rounded-2xl border border-border bg-card p-6 transition-colors duration-200 hover:border-[var(--color-border-strong)]"
-        >
-          <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{p.secteur}</p>
-          <h3 className="mt-2 text-lg font-semibold text-foreground">{p.nom}</h3>
-          <p className="mt-2 text-sm text-muted-foreground">{p.resume}</p>
-          {p.resultats.length > 0 && (
-            <ul className="mt-4 flex flex-col gap-1.5">
-              {p.resultats.map((r) => (
-                <li key={r} className="text-sm text-foreground/80">
-                  · {r}
-                </li>
-              ))}
-            </ul>
-          )}
-          {p.lien && (
-            <a
-              href={p.lien}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="mt-4 inline-flex min-h-11 items-center text-sm font-medium text-primary hover:underline"
-            >
-              Voir le projet →
-            </a>
-          )}
-        </motion.article>
-      ))}
+      {projets.map((p, i) => {
+        const isPlaceholder = !p.publie;
+        return (
+          <motion.article
+            key={p.slug}
+            variants={staggerItem(reduceMotion ?? false)}
+            whileHover={reduceMotion ? undefined : { y: -2 }}
+            transition={{ duration: 0.2 }}
+            className="overflow-hidden rounded-2xl border border-border bg-card transition-colors duration-200 hover:border-[var(--color-border-strong)]"
+          >
+            <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden border-b border-border bg-[var(--color-bg-subtle)]">
+              <div
+                aria-hidden="true"
+                className="absolute inset-0"
+                style={{
+                  background:
+                    i % 3 === 0
+                      ? "linear-gradient(135deg,color-mix(in srgb,var(--brand-petrol) 55%,transparent),color-mix(in srgb,var(--brand-accent-raw) 35%,transparent))"
+                      : i % 3 === 1
+                        ? "linear-gradient(135deg,color-mix(in srgb,var(--brand-accent-raw) 45%,transparent),color-mix(in srgb,var(--brand-petrol) 40%,transparent))"
+                        : "linear-gradient(160deg,color-mix(in srgb,var(--brand-petrol) 60%,transparent),color-mix(in srgb,var(--brand-accent-raw) 28%,transparent))",
+                }}
+              />
+              {isPlaceholder && (
+                <span className="relative rounded-full border border-dashed border-[var(--color-border-strong)] bg-[var(--navbar-bg)] px-3 py-1.5 font-mono text-[0.68rem] uppercase tracking-wider text-muted-foreground">
+                  Projet à fournir
+                </span>
+              )}
+            </div>
+            <div className="p-6">
+              <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{p.secteur}</p>
+              <h3 className="mt-2 text-lg font-semibold text-foreground">{p.nom}</h3>
+              {p.resume && <p className="mt-2 text-sm text-muted-foreground">{p.resume}</p>}
+              {p.resultats.length > 0 && (
+                <ul className="mt-4 flex flex-col gap-1.5">
+                  {p.resultats.map((r) => (
+                    <li key={r} className="text-sm text-foreground/80">
+                      · {r}
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {p.lien && (
+                <a
+                  href={p.lien}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="mt-4 inline-flex min-h-11 items-center text-sm font-medium text-primary hover:underline"
+                >
+                  Voir le projet →
+                </a>
+              )}
+            </div>
+          </motion.article>
+        );
+      })}
     </motion.div>
   );
 }

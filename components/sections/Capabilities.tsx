@@ -10,7 +10,7 @@ export default function Capabilities({ titre = "Ce que nous faisons pour vous", 
   return (
     <section className="py-20 sm:py-28">
       <div className="container">
-        <p className="eyebrow">● NOS SERVICES</p>
+        <p className="eyebrow">NOS SERVICES</p>
         <h2 className="mt-4 max-w-xl text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
           {titre}
         </h2>

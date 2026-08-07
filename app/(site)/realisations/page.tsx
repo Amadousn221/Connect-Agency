@@ -13,7 +13,7 @@ export default function RealisationsPage() {
   return (
     <>
       <Hero
-        eyebrow="● RÉALISATIONS"
+        eyebrow="RÉALISATIONS"
         h1="Nos réalisations."
         chapo="Découvrez quelques exemples de projets récents réalisés pour des organisations de différents secteurs. Vous ne trouvez pas exactement ce que vous cherchez ? Contactez-nous et nous vous présenterons d'autres exemples."
         ctas={[{ label: "Parlons-en", href: "/nous-joindre" }]}

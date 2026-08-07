@@ -4,7 +4,7 @@ export default function Sectors() {
   return (
     <section className="py-20 sm:py-28">
       <div className="container">
-        <p className="eyebrow">● SECTEURS</p>
+        <p className="eyebrow">SECTEURS</p>
         <h2 className="mt-4 max-w-xl text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
           On connaît votre milieu.
         </h2>

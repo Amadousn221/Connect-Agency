@@ -24,24 +24,25 @@ export default function BentoServices() {
   return (
     <section className="py-[clamp(4rem,10vw,8rem)]">
       <div className="container">
-        <p className="eyebrow">● NOS SERVICES</p>
+        <p className="eyebrow">Nos services</p>
         <h2 className="mt-4 max-w-xl text-[clamp(1.75rem,3vw,2.5rem)] font-semibold tracking-tight text-foreground">
           Ce que nous faisons.
         </h2>
+        <p className="mt-3 max-w-xl text-sm text-muted-foreground sm:text-base">
+          Six piliers, une seule équipe. On peut n&apos;en activer qu&apos;un — ou les connecter tous en un système de
+          vente cohérent.
+        </p>
 
         <motion.div
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer(0.1)}
-          className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-12"
+          className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
         >
           {HOME_BENTO.map((card, i) => {
             const Icon = ICONS[card.href] ?? Globe;
-            const mesh =
-              i % 2 === 0
-                ? "radial-gradient(120%_100%_at_100%_0%,color-mix(in_oklch,var(--primary),transparent_92%),transparent_60%)"
-                : "radial-gradient(120%_100%_at_100%_0%,color-mix(in_oklch,var(--accent),transparent_92%),transparent_60%)";
+            const glow = i % 2 === 0 ? "var(--glow-1)" : "var(--glow-2)";
 
             return (
               <MotionLink
@@ -50,22 +51,30 @@ export default function BentoServices() {
                 variants={staggerItem(reduceMotion ?? false)}
                 whileHover={reduceMotion ? undefined : { scale: 1.01, y: -2 }}
                 transition={{ duration: 0.2 }}
-                style={{ backgroundImage: mesh }}
                 className={cn(
-                  "group relative flex min-h-[168px] flex-col justify-between overflow-hidden rounded-2xl border border-border bg-card p-6 transition-[border-color,box-shadow] duration-200",
-                  "hover:border-[var(--color-border-strong)] hover:shadow-[0_0_30px_color-mix(in_oklch,var(--primary),transparent_65%)]",
-                  card.taille === "feature" && "sm:col-span-2 lg:col-span-12 lg:min-h-[200px]",
-                  card.taille === "lg" && "sm:col-span-2 lg:col-span-8",
-                  card.taille === "sm" && "lg:col-span-4",
-                  card.accent && "border-primary/25"
+                  "group relative flex min-h-[236px] flex-col gap-2.5 overflow-hidden rounded-2xl border border-border bg-card p-6 transition-[border-color,box-shadow] duration-200",
+                  "hover:border-[var(--color-border-strong)]",
+                  card.star && "border-[color-mix(in_srgb,var(--brand-accent-raw)_45%,transparent)]"
                 )}
               >
-                <div>
-                  <Icon className="size-6 text-primary" />
-                  <h3 className="mt-4 text-lg font-semibold text-foreground">{card.titre}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{card.corps}</p>
-                </div>
-                <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-primary opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute -right-[35%] -bottom-[55%] size-[230px] rounded-full opacity-[var(--glow-alpha)] blur-[55px] transition-transform duration-[400ms] group-hover:scale-115"
+                  style={{ background: glow }}
+                />
+
+                {card.star && (
+                  <span className="absolute top-4 right-4 rounded-full bg-[var(--color-accent-subtle)] px-2 py-1 font-[family-name:var(--font-mono)] text-[0.6rem] tracking-[0.1em] text-primary uppercase">
+                    Pilier phare
+                  </span>
+                )}
+
+                <span className="relative flex size-9 items-center justify-center rounded-[var(--radius-md)] border border-border bg-[var(--color-accent-subtle)] text-primary">
+                  <Icon className="size-[18px]" />
+                </span>
+                <h3 className="relative text-lg font-semibold text-foreground">{card.titre}</h3>
+                <p className="relative text-sm leading-relaxed text-muted-foreground">{card.corps}</p>
+                <span className="relative mt-auto inline-flex items-center gap-1.5 pt-3.5 text-sm font-medium text-primary">
                   En savoir plus
                   <ArrowRight className="size-3.5 transition-transform duration-200 group-hover:translate-x-1" />
                 </span>

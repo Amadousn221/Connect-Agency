@@ -17,7 +17,7 @@ export default function ProcessSteps({
   return (
     <section className="py-[clamp(4rem,10vw,8rem)]">
       <div className="container">
-        <p className="eyebrow">● NOTRE PROCESSUS</p>
+        <p className="eyebrow">NOTRE PROCESSUS</p>
         <h2 className="mt-4 max-w-xl text-[clamp(1.75rem,3vw,2.5rem)] font-semibold tracking-tight text-foreground">
           {titre}
         </h2>

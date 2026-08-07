@@ -7,30 +7,34 @@ export default function LogoMarquee() {
   const track = [...clients, ...clients];
 
   return (
-    <section className="border-y border-border py-[clamp(3rem,7vw,4.5rem)]">
-      <div className="container text-center">
-        <h2 className="text-[clamp(1.4rem,2.2vw,1.75rem)] font-semibold tracking-tight text-foreground">
-          Des entreprises qui nous font confiance.
-        </h2>
-        <p className="mx-auto mt-3 max-w-xl text-sm text-muted-foreground">
+    <section className="py-[clamp(2.5rem,6vw,4.125rem)]">
+      <div className="container is-center mb-9">
+        <p className="text-[1.12rem] font-semibold text-foreground">Plus de 20 projets livrés.</p>
+        <p className="mt-2 text-sm text-muted-foreground">
           Des entreprises partout au Sénégal et en Afrique de l&apos;Ouest nous confient leurs projets numériques.
         </p>
       </div>
 
       <div
-        className="group relative mt-10 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
+        className="group relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
       >
         <div className="flex w-max gap-16 motion-safe:animate-marquee motion-safe:group-hover:[animation-play-state:paused] motion-reduce:flex-wrap motion-reduce:justify-center motion-reduce:gap-8">
           {track.map((client, i) => (
             <span
               key={`${client.nom}-${i}`}
-              className="shrink-0 text-lg font-semibold tracking-tight text-foreground/60 opacity-60 grayscale"
+              className="flex shrink-0 items-center gap-2 font-[family-name:var(--font-display)] text-[1.1rem] font-bold whitespace-nowrap text-foreground opacity-60"
             >
+              <span className="text-[0.65em] text-primary" aria-hidden="true">
+                ◆
+              </span>
               {client.nom}
             </span>
           ))}
         </div>
       </div>
+      <p className="is-center container mt-4 text-xs text-muted-foreground">
+        Emplacements réservés — logos clients à fournir avec autorisation.
+      </p>
     </section>
   );
 }

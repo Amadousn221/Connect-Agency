@@ -11,6 +11,11 @@ function CountUp({ value }: { value: string }) {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   const reduceMotion = useReducedMotion();
   const [display, setDisplay] = useState(0);
+  // Évite un mismatch d'hydratation : useReducedMotion() ne peut être fiable
+  // qu'après le montage côté client (indisponible pendant le rendu serveur).
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     if (!match || !isInView || reduceMotion) return;
@@ -35,7 +40,8 @@ function CountUp({ value }: { value: string }) {
   }
 
   const suffix = match[2];
-  const shown = reduceMotion || isInView ? (reduceMotion ? match[1] : display) : 0;
+  const reduced = mounted && reduceMotion;
+  const shown = reduced || isInView ? (reduced ? match[1] : display) : 0;
 
   return (
     <p ref={ref} className="text-[clamp(2rem,4vw,2.5rem)] font-semibold tracking-tight text-primary">
@@ -51,7 +57,7 @@ export default function Stats({ stats }: { stats: Stat[] }) {
   return (
     <section className="border-y border-border py-[clamp(3.5rem,8vw,5.5rem)]">
       <div className="container">
-        <p className="eyebrow">● EN CHIFFRES</p>
+        <p className="eyebrow">EN CHIFFRES</p>
         <h2 className="mt-4 text-[clamp(1.75rem,3vw,2.5rem)] font-semibold tracking-tight text-foreground">
           Les chiffres derrière notre travail.
         </h2>

@@ -15,7 +15,7 @@ export default function ServicesPage() {
   return (
     <>
       <Hero
-        eyebrow="● NOS SERVICES"
+        eyebrow="NOS SERVICES"
         h1="Six piliers, une seule équipe."
         chapo="Du site web à l'intégration de vos outils de vente, on couvre tout ce dont votre entreprise a besoin pour grandir en ligne."
         ctas={[{ label: "Demander une soumission", href: "/nous-joindre" }]}
