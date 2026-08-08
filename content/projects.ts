@@ -19,6 +19,7 @@ export const PROJETS: Projet[] = [
     resultats: [],
     services: ["sites-web-ecommerce"],
     gradient: "linear-gradient(135deg,#1a1207,#3a2a10 60%,#0b0906)",
+    lien: "https://luxurybijouterie.com",
     ordre: 1,
     publie: true,
   },
@@ -44,6 +45,7 @@ export const PROJETS: Projet[] = [
     resultats: [],
     services: ["sites-web-ecommerce", "logiciels-applications-web"],
     gradient: "linear-gradient(135deg,#0c0f2b,#1a1f52 55%,#f5c451)",
+    lien: "https://scodvtc.com",
     ordre: 3,
     publie: true,
   },
@@ -56,6 +58,7 @@ export const PROJETS: Projet[] = [
     resultats: [],
     services: ["sites-web-ecommerce"],
     gradient: "linear-gradient(135deg,#0a2818,#12603a 55%,#0b1a10)",
+    lien: "https://linkshop.sn",
     ordre: 4,
     publie: true,
   },
@@ -80,6 +83,7 @@ export const PROJETS: Projet[] = [
     resultats: [],
     services: ["sites-web-ecommerce", "marketing-generation-prospects"],
     gradient: "linear-gradient(135deg,#071a3a,#123fa0 55%,#0a1428)",
+    lien: "https://ddsmedicalsenegal.com",
     ordre: 6,
     publie: true,
   },
@@ -118,7 +122,24 @@ export const PROJETS: Projet[] = [
     resultats: [],
     services: ["sites-web-ecommerce"],
     gradient: "linear-gradient(135deg,#062033,#0f5a8c 55%,#0a2436)",
+    lien: "https://tamou.sn",
     ordre: 9,
+    publie: true,
+  },
+  {
+    slug: "fahamu-africa",
+    nom: "Fahamu Africa",
+    secteur: "Association · ONG",
+    resume:
+      "Site institutionnel pour une organisation panafricaine dédiée à la justice sociale : vision et valeurs, programmes, articles, galerie et formulaire de contact. Un site clair au service du plaidoyer.",
+    resultats: [],
+    services: ["sites-web-ecommerce", "conseil-strategie"],
+    gradient: "linear-gradient(135deg,#3a0a0a,#c23838 55%,#2a0808)",
+    // ⚠️ Note interne (non affichée) : au moment de la capture, le site laissait
+    // apparaître des articles de spam (casino) — piratage probable. Le client a
+    // demandé à l'afficher malgré tout ; à faire nettoyer côté client au plus vite.
+    lien: "https://fahamuafrica.org",
+    ordre: 10,
     publie: true,
   },
 ];
