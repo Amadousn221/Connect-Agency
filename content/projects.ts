@@ -4,10 +4,9 @@ import type { Projet } from "@/types/content";
  * Réalisations Connect Web — projets réels, rédigés d'après les sites livrés
  * (débrief client). Règles d'honnêteté conservées :
  *  - aucun résultat chiffré tant que le client ne l'a pas confirmé (`resultats` vide) ;
- *  - le bouton « Voir le site » n'apparaît que pour une URL publique confirmée
- *    (`lien`). Les six autres restent sans lien tant que le client ne les fournit pas ;
- *  - `couverture` pointera vers /realisations/<slug>.jpg une fois les captures
- *    livrées ; en attendant, `gradient` sert de placeholder (repris de la maquette).
+ *  - le bouton « Voir le site » n'apparaît que pour une URL publique confirmée (`lien`) ;
+ *  - `couverture` pointe vers /realisations/<slug>.jpg (capture réelle fournie par le
+ *    client, recadrée en 16:11) ; `gradient` reste en secours si jamais absente.
  */
 export const PROJETS: Projet[] = [
   {
@@ -19,6 +18,7 @@ export const PROJETS: Projet[] = [
     resultats: [],
     services: ["sites-web-ecommerce"],
     gradient: "linear-gradient(135deg,#1a1207,#3a2a10 60%,#0b0906)",
+    couverture: "/realisations/luxury-bijouterie.jpg",
     lien: "https://luxurybijouterie.com",
     ordre: 1,
     publie: true,
@@ -32,6 +32,7 @@ export const PROJETS: Projet[] = [
     resultats: [],
     services: ["sites-web-ecommerce", "marketing-generation-prospects"],
     gradient: "linear-gradient(135deg,#0f3d63,#1b6fa6 55%,#f1571a)",
+    couverture: "/realisations/ada-voyages.jpg",
     lien: "https://adavoyages.net",
     ordre: 2,
     publie: true,
@@ -45,6 +46,7 @@ export const PROJETS: Projet[] = [
     resultats: [],
     services: ["sites-web-ecommerce", "logiciels-applications-web"],
     gradient: "linear-gradient(135deg,#0c0f2b,#1a1f52 55%,#f5c451)",
+    couverture: "/realisations/scod-vtc.jpg",
     lien: "https://scodvtc.com",
     ordre: 3,
     publie: true,
@@ -58,6 +60,7 @@ export const PROJETS: Projet[] = [
     resultats: [],
     services: ["sites-web-ecommerce"],
     gradient: "linear-gradient(135deg,#0a2818,#12603a 55%,#0b1a10)",
+    couverture: "/realisations/link-shop.jpg",
     lien: "https://linkshop.sn",
     ordre: 4,
     publie: true,
@@ -71,6 +74,7 @@ export const PROJETS: Projet[] = [
     resultats: [],
     services: ["sites-web-ecommerce"],
     gradient: "linear-gradient(135deg,#3a1e05,#f39c1f 60%,#7a4a10)",
+    couverture: "/realisations/marjan-bijouterie.jpg",
     lien: "https://marjanbijouterie.com",
     ordre: 5,
     publie: true,
@@ -84,6 +88,7 @@ export const PROJETS: Projet[] = [
     resultats: [],
     services: ["sites-web-ecommerce", "marketing-generation-prospects"],
     gradient: "linear-gradient(135deg,#071a3a,#123fa0 55%,#0a1428)",
+    couverture: "/realisations/dds-medical.jpg",
     lien: "https://ddsmedicalsenegal.com",
     ordre: 6,
     publie: true,
@@ -97,6 +102,7 @@ export const PROJETS: Projet[] = [
     resultats: [],
     services: ["sites-web-ecommerce", "marketing-generation-prospects"],
     gradient: "linear-gradient(135deg,#3a2408,#c9822a 60%,#5a3a12)",
+    couverture: "/realisations/sunu-thiossane.jpg",
     lien: "https://sunuthiossane.org",
     ordre: 7,
     publie: true,
@@ -110,6 +116,7 @@ export const PROJETS: Projet[] = [
     resultats: [],
     services: ["sites-web-ecommerce", "conseil-strategie"],
     gradient: "linear-gradient(135deg,#08240f,#1a7a34 55%,#0a1a0e)",
+    couverture: "/realisations/was-africa.jpg",
     lien: "https://wasafrica.org",
     ordre: 8,
     publie: true,
@@ -123,6 +130,7 @@ export const PROJETS: Projet[] = [
     resultats: [],
     services: ["sites-web-ecommerce"],
     gradient: "linear-gradient(135deg,#062033,#0f5a8c 55%,#0a2436)",
+    couverture: "/realisations/tamou-fishing.jpg",
     lien: "https://tamou.sn",
     ordre: 9,
     publie: true,
@@ -136,6 +144,7 @@ export const PROJETS: Projet[] = [
     resultats: [],
     services: ["sites-web-ecommerce", "conseil-strategie"],
     gradient: "linear-gradient(135deg,#3a0a0a,#c23838 55%,#2a0808)",
+    couverture: "/realisations/fahamu-africa.jpg",
     // ⚠️ Note interne (non affichée) : au moment de la capture, le site laissait
     // apparaître des articles de spam (casino) — piratage probable. Le client a
     // demandé à l'afficher malgré tout ; à faire nettoyer côté client au plus vite.

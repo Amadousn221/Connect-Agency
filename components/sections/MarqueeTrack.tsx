@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CLIENTS } from "@/content/clients";
 
 /**
@@ -12,10 +13,17 @@ export default function MarqueeTrack() {
   const track = [...clients, ...clients];
 
   return (
-    <>
-      <div className="group relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-        <div className="flex w-max gap-16 motion-safe:animate-marquee motion-safe:group-hover:[animation-play-state:paused] motion-reduce:flex-wrap motion-reduce:justify-center motion-reduce:gap-8">
-          {track.map((client, i) => (
+    <div className="group relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+      <div className="flex w-max items-center gap-12 motion-safe:animate-marquee motion-safe:group-hover:[animation-play-state:paused] motion-reduce:flex-wrap motion-reduce:justify-center motion-reduce:gap-8">
+        {track.map((client, i) =>
+          client.logo ? (
+            <span
+              key={`${client.nom}-${i}`}
+              className="relative h-9 w-[140px] shrink-0 opacity-70 grayscale transition-[opacity,filter] duration-200 hover:opacity-100 hover:grayscale-0"
+            >
+              <Image src={client.logo} alt={client.nom} fill sizes="140px" className="object-contain" />
+            </span>
+          ) : (
             <span
               key={`${client.nom}-${i}`}
               className="flex shrink-0 items-center gap-2 font-[family-name:var(--font-display)] text-[1.1rem] font-bold whitespace-nowrap text-foreground opacity-60"
@@ -25,12 +33,9 @@ export default function MarqueeTrack() {
               </span>
               {client.nom}
             </span>
-          ))}
-        </div>
+          ),
+        )}
       </div>
-      <p className="is-center container mt-4 text-xs text-muted-foreground">
-        Emplacements réservés — logos clients à fournir avec autorisation.
-      </p>
-    </>
+    </div>
   );
 }

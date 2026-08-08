@@ -1,18 +1,19 @@
 import type { Client } from "@/types/content";
 
 /**
- * Logos clients pour la preuve sociale (bandeau défilant). Emplacements
- * réservés tant que les logos et autorisations clients n'ont pas été
- * fournis — repris à l'identique de la maquette v2 (« Client 01 » à
- * « Client 08 »). Remplacer par les vrais noms/logos dès qu'ils arrivent.
+ * Logos clients pour la preuve sociale (bandeau défilant). Repris des
+ * projets livrés en réalisations (public/clients/<slug>.png, 320×140,
+ * fond transparent). DDS Medical et SCOD VTC n'ont pas encore de logo
+ * fourni par le client — ils resteront absents du bandeau tant qu'il n'est
+ * pas transmis (pas de logo générique inventé).
  */
 export const CLIENTS: Client[] = [
-  { nom: "Client 01", visible: true },
-  { nom: "Client 02", visible: true },
-  { nom: "Client 03", visible: true },
-  { nom: "Client 04", visible: true },
-  { nom: "Client 05", visible: true },
-  { nom: "Client 06", visible: true },
-  { nom: "Client 07", visible: true },
-  { nom: "Client 08", visible: true },
+  { nom: "Luxury Bijouterie by KN", visible: true, logo: "/clients/luxury-bijouterie.png" },
+  { nom: "ADA Voyages", visible: true, logo: "/clients/ada-voyages.png" },
+  { nom: "Link Shop", visible: true, logo: "/clients/link-shop.png" },
+  { nom: "Marjan Bijouterie", visible: true, logo: "/clients/marjan-bijouterie.png" },
+  { nom: "Sunu Thiossane", visible: true, logo: "/clients/sunu-thiossane.png" },
+  { nom: "WAS Africa", visible: true, logo: "/clients/was-africa.png" },
+  { nom: "Tamou Fishing International", visible: true, logo: "/clients/tamou-fishing.png" },
+  { nom: "Fahamu Africa", visible: true, logo: "/clients/fahamu-africa.png" },
 ];
