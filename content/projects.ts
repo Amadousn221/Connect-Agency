@@ -121,6 +121,22 @@ export const PROJETS: Projet[] = [
     ordre: 9,
     publie: true,
   },
+  {
+    slug: "fahamu-africa",
+    nom: "Fahamu Africa",
+    secteur: "Association · ONG",
+    resume:
+      "Site institutionnel pour une organisation panafricaine dédiée à la justice sociale : vision et valeurs, programmes, articles, galerie et formulaire de contact. Un site clair au service du plaidoyer.",
+    resultats: [],
+    services: ["sites-web-ecommerce", "conseil-strategie"],
+    gradient: "linear-gradient(135deg,#3a0a0a,#c23838 55%,#2a0808)",
+    // ⚠️ Note interne (non affichée) : au moment de la capture, le site laissait
+    // apparaître des articles de spam (casino) — piratage probable. Le client a
+    // demandé à l'afficher malgré tout ; à faire nettoyer côté client au plus vite.
+    lien: "https://fahamuafrica.org",
+    ordre: 10,
+    publie: true,
+  },
 ];
 
 /** Libellés courts des tags de service affichés sur les cartes (cf. maquette). */
