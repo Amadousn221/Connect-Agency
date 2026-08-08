@@ -41,17 +41,6 @@ export const SITE = {
   ] as Stat[],
 } as const;
 
-export const SECTEURS = [
-  "Commerce & distribution",
-  "PME & services professionnels",
-  "E-commerce & vente au détail",
-  "Industrie & manufacture",
-  "Santé & cliniques",
-  "Éducation & formation",
-  "Organisations & associations",
-  "Secteur public & institutionnel",
-];
-
 export const PROCESSUS_STANDARD = [
   {
     etape: "Étape 01",
@@ -67,41 +56,6 @@ export const PROCESSUS_STANDARD = [
     etape: "Étape 03",
     titre: "Lancement & suivi",
     description: "On met en ligne, on forme votre équipe, et on reste disponible pour la suite.",
-  },
-];
-
-export const CAPACITES_SECONDAIRES = [
-  "Contenu & rédaction",
-  "Sites web accessibles",
-  "Design adaptatif",
-  "Optimisation de la vitesse",
-  "Entretien & maintenance",
-];
-
-export const POURQUOI_NOUS_CHOISIR = [
-  {
-    titre: "On commence par ce qui compte vraiment",
-    description: "Objectifs d'abord, technique ensuite.",
-  },
-  {
-    titre: "Vous gardez le contrôle",
-    description: "Vos accès, vos comptes, votre contenu vous appartiennent.",
-  },
-  {
-    titre: "Conçu pour durer",
-    description: "Des bases web propres qui vieillissent bien.",
-  },
-  {
-    titre: "Une communication claire",
-    description: "Un interlocuteur, pas un labyrinthe.",
-  },
-  {
-    titre: "Une seule équipe, moins de bouts qui traînent",
-    description: "Design, dev, marketing et intégrations au même endroit.",
-  },
-  {
-    titre: "Une expertise rare en accessibilité",
-    description: "Des sites utilisables par tout le monde.",
   },
 ];
 

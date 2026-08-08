@@ -17,47 +17,9 @@ export interface ProcessStep {
   description: string;
 }
 
-export interface Capacite {
-  titre: string;
-  description?: string;
-}
-
 export interface FaqItem {
   question: string;
   reponse: string;
-}
-
-export interface RelatedService {
-  slug: string;
-  titre: string;
-}
-
-export interface SubService {
-  slug: string;
-  h1: string;
-  chapo: string;
-}
-
-export interface ServiceContent {
-  slug: string;
-  pilier: string;
-  eyebrow: string;
-  h1: string;
-  chapo: string;
-  heroCtas: Cta[];
-  probleme: {
-    titre: string;
-    corps: string;
-  };
-  capacites: Capacite[];
-  sousServices?: SubService[];
-  raisonsMisesEnAvant?: string[];
-  faq: FaqItem[];
-  pagesLiees: RelatedService[];
-  seo: {
-    title: string;
-    description: string;
-  };
 }
 
 export interface Projet {

@@ -69,6 +69,23 @@ export function collectionPageJsonLd(
   };
 }
 
+export function serviceJsonLd(content: { pilier: string; chapo: string; slug: string; parent?: { href: string } }) {
+  const path = content.parent ? `${content.parent.href}/${content.slug}` : `/services/${content.slug}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: content.pilier,
+    description: content.chapo,
+    url: `${SITE_URL}${path}`,
+    provider: {
+      "@type": "Organization",
+      name: SITE.nom,
+      url: SITE_URL,
+    },
+    areaServed: "SN",
+  };
+}
+
 export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
   return {
     "@context": "https://schema.org",
