@@ -71,6 +71,7 @@ export const PROJETS: Projet[] = [
     resultats: [],
     services: ["sites-web-ecommerce"],
     gradient: "linear-gradient(135deg,#3a1e05,#f39c1f 60%,#7a4a10)",
+    lien: "https://marjanbijouterie.com",
     ordre: 5,
     publie: true,
   },
