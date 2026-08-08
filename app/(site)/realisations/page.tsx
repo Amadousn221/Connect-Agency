@@ -32,9 +32,8 @@ export default function RealisationsPage() {
           <ProjectGrid projets={projets} secteurs={SECTEURS_PROJETS} />
 
           <p className="mt-10 rounded-[var(--radius-md)] border border-border border-l-[3px] border-l-primary bg-[var(--color-bg-subtle)] px-5 py-4 text-[0.85rem] text-muted-foreground">
-            Les vignettes ci-dessus sont des placeholders colorés en attendant les captures d&apos;écran de chaque
-            site. Aucun résultat chiffré n&apos;est affiché tant qu&apos;il n&apos;a pas été confirmé : mieux vaut «
-            site livré » qu&apos;un chiffre invérifiable.
+            Aucun résultat chiffré n&apos;est affiché tant qu&apos;il n&apos;a pas été confirmé par le client : mieux
+            vaut « site livré » qu&apos;un chiffre invérifiable.
           </p>
         </div>
       </section>

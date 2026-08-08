@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import type { Projet } from "@/types/content";
 import { staggerContainer, staggerItem } from "@/components/motion/Reveal";
@@ -46,18 +47,28 @@ export default function ProjectsGrid({ projets, emptyMessage }: ProjectsGridProp
             className="overflow-hidden rounded-2xl border border-border bg-card transition-colors duration-200 hover:border-[var(--color-border-strong)]"
           >
             <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden border-b border-border bg-[var(--color-bg-subtle)]">
-              <div
-                aria-hidden="true"
-                className="absolute inset-0"
-                style={{
-                  background:
-                    i % 3 === 0
-                      ? "linear-gradient(135deg,color-mix(in srgb,var(--brand-petrol) 55%,transparent),color-mix(in srgb,var(--brand-accent-raw) 35%,transparent))"
-                      : i % 3 === 1
-                        ? "linear-gradient(135deg,color-mix(in srgb,var(--brand-accent-raw) 45%,transparent),color-mix(in srgb,var(--brand-petrol) 40%,transparent))"
-                        : "linear-gradient(160deg,color-mix(in srgb,var(--brand-petrol) 60%,transparent),color-mix(in srgb,var(--brand-accent-raw) 28%,transparent))",
-                }}
-              />
+              {p.couverture ? (
+                <Image
+                  src={p.couverture}
+                  alt={`Aperçu du site ${p.nom} — ${p.secteur}`}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1000px) 50vw, 33vw"
+                  className="object-cover"
+                />
+              ) : (
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0"
+                  style={{
+                    background:
+                      i % 3 === 0
+                        ? "linear-gradient(135deg,color-mix(in srgb,var(--brand-petrol) 55%,transparent),color-mix(in srgb,var(--brand-accent-raw) 35%,transparent))"
+                        : i % 3 === 1
+                          ? "linear-gradient(135deg,color-mix(in srgb,var(--brand-accent-raw) 45%,transparent),color-mix(in srgb,var(--brand-petrol) 40%,transparent))"
+                          : "linear-gradient(160deg,color-mix(in srgb,var(--brand-petrol) 60%,transparent),color-mix(in srgb,var(--brand-accent-raw) 28%,transparent))",
+                  }}
+                />
+              )}
               {isPlaceholder && (
                 <span className="relative rounded-full border border-dashed border-[var(--color-border-strong)] bg-[var(--navbar-bg)] px-3 py-1.5 font-mono text-[0.68rem] uppercase tracking-wider text-muted-foreground">
                   Projet à fournir

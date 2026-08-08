@@ -42,4 +42,6 @@ export interface Projet {
 export interface Client {
   nom: string;
   visible: boolean;
+  /** Logo réel : /clients/<slug>.png (320×140, fond transparent). Sans logo, le nom seul s'affiche. */
+  logo?: string;
 }
