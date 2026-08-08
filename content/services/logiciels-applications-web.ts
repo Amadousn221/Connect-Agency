@@ -6,7 +6,28 @@ const content: ServiceContent = {
   eyebrow: "Logiciels & applications web",
   h1: "**Logiciels et applications web** sur mesure.",
   chapo: "Applications métier, portails clients, outils internes et API — développés autour de vos processus réels, pas l'inverse.",
-  trustLine: "Des outils sur mesure qui s'intègrent à votre existant.",
+  reassurance: [
+    {
+      titre: "Sur mesure, vraiment",
+      description: "On code autour de vos processus, pas d'un template plié à la va-vite.",
+      icon: "LayoutGrid",
+    },
+    {
+      titre: "Un code qui vous appartient",
+      description: "Repo Git, documentation, transfert de propriété inclus.",
+      icon: "GitBranch",
+    },
+    {
+      titre: "Sécurisé de série",
+      description: "Bonnes pratiques OWASP, tests, sauvegardes automatiques.",
+      icon: "ShieldCheck",
+    },
+    {
+      titre: "Évolutif dans le temps",
+      description: "Architecture pensée pour grandir avec vous, maintenance incluse en option.",
+      icon: "Wrench",
+    },
+  ],
   probleme: {
     titre: "Les solutions toutes faites finissent par vous bloquer.",
     corps:

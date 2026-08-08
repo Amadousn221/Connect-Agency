@@ -12,7 +12,7 @@ export default function Faq({ items, titre = "Foire aux questions." }: FaqProps)
   if (items.length === 0) return null;
 
   return (
-    <section className="section pt-0">
+    <section className="section pt-0 section--subtle">
       <div className="container">
         <Reveal className="section-header is-center mx-auto justify-items-center text-center">
           <p className="eyebrow">FAQ</p>

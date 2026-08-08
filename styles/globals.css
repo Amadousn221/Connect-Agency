@@ -203,7 +203,12 @@
 
 @layer components {
   .section {
-    padding-block: clamp(60px, 9vw, 120px);
+    padding-block: clamp(72px, 11vw, 144px);
+  }
+
+  /* Bande de transition (trust bar, réassurance) — padding réduit, pas une section pleine. */
+  .section--sm {
+    padding-block: clamp(48px, 7vw, 88px);
   }
 
   .section--subtle {

@@ -22,7 +22,7 @@ export default function BentoServices() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="section pt-0" id="services">
+    <section className="section pt-0 section--subtle" id="services">
       <div className="container">
         <Reveal className="section-header">
           <p className="eyebrow">Nos services</p>

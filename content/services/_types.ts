@@ -42,6 +42,12 @@ export interface RelatedLink {
   icon: IconKey;
 }
 
+export interface ReassuranceItem {
+  titre: string;
+  description: string;
+  icon: IconKey;
+}
+
 export interface ServiceContent {
   slug: string;
   /** Libellé court (nav, footer, formulaire, e-mails) — distinct du H1 marketing. */
@@ -53,7 +59,9 @@ export interface ServiceContent {
   /** Sous-page → breadcrumb + JSON-LD BreadcrumbList. `href` = chemin du parent. */
   parent?: { label: string; href: string };
 
-  trustLine: string;
+  /** 4 items de réassurance ciblés (remplacent le bandeau de logos sur les pages service).
+   *  Absent sur une sous-page → hérite de ceux du pilier parent (cf. `ServiceTemplate`). */
+  reassurance?: ReassuranceItem[];
 
   probleme: { titre: string; corps: string };
 

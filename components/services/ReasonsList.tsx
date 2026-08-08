@@ -5,9 +5,9 @@ import { getIcon } from "@/lib/icons";
 import type { RaisonItem } from "@/content/services/_types";
 import Reveal, { staggerContainer, staggerItem } from "@/components/motion/Reveal";
 
-export default function ReasonsList({ raisons }: { raisons: RaisonItem[] }) {
+export default function ReasonsList({ raisons, subtle = true }: { raisons: RaisonItem[]; subtle?: boolean }) {
   return (
-    <section className="section section--subtle">
+    <section className={"section" + (subtle ? " section--subtle" : "")}>
       <div className="container">
         <Reveal className="section-header">
           <p className="eyebrow">Pourquoi ce système</p>

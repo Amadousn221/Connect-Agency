@@ -8,7 +8,6 @@ const content: ServiceContent = {
   chapo:
     "On modernise votre site sans perdre votre positionnement Google : audit, migration propre, redirections, et un design qui vous ressemble enfin.",
   parent: { label: "Sites web & e-commerce", href: "/services/sites-web-ecommerce" },
-  trustLine: "Un site modernisé, sans repartir à zéro sur Google.",
   probleme: {
     titre: "Un vieux site qui freine, une refonte qui fait peur.",
     corps:

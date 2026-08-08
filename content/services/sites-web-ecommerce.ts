@@ -7,7 +7,28 @@ const content: ServiceContent = {
   h1: "Conception et développement de **sites web** à Dakar et partout au Sénégal.",
   chapo:
     "Que ce soit pour un premier site ou une refonte complète, nous concevons des sites qui continuent de générer des résultats bien après leur mise en ligne.",
-  trustLine: "Des sites conçus pour convertir, pas seulement pour exister.",
+  reassurance: [
+    {
+      titre: "Livrable en 3–6 semaines",
+      description: "Cadrage, design et mise en ligne. Un seul interlocuteur, un calendrier clair.",
+      icon: "CalendarClock",
+    },
+    {
+      titre: "Le référencement préservé",
+      description: "Sur une refonte : redirections 301, structure conservée, contenu qui performe repris.",
+      icon: "Search",
+    },
+    {
+      titre: "Rapides par conception",
+      description: "Core Web Vitals au vert, chargement sous 2 secondes en 4G.",
+      icon: "Gauge",
+    },
+    {
+      titre: "Vos accès vous appartiennent",
+      description: "Code, contenu, domaine, comptes. Vous gardez le contrôle, toujours.",
+      icon: "KeyRound",
+    },
+  ],
   probleme: {
     titre: "Pourquoi un beau site ne donne pas toujours de résultats.",
     corps:

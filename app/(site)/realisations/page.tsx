@@ -30,11 +30,6 @@ export default function RealisationsPage() {
       <section className="section pt-0">
         <div className="container">
           <ProjectGrid projets={projets} secteurs={SECTEURS_PROJETS} />
-
-          <p className="mt-10 rounded-[var(--radius-md)] border border-border border-l-[3px] border-l-primary bg-[var(--color-bg-subtle)] px-5 py-4 text-[0.85rem] text-muted-foreground">
-            Aucun résultat chiffré n&apos;est affiché tant qu&apos;il n&apos;a pas été confirmé par le client : mieux
-            vaut « site livré » qu&apos;un chiffre invérifiable.
-          </p>
         </div>
       </section>
 

@@ -7,7 +7,6 @@ const content: ServiceContent = {
   h1: "Des sites WordPress solides, faciles à faire **évoluer**.",
   chapo: "Un CMS que votre équipe maîtrise, sans dépendre de personne pour changer un texte ou une image.",
   parent: { label: "Sites web & e-commerce", href: "/services/sites-web-ecommerce" },
-  trustLine: "Un CMS que votre équipe garde en main, dès le premier jour.",
   probleme: {
     titre: "WordPress mal construit, WordPress qui devient un fardeau.",
     corps:

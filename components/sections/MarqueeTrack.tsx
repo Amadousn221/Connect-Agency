@@ -2,9 +2,8 @@ import Image from "next/image";
 import { CLIENTS } from "@/content/clients";
 
 /**
- * Bandeau défilant des logos clients — extrait de `LogoMarquee` pour être
- * réutilisé tel quel dans `TrustBar` (pages de service), sans dupliquer le
- * titre spécifique à l'accueil.
+ * Piste défilante des logos clients — extraite de `LogoMarquee` pour isoler
+ * le défilement du titre spécifique à l'accueil.
  */
 export default function MarqueeTrack() {
   const clients = CLIENTS.filter((c) => c.visible);

@@ -50,11 +50,11 @@ function CountUp({ value }: { value: string }) {
   );
 }
 
-export default function Stats({ stats }: { stats: Stat[] }) {
+export default function Stats({ stats, subtle = true }: { stats: Stat[]; subtle?: boolean }) {
   if (stats.length === 0) return null;
 
   return (
-    <section className="section section--subtle">
+    <section className={"section" + (subtle ? " section--subtle" : "")}>
       <div className="container">
         <Reveal className="section-header">
           <p className="eyebrow">En chiffres</p>

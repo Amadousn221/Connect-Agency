@@ -4,7 +4,7 @@ import Reveal from "@/components/motion/Reveal";
 
 export default function ConversationCta() {
   return (
-    <section className="py-[clamp(44px,6vw,80px)]">
+    <section className="section section--subtle">
       <div className="container">
         <Reveal className="card relative grid justify-items-center gap-[0.9rem] p-[clamp(2rem,4.5vw,3.5rem)] text-center">
           <div

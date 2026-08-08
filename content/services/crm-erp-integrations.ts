@@ -7,7 +7,28 @@ const content: ServiceContent = {
   h1: "Vos outils, enfin **connectés** en un seul système de vente.",
   chapo:
     "Odoo, HubSpot, Mailchimp, Klaviyo — on relie votre site, votre boutique, votre CRM et votre gestion pour que l'information circule et que rien ne se perde.",
-  trustLine: "Vos outils de vente, enfin connectés entre eux.",
+  reassurance: [
+    {
+      titre: "Intégrations en 4–8 semaines",
+      description: "Cadrage, migration, formation. Un plan clair, pas d'effet tunnel.",
+      icon: "CalendarClock",
+    },
+    {
+      titre: "Zéro perte de données",
+      description: "Migration testée en environnement de recette avant le jour J.",
+      icon: "DatabaseZap",
+    },
+    {
+      titre: "Vos équipes formées",
+      description: "Sessions live, documentation en français, support pendant la prise en main.",
+      icon: "GraduationCap",
+    },
+    {
+      titre: "Partenaires certifiés",
+      description: "HubSpot, Odoo, Mailchimp, Klaviyo : on connaît les outils qu'on installe.",
+      icon: "BadgeCheck",
+    },
+  ],
   star: true,
   probleme: {
     titre: "Un lead ici, un devis là, un client ailleurs — et des ventes qui filent.",
