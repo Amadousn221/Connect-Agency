@@ -7,7 +7,28 @@ const content: ServiceContent = {
   h1: "**Intelligence artificielle** et automatisation.",
   chapo:
     "Automatisez les tâches qui ralentissent votre équipe : réceptionniste IA, bots d'assistance et flux de travail automatisés. L'IA au service de résultats concrets.",
-  trustLine: "L'automatisation au service de vraies heures gagnées.",
+  reassurance: [
+    {
+      titre: "Déploiement en 2–4 semaines",
+      description: "Cadrage du besoin, prototype validé, mise en production.",
+      icon: "Rocket",
+    },
+    {
+      titre: "Vos données restent chez vous",
+      description: "Hébergement Sénégal ou UE au choix, aucun partage sans accord écrit.",
+      icon: "Lock",
+    },
+    {
+      titre: "Retour sur investissement mesuré",
+      description: "On chiffre le temps gagné avant, pendant et après.",
+      icon: "TrendingUp",
+    },
+    {
+      titre: "Un humain reste dans la boucle",
+      description: "L'IA propose ou traite, vous validez ce qui compte.",
+      icon: "UserCheck",
+    },
+  ],
   probleme: {
     titre: "Votre équipe fait à la main ce qu'une machine ferait en une seconde.",
     corps:

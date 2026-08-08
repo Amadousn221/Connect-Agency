@@ -3,7 +3,7 @@ import Reveal from "@/components/motion/Reveal";
 
 export default function Manifesto() {
   return (
-    <section className="section section--subtle">
+    <section className="section">
       <div className="container grid gap-8 min-[900px]:grid-cols-[0.85fr_1.15fr] min-[900px]:gap-14">
         <Reveal>
           <p className="eyebrow">{MANIFESTE.eyebrow}</p>

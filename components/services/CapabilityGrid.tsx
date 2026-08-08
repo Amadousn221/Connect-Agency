@@ -9,11 +9,12 @@ interface CapabilityGridProps {
   capacites: CapaciteItem[];
   pilier: string;
   star?: boolean;
+  subtle?: boolean;
 }
 
-export default function CapabilityGrid({ capacites, pilier, star = false }: CapabilityGridProps) {
+export default function CapabilityGrid({ capacites, pilier, star = false, subtle = false }: CapabilityGridProps) {
   return (
-    <section className="section pt-0">
+    <section className={"section pt-0" + (subtle ? " section--subtle" : "")}>
       <div className="container">
         <Reveal className="section-header">
           <p className="eyebrow">Nos services</p>

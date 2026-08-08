@@ -2,9 +2,9 @@ import Link from "next/link";
 import { SECTEURS_TRANSVERSAUX } from "@/content/services/_shared";
 import Reveal from "@/components/motion/Reveal";
 
-export default function SectorGrid() {
+export default function SectorGrid({ subtle = false }: { subtle?: boolean }) {
   return (
-    <section className="section">
+    <section className={"section" + (subtle ? " section--subtle" : "")}>
       <div className="container">
         <Reveal className="section-header">
           <p className="eyebrow">Secteurs</p>

@@ -17,7 +17,7 @@ const CONTACT_LINES = [
 
 export default function CtaBand() {
   return (
-    <section id="contact" className="section section--subtle relative overflow-hidden">
+    <section id="contact" className="section relative overflow-hidden">
       <div className="glow pointer-events-none absolute -top-[210px] -right-[120px] h-[400px] w-[560px] bg-[var(--glow-1)]" aria-hidden="true" />
       <Reveal className="container relative grid gap-12 lg:grid-cols-[1fr_1.05fr] lg:items-center lg:gap-16">
         <div>

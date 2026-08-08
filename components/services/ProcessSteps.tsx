@@ -9,11 +9,11 @@ import Reveal, { staggerContainer, staggerItem } from "@/components/motion/Revea
  * 3 étapes numérotées, cartouche à icône. Une ligne de progression se dessine
  * entre elles au scroll (`pathLength` animé) — statique en reduced-motion.
  */
-export default function ProcessSteps({ steps }: { steps: ProcessItem[] }) {
+export default function ProcessSteps({ steps, subtle = false }: { steps: ProcessItem[]; subtle?: boolean }) {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="section">
+    <section className={"section" + (subtle ? " section--subtle" : "")}>
       <div className="container">
         <Reveal className="section-header">
           <p className="eyebrow">Le processus</p>

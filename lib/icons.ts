@@ -38,6 +38,17 @@ import {
   Cpu,
   Code2,
   Rocket,
+  CalendarClock,
+  KeyRound,
+  GitBranch,
+  ShieldCheck,
+  Lock,
+  TrendingUp,
+  UserCheck,
+  DatabaseZap,
+  BadgeCheck,
+  Handshake,
+  BookOpenCheck,
   type LucideIcon,
 } from "lucide-react";
 
@@ -86,6 +97,17 @@ export const ICONS = {
   Cpu,
   Code2,
   Rocket,
+  CalendarClock,
+  KeyRound,
+  GitBranch,
+  ShieldCheck,
+  Lock,
+  TrendingUp,
+  UserCheck,
+  DatabaseZap,
+  BadgeCheck,
+  Handshake,
+  BookOpenCheck,
 } satisfies Record<string, LucideIcon>;
 
 export type IconKey = keyof typeof ICONS;

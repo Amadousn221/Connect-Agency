@@ -7,7 +7,28 @@ const content: ServiceContent = {
   h1: "**Conseil** & stratégie.",
   chapo:
     "Vous ne savez pas par où commencer ? Nous analysons votre entreprise et vous proposons un plan d'action, classé par priorité selon les actions à plus fort impact.",
-  trustLine: "Une feuille de route claire, pas un rapport de plus.",
+  reassurance: [
+    {
+      titre: "Livrable en 2–4 semaines",
+      description: "Audit, priorisation, feuille de route. Rendu court, actionnable.",
+      icon: "ClipboardCheck",
+    },
+    {
+      titre: "Recommandations indépendantes",
+      description: "On vous dit ce qui marche, même si c'est ne rien faire avec nous.",
+      icon: "Compass",
+    },
+    {
+      titre: "Basé sur vos chiffres",
+      description: "Analytics, ventes, conversions. Pas d'avis en l'air.",
+      icon: "LineChart",
+    },
+    {
+      titre: "Utilisable seul",
+      description: "Si vous voulez exécuter en interne, la feuille de route est complète et suffisante.",
+      icon: "BookOpenCheck",
+    },
+  ],
   probleme: {
     titre: "Beaucoup de possibilités, peu de clarté.",
     corps:

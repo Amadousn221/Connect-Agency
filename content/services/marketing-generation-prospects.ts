@@ -7,7 +7,28 @@ const content: ServiceContent = {
   h1: "**Marketing** et génération de prospects.",
   chapo:
     "SEO, campagnes Google Ads, réseaux sociaux et emailing de masse qui génèrent de vrais prospects et de vraies conversions. Chaque franc compte.",
-  trustLine: "Une visibilité qui se traduit en prospects mesurables.",
+  reassurance: [
+    {
+      titre: "Chaque franc suivi",
+      description: "Tableau de bord partagé, coût par prospect visible en continu.",
+      icon: "BarChart3",
+    },
+    {
+      titre: "Un contrat clair, résiliable",
+      description: "Engagement de 3 mois maximum, ensuite au mois. Pas de piège.",
+      icon: "FileSignature",
+    },
+    {
+      titre: "Zéro promesse creuse",
+      description: "On refuse un mandat si le budget n'a aucune chance de générer du résultat.",
+      icon: "Handshake",
+    },
+    {
+      titre: "Prospects qualifiés, pas des clics",
+      description: "On optimise sur les demandes reçues, pas sur les impressions.",
+      icon: "Target",
+    },
+  ],
   probleme: {
     titre: "Un beau site que personne ne trouve, ça ne sert à rien.",
     corps:

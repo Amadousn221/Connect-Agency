@@ -8,7 +8,6 @@ const content: ServiceContent = {
   chapo:
     "Shopify, WooCommerce ou sur mesure — on connecte paiement, livraison, stock et CRM pour que la vente tourne toute seule.",
   parent: { label: "Sites web & e-commerce", href: "/services/sites-web-ecommerce" },
-  trustLine: "Une boutique où paiement, stock et livraison travaillent ensemble.",
   probleme: {
     titre: "Une boutique qui existe, mais qui ne vend pas toute seule.",
     corps:
