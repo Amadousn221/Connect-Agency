@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { SERVICES } from "@/content/services";
+import { PILIERS, SOUS_SERVICES } from "@/content/services";
 import { SITE_URL } from "@/lib/site-url";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -12,12 +12,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/mentions-legales",
   ];
 
-  const serviceRoutes = SERVICES.flatMap((service) => [
-    `/services/${service.slug}`,
-    ...(service.sousServices?.map((sub) => `/services/${service.slug}/${sub.slug}`) ?? []),
-  ]);
+  const serviceRoutes = PILIERS.map((s) => `/services/${s.slug}`);
+  const subServiceRoutes = SOUS_SERVICES.map((s) => `${s.parent!.href}/${s.slug}`);
 
-  return [...staticRoutes, ...serviceRoutes].map((path) => ({
+  return [...staticRoutes, ...serviceRoutes, ...subServiceRoutes].map((path) => ({
     url: `${SITE_URL}${path}`,
     lastModified: new Date(),
   }));
