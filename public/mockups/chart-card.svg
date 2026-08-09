@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="500" viewBox="0 0 600 500" fill="none">
+  <defs>
+    <linearGradient id="bar1" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#4ADE9E" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#4ADE9E"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="500" rx="22" fill="#101218"/>
+  <rect x="0.5" y="0.5" width="599" height="499" rx="21.5" stroke="#FFFFFF" stroke-opacity="0.08"/>
+
+  <rect x="48" y="48" width="180" height="18" rx="6" fill="#F4F5F7" fill-opacity="0.85"/>
+  <rect x="48" y="76" width="120" height="12" rx="6" fill="#A6ABB6" fill-opacity="0.5"/>
+
+  <circle cx="440" cy="56" r="5" fill="#4ADE9E"/>
+  <rect x="452" y="51" width="60" height="10" rx="5" fill="#A6ABB6" fill-opacity="0.6"/>
+  <circle cx="440" cy="80" r="5" fill="#22D3EE"/>
+  <rect x="452" y="75" width="70" height="10" rx="5" fill="#A6ABB6" fill-opacity="0.6"/>
+
+  <!-- bars -->
+  <rect x="64" y="290" width="48" height="140" rx="10" fill="url(#bar1)"/>
+  <rect x="140" y="230" width="48" height="200" rx="10" fill="url(#bar1)" opacity="0.85"/>
+  <rect x="216" y="340" width="48" height="90" rx="10" fill="url(#bar1)" opacity="0.6"/>
+  <rect x="292" y="180" width="48" height="250" rx="10" fill="url(#bar1)"/>
+  <rect x="368" y="260" width="48" height="170" rx="10" fill="url(#bar1)" opacity="0.75"/>
+  <rect x="444" y="210" width="48" height="220" rx="10" fill="url(#bar1)" opacity="0.9"/>
+
+  <rect x="48" y="452" width="504" height="1" fill="#FFFFFF" fill-opacity="0.1"/>
+</svg>

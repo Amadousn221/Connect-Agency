@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="820" viewBox="0 0 400 820" fill="none">
+  <defs>
+    <radialGradient id="mg1" cx="30%" cy="0%" r="55%">
+      <stop offset="0%" stop-color="#7C5CFF" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#7C5CFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="820" rx="32" fill="#101218"/>
+  <rect width="400" height="820" rx="32" fill="url(#mg1)"/>
+  <rect x="0.5" y="0.5" width="399" height="819" rx="31.5" stroke="#FFFFFF" stroke-opacity="0.08"/>
+
+  <rect x="150" y="24" width="100" height="8" rx="4" fill="#FFFFFF" fill-opacity="0.14"/>
+
+  <rect x="32" y="72" width="140" height="20" rx="6" fill="#F4F5F7" fill-opacity="0.9"/>
+  <rect x="32" y="104" width="220" height="12" rx="6" fill="#A6ABB6" fill-opacity="0.5"/>
+
+  <!-- list rows -->
+  <g>
+    <rect x="32" y="152" width="336" height="88" rx="16" fill="#14161D" stroke="#FFFFFF" stroke-opacity="0.08"/>
+    <circle cx="70" cy="196" r="20" fill="#4ADE9E" fill-opacity="0.8"/>
+    <rect x="106" y="184" width="140" height="12" rx="6" fill="#F4F5F7" fill-opacity="0.85"/>
+    <rect x="106" y="204" width="90" height="10" rx="5" fill="#A6ABB6" fill-opacity="0.5"/>
+  </g>
+  <g>
+    <rect x="32" y="256" width="336" height="88" rx="16" fill="#14161D" stroke="#FFFFFF" stroke-opacity="0.08"/>
+    <circle cx="70" cy="300" r="20" fill="#22D3EE" fill-opacity="0.7"/>
+    <rect x="106" y="288" width="160" height="12" rx="6" fill="#F4F5F7" fill-opacity="0.85"/>
+    <rect x="106" y="308" width="100" height="10" rx="5" fill="#A6ABB6" fill-opacity="0.5"/>
+  </g>
+  <g>
+    <rect x="32" y="360" width="336" height="88" rx="16" fill="#14161D" stroke="#FFFFFF" stroke-opacity="0.08"/>
+    <circle cx="70" cy="404" r="20" fill="#7C5CFF" fill-opacity="0.7"/>
+    <rect x="106" y="392" width="120" height="12" rx="6" fill="#F4F5F7" fill-opacity="0.85"/>
+    <rect x="106" y="412" width="80" height="10" rx="5" fill="#A6ABB6" fill-opacity="0.5"/>
+  </g>
+  <g>
+    <rect x="32" y="464" width="336" height="88" rx="16" fill="#14161D" stroke="#FFFFFF" stroke-opacity="0.08"/>
+    <circle cx="70" cy="508" r="20" fill="#4ADE9E" fill-opacity="0.5"/>
+    <rect x="106" y="496" width="150" height="12" rx="6" fill="#F4F5F7" fill-opacity="0.85"/>
+    <rect x="106" y="516" width="70" height="10" rx="5" fill="#A6ABB6" fill-opacity="0.5"/>
+  </g>
+
+  <!-- floating action button -->
+  <circle cx="336" cy="620" r="32" fill="#4ADE9E"/>
+  <rect x="326" y="618" width="20" height="4" rx="2" fill="#05130D"/>
+  <rect x="334" y="610" width="4" height="20" rx="2" fill="#05130D"/>
+</svg>

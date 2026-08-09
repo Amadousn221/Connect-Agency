@@ -1,0 +1,82 @@
+/* ==============================================
+   CONNECT WEB — Design System Tokens v2
+   Palette : émeraude électrique sur near-black,
+   halos violet/cyan. Remplace la v1 (rouge/orange).
+   ============================================== */
+
+:root {
+  /* Radius */
+  --cw-radius-sm: 8px;
+  --cw-radius-md: 14px;
+  --cw-radius-lg: 22px;
+  --cw-radius-xl: 32px;
+  --cw-radius-pill: 999px;
+
+  /* Fluid typography */
+  --cw-fs-display: clamp(2.75rem, 6vw, 5.5rem);
+  --cw-fs-h1: clamp(2.25rem, 4.5vw, 3.75rem);
+  --cw-fs-h2: clamp(1.75rem, 3vw, 2.5rem);
+  --cw-fs-h3: clamp(1.25rem, 2vw, 1.6rem);
+  --cw-fs-lead: clamp(1.05rem, 1.4vw, 1.3rem);
+  --cw-fs-body: 1rem;
+  --cw-fs-sm: 0.875rem;
+  --cw-fs-eyebrow: 0.78rem;
+
+  --cw-lh-tight: 1.05;
+  --cw-lh-snug: 1.2;
+  --cw-lh-body: 1.6;
+
+  --cw-tracking-tight: -0.02em;
+  --cw-tracking-eyebrow: 0.14em;
+
+  /* Spacing */
+  --cw-space-1: 4px;
+  --cw-space-2: 8px;
+  --cw-space-3: 12px;
+  --cw-space-4: 16px;
+  --cw-space-6: 24px;
+  --cw-space-8: 32px;
+  --cw-space-12: 48px;
+  --cw-space-16: 64px;
+  --cw-space-24: 96px;
+  --cw-space-32: 128px;
+
+  /* Glows — same hue in both themes, opacity controlled at usage site */
+  --cw-glow-1: #7c5cff;
+  --cw-glow-2: #22d3ee;
+}
+
+/* ===== Dark theme (default) ===== */
+:root,
+[data-theme="dark"] {
+  --cw-bg: #0a0b0f;
+  --cw-bg-elevated: #101218;
+  --cw-bg-subtle: #14161d;
+  --cw-bg-inset: #0d0e13;
+  --cw-border: rgba(255, 255, 255, 0.08);
+  --cw-border-strong: rgba(255, 255, 255, 0.14);
+  --cw-text: #f4f5f7;
+  --cw-text-muted: #a6abb6;
+  --cw-text-subtle: #6c7280;
+  --cw-accent: #4ade9e;
+  --cw-accent-hover: #38c98a;
+  --cw-accent-ink: #05130d;
+  --cw-danger: #f87171;
+}
+
+/* ===== Light theme (derived — accent darkened for AA contrast on white) ===== */
+[data-theme="light"] {
+  --cw-bg: #ffffff;
+  --cw-bg-elevated: #f7f8fa;
+  --cw-bg-subtle: #f2f3f5;
+  --cw-bg-inset: #fafafb;
+  --cw-border: rgba(10, 11, 15, 0.08);
+  --cw-border-strong: rgba(10, 11, 15, 0.14);
+  --cw-text: #0b0c0f;
+  --cw-text-muted: #565b66;
+  --cw-text-subtle: #8a8f99;
+  --cw-accent: #0e9f6e;
+  --cw-accent-hover: #0b815a;
+  --cw-accent-ink: #ffffff;
+  --cw-danger: #dc2626;
+}

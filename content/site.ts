@@ -65,7 +65,7 @@ export const PROCESSUS_STANDARD = [
   },
   {
     etape: "Étape 3",
-    titre: "Lancement & soutien",
+    titre: "Lancement & suivi",
     description:
       "Nous mettons en ligne, formons votre équipe et restons disponibles pour la suite.",
   },

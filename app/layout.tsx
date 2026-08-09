@@ -1,11 +1,16 @@
 import type { ReactNode } from "react";
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Inter, Sora } from "next/font/google";
 import "@/styles/globals.css";
 
-const geist = Geist({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-geist",
+  variable: "--font-inter",
+});
+
+const sora = Sora({
+  subsets: ["latin"],
+  variable: "--font-sora",
 });
 
 export const metadata: Metadata = {
@@ -23,7 +28,7 @@ const ANTI_FOUC = `(function(){try{var t=localStorage.getItem('cw-theme');if(t==
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="fr" data-theme="dark" className={geist.variable}>
+    <html lang="fr" data-theme="dark" className={`${inter.variable} ${sora.variable}`}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: ANTI_FOUC }} />
       </head>

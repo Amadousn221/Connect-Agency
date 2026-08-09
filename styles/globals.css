@@ -1,17 +1,20 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+@import "./tokens.css";
 
 /* Dark mode driven by data-theme attribute — matches ThemeToggle + anti-FOUC script */
 @custom-variant dark (&:is([data-theme="dark"] *));
 
 /* ==============================================
-   CONNECT WEB — Design System Tokens
-   Palette : rouge/orange sur fond navy sombre
+   CONNECT WEB — shadcn semantic layer
+   Points at the --cw-* tokens defined in tokens.css,
+   so light/dark switching happens in one place.
    ============================================== */
 
 :root {
-  --font-sans: 'Geist', system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-sora), var(--font-sans);
 
   --header-height: 76px;
   --container-max: 1280px;
@@ -22,79 +25,31 @@
   --transition-slow:   400ms ease;
   --transition-spring: 350ms cubic-bezier(0.34, 1.56, 0.64, 1);
 
-  /* ── shadcn/ui tokens — LIGHT MODE ── */
-  --background:                  #FFFFFF;
-  --foreground:                  #0F172A;
-  --card:                        #FFFFFF;
-  --card-foreground:             #0F172A;
-  --popover:                     #FFFFFF;
-  --popover-foreground:          #0F172A;
-  --primary:                     #FA0E1F;
-  --primary-foreground:          #FFFFFF;
-  --secondary:                   #F5F5F5;
-  --secondary-foreground:        #0F172A;
-  --muted:                       #F5F5F5;
-  --muted-foreground:            #475569;
-  --accent:                      #FF4002;
-  --accent-foreground:           #FFFFFF;
-  --destructive:                 #DC2626;
-  --border:                      #E2E8F0;
-  --input:                       #E2E8F0;
-  --ring:                        #FA0E1F;
-  --radius:                      0.625rem;
-}
+  /* ── shadcn/ui tokens — mapped to --cw-* (theme-reactive) ── */
+  --background:                  var(--cw-bg);
+  --foreground:                  var(--cw-text);
+  --card:                        var(--cw-bg-elevated);
+  --card-foreground:             var(--cw-text);
+  --popover:                     var(--cw-bg-elevated);
+  --popover-foreground:          var(--cw-text);
+  --primary:                     var(--cw-accent);
+  --primary-foreground:          var(--cw-accent-ink);
+  --secondary:                   var(--cw-bg-subtle);
+  --secondary-foreground:        var(--cw-text);
+  --muted:                       var(--cw-bg-subtle);
+  --muted-foreground:            var(--cw-text-muted);
+  --accent:                      var(--cw-accent);
+  --accent-foreground:           var(--cw-accent-ink);
+  --destructive:                 var(--cw-danger);
+  --border:                      var(--cw-border);
+  --input:                       var(--cw-border);
+  --ring:                        var(--cw-accent);
 
-/* ===== Light theme (default) ===== */
-:root,
-[data-theme="light"] {
-  --color-bg-subtle:       #F8FAFC;
-  --color-accent-subtle:   #FDEAEA;
-  --color-border-strong:   #CBD5E1;
-  --navbar-bg:             rgba(255, 255, 255, 0.85);
-  --navbar-border:         #E2E8F0;
-}
-
-/* ===== Dark theme ===== */
-[data-theme="dark"] {
-  --background:            #0A0F1E;
-  --foreground:             #F1F5F9;
-  --card:                   #111827;
-  --card-foreground:        #F1F5F9;
-  --popover:                #111827;
-  --popover-foreground:     #F1F5F9;
-  --primary:                #FA0E1F;
-  --primary-foreground:     #FFFFFF;
-  --secondary:              #111827;
-  --secondary-foreground:   #F1F5F9;
-  --muted:                  #0D1117;
-  --muted-foreground:       #94A3B8;
-  --accent:                 #FF4002;
-  --accent-foreground:      #FFFFFF;
-  --destructive:             #EF4444;
-  --border:                  #1E293B;
-  --input:                   #1E293B;
-  --ring:                    #FA0E1F;
-
-  --color-bg-subtle:        #0D1117;
-  --color-accent-subtle:    rgba(250, 14, 31, 0.15);
-  --color-border-strong:    #334155;
-  --navbar-bg:              rgba(10, 15, 30, 0.85);
-  --navbar-border:          #1E293B;
-}
-
-/* ===== Reset & base ===== */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  font-size: 16px;
-  -webkit-text-size-adjust: 100%;
-  scroll-behavior: smooth;
+  --color-bg-subtle:      var(--cw-bg-subtle);
+  --color-accent-subtle:  color-mix(in oklch, var(--cw-accent), transparent 85%);
+  --color-border-strong:  var(--cw-border-strong);
+  --navbar-bg:            color-mix(in oklch, var(--cw-bg), transparent 12%);
+  --navbar-border:        var(--cw-border);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -106,95 +61,118 @@ html {
   }
 }
 
-body {
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  min-height: 100dvh;
-}
-
-img, video { max-width: 100%; height: auto; display: block; }
-a { color: inherit; text-decoration: none; }
-button { cursor: pointer; border: none; background: none; font-family: inherit; font-size: inherit; }
-ul, ol { list-style: none; }
-
-.container {
+/* Custom utility-style classes, authored with @utility so Tailwind compiles
+   them into its own utilities layer — this is what actually gives classes
+   like `hidden`/`sm:inline-flex`/`w-full` applied alongside them in JSX
+   priority to override, which a plain hand-written CSS rule (even inside a
+   manually-written @layer block) could not reliably do in this build. */
+@utility container {
   width: 100%;
   max-width: var(--container-max);
   margin-inline: auto;
   padding-inline: var(--container-pad);
 }
 
-.btn-primary {
+@utility btn-primary {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
+  min-height: 44px;
   padding: 0.6875rem 1.5rem;
   background-color: var(--primary);
-  color: #FFFFFF;
-  border-radius: var(--radius-full);
+  color: var(--cw-accent-ink);
+  border-radius: var(--cw-radius-pill);
   font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.01em;
   line-height: 1;
   transition: background-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
   white-space: nowrap;
+
+  &:hover {
+    box-shadow: 0 0 0 3px var(--color-accent-subtle);
+    transform: translateY(-1px);
+  }
+
+  [data-theme="dark"] &:hover {
+    background: linear-gradient(135deg, #6eefc0, #34d399);
+    box-shadow: 0 0 24px rgba(74, 222, 158, 0.35);
+  }
 }
 
-.btn-primary:hover {
-  box-shadow: 0 0 0 3px var(--color-accent-subtle);
-  transform: translateY(-1px);
-}
-
-[data-theme="dark"] .btn-primary:hover {
-  background: linear-gradient(135deg, #FF5D6E, #FC5656);
-  box-shadow: 0 0 24px rgba(250, 14, 31, 0.35);
-}
-
-.btn-outline {
+@utility btn-outline {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
+  min-height: 44px;
   padding: 0.625rem 1.375rem;
   background-color: transparent;
   color: var(--foreground);
   border: 1px solid var(--color-border-strong);
-  border-radius: var(--radius-full);
+  border-radius: var(--cw-radius-pill);
   font-size: 0.875rem;
   font-weight: 500;
   transition: border-color var(--transition-fast), color var(--transition-fast);
   white-space: nowrap;
+
+  &:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
 }
 
-.btn-outline:hover {
-  border-color: var(--primary);
-  color: var(--primary);
-}
-
-.eyebrow {
+@utility eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.75rem;
+  font-size: var(--cw-fs-eyebrow);
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: var(--cw-tracking-eyebrow);
   text-transform: uppercase;
   color: var(--primary);
+
+  &::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--primary);
+    flex-shrink: 0;
+  }
 }
 
-.eyebrow::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--primary);
-  flex-shrink: 0;
+/* Subtle film-grain overlay — used behind the hero */
+@utility cw-grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* ===== shadcn @theme inline — Tailwind v4 color mappings ===== */
+@keyframes cw-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes cw-accordion-down {
+  from { height: 0; }
+  to   { height: var(--radix-accordion-content-height); }
+}
+
+@keyframes cw-accordion-up {
+  from { height: var(--radix-accordion-content-height); }
+  to   { height: 0; }
+}
+
+/* ===== shadcn @theme inline — Tailwind v4 token mappings ===== */
 @theme inline {
-  --font-heading: var(--font-sans);
   --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
+  --font-heading: var(--font-display);
+
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -214,23 +192,83 @@ ul, ol { list-style: none; }
   --color-foreground: var(--foreground);
   --color-background: var(--background);
   --color-bg-subtle: var(--color-bg-subtle);
-  --radius-sm:  calc(var(--radius) * 0.5);
-  --radius-md:  calc(var(--radius) * 0.8);
-  --radius-lg:  var(--radius);
-  --radius-xl:  calc(var(--radius) * 1.5);
-  --radius-2xl: calc(var(--radius) * 2.0);
-  --radius-full: 9999px;
+
+  /* Direct --cw-* exposure as Tailwind utilities (bg-cw-elevated, text-cw-muted…) */
+  --color-cw-bg: var(--cw-bg);
+  --color-cw-elevated: var(--cw-bg-elevated);
+  --color-cw-subtle: var(--cw-bg-subtle);
+  --color-cw-inset: var(--cw-bg-inset);
+  --color-cw-border: var(--cw-border);
+  --color-cw-border-strong: var(--cw-border-strong);
+  --color-cw-text: var(--cw-text);
+  --color-cw-muted: var(--cw-text-muted);
+  --color-cw-subtletext: var(--cw-text-subtle);
+  --color-cw-accent: var(--cw-accent);
+  --color-cw-accent-hover: var(--cw-accent-hover);
+  --color-cw-accent-ink: var(--cw-accent-ink);
+  --color-cw-glow-1: var(--cw-glow-1);
+  --color-cw-glow-2: var(--cw-glow-2);
+  --color-cw-danger: var(--cw-danger);
+
+  --text-cw-display: var(--cw-fs-display);
+  --text-cw-h1: var(--cw-fs-h1);
+  --text-cw-h2: var(--cw-fs-h2);
+  --text-cw-h3: var(--cw-fs-h3);
+  --text-cw-lead: var(--cw-fs-lead);
+  --text-cw-eyebrow: var(--cw-fs-eyebrow);
+
+  --radius-sm:  var(--cw-radius-sm);
+  --radius-md:  var(--cw-radius-md);
+  --radius-lg:  var(--cw-radius-lg);
+  --radius-xl:  var(--cw-radius-xl);
+  --radius-2xl: calc(var(--cw-radius-xl) + 8px);
+  --radius-full: var(--cw-radius-pill);
 }
 
-/* ===== shadcn @layer base — border + font defaults ===== */
+/* ===== Base resets =====
+   Everything lives in this single @layer base block (proven to survive the
+   build because it contains @apply — plain hand-written @layer blocks with
+   no Tailwind directive inside were found to be silently flattened back to
+   unlayered CSS, which then incorrectly beat @utility-based component
+   classes for shared properties like margin/padding/color). */
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border outline-ring/50 m-0 p-0 box-border;
   }
-  body {
-    @apply bg-background text-foreground;
-  }
+
   html {
     @apply font-sans;
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100dvh;
+    overflow-x: hidden;
+  }
+
+  img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button {
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  ul, ol {
+    list-style: none;
   }
 }

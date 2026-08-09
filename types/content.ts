@@ -65,6 +65,8 @@ export interface Projet {
   resume: string;
   resultats: string[];
   services: string[];
+  image?: string;
+  logo?: string;
   lien?: string;
   publie: boolean;
 }

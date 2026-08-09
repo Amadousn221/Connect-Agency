@@ -52,17 +52,17 @@ export const MANIFESTE = {
   ],
   tags: [
     "Sites web",
-    "Développement",
+    "E-commerce",
     "Automatisation",
     "Intelligence artificielle",
     "CRM & ERP",
-    "Acquisition de clients",
+    "Acquisition",
   ],
 };
 
 export const CONVERSATION = {
   titre: "Chaque projet commence par une conversation.",
   corps:
-    "Réservez un échange avec notre équipe. Nous ferons le point sur votre situation et vous aiderons à clarifier la prochaine étape.",
+    "Réservons un appel de découverte. On fait le point sur votre situation et on clarifie la prochaine étape — sans engagement.",
   cta: { label: "Nous joindre", href: "/nous-joindre" },
 };
