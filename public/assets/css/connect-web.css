@@ -1,0 +1,82 @@
+/* Connect Web — surcharges du thème Tekni. Chargé en dernier dans src/app/layout.tsx. */
+
+/* Lien d'évitement (docs/07 §1) */
+.cw-skip-link {
+	position: absolute;
+	left: 16px;
+	top: -100px;
+	z-index: 100000;
+	padding: 12px 20px;
+	background: var(--white);
+	color: var(--dark);
+	font-weight: 600;
+	border-radius: 4px;
+	box-shadow: var(--box-shadow-regular);
+}
+
+.cw-skip-link:focus {
+	top: 16px;
+}
+
+/* Nom de marque en texte, en attendant le logo */
+.cw-wordmark {
+	display: inline-block;
+	font-family: var(--font-heading);
+	font-size: 26px;
+	font-weight: 700;
+	line-height: 1;
+	letter-spacing: -0.5px;
+	color: var(--dark);
+	white-space: nowrap;
+}
+
+nav.navbar.validnavs.dark.no-background .navbar-header .cw-wordmark {
+	color: var(--white);
+}
+
+nav.navbar.validnavs .navbar-brand.cw-wordmark {
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+/* Focus visible au clavier sur les éléments de navigation */
+nav.navbar.validnavs a:focus-visible,
+nav.navbar.validnavs button:focus-visible,
+.cw-skip-link:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 3px;
+}
+
+/* Page courante */
+nav.navbar.validnavs ul.nav li a.cw-active {
+	color: var(--color-primary);
+}
+
+/* CTA du panneau mobile */
+.cw-mobile-cta {
+	margin-top: 30px;
+}
+
+.cw-mobile-cta .btn {
+	width: 100%;
+	text-align: center;
+}
+
+/* Panneau mobile fermé : hors de l'ordre de tabulation (il est déjà hors écran visuellement) */
+@media (max-width: 991px) {
+	nav.navbar.validnavs .navbar-collapse.collapse-mobile:not(.show) {
+		visibility: hidden;
+	}
+}
+
+/* Réduction des animations (docs/11 §5) */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}

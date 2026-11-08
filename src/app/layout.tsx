@@ -15,13 +15,19 @@ import '@/assets/css/helper.css';
 import '@/assets/css/unit-test.css';
 import '@/assets/css/validnavs.css';
 import '@/assets/css/style.css'
+import '@/assets/css/connect-web.css'
 
 import type { Metadata } from "next";
 import Dependency from '@/components/utilities/Dependency';
 import ScrollUpBtn from '@/components/utilities/ScrollUpBtn';
 
 export const metadata: Metadata = {
-  title: "Tekni - IT Solutions & Services Next.Js Template"
+  title: {
+    default: "Connect Web — Sites, e-commerce et outils de gestion",
+    template: "%s | Connect Web",
+  },
+  description:
+    "Sites internet, boutiques en ligne, applications de gestion, CRM/ERP, email marketing et installations réseau : Connect Web part de votre activité pour choisir les bons outils.",
 };
 
 export default function RootLayout({
@@ -30,8 +36,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-scroll-behavior="smooth">
+    <html lang="fr" data-scroll-behavior="smooth">
       <body>
+        <a className="cw-skip-link" href="#contenu">Aller au contenu</a>
         <Dependency />
         {children}
         <ScrollUpBtn />
