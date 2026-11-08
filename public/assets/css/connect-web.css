@@ -839,3 +839,163 @@ nav.navbar.validnavs .dropdown-menu li a {
 		padding: 28px 24px;
 	}
 }
+
+/* Section L'équipe de l'accueil (base TeamV1 / Team One) */
+.cw-team .cw-team-intro {
+	margin-top: 25px;
+	margin-bottom: 0;
+}
+
+.cw-team .cw-team-grid {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.cw-team .cw-team-avatar {
+	width: 100%;
+	aspect-ratio: 8 / 9;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(120deg, var(--dark) 0%, var(--dark-secondary) 45%, var(--color-primary) 100%);
+}
+
+.cw-team .cw-team-avatar span {
+	font-family: var(--font-heading);
+	font-size: 72px;
+	font-weight: 600;
+	letter-spacing: 2px;
+	color: rgba(255, 255, 255, 0.85);
+}
+
+.cw-team .team-style-one {
+	margin-bottom: 30px;
+}
+
+.cw-team .team-style-one .info span {
+	display: block;
+	margin-bottom: 4px;
+}
+
+.cw-team .cw-team-name {
+	font-size: 22px;
+	font-weight: 600;
+	margin: 0;
+}
+
+/* Section « Pourquoi Connect Web ? » (base WhyChooseV1) */
+.cw-why .cw-why-cover {
+	background: linear-gradient(135deg, var(--dark-secondary) 0%, var(--color-primary) 60%, #00a1ff 100%);
+}
+
+.cw-why .title {
+	color: var(--white);
+}
+
+.cw-why .list-item li h3 {
+	font-size: 22px;
+	font-weight: 600;
+	color: var(--white);
+	margin-bottom: 8px;
+}
+
+.cw-why .text-invisible {
+	white-space: nowrap;
+}
+
+.cw-why .text-invisible {
+	font-size: 6vw;
+}
+
+/* Section « Nos chiffres » (compteurs du template, cartes blanches) */
+.cw-stats {
+	--cw-accent-green: #1fa971;
+}
+
+.cw-stats .cw-stats-text {
+	max-width: 720px;
+	margin: 0 auto;
+}
+
+.cw-stats-grid {
+	list-style: none;
+	margin: 45px 0 0;
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 24px;
+}
+
+.cw-stats-grid[data-count="3"] {
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.cw-stat {
+	background: var(--white);
+	border: 1px solid #e3eaf7;
+	border-top: 3px solid var(--color-primary);
+	border-radius: 8px;
+	padding: 28px 20px;
+	text-align: center;
+	box-shadow: var(--box-shadow-regular);
+}
+
+.cw-stat-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 52px;
+	height: 52px;
+	border-radius: 50%;
+	background: var(--bg-gray);
+	color: var(--color-primary);
+	margin-bottom: 14px;
+}
+
+.cw-stat-value {
+	font-size: 56px;
+	font-weight: 600;
+	line-height: 1;
+	color: var(--color-primary);
+	font-variant-numeric: tabular-nums;
+}
+
+.cw-stat-suffix {
+	color: var(--cw-accent-green);
+	margin-left: 2px;
+}
+
+.cw-stat-label {
+	margin: 10px 0 0;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	font-size: 14px;
+	color: var(--color-heading);
+}
+
+@media (max-width: 991px) {
+	.cw-stats-grid,
+	.cw-stats-grid[data-count="3"] {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 575px) {
+	.cw-stats-grid {
+		gap: 14px;
+	}
+
+	.cw-stat {
+		padding: 22px 12px;
+	}
+
+	.cw-stat-value {
+		font-size: 40px;
+	}
+
+	.cw-stat-label {
+		font-size: 12px;
+	}
+}

@@ -3,9 +3,12 @@
 import HomeAgency from "@/components/about/HomeAgency";
 import HomeHero from "@/components/banner/HomeHero";
 import HomeMethod from "@/components/choose/HomeMethod";
+import HomeWhy from "@/components/choose/HomeWhy";
+import HomeStats from "@/components/fact/HomeStats";
 import HomeExpertises from "@/components/feature/HomeExpertises";
 import HomeRealisations from "@/components/project/HomeRealisations";
 import HomeServices from "@/components/services/HomeServices";
+import HomeTeam from "@/components/team/HomeTeam";
 import SiteLayout from "@/components/layouts/SiteLayout";
 
 export const metadata = {
@@ -19,8 +22,11 @@ export default function HomePage() {
             <HomeAgency />
             <HomeExpertises />
             <HomeServices />
+            <HomeWhy />
             <HomeMethod />
+            <HomeStats />
             <HomeRealisations />
+            <HomeTeam />
         </SiteLayout>
     );
 }

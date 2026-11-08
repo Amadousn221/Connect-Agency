@@ -1,3 +1,5 @@
+import { expertises } from "@/content/expertises";
+
 // Textes de l'accueil — source : docs/07 [07-ACC-*]. Ne pas réécrire sans le signaler.
 
 export const homeHero = {
@@ -130,4 +132,47 @@ export const homeMethod = {
     ],
     // Gabarit gris de la template (800×1038) en attendant un visuel Connect Web.
     image: { src: "/assets/img/illustration/10.png", alt: "", width: 800, height: 1038 },
+};
+
+// « Pourquoi Connect Web ? » — source : docs/03 §2 (proposition de valeur, bénéfices 1 à 4) ; docs/03 « Ce que
+// Connect Web ne dit pas » respecté : pas de 24/7, de délai, de chiffre ni de superlatif. Le titre et les formulations
+// sont originaux ; à valider par Amadou (docs/07 n'a pas encore de bloc dédié).
+export const homeWhy = {
+    title: "Pourquoi choisir Connect Web ?",
+    points: [
+        {
+            title: "Comprendre avant de construire",
+            text: "Chaque projet commence par l'étude de vos commandes, de vos clients et des tâches que vous répétez, avant de choisir un outil.",
+        },
+        {
+            title: "Des outils qui se parlent",
+            text: "Site, boutique, CRM, emailing et outils internes sont connectés plutôt qu'empilés, pour éviter les ressaisies.",
+        },
+        {
+            title: "Autonomie après la livraison",
+            text: "Formation, documentation et interfaces administrables : vous savez utiliser ce que vous recevez.",
+        },
+        {
+            title: "Un interlocuteur pour le digital et les locaux",
+            text: "Nous coordonnons le digital et les installations, réalisées seul ou avec des partenaires techniques.",
+        },
+    ],
+    // Mot décoratif en filigrane du modèle de la template (« Technology »).
+    watermark: "Connect Web",
+};
+
+// Section « Nos chiffres » — chiffres fournis par Amadou le 08/11/2026 (30+ projets, 18+ clients) : à justifier
+// dans docs/08 avant publication. L'expérience n'est pas confirmée : `value: null` masque l'indicateur.
+// Le nombre de pôles est calculé depuis expertises.ts pour rester cohérent avec « Nos expertises ».
+export const homeStats = {
+    eyebrow: "Nos chiffres",
+    title: "Des réalisations concrètes, une expertise au service de vos projets",
+    text: "Derrière chaque projet, il y a un besoin, un objectif et une solution adaptée. Découvrez quelques chiffres qui illustrent notre expérience et les collaborations que nous avons développées auprès des entreprises et organisations.",
+    items: [
+        { id: "projets", icon: "briefcase", value: 30 as number | null, suffix: "+", label: "Projets réalisés" },
+        { id: "clients", icon: "users", value: 18 as number | null, suffix: "+", label: "Clients accompagnés" },
+        { id: "poles", icon: "layers", value: expertises.length as number | null, suffix: "", label: "Pôles d'expertise" },
+        // À CONFIRMER : renseigner le nombre d'années (ex. 5) pour afficher « N+ années d'expérience ».
+        { id: "experience", icon: "calendar", value: null as number | null, suffix: "+", label: "Années d'expérience" },
+    ],
 };
