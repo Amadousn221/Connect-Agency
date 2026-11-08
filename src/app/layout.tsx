@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: "%s | Connect Web",
   },
   description:
-    "Sites internet, boutiques en ligne, applications de gestion, CRM/ERP, email marketing et installations réseau : Connect Web part de votre activité pour choisir les bons outils.",
+    "Sites internet, boutiques en ligne, applications de gestion, CRM/ERP, marketing digital et installations réseau : Connect Web part de votre activité pour choisir les bons outils.",
 };
 
 export default function RootLayout({

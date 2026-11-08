@@ -9,7 +9,7 @@ export interface NavLink {
 export const poles: NavLink[] = [
     { label: "Sites web & e-commerce", href: "/expertises/web-ecommerce" },
     { label: "Applications & gestion d'entreprise", href: "/expertises/applications-crm-erp" },
-    { label: "Email marketing & fidélisation", href: "/expertises/email-marketing" },
+    { label: "Marketing digital", href: "/expertises/marketing-digital" },
     { label: "Réseaux informatiques & câblage", href: "/expertises/reseaux-cablage" },
     { label: "Téléphonie VoIP & vidéosurveillance", href: "/expertises/telephonie-videosurveillance" },
 ];

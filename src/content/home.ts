@@ -66,11 +66,11 @@ export const homePoles = {
             icon: "fal fa-cogs",
         },
         {
-            title: "Email marketing & fidélisation",
-            need: "Garder le contact avec vos clients et les faire revenir.",
-            services: ["Campagnes", "Scénarios automatiques", "Segmentation et mesure"],
-            href: "/expertises/email-marketing",
-            icon: "fal fa-envelope-open-text",
+            title: "Marketing digital",
+            need: "Attirer, garder le contact avec vos clients et automatiser ce qui se répète.",
+            services: ["Email marketing", "Fidélisation", "Segmentation et mesure", "Automatisation Shopify, Klaviyo…"],
+            href: "/expertises/marketing-digital",
+            icon: "fal fa-bullhorn",
         },
         {
             title: "Réseaux informatiques & câblage",
@@ -117,9 +117,9 @@ export const homeSituations = {
         {
             title: "Fidéliser",
             problem: "Vos clients achètent une fois, puis vous n'avez plus de nouvelles.",
-            text: "Des emails utiles, envoyés au bon moment, entretiennent la relation sans y passer vos journées.",
-            pole: "Email marketing & fidélisation",
-            href: "/expertises/email-marketing",
+            text: "Des emails utiles, envoyés au bon moment et en partie automatisés, entretiennent la relation sans y passer vos journées.",
+            pole: "Marketing digital",
+            href: "/expertises/marketing-digital",
             icon: "fal fa-heart",
         },
         {
