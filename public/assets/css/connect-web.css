@@ -203,3 +203,74 @@ nav.navbar .attr-right .attr-nav li.button a {
 		margin-top: 50px;
 	}
 }
+
+/* Section « Pôles » de l'accueil (base ServiceV6) */
+.cw-poles .cw-poles-intro {
+	margin-top: 25px;
+	margin-bottom: 0;
+}
+
+.cw-poles .services-style-six-item .item {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.cw-poles .services-style-six-item {
+	display: flex;
+}
+
+.cw-poles .services-style-six-item > .item {
+	width: 100%;
+}
+
+.cw-poles .cw-pole-icon {
+	margin-bottom: 35px;
+}
+
+.cw-poles .cw-pole-icon i {
+	font-size: 56px;
+	line-height: 1;
+	color: var(--color-primary);
+	transition: color 0.35s ease-in-out;
+}
+
+.cw-poles .services-style-six-item.active .cw-pole-icon i {
+	color: var(--white);
+}
+
+.cw-poles .cw-pole-title {
+	font-size: 24px;
+	margin-bottom: 15px;
+	transition: color 0.35s ease-in-out;
+}
+
+.cw-poles .services-style-six-item.active .cw-pole-title {
+	color: var(--white);
+}
+
+.cw-poles .services-style-six-item .item ul {
+	margin-bottom: 30px;
+}
+
+.cw-poles .cw-pole-link {
+	margin-top: auto;
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	font-weight: 600;
+	color: var(--color-primary);
+}
+
+.cw-poles .cw-pole-link:focus-visible {
+	outline: 2px solid currentColor;
+	outline-offset: 4px;
+}
+
+.cw-poles .cw-pole-icon {
+	align-self: flex-start;
+}
+
+.cw-poles .site-heading .title br {
+	display: inline;
+}

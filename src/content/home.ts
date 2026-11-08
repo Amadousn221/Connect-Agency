@@ -42,3 +42,49 @@ export const homeAgency = {
     // Gabarit gris de la template (783×900) en attendant la photo d'Amadou (docs/06 §1 section 7).
     image: { src: "/assets/img/about/1.jpg", alt: "", width: 783, height: 900 },
 };
+
+export const homePoles = {
+    // En-tête réécrit le 08/11/2026 à la demande d'Amadou (structure surtitre / titre sur 2 lignes / une phrase),
+    // formulation originale — remplace l'en-tête initial de [07-ACC-3] ; docs/07 mis à jour.
+    eyebrow: "Nos expertises",
+    titleLines: ["Vos outils, en ligne", "et dans vos locaux."],
+    intro: "Cinq pôles qui se complètent : vendre en ligne, organiser vos opérations, fidéliser vos clients, connecter et équiper vos locaux. Commencez par celui qui répond à votre besoin du moment.",
+    linkLabel: "Voir le pôle",
+    cards: [
+        {
+            title: "Sites web & e-commerce",
+            need: "Être trouvé, inspirer confiance et vendre en ligne.",
+            services: ["Création et refonte de sites", "Boutiques en ligne", "Migration de plateforme"],
+            href: "/expertises/web-ecommerce",
+            icon: "fas fa-store",
+        },
+        {
+            title: "Applications & gestion d'entreprise",
+            need: "Organiser vos opérations sans tableurs éparpillés.",
+            services: ["Applications métier", "Applications web et PWA", "CRM, ERP et intégrations"],
+            href: "/expertises/applications-crm-erp",
+            icon: "fas fa-cogs",
+        },
+        {
+            title: "Email marketing & fidélisation",
+            need: "Garder le contact avec vos clients et les faire revenir.",
+            services: ["Campagnes", "Scénarios automatiques", "Segmentation et mesure"],
+            href: "/expertises/email-marketing",
+            icon: "fas fa-envelope-open-text",
+        },
+        {
+            title: "Réseaux informatiques & câblage",
+            need: "Une connexion fiable dans tous vos locaux.",
+            services: ["Câblage", "Wi-Fi", "Équipements réseau"],
+            href: "/expertises/reseaux-cablage",
+            icon: "fas fa-network-wired",
+        },
+        {
+            title: "Téléphonie VoIP & vidéosurveillance",
+            need: "Être joignable et garder un œil sur vos locaux.",
+            services: ["Standard téléphonique sur IP", "Caméras", "Accès à distance"],
+            href: "/expertises/telephonie-videosurveillance",
+            icon: "fas fa-video",
+        },
+    ],
+};
