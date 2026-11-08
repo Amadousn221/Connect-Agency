@@ -692,3 +692,32 @@ nav.navbar.validnavs .dropdown-menu li a {
 	outline: 2px solid currentColor;
 	outline-offset: 4px;
 }
+
+/* Nos services : bouton « Voir plus » et cartes masquées */
+.cw-services li[hidden] {
+	display: none !important;
+}
+
+.cw-services .cw-services-more {
+	display: flex;
+	justify-content: center;
+	padding-bottom: 20px;
+}
+
+.cw-services .cw-services-more .btn:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 3px;
+}
+
+.cw-services .cw-services-more .btn.btn-border-theme {
+	color: var(--color-primary);
+	background: var(--white);
+	text-transform: none !important;
+	padding: 14px 34px;
+}
+
+.cw-services .cw-services-more .btn.btn-border-theme:hover,
+.cw-services .cw-services-more .btn.btn-border-theme:focus-visible {
+	color: var(--white);
+	background: var(--color-primary);
+}

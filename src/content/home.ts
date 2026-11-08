@@ -90,23 +90,30 @@ export const homeServices = {
     title: "Ce que nous réalisons pour vous",
     intro: "Du site à la caméra : chaque service est détaillé sur la page de son pôle, avec ce que vous recevez, ce qui n'est pas inclus et la façon de démarrer.",
     linkLabel: "En savoir plus",
+    // Les services marqués featured s'affichent d'abord ; les autres apparaissent avec le bouton ci-dessous.
+    // Choix initial : sites, boutique, application sur mesure, CRM/ERP, email marketing (pages prioritaires de docs/05).
+    moreLabel: "Voir plus de services",
+    lessLabel: "Voir moins",
     cards: [
         {
             title: "Création et refonte de sites",
             text: "Un site clair, facile à mettre à jour, qui se trouve sur internet et vous apporte des contacts.",
             href: "/expertises/web-ecommerce#sites",
+            featured: true,
             icon: "fal fa-globe",
         },
         {
             title: "Boutique en ligne",
             text: "Catalogue, paiements, livraisons et commandes réunis au même endroit, avec migration depuis votre plateforme actuelle si besoin.",
             href: "/expertises/web-ecommerce#ecommerce",
+            featured: true,
             icon: "fal fa-shopping-cart",
         },
         {
             title: "Application métier sur mesure",
             text: "Un outil conçu pour votre façon de travailler : fini les ressaisies entre tableurs et messageries.",
             href: "/expertises/applications-crm-erp#applications-metier",
+            featured: true,
             icon: "fal fa-database",
         },
         {
@@ -119,12 +126,14 @@ export const homeServices = {
             title: "CRM, ERP et intégrations",
             text: "Clients, stock, ventes et facturation dans un logiciel adapté, relié à votre site ou à votre boutique.",
             href: "/expertises/applications-crm-erp#crm-erp",
+            featured: true,
             icon: "fal fa-users-cog",
         },
         {
             title: "Email marketing et fidélisation",
             text: "Campagnes et relances au bon moment, à partir d'une base de contacts propre et consentie.",
             href: "/expertises/marketing-digital#email-fidelisation",
+            featured: true,
             icon: "fal fa-envelope-open-text",
         },
         {
