@@ -3,7 +3,7 @@
 // Pas de lien vers une page d'article inexistante ; image absente = fond aux couleurs du thème.
 import Image from "next/image";
 import Link from "next/link";
-import { blogSection, posts, previewPosts } from "@/content/blog";
+import { blogSection, posts, previewPosts, SHOW_EXAMPLES_IN_PRODUCTION } from "@/content/blog";
 
 const formatDate = (iso: string) =>
     new Date(`${iso}T00:00:00`).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
@@ -11,8 +11,10 @@ const formatDate = (iso: string) =>
 const HomeBlog = () => {
     const { eyebrow, title, minPublished } = blogSection;
     const published = posts.filter((post) => post.published);
-    const isPreview = published.length < minPublished && process.env.NODE_ENV === "development";
-    const items = published.length >= minPublished ? published.slice(0, 3) : isPreview ? previewPosts : [];
+    const showExamples = published.length < minPublished && (process.env.NODE_ENV === "development" || SHOW_EXAMPLES_IN_PRODUCTION);
+    // Le bandeau explicatif n'existe qu'en développement local.
+    const isPreview = showExamples && process.env.NODE_ENV === "development";
+    const items = published.length >= minPublished ? published.slice(0, 3) : showExamples ? previewPosts : [];
     if (items.length === 0) return null;
 
     return (

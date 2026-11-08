@@ -7,13 +7,15 @@
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { A11y, Keyboard, Navigation, Pagination } from "swiper/modules";
-import { previewRealisations, realisations, realisationsSection } from "@/content/realisations";
+import { previewRealisations, realisations, realisationsSection, SHOW_EXAMPLES_IN_PRODUCTION } from "@/content/realisations";
 
 const HomeRealisations = () => {
     const { eyebrow, title, intro, linkLabel, minPublished } = realisationsSection;
     const published = realisations.filter((r) => r.published);
-    const isPreview = published.length < minPublished && process.env.NODE_ENV === "development";
-    const items = published.length >= minPublished ? published : isPreview ? previewRealisations : [];
+    const showExamples = published.length < minPublished && (process.env.NODE_ENV === "development" || SHOW_EXAMPLES_IN_PRODUCTION);
+    // Le bandeau explicatif n'existe qu'en développement local.
+    const isPreview = showExamples && process.env.NODE_ENV === "development";
+    const items = published.length >= minPublished ? published : showExamples ? previewRealisations : [];
 
     if (items.length === 0) return null;
 

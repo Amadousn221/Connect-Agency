@@ -33,3 +33,8 @@ export const previewPosts: BlogPost[] = [1, 2, 3].map((n) => ({
     published: false,
     pageReady: false,
 }));
+
+// Décision d'Amadou du 08/11/2026 (D44), malgré la recommandation contraire : tant qu'aucun article n'est publié, les
+// cartes d'exemple (titres « (exemple) », images génériques) sont aussi visibles en production. Mettre à false pour
+// masquer la section en production jusqu'à la publication d'un vrai article.
+export const SHOW_EXAMPLES_IN_PRODUCTION = true;

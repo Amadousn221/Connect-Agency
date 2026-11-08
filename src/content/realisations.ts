@@ -62,3 +62,8 @@ export const previewRealisations: Realisation[] = [
         pageReady: false,
     },
 ];
+
+// Décision d'Amadou du 08/11/2026 (D44), malgré la recommandation contraire : tant qu'aucun cas n'est autorisé, les
+// cartes d'exemple (titres « (exemple) », images génériques) sont aussi visibles en production. Mettre à false pour
+// masquer la section en production jusqu'à la publication d'un vrai cas (au moins `minPublished`).
+export const SHOW_EXAMPLES_IN_PRODUCTION = true;
