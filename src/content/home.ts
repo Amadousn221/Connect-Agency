@@ -8,6 +8,7 @@ export const homeHero = {
     slides: [
         {
             pole: "developpement-web",
+            image: "/assets/img/cw/hero-developpement-web.jpg",
             eyebrow: "Développement Web & E-commerce",
             title: "Des solutions web pensées pour développer votre activité",
             text: "Nous concevons des sites internet, des boutiques e-commerce et des applications web adaptés à vos objectifs. Des expériences digitales performantes et évolutives pour valoriser votre entreprise, attirer des clients et vendre en ligne.",
@@ -15,24 +16,27 @@ export const homeHero = {
         },
         {
             pole: "digitalisation",
+            image: "/assets/img/cw/hero-digitalisation.jpg",
             eyebrow: "Digitalisation & Solutions Métiers",
             title: "Simplifiez votre gestion avec des outils adaptés à votre métier",
             text: "CRM, ERP, applications métiers et automatisations : nous connectons vos outils et optimisons vos processus pour vous aider à mieux organiser votre activité, suivre vos opérations et gagner du temps au quotidien.",
             cta: "Découvrir nos solutions métiers",
         },
         {
-            pole: "marketing-digital",
-            eyebrow: "Marketing Digital & Automatisation",
-            title: "Développez votre visibilité et fidélisez vos clients",
-            text: "Du référencement naturel aux campagnes marketing, en passant par l'emailing et l'automatisation, nous mettons en place des actions adaptées à votre audience pour attirer, convertir et fidéliser vos clients.",
-            cta: "Découvrir nos solutions marketing",
-        },
-        {
             pole: "infrastructure-it",
+            image: "/assets/img/cw/hero-infrastructure-it.jpg",
             eyebrow: "Infrastructure & Solutions IT",
             title: "Des infrastructures fiables pour accompagner votre activité",
             text: "Réseaux informatiques, câblage, équipements IT, serveurs et solutions de sécurité : nous vous accompagnons dans la mise en place d'environnements professionnels connectés et adaptés à vos besoins techniques.",
             cta: "Découvrir nos solutions IT",
+        },
+        {
+            pole: "marketing-digital",
+            image: "/assets/img/cw/hero-marketing-digital.jpg",
+            eyebrow: "Marketing Digital & Automatisation",
+            title: "Développez votre visibilité et fidélisez vos clients",
+            text: "Du référencement naturel aux campagnes marketing, en passant par l'emailing et l'automatisation, nous mettons en place des actions adaptées à votre audience pour attirer, convertir et fidéliser vos clients.",
+            cta: "Découvrir nos solutions marketing",
         },
     ],
     secondaryCta: { label: "Parlons de votre projet", href: "/contact" },
@@ -41,26 +45,23 @@ export const homeHero = {
 };
 
 export const homeAgency = {
-    // Nouvelle orientation (08/11/2026) : l'agence et les problèmes de ses clients, sans le parcours du fondateur
-    // (réservé à la page /agence).
+    // Texte fourni par Amadou le 08/11/2026 (remplace la version précédente), repris tel quel.
     eyebrow: "L'agence",
-    title: "Une agence digitale qui comprend vos enjeux",
+    // Titre en deux temps : la 2e ligne est en dégradé bleu.
+    titleLines: ["Une expertise digitale complète", "pour développer votre activité."],
     paragraphs: [
-        "Connect Web accompagne les entreprises, PME, entrepreneurs et organisations dans la création de leurs outils digitaux et l'amélioration de leurs activités. Nous associons développement web, solutions métiers, marketing digital et infrastructures informatiques pour répondre à des besoins concrets.",
-        "Manque de visibilité, difficultés à vendre en ligne, outils qui ne communiquent pas ou tâches répétitives : nous analysons vos problématiques pour concevoir des solutions simples à utiliser, adaptées à votre fonctionnement et capables d'évoluer avec votre activité.",
+        "Connect Web accompagne les PME, entrepreneurs et organisations dans leurs projets numériques. Nous réunissons développement web et mobile, solutions métiers, marketing digital et infrastructure IT avec un seul interlocuteur pour coordonner l'ensemble.",
+        "Nous partons de vos besoins pour concevoir des outils adaptés à votre activité, simplifier votre quotidien et vous aider à toucher de nouveaux clients.",
     ],
-    listTitle: "Concrètement, nous vous aidons à :",
     points: [
-        { title: "Développer votre présence en ligne", text: "Sites web et e-commerce." },
+        { title: "Développer votre présence en ligne", text: "sites web et boutiques e-commerce." },
+        { title: "Créer vos applications web et mobiles", text: "des solutions sur mesure pour vos équipes et vos clients." },
         { title: "Simplifier votre gestion", text: "CRM, ERP et applications métiers." },
         { title: "Attirer et fidéliser vos clients", text: "SEO, emailing et automatisation." },
-        { title: "Connecter votre environnement de travail", text: "Réseaux, équipements et solutions IT." },
+        { title: "Connecter vos équipes", text: "réseaux, équipements et solutions IT." },
     ],
-    // Page /agence pas encore créée : lien vers la section « Pourquoi choisir Connect Web ? » de l'accueil (valide).
-    link: { label: "Découvrir Connect Web", href: "/#pourquoi-titre" },
-    // Gabarit gris de la template (783×900). Besoin visuel : photo réelle de travail ou d'équipe, autorisée,
-    // format portrait ~4:5, sans logo tiers.
-    image: { src: "/assets/img/about/1.jpg", alt: "", width: 783, height: 900 },
+    // Photo fournie par Amadou (dossier Images/hero), droits à confirmer avant publication.
+    image: { src: "/assets/img/cw/accueil-agence-echange.jpg", alt: "Des professionnels échangent devant des écrans de travail", width: 1000, height: 667 },
 };
 
 // « Ce que nous réalisons pour vous » : 6 services, un par carte, comme la maquette de référence d'Amadou
@@ -71,57 +72,72 @@ export const homeAgency = {
 export const homeServices = {
     eyebrow: "Nos services",
     title: "Ce que nous réalisons pour vous",
-    intro: "Une sélection de nos services, du site internet au réseau de vos locaux. Chacun est détaillé sur la page de son pôle : ce que vous recevez, ce qui n'est pas inclus et la façon de démarrer.",
-    linkLabel: "En savoir plus",
-    // Sous-services et technologies fournis par Amadou le 08/11/2026. Outils nommés (Shopify, WooCommerce, Odoo,
-    // Klaviyo, Brevo) : liste des outils maîtrisés à confirmer avant publication (docs/12 Q21).
+    intro: "Du site internet au réseau de vos locaux, voici ce que nous réalisons pour vous.",
+    // Six services et leurs cinq sous-services : texte fourni par Amadou le 08/11/2026, repris tel quel (remplace les
+    // cartes courtes précédentes). Capacités à confirmer avant publication (docs/12 Q22) : applications mobiles iOS et
+    // Android, plateformes SaaS, sauvegarde et protection des données, outils nommés (WooCommerce, Shopify).
     cards: [
         {
-            title: "Création de sites internet",
-            text: "Nous créons des sites professionnels modernes, rapides et adaptés à votre activité pour renforcer votre image, présenter vos offres et faciliter la prise de contact avec vos clients.",
-            items: ["Sites vitrines & corporate", "Sites institutionnels", "Sites tourisme & voyages", "WordPress & développement sur mesure", "Refonte & maintenance web"],
-            pole: "developpement-web",
-            anchor: "sites",
+            title: "Sites web & e-commerce",
+            text: "Présentez votre entreprise et vendez en ligne avec un site adapté à votre image.",
+            items: ["Sites vitrines et institutionnels", "Boutiques WooCommerce", "Boutiques Shopify", "Landing pages", "Refonte de sites web"],
             icon: "fal fa-globe",
         },
         {
-            title: "Création de sites e-commerce",
-            text: "Nous concevons des boutiques en ligne adaptées à votre catalogue et à vos clients, avec les fonctionnalités essentielles pour vendre, gérer vos commandes et développer votre activité.",
-            items: ["Shopify", "WooCommerce", "Marketplaces & catalogues connectés", "Paiement & livraison", "Optimisation des boutiques en ligne"],
-            pole: "developpement-web",
-            anchor: "ecommerce",
-            icon: "fal fa-shopping-cart",
+            title: "Applications web sur mesure",
+            text: "Simplifiez le travail de vos équipes avec une application web conçue autour de vos besoins : espace client, outils internes.",
+            items: ["Applications métiers", "Plateformes SaaS", "Portails et espaces clients", "Plateformes de réservation", "Tableaux de bord personnalisés"],
+            icon: "fal fa-browser",
         },
         {
-            title: "Applications métiers sur mesure",
-            text: "Nous développons des applications adaptées aux processus de votre entreprise pour centraliser les informations, améliorer le suivi des opérations et simplifier le travail quotidien.",
-            items: ["Applications web & PWA", "Outils de gestion interne", "Réservations & planification", "Tableaux de bord métiers", "API & intégrations"],
-            pole: "digitalisation",
-            anchor: "applications-metiers",
-            icon: "fal fa-database",
+            title: "Applications mobiles",
+            text: "Mettez vos services à portée de main avec une application adaptée aux habitudes de vos utilisateurs, sur leur smartphone.",
+            items: [
+                "Applications iOS et Android",
+                "Applications de vente en ligne",
+                "Applications de réservation",
+                "Applications internes pour vos équipes",
+                "Maintenance et évolution des applications",
+            ],
+            icon: "fal fa-mobile",
         },
         {
             title: "CRM & ERP",
-            text: "Nous vous accompagnons dans la mise en place d'outils de gestion pour centraliser vos données, suivre vos clients et mieux piloter les opérations de votre entreprise.",
-            items: ["Odoo ERP", "CRM & suivi commercial", "Gestion des ventes & stocks", "Facturation & processus métiers", "Intégration et automatisation"],
-            pole: "digitalisation",
-            anchor: "crm-erp",
+            text: "Pilotez votre activité avec des logiciels qui regroupent vos informations. Nous adaptons votre CRM ou ERP à vos méthodes.",
+            items: [
+                "Gestion des contacts et suivi commercial",
+                "Devis, facturation et paiements",
+                "Gestion des stocks et des achats",
+                "Suivi des projets et des équipes",
+                "Connexion entre vos logiciels",
+            ],
             icon: "fal fa-users-cog",
         },
         {
-            title: "Email marketing & automatisation",
-            text: "Nous créons des parcours de communication et des automatisations pour garder le contact avec vos clients, développer leur engagement et améliorer votre fidélisation.",
-            items: ["Klaviyo & Brevo", "Campagnes email & newsletters", "Segmentation des contacts", "Relances & scénarios automatisés", "Analyse des performances"],
-            pole: "marketing-digital",
-            anchor: "email-automatisation",
-            icon: "fal fa-envelope-open-text",
+            title: "Stratégie & Acquisition",
+            // Titre et description fournis par Amadou le 08/11/2026. ATTENTION : ce sont les mots exacts du site de référence
+            // Forge (benchmark) et la gestion des réseaux sociaux n'est pas un service acquis (docs/12 D13, Q22) : à réécrire
+            // avant toute publication. Les 5 sous-services sont ceux du pôle Marketing (docs/12 D42).
+            text: "Campagnes publicitaires, SEO performant et gestion des réseaux sociaux pour maximiser votre visibilité.",
+            items: [
+                "Stratégie marketing digital",
+                "Référencement naturel (SEO)",
+                "Email marketing & CRM marketing",
+                "Marketing automation",
+                "Publicité digitale & acquisition",
+            ],
+            icon: "fal fa-bullhorn",
         },
         {
             title: "Réseaux informatiques & solutions IT",
-            text: "Nous accompagnons les organisations dans la mise en place de leurs équipements et infrastructures informatiques pour faciliter la connectivité et sécuriser leurs environnements de travail.",
-            items: ["Réseaux LAN & Wi-Fi", "Câblage informatique", "Installation d'équipements IT", "Serveurs & téléphonie IP", "Vidéosurveillance & contrôle d'accès"],
-            pole: "infrastructure-it",
-            anchor: "reseaux-cablage",
+            text: "Un environnement informatique adapté à vos usages et à vos locaux. Nous installons vos équipements et entretenons votre réseau.",
+            items: [
+                "Installation de réseaux et Wi-Fi",
+                "Câblage informatique",
+                "Installation et configuration des équipements",
+                "Sauvegarde et protection des données",
+                "Maintenance et assistance informatique",
+            ],
             icon: "fal fa-network-wired",
         },
     ],
@@ -153,8 +169,8 @@ export const homeMethod = {
             role: "désigner les utilisateurs concernés et organiser la prise en main.",
         },
     ],
-    // Gabarit gris de la template (800×1038) en attendant un visuel Connect Web.
-    image: { src: "/assets/img/illustration/10.png", alt: "", width: 800, height: 1038 },
+    // Photo fournie par Amadou (dossier Images/hero), droits à confirmer avant publication.
+    image: { src: "/assets/img/cw/accueil-methode-collaboration.jpg", alt: "Deux personnes examinent ensemble un écran de code", width: 1000, height: 563 },
 };
 
 // « Pourquoi Connect Web ? » — source : docs/03 §2 (proposition de valeur, bénéfices 1 à 4) ; docs/03 « Ce que
@@ -203,21 +219,25 @@ export const homeStats = {
 // Cartes de « Nos expertises » (accueil) : titre court et sous-services affichés sur la carte, fournis par Amadou le
 // 08/11/2026. Les libellés du menu (expertises.ts) ne changent pas ; les noms complets des pôles restent dans
 // expertises.ts. Clé = id du pôle.
-export const expertiseCards: Record<string, { cardTitle: string; items: string[] }> = {
+export const expertiseCards: Record<string, { cardTitle: string; photo: string; items: string[] }> = {
     "developpement-web": {
         cardTitle: "Développement web",
+        photo: "/assets/img/cw/hero-developpement-web.jpg",
         items: ["Sites internet professionnels", "Sites e-commerce", "Shopify & WooCommerce", "Applications web & PWA", "Refonte & maintenance"],
     },
     digitalisation: {
         cardTitle: "Digitalisation",
+        photo: "/assets/img/cw/hero-digitalisation.jpg",
         items: ["CRM & gestion client", "ERP & gestion d'entreprise", "Applications métiers", "Automatisation des processus", "Intégration de solutions digitales"],
     },
     "marketing-digital": {
         cardTitle: "Marketing digital",
+        photo: "/assets/img/cw/hero-marketing-digital.jpg",
         items: ["Stratégie marketing digital", "Référencement naturel SEO", "Email marketing & CRM", "Marketing automation", "Publicité digitale & acquisition"],
     },
     "infrastructure-it": {
         cardTitle: "Infrastructure IT",
+        photo: "/assets/img/cw/hero-infrastructure-it.jpg",
         items: ["Réseaux & câblage", "Installation d'équipements IT", "Hébergement & serveurs", "Téléphonie IP", "Vidéosurveillance & contrôle d'accès"],
     },
 };

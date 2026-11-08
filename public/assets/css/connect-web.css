@@ -2002,3 +2002,436 @@ nav.navbar.validnavs .cw-dropdown-inner a:focus-visible {
 	-webkit-text-fill-color: var(--cw-accent-green);
 	color: var(--cw-accent-green);
 }
+
+/* Texte courant en noir sur tout le site (demande d'Amadou, 08/11/2026) : la couleur de paragraphe du thème (#666)
+   devient quasi noire. Les sections sur fond sombre gardent leur texte blanc défini explicitement. */
+:root {
+	--color-paragraph: #111111;
+}
+
+body,
+p,
+li,
+dd,
+dt,
+label,
+.form-control {
+	color: #111111;
+}
+
+.text-light,
+.text-light p,
+.text-light li,
+.text-light h1,
+.text-light h2,
+.text-light h3,
+.text-light h4 {
+	color: var(--white);
+}
+
+/* Hero : photo par slide + voile bleu pour garder le texte lisible */
+.cw-hero .cw-hero-slider .swiper-slide {
+	position: relative;
+	overflow: hidden;
+}
+
+.cw-hero .cw-hero-photo {
+	object-fit: cover;
+	object-position: center;
+}
+
+.cw-hero .cw-hero-overlay {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(90deg, rgba(14, 39, 105, 0.94) 0%, rgba(14, 39, 105, 0.82) 42%, rgba(19, 81, 216, 0.4) 100%);
+}
+
+.cw-hero .cw-hero-slider .swiper-slide > .container {
+	position: relative;
+	z-index: 1;
+}
+
+@media (max-width: 767px) {
+	.cw-hero .cw-hero-overlay {
+		background: linear-gradient(180deg, rgba(14, 39, 105, 0.9) 0%, rgba(14, 39, 105, 0.82) 100%);
+	}
+}
+
+/* Agence : photo au format portrait, recadrée */
+.cw-agency .cw-agency-thumb img:first-child {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 4 / 5;
+	object-fit: cover;
+	border-radius: 12px;
+}
+
+/* Logo Connect Web (PNG transparent ; variante claire pour le pied de page) */
+.cw-header .navbar-brand.cw-logo {
+	padding: 0;
+	height: auto;
+	display: inline-flex;
+	align-items: center;
+}
+
+.cw-header .navbar-brand.cw-logo img,
+.cw-header .cw-logo-img {
+	height: 46px;
+	width: auto;
+}
+
+.cw-footer .cw-footer-logo {
+	height: 56px;
+	width: auto;
+	margin-bottom: 14px;
+}
+
+@media (max-width: 991px) {
+	.cw-header .navbar-brand.cw-logo img {
+		height: 40px;
+	}
+}
+
+/* Hero : photo bien visible, voile bleu limité à la zone du texte */
+.cw-hero .cw-hero-overlay {
+	background: linear-gradient(90deg, rgba(14, 39, 105, 0.9) 0%, rgba(14, 39, 105, 0.72) 38%, rgba(14, 39, 105, 0.18) 68%, rgba(14, 39, 105, 0) 100%);
+}
+
+.cw-hero .cw-hero-content .cw-hero-eyebrow,
+.cw-hero .cw-hero-content .cw-hero-title,
+.cw-hero .cw-hero-content .cw-hero-text {
+	text-shadow: 0 1px 14px rgba(8, 24, 70, 0.55);
+}
+
+@media (max-width: 767px) {
+	.cw-hero .cw-hero-overlay {
+		background: linear-gradient(180deg, rgba(14, 39, 105, 0.82) 0%, rgba(14, 39, 105, 0.6) 100%);
+	}
+}
+
+/* Hero : deux boutons pleins avec survol (bleu foncé / blanc) */
+.cw-hero .cw-hero-buttons .btn {
+	transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cw-hero .cw-hero-buttons .btn-theme {
+	background: var(--color-primary);
+	border-color: var(--color-primary);
+	color: var(--white);
+}
+
+.cw-hero .cw-hero-buttons .btn-border-light {
+	background: var(--white);
+	border-color: var(--white);
+	color: var(--dark);
+}
+
+.cw-hero .cw-hero-buttons .btn-theme:hover,
+.cw-hero .cw-hero-buttons .btn-theme:focus-visible {
+	background: var(--dark-secondary);
+	border-color: var(--dark-secondary);
+	color: var(--white);
+	transform: translateY(-2px);
+	box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.45);
+}
+
+.cw-hero .cw-hero-buttons .btn-border-light:hover,
+.cw-hero .cw-hero-buttons .btn-border-light:focus-visible {
+	background: #e3ebff;
+	border-color: #e3ebff;
+	color: var(--color-primary);
+	transform: translateY(-2px);
+	box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.cw-hero .cw-hero-buttons .btn:hover {
+		transform: none;
+	}
+}
+
+/* Nos expertises : photo du pôle dans le bandeau, voile bleu conservé */
+.cw-expertises .cw-expertise-visual .cw-expertise-photo {
+	object-fit: cover;
+}
+
+.cw-expertises .cw-expertise-visual .cw-expertise-veil {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(120deg, rgba(14, 39, 105, 0.82) 0%, rgba(30, 51, 115, 0.62) 50%, rgba(19, 81, 216, 0.45) 100%);
+}
+
+.cw-expertises .cw-expertise-visual .cw-expertise-bigicon {
+	display: none;
+}
+
+.cw-expertises .cw-expertise-visual .cw-expertise-number {
+	z-index: 1;
+}
+
+/* Nos expertises : photo entière et nette (bandeau plus haut, voile léger, plus de fondu blanc) */
+.cw-expertises .feature-style-two .thumb::after {
+	display: none;
+}
+
+.cw-expertises .cw-expertise-visual {
+	height: 230px;
+	border-radius: 13px 13px 0 0;
+}
+
+.cw-expertises .cw-expertise-visual .cw-expertise-photo {
+	object-position: center;
+}
+
+.cw-expertises .cw-expertise-visual .cw-expertise-veil {
+	background: linear-gradient(180deg, rgba(14, 39, 105, 0.38) 0%, rgba(14, 39, 105, 0.08) 45%, rgba(14, 39, 105, 0) 100%);
+}
+
+@media (max-width: 767px) {
+	.cw-expertises .cw-expertise-visual {
+		height: 200px;
+	}
+}
+
+/* Nos services : cartes épurées (icône, titre, texte court, lien en bas) */
+.cw-services .cw-service-card {
+	padding: 34px 32px 30px;
+	border-radius: 16px;
+	box-shadow: 0 2px 14px rgba(14, 39, 105, 0.05);
+}
+
+.cw-services .cw-service-title {
+	font-size: 22px;
+	line-height: 1.3;
+	margin-bottom: 10px;
+	min-height: 2.6em;
+	display: flex;
+	align-items: flex-start;
+}
+
+.cw-services .cw-service-card .cw-service-text {
+	font-size: 16px;
+	line-height: 1.65;
+	margin-bottom: 24px;
+}
+
+.cw-services .cw-service-link {
+	margin-top: auto;
+}
+
+@media (max-width: 991px) {
+	.cw-services .cw-service-title {
+		min-height: 0;
+	}
+}
+
+/* Hero : hauteur réduite de 5 % (demande d'Amadou, 08/11/2026) — ordinateur 686 → ~652 px, tablette 568 → ~540 px,
+   mobile 687 → ~653 px. La hauteur vient des marges verticales du contenu. */
+.cw-hero .cw-hero-content {
+	padding: 172px 0 154px;
+}
+
+@media (max-width: 767px) {
+	.cw-hero .cw-hero-content {
+		padding: 106px 0 116px;
+	}
+}
+
+@media (max-width: 575px) {
+	.cw-hero .cw-hero-content {
+		padding: 103px 0 113px;
+	}
+}
+
+/* Services de l'accueil : description puis cinq sous-services en liste à flèches */
+.cw-services .cw-service-card .cw-service-text {
+	margin-bottom: 20px;
+}
+
+.cw-services .cw-service-card .cw-service-list {
+	margin-top: auto;
+	padding-top: 18px;
+	border-top: 1px solid #eef0f6;
+}
+
+.cw-services .cw-service-card .cw-service-list li {
+	font-size: 15px;
+	font-weight: 500;
+}
+
+/* Pourquoi Connect Web : photo à droite (voile bleu léger côté panneau) */
+.cw-why .cw-why-cover {
+	background-image: linear-gradient(90deg, rgba(14, 39, 105, 0.35) 0%, rgba(14, 39, 105, 0) 45%), url("/assets/img/cw/pourquoi-poste-de-travail.jpg");
+	background-size: cover;
+	background-position: center;
+}
+
+/* Blog : bandeau, filtre par catégorie, badges, page d'article */
+.cw-blog-head {
+	padding: 150px 0 60px;
+	background: linear-gradient(120deg, var(--dark) 0%, var(--dark-secondary) 45%, var(--color-primary) 100%);
+}
+
+.cw-blog-head h1 {
+	color: var(--white);
+	font-size: 42px;
+	font-weight: 500;
+	margin: 0;
+}
+
+.cw-breadcrumb {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px 10px;
+	list-style: none;
+	margin: 0 0 16px;
+	padding: 0;
+	font-size: 14px;
+}
+
+.cw-breadcrumb li + li::before {
+	content: "/";
+	margin-right: 10px;
+	opacity: 0.6;
+}
+
+.cw-breadcrumb a,
+.cw-breadcrumb li {
+	color: rgba(255, 255, 255, 0.9);
+}
+
+.cw-article-meta {
+	margin: 14px 0 0;
+	color: rgba(255, 255, 255, 0.85);
+}
+
+.cw-blog-filter {
+	margin-bottom: 40px;
+}
+
+.cw-blog-filter ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.cw-blog-filter a {
+	display: inline-block;
+	padding: 8px 16px;
+	border: 1px solid #d5dbe8;
+	border-radius: 30px;
+	background: var(--white);
+	color: var(--color-heading);
+	font-size: 15px;
+	font-weight: 500;
+	white-space: nowrap;
+	transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.cw-blog-filter a:hover,
+.cw-blog-filter a.is-active {
+	background: var(--color-primary);
+	border-color: var(--color-primary);
+	color: var(--white);
+}
+
+.cw-blog-filter a:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+}
+
+@media (max-width: 767px) {
+	.cw-blog-head {
+		padding: 120px 0 40px;
+	}
+
+	.cw-blog-head h1 {
+		font-size: 30px;
+	}
+
+	.cw-blog-filter {
+		margin-left: -12px;
+		margin-right: -12px;
+	}
+
+	.cw-blog-filter ul {
+		flex-wrap: nowrap;
+		overflow-x: auto;
+		padding: 4px 12px 10px;
+		scroll-snap-type: x proximity;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.cw-blog-filter li {
+		scroll-snap-align: start;
+		flex: 0 0 auto;
+	}
+}
+
+.blog-style-one .thumb {
+	position: relative;
+}
+
+.cw-blog-cat {
+	position: absolute;
+	left: 16px;
+	top: 16px;
+	z-index: 2;
+	padding: 4px 12px;
+	border-radius: 30px;
+	background: var(--white);
+	color: var(--color-primary);
+	font-size: 13px;
+	font-weight: 600;
+}
+
+.cw-blog-cat:hover {
+	background: var(--color-primary);
+	color: var(--white);
+}
+
+.cw-blog-cat-inline {
+	position: static;
+	display: inline-block;
+	margin-bottom: 14px;
+}
+
+.cw-blog-empty {
+	max-width: 640px;
+	margin: 20px auto 0;
+	padding: 40px 24px;
+	text-align: center;
+	background: var(--bg-gray);
+	border-radius: 14px;
+}
+
+.cw-blog-empty h2 {
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+
+.cw-blog-empty p {
+	margin-bottom: 20px;
+}
+
+.cw-article .cw-article-image {
+	width: 100%;
+	height: auto;
+	border-radius: 12px;
+	margin-bottom: 28px;
+}
+
+.cw-article p {
+	font-size: 17px;
+	line-height: 1.8;
+}
+
+/* Titre de « Nos expertises » : une seule ligne de 992 à 1199 px (36 px dépassait de 1 px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+	.cw-expertises .site-heading .title {
+		font-size: 34px;
+	}
+}

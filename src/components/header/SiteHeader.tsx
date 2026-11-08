@@ -5,6 +5,7 @@
 // Accessibilité : chaque pôle est un bouton (aria-expanded, aria-controls) ; ouverture au survol (avec délai de
 // fermeture), au clic (le menu reste alors ouvert) et au clavier (Entrée, Espace, flèches, Échap) ; fermeture au clic
 // extérieur et quand le focus sort du menu. Mobile : panneau latéral avec accordéons, focus piégé, défilement bloqué.
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -226,9 +227,8 @@ const SiteHeader = () => {
                         >
                             <i className="fa fa-bars" aria-hidden="true" />
                         </button>
-                        {/* Logo : fichier Connect Web non fourni — nom de la marque en texte en attendant. */}
-                        <Link className="navbar-brand cw-wordmark" href="/">
-                            Connect Web
+                        <Link className="navbar-brand cw-logo" href="/" aria-label="Connect Web, accueil">
+                            <Image src="/assets/img/cw/logo-connect-web.png" alt="Connect Web" width={688} height={185} priority />
                         </Link>
                     </div>
 
@@ -244,7 +244,7 @@ const SiteHeader = () => {
                             : {})}
                     >
                         <div className="collapse-header">
-                            <span className="cw-wordmark">Connect Web</span>
+                            <Image className="cw-logo-img" src="/assets/img/cw/logo-connect-web.png" alt="Connect Web" width={688} height={185} />
                             <button type="button" className="navbar-toggle" aria-label="Fermer le menu" onClick={() => closePanel()}>
                                 <i className="fa fa-times" aria-hidden="true" />
                             </button>

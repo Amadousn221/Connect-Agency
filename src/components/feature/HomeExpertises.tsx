@@ -4,6 +4,7 @@
 // s'atteint avec les flèches, les puces ou le clavier), 2 sur tablette, 1 sur mobile. Défilement manuel uniquement
 // (docs/09 §4). Données : src/content/expertises.ts (source unique).
 // Les photos de la démo sont des gabarits gris : le bandeau est un dégradé du thème.
+import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { A11y, Keyboard, Navigation, Pagination } from "swiper/modules";
@@ -54,6 +55,8 @@ const HomeExpertises = () => {
                             <article className="feature-style-two" aria-labelledby={`expertise-${expertise.id}`}>
                                 <div className="thumb">
                                     <div className="cw-expertise-visual" aria-hidden="true">
+                                        <Image className="cw-expertise-photo" src={card.photo} alt="" fill sizes="(min-width: 1200px) 400px, (min-width: 768px) 50vw, 100vw" />
+                                        <span className="cw-expertise-veil" />
                                         <span className="cw-expertise-number">Pôle {expertise.number}</span>
                                         <span className={`cw-expertise-bigicon ${expertise.icon}`} />
                                     </div>

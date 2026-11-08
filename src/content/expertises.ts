@@ -123,49 +123,8 @@ export const expertises: Expertise[] = [
         pageReady: false,
     },
     {
-        id: "marketing-digital",
-        number: "03",
-        title: "Marketing Digital & Automatisation",
-        shortTitle: "Marketing digital & automatisation",
-        menuLabel: "Marketing",
-        menuAllLabel: "Découvrir nos solutions marketing",
-        description:
-            "Nous accompagnons les marques et les entreprises dans le développement de leur visibilité, l'acquisition de nouveaux clients et la fidélisation grâce à des stratégies marketing mesurables.",
-        subServices: [
-            {
-                title: "Stratégie marketing digital",
-                slug: "strategie",
-                description: "Positionnement, plan d'action, identification des audiences et définition des objectifs.",
-            },
-            {
-                title: "Référencement naturel (SEO)",
-                slug: "seo",
-                description: "Optimisation des sites et contenus pour améliorer leur visibilité sur les moteurs de recherche.",
-            },
-            {
-                title: "Email marketing & CRM marketing",
-                slug: "email-crm-marketing",
-                description: "Campagnes, newsletters, segmentation, scénarios de fidélisation et solutions comme Klaviyo ou Brevo.",
-            },
-            {
-                title: "Marketing automation",
-                slug: "marketing-automation",
-                description: "Séquences automatiques, relances clients, récupération de paniers abandonnés et parcours de conversion.",
-            },
-            {
-                title: "Publicité digitale & acquisition",
-                slug: "publicite-acquisition",
-                description: "Accompagnement sur Google Ads et Meta Ads, création de campagnes, suivi des conversions et analyse des performances.",
-            },
-        ],
-        targets: "Marques, commerces en ligne, entreprises, associations.",
-        icon: "fal fa-bullhorn",
-        href: "/expertises/marketing-digital",
-        pageReady: false,
-    },
-    {
         id: "infrastructure-it",
-        number: "04",
+        number: "03",
         title: "Infrastructure & Solutions IT",
         shortTitle: "Infrastructure & solutions IT",
         menuLabel: "Infrastructure",
@@ -204,11 +163,52 @@ export const expertises: Expertise[] = [
         href: "/expertises/infrastructure-it",
         pageReady: false,
     },
+    {
+        id: "marketing-digital",
+        number: "04",
+        title: "Marketing Digital & Automatisation",
+        shortTitle: "Marketing digital & automatisation",
+        menuLabel: "Marketing",
+        menuAllLabel: "Découvrir nos solutions marketing",
+        description:
+            "Nous accompagnons les marques et les entreprises dans le développement de leur visibilité, l'acquisition de nouveaux clients et la fidélisation grâce à des stratégies marketing mesurables.",
+        subServices: [
+            {
+                title: "Stratégie marketing digital",
+                slug: "strategie",
+                description: "Positionnement, plan d'action, identification des audiences et définition des objectifs.",
+            },
+            {
+                title: "Référencement naturel (SEO)",
+                slug: "seo",
+                description: "Optimisation des sites et contenus pour améliorer leur visibilité sur les moteurs de recherche.",
+            },
+            {
+                title: "Email marketing & CRM marketing",
+                slug: "email-crm-marketing",
+                description: "Campagnes, newsletters, segmentation, scénarios de fidélisation et solutions comme Klaviyo ou Brevo.",
+            },
+            {
+                title: "Marketing automation",
+                slug: "marketing-automation",
+                description: "Séquences automatiques, relances clients, récupération de paniers abandonnés et parcours de conversion.",
+            },
+            {
+                title: "Publicité digitale & acquisition",
+                slug: "publicite-acquisition",
+                description: "Accompagnement sur Google Ads et Meta Ads, création de campagnes, suivi des conversions et analyse des performances.",
+            },
+        ],
+        targets: "Marques, commerces en ligne, entreprises, associations.",
+        icon: "fal fa-bullhorn",
+        href: "/expertises/marketing-digital",
+        pageReady: false,
+    },
 ];
 
 export const expertisesSection = {
     eyebrow: "Nos expertises",
-    title: "Quatre pôles d'expertise pour accompagner votre transformation digitale",
+    title: "Quatre pôles pour votre transformation digitale",
     intro: "Du développement web à la digitalisation de vos opérations, en passant par le marketing digital et les infrastructures IT, Connect Web vous accompagne avec des solutions adaptées aux besoins de votre entreprise.",
     linkLabel: "Découvrir nos services",
     subServicesLabel: "Sous-services",

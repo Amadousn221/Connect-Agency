@@ -3,6 +3,7 @@
 // fictifs). Ne contient que des faits établis : nom, description du dossier (docs/07 §1), liens vers les pôles et
 // les sections de l'accueil, droits. Coordonnées, réseaux sociaux, mentions légales et confidentialité : à ajouter
 // quand Amadou les fournit (docs/12 Q07) ; aucun lien vers une page inexistante.
+import Image from "next/image";
 import Link from "next/link";
 import { mainLinks, navPoles } from "@/content/navigation";
 
@@ -12,7 +13,7 @@ const SiteFooter = () => {
             <div className="container">
                 <div className="row cw-footer-main">
                     <div className="col-lg-5 col-md-12">
-                        <p className="cw-footer-brand cw-wordmark">Connect Web</p>
+                        <Image className="cw-footer-logo" src="/assets/img/cw/logo-connect-web-clair.png" alt="Connect Web" width={688} height={185} />
                         <p className="cw-footer-text">
                             Connect Web conçoit des sites, des boutiques en ligne et des outils de gestion, et accompagne l&apos;équipement
                             informatique des locaux professionnels.
