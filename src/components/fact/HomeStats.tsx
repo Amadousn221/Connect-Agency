@@ -1,17 +1,13 @@
 "use client";
-// Section « Nos chiffres » de l'accueil — base : compteurs du template (Counter / react-countup, classes .fun-fact),
-// mise en page en cartes blanches à filet bleu. Aucune nouvelle dépendance ; icônes en SVG intégrés.
+// Section « Nos chiffres » de l'accueil — base visuelle : PartnerV1 (démo home-1) : grand chiffre sur carte du monde à
+// gauche, grille à filets à droite. Les logos partenaires sont remplacés par les autres indicateurs (aucun partenaire
+// n'est nommé). Compteurs : react-countup du template. Icônes en SVG intégrés, aucune nouvelle dépendance.
 // Les indicateurs sans valeur confirmée (value: null) ne sont pas affichés.
 import CountUp from "react-countup";
 import { useSyncExternalStore } from "react";
+import Image from "next/image";
 import { homeStats } from "@/content/home";
-
-const icons: Record<string, React.ReactNode> = {
-    briefcase: (<><rect x="3" y="7" width="18" height="13" rx="2" /><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18" /></>),
-    users: (<><circle cx="9" cy="8" r="3.5" /><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.2a6.5 6.5 0 0 1 3.5 5.8" /></>),
-    layers: (<><path d="m12 3 9 5-9 5-9-5 9-5Z" /><path d="m3 12 9 5 9-5M3 16l9 5 9-5" /></>),
-    calendar: (<><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M8 3v4M16 3v4M3 10h18" /></>),
-};
+import { MIN_PARTNERS, partners, previewPartners } from "@/content/partners";
 
 const HomeStats = () => {
     const { eyebrow, title, text, items } = homeStats;
@@ -25,9 +21,18 @@ const HomeStats = () => {
         () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
         () => false,
     );
+    const published = partners.filter((partner) => partner.published);
+    const isPreview = published.length < MIN_PARTNERS && process.env.NODE_ENV === "development";
+    const logos = published.length >= MIN_PARTNERS ? published.slice(0, 6) : isPreview ? previewPartners : [];
+    const [main, ...others] = visible;
+    if (!main) return null;
+
+    const counter = (item: (typeof visible)[number]) => (
+        <CountUp end={item.value as number} duration={reduceMotion ? 0 : 2} enableScrollSpy scrollSpyOnce />
+    );
 
     return (
-        <section className="default-padding-bottom cw-stats" aria-labelledby="chiffres-titre">
+        <section className="partner-style-one-area default-padding-bottom cw-stats" aria-labelledby="chiffres-titre">
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-xl-8 col-lg-9 text-center">
@@ -36,22 +41,49 @@ const HomeStats = () => {
                         <p className="cw-stats-text">{text}</p>
                     </div>
                 </div>
-                <ul className="cw-stats-grid" data-count={visible.length}>
-                    {visible.map((item) => (
-                        <li className="cw-stat" key={item.id}>
-                            <span className="cw-stat-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                                    {icons[item.icon]}
-                                </svg>
-                            </span>
-                            <div className="cw-stat-value">
-                                <CountUp end={item.value as number} duration={reduceMotion ? 0 : 2} enableScrollSpy scrollSpyOnce />
-                                {item.suffix && <span className="cw-stat-suffix">{item.suffix}</span>}
+                {isPreview && (
+                    <p className="cw-preview-banner" role="note">
+                        Aperçu de mise en page : logos de démonstration visibles seulement en développement local. La grille reste masquée
+                        tant que moins de {MIN_PARTNERS} logos ne sont pas autorisés.
+                    </p>
+                )}
+                <div className="row align-center cw-stats-row">
+                    <div className={logos.length ? "col-lg-5" : "col-12"}>
+                        <div className="partner-map" style={{ backgroundImage: "url(/assets/img/shape/map.png)" }}>
+                            <h2 className="mask-text cw-stats-big">
+                                {counter(main)}
+                                {main.suffix && <span className="cw-stat-suffix">{main.suffix}</span>}
+                            </h2>
+                            <h3 className="cw-stats-big-label">{main.label}</h3>
+                        </div>
+                        {others.length > 0 && (
+                            <dl className="cw-stats-minimal">
+                                {others.map((item) => (
+                                    <div key={item.id}>
+                                        <dt>{item.label}</dt>
+                                        <dd>
+                                            {counter(item)}
+                                            {item.suffix && <span className="cw-stat-suffix">{item.suffix}</span>}
+                                        </dd>
+                                    </div>
+                                ))}
+                            </dl>
+                        )}
+                    </div>
+                    {logos.length > 0 && (
+                        <div className="col-lg-6 offset-lg-1">
+                            <div className="partner-items">
+                                <ul>
+                                    {logos.map((partner, index) => (
+                                        <li key={`${partner.name}-${index}`}>
+                                            <Image src={partner.logo} alt={isPreview ? "" : partner.name} width={256} height={256} />
+                                        </li>
+                                    ))}
+                                </ul>
                             </div>
-                            <p className="cw-stat-label">{item.label}</p>
-                        </li>
-                    ))}
-                </ul>
+                        </div>
+                    )}
+                </div>
             </div>
         </section>
     );

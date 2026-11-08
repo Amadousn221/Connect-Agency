@@ -37,7 +37,12 @@ const HomeServices = () => {
                                     <i className={card.icon} />
                                 </div>
                                 <h3 className="cw-service-title">{card.title}</h3>
-                                <p>{card.text}</p>
+                                <p className="cw-service-text">{card.text}</p>
+                                <ul className="cw-arrow-list cw-service-items" aria-label={`Ce que comprend : ${card.title}`}>
+                                    {card.items.map((item) => (
+                                        <li key={item}>{item}</li>
+                                    ))}
+                                </ul>
                                 <Link className="cw-service-link" href={serviceHref(card.pole, card.anchor)}>
                                     {linkLabel}
                                     <span className="visually-hidden"> sur {card.title}</span>

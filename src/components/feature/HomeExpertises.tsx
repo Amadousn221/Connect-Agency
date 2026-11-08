@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { A11y, Keyboard, Navigation, Pagination } from "swiper/modules";
 import { expertiseHref, expertises, expertisesSection } from "@/content/expertises";
+import { expertiseCards } from "@/content/home";
 
 const HomeExpertises = () => {
     const { eyebrow, title, intro, linkLabel, subServicesLabel } = expertisesSection;
@@ -46,7 +47,9 @@ const HomeExpertises = () => {
                         slideLabelMessage: "{{index}} sur {{slidesLength}}",
                     }}
                 >
-                    {expertises.map((expertise, index) => (
+                    {expertises.map((expertise, index) => {
+                        const card = expertiseCards[expertise.id];
+                        return (
                         <SwiperSlide key={expertise.id}>
                             <article className="feature-style-two" aria-labelledby={`expertise-${expertise.id}`}>
                                 <div className="thumb">
@@ -59,11 +62,11 @@ const HomeExpertises = () => {
                                     <span className={`icon cw-tone-${(index % 5) + 1}`} aria-hidden="true">
                                         <span className={expertise.icon} />
                                     </span>
-                                    <h3 id={`expertise-${expertise.id}`} className="cw-expertise-title">{expertise.title}</h3>
+                                    <h3 id={`expertise-${expertise.id}`} className="cw-expertise-title">{card.cardTitle}</h3>
                                     <p className="cw-expertise-desc">{expertise.description}</p>
-                                    <ul className="cw-expertise-services" aria-label={`${subServicesLabel} : ${expertise.shortTitle}`}>
-                                        {expertise.subServices.map((subService) => (
-                                            <li key={subService.title}>{subService.title}</li>
+                                    <ul className="cw-arrow-list cw-expertise-services" aria-label={`${subServicesLabel} : ${expertise.shortTitle}`}>
+                                        {card.items.map((item) => (
+                                            <li key={item}>{item}</li>
                                         ))}
                                     </ul>
                                     <Link className="cw-expertise-link" href={expertiseHref(expertise)}>
@@ -73,7 +76,8 @@ const HomeExpertises = () => {
                                 </div>
                             </article>
                         </SwiperSlide>
-                    ))}
+                        );
+                    })}
                 </Swiper>
                 <div className="cw-expertises-controls">
                     <button type="button" className="cw-expertises-prev" aria-label="Pôle précédent">

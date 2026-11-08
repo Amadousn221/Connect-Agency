@@ -3,45 +3,63 @@ import { expertises } from "@/content/expertises";
 // Textes de l'accueil — source : docs/07 [07-ACC-*]. Ne pas réécrire sans le signaler.
 
 export const homeHero = {
-    // [07-ACC-1]
-    eyebrow: "Agence digitale et solutions informatiques",
-    title: "Des sites, des outils de gestion et des installations pensés pour votre façon de travailler",
-    text: "Connect Web accompagne les commerces, les PME et les organisations qui veulent vendre en ligne, travailler sans ressaisies, garder le lien avec leurs clients et équiper leurs locaux. Nous partons de votre activité — vos commandes, vos clients, vos équipes — avant de choisir un outil.",
-    primaryCta: { label: "Parlons de votre projet", href: "/contact" },
-    secondaryCta: { label: "Découvrir nos expertises", href: "/expertises" },
-    // Les images de démo Tekni sont des gabarits gris (ex. « 1900x1004 ») : fond en dégradé du thème
-    // tant qu'aucun visuel Connect Web n'est fourni. Renseigner un chemin pour afficher une image.
+    // Quatre slides, un par pôle (lot de refinement du 08/11/2026, textes fournis par Amadou).
+    // `pole` référence l'id d'un pôle de expertises.ts : le lien du bouton suit `pageReady`.
+    slides: [
+        {
+            pole: "developpement-web",
+            eyebrow: "Développement Web & E-commerce",
+            title: "Des solutions web pensées pour développer votre activité",
+            text: "Nous concevons des sites internet, des boutiques e-commerce et des applications web adaptés à vos objectifs. Des expériences digitales performantes et évolutives pour valoriser votre entreprise, attirer des clients et vendre en ligne.",
+            cta: "Découvrir nos solutions web",
+        },
+        {
+            pole: "digitalisation",
+            eyebrow: "Digitalisation & Solutions Métiers",
+            title: "Simplifiez votre gestion avec des outils adaptés à votre métier",
+            text: "CRM, ERP, applications métiers et automatisations : nous connectons vos outils et optimisons vos processus pour vous aider à mieux organiser votre activité, suivre vos opérations et gagner du temps au quotidien.",
+            cta: "Découvrir nos solutions métiers",
+        },
+        {
+            pole: "marketing-digital",
+            eyebrow: "Marketing Digital & Automatisation",
+            title: "Développez votre visibilité et fidélisez vos clients",
+            text: "Du référencement naturel aux campagnes marketing, en passant par l'emailing et l'automatisation, nous mettons en place des actions adaptées à votre audience pour attirer, convertir et fidéliser vos clients.",
+            cta: "Découvrir nos solutions marketing",
+        },
+        {
+            pole: "infrastructure-it",
+            eyebrow: "Infrastructure & Solutions IT",
+            title: "Des infrastructures fiables pour accompagner votre activité",
+            text: "Réseaux informatiques, câblage, équipements IT, serveurs et solutions de sécurité : nous vous accompagnons dans la mise en place d'environnements professionnels connectés et adaptés à vos besoins techniques.",
+            cta: "Découvrir nos solutions IT",
+        },
+    ],
+    secondaryCta: { label: "Parlons de votre projet", href: "/contact" },
+    // Les images de démo Tekni sont des gabarits gris : fond en dégradé du thème tant qu'aucun visuel n'est fourni.
     backgroundImage: null as string | null,
 };
 
 export const homeAgency = {
-    // Surtitre ajouté pour reprendre la structure de AboutV1 (non présent dans docs/07) — à valider.
+    // Nouvelle orientation (08/11/2026) : l'agence et les problèmes de ses clients, sans le parcours du fondateur
+    // (réservé à la page /agence).
     eyebrow: "L'agence",
-    // [07-ACC-7] — bloc [VALIDATION] dans docs/07.
-    title: "Une agence qui connaît le quotidien de ses clients",
-    // [07-ACC-7] sans « basé à {{VILLE_ADRESSE}} » tant que Q07 n'est pas réglée.
-    text: "Connect Web est dirigée par Amadou Diallo, développeur web. Avant de concevoir des outils pour d'autres, il a géré l'activité en ligne d'une marque : migration de la boutique, catalogue, réassorts, service client, campagnes email. Cette expérience guide chaque projet : un outil n'est utile que s'il simplifie le travail de ceux qui l'utilisent.",
-    // [07-ACC-2] Repères, présentés dans l'accordéon de AboutV1.
-    points: [
-        {
-            title: "Expérience terrain du e-commerce",
-            text: "Catalogue, commandes, service client et emailing gérés au quotidien.",
-        },
-        {
-            title: "Un interlocuteur, du cadrage à la prise en main",
-            text: "La personne qui comprend votre besoin suit votre projet.",
-        },
-        {
-            title: "Des outils que vous savez utiliser",
-            text: "Chaque livraison comprend une prise en main et une documentation.",
-        },
-        {
-            title: "Le bon outil, pas le plus complexe",
-            text: "Nous vérifions si un logiciel existant suffit avant de proposer du sur mesure.",
-        },
+    title: "Une agence digitale qui comprend vos enjeux",
+    paragraphs: [
+        "Connect Web accompagne les entreprises, PME, entrepreneurs et organisations dans la création de leurs outils digitaux et l'amélioration de leurs activités. Nous associons développement web, solutions métiers, marketing digital et infrastructures informatiques pour répondre à des besoins concrets.",
+        "Manque de visibilité, difficultés à vendre en ligne, outils qui ne communiquent pas ou tâches répétitives : nous analysons vos problématiques pour concevoir des solutions simples à utiliser, adaptées à votre fonctionnement et capables d'évoluer avec votre activité.",
     ],
-    link: { label: "Découvrir l'agence", href: "/agence" },
-    // Gabarit gris de la template (783×900) en attendant la photo d'Amadou (docs/06 §1 section 7).
+    listTitle: "Concrètement, nous vous aidons à :",
+    points: [
+        { title: "Développer votre présence en ligne", text: "Sites web et e-commerce." },
+        { title: "Simplifier votre gestion", text: "CRM, ERP et applications métiers." },
+        { title: "Attirer et fidéliser vos clients", text: "SEO, emailing et automatisation." },
+        { title: "Connecter votre environnement de travail", text: "Réseaux, équipements et solutions IT." },
+    ],
+    // Page /agence pas encore créée : lien vers la section « Pourquoi choisir Connect Web ? » de l'accueil (valide).
+    link: { label: "Découvrir Connect Web", href: "/#pourquoi-titre" },
+    // Gabarit gris de la template (783×900). Besoin visuel : photo réelle de travail ou d'équipe, autorisée,
+    // format portrait ~4:5, sans logo tiers.
     image: { src: "/assets/img/about/1.jpg", alt: "", width: 783, height: 900 },
 };
 
@@ -55,45 +73,53 @@ export const homeServices = {
     title: "Ce que nous réalisons pour vous",
     intro: "Une sélection de nos services, du site internet au réseau de vos locaux. Chacun est détaillé sur la page de son pôle : ce que vous recevez, ce qui n'est pas inclus et la façon de démarrer.",
     linkLabel: "En savoir plus",
+    // Sous-services et technologies fournis par Amadou le 08/11/2026. Outils nommés (Shopify, WooCommerce, Odoo,
+    // Klaviyo, Brevo) : liste des outils maîtrisés à confirmer avant publication (docs/12 Q21).
     cards: [
         {
             title: "Création de sites internet",
-            text: "Un site clair, facile à mettre à jour, qui se trouve sur internet et vous apporte des contacts.",
+            text: "Nous créons des sites professionnels modernes, rapides et adaptés à votre activité pour renforcer votre image, présenter vos offres et faciliter la prise de contact avec vos clients.",
+            items: ["Sites vitrines & corporate", "Sites institutionnels", "Sites tourisme & voyages", "WordPress & développement sur mesure", "Refonte & maintenance web"],
             pole: "developpement-web",
             anchor: "sites",
             icon: "fal fa-globe",
         },
         {
             title: "Création de sites e-commerce",
-            text: "Catalogue, paiements, livraisons et commandes réunis au même endroit, avec migration depuis votre plateforme actuelle si besoin.",
+            text: "Nous concevons des boutiques en ligne adaptées à votre catalogue et à vos clients, avec les fonctionnalités essentielles pour vendre, gérer vos commandes et développer votre activité.",
+            items: ["Shopify", "WooCommerce", "Marketplaces & catalogues connectés", "Paiement & livraison", "Optimisation des boutiques en ligne"],
             pole: "developpement-web",
             anchor: "ecommerce",
             icon: "fal fa-shopping-cart",
         },
         {
             title: "Applications métiers sur mesure",
-            text: "Un outil conçu pour votre façon de travailler : fini les ressaisies entre tableurs et messageries.",
+            text: "Nous développons des applications adaptées aux processus de votre entreprise pour centraliser les informations, améliorer le suivi des opérations et simplifier le travail quotidien.",
+            items: ["Applications web & PWA", "Outils de gestion interne", "Réservations & planification", "Tableaux de bord métiers", "API & intégrations"],
             pole: "digitalisation",
             anchor: "applications-metiers",
             icon: "fal fa-database",
         },
         {
             title: "CRM & ERP",
-            text: "Clients, stock, ventes et facturation dans un logiciel adapté, relié à votre site ou à votre boutique.",
+            text: "Nous vous accompagnons dans la mise en place d'outils de gestion pour centraliser vos données, suivre vos clients et mieux piloter les opérations de votre entreprise.",
+            items: ["Odoo ERP", "CRM & suivi commercial", "Gestion des ventes & stocks", "Facturation & processus métiers", "Intégration et automatisation"],
             pole: "digitalisation",
             anchor: "crm-erp",
             icon: "fal fa-users-cog",
         },
         {
             title: "Email marketing & automatisation",
-            text: "Campagnes et relances au bon moment, avec des envois qui se déclenchent seuls dans vos outils.",
+            text: "Nous créons des parcours de communication et des automatisations pour garder le contact avec vos clients, développer leur engagement et améliorer votre fidélisation.",
+            items: ["Klaviyo & Brevo", "Campagnes email & newsletters", "Segmentation des contacts", "Relances & scénarios automatisés", "Analyse des performances"],
             pole: "marketing-digital",
             anchor: "email-automatisation",
             icon: "fal fa-envelope-open-text",
         },
         {
-            title: "Réseaux informatiques & câblage",
-            text: "Un Wi-Fi qui couvre tous vos espaces et un câblage propre, documenté, à partir d'une visite de vos locaux.",
+            title: "Réseaux informatiques & solutions IT",
+            text: "Nous accompagnons les organisations dans la mise en place de leurs équipements et infrastructures informatiques pour faciliter la connectivité et sécuriser leurs environnements de travail.",
+            items: ["Réseaux LAN & Wi-Fi", "Câblage informatique", "Installation d'équipements IT", "Serveurs & téléphonie IP", "Vidéosurveillance & contrôle d'accès"],
             pole: "infrastructure-it",
             anchor: "reseaux-cablage",
             icon: "fal fa-network-wired",
@@ -102,32 +128,29 @@ export const homeServices = {
 };
 
 export const homeMethod = {
-    // [07-ACC-6]
     title: "Comment nous travaillons",
-    // Phrase d'intro ajoutée pour reprendre la structure de la maquette choisie (absente de docs/07,
-    // rédaction originale) — à valider.
-    intro: "Chaque projet suit les mêmes quatre étapes, avec à chaque fois ce que nous attendons de vous : vous savez où vous en êtes et ce qui reste à faire.",
+    intro: "Chaque projet commence par une bonne compréhension de vos besoins. Nous avançons étape par étape, avec des échanges clairs, des livrables définis et un accompagnement adapté à votre organisation.",
     rolePrefix: "Votre rôle :",
     steps: [
         {
             title: "Échange et cadrage",
-            text: "Vous nous présentez votre activité et ce qui bloque. Nous posons les questions qui permettent de cerner le vrai besoin.",
-            role: "partager l'existant (outils, documents, exemples).",
+            text: "Nous prenons le temps de comprendre votre activité, vos objectifs et les difficultés que vous souhaitez résoudre. Cet échange nous permet de définir le besoin réel et les priorités du projet.",
+            role: "partager vos attentes, vos outils existants et les informations utiles.",
         },
         {
             title: "Proposition",
-            text: "Vous recevez une proposition écrite : périmètre, livrables, étapes, conditions et devis. Rien ne démarre sans votre accord.",
-            role: "valider ou ajuster.",
+            text: "Nous préparons une proposition adaptée à vos besoins, avec un périmètre clair, les fonctionnalités prévues, les grandes étapes et les conditions de réalisation.",
+            role: "examiner la proposition et valider les orientations du projet.",
         },
         {
             title: "Réalisation et recette",
-            text: "Nous avançons par étapes et vous montrons le travail en cours. Avant la livraison, vous testez sur des cas réels.",
-            role: "tester et faire vos retours.",
+            text: "Nous concevons et développons votre solution progressivement. Des points de suivi et des tests permettent de vérifier que le résultat correspond aux besoins définis.",
+            role: "tester les fonctionnalités, partager vos observations et valider les livrables.",
         },
         {
             title: "Prise en main et suivi",
-            text: "Formation, documentation et accès à votre nom. Le suivi après livraison est défini dès la proposition.",
-            role: "désigner les personnes à former.",
+            text: "Nous vous accompagnons dans la mise en service et la prise en main de votre solution. Selon le projet, nous prévoyons une documentation, une formation et un suivi adapté.",
+            role: "désigner les utilisateurs concernés et organiser la prise en main.",
         },
     ],
     // Gabarit gris de la template (800×1038) en attendant un visuel Connect Web.
@@ -175,4 +198,26 @@ export const homeStats = {
         // À CONFIRMER : renseigner le nombre d'années (ex. 5) pour afficher « N+ années d'expérience ».
         { id: "experience", icon: "calendar", value: null as number | null, suffix: "+", label: "Années d'expérience" },
     ],
+};
+
+// Cartes de « Nos expertises » (accueil) : titre court et sous-services affichés sur la carte, fournis par Amadou le
+// 08/11/2026. Les libellés du menu (expertises.ts) ne changent pas ; les noms complets des pôles restent dans
+// expertises.ts. Clé = id du pôle.
+export const expertiseCards: Record<string, { cardTitle: string; items: string[] }> = {
+    "developpement-web": {
+        cardTitle: "Développement web",
+        items: ["Sites internet professionnels", "Sites e-commerce", "Shopify & WooCommerce", "Applications web & PWA", "Refonte & maintenance"],
+    },
+    digitalisation: {
+        cardTitle: "Digitalisation",
+        items: ["CRM & gestion client", "ERP & gestion d'entreprise", "Applications métiers", "Automatisation des processus", "Intégration de solutions digitales"],
+    },
+    "marketing-digital": {
+        cardTitle: "Marketing digital",
+        items: ["Stratégie marketing digital", "Référencement naturel SEO", "Email marketing & CRM", "Marketing automation", "Publicité digitale & acquisition"],
+    },
+    "infrastructure-it": {
+        cardTitle: "Infrastructure IT",
+        items: ["Réseaux & câblage", "Installation d'équipements IT", "Hébergement & serveurs", "Téléphonie IP", "Vidéosurveillance & contrôle d'accès"],
+    },
 };

@@ -24,7 +24,7 @@ const ScrollUpBtn = () => {
     return (
         <>
             {scrollUpButton && (
-                <button className='customScrollUp' onClick={scrollUp}><i className="fas fa-angle-up"></i></button>
+                <button type="button" className='customScrollUp' onClick={scrollUp} aria-label="Retour en haut de la page"><i className="fas fa-angle-up" aria-hidden="true"></i></button>
             )}
         </>
     );

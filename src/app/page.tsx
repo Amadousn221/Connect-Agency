@@ -8,7 +8,7 @@ import HomeStats from "@/components/fact/HomeStats";
 import HomeExpertises from "@/components/feature/HomeExpertises";
 import HomeRealisations from "@/components/project/HomeRealisations";
 import HomeServices from "@/components/services/HomeServices";
-import HomeTeam from "@/components/team/HomeTeam";
+import HomeBlog from "@/components/blog/HomeBlog";
 import SiteLayout from "@/components/layouts/SiteLayout";
 
 export const metadata = {
@@ -26,7 +26,7 @@ export default function HomePage() {
             <HomeMethod />
             <HomeStats />
             <HomeRealisations />
-            <HomeTeam />
+            <HomeBlog />
         </SiteLayout>
     );
 }

@@ -30,47 +30,6 @@
 	white-space: nowrap;
 }
 
-@media (min-width: 992px) {
-	nav.navbar.validnavs.dark.no-background .navbar-header .cw-wordmark {
-		color: var(--white);
-	}
-}
-
-nav.navbar.validnavs .navbar-brand.cw-wordmark {
-	padding-top: 25px;
-	padding-bottom: 25px;
-}
-
-/* Focus visible au clavier sur les éléments de navigation */
-nav.navbar.validnavs a:focus-visible,
-nav.navbar.validnavs button:focus-visible,
-.cw-skip-link:focus-visible {
-	outline: 2px solid var(--color-primary);
-	outline-offset: 3px;
-}
-
-/* Page courante */
-nav.navbar.validnavs ul.nav li a.cw-active {
-	color: var(--color-primary);
-}
-
-/* CTA du panneau mobile */
-.cw-mobile-cta {
-	margin-top: 30px;
-}
-
-.cw-mobile-cta .btn {
-	width: 100%;
-	text-align: center;
-}
-
-/* Panneau mobile fermé : hors de l'ordre de tabulation (il est déjà hors écran visuellement) */
-@media (max-width: 991px) {
-	nav.navbar.validnavs .navbar-collapse.collapse-mobile:not(.show) {
-		visibility: hidden;
-	}
-}
-
 /* Réduction des animations (docs/11 §5) */
 @media (prefers-reduced-motion: reduce) {
 	*,
@@ -84,26 +43,18 @@ nav.navbar.validnavs ul.nav li a.cw-active {
 }
 
 /* Hero d'accueil (base BannerV1, diapositive unique statique) */
-.banner-area.cw-hero .content {
+.cw-hero .content {
 	padding: 210px 0 150px;
 }
 
-.banner-area.cw-hero .content .cw-hero-eyebrow {
+.cw-hero .content .cw-hero-eyebrow {
 	text-transform: uppercase;
 	font-weight: 600;
 	letter-spacing: 1px;
 	margin-bottom: 20px;
 }
 
-.banner-area.cw-hero h1 {
-	font-size: 56px;
-	font-weight: 500;
-	line-height: 1.15;
-	margin: 0;
-	color: var(--white);
-}
-
-.banner-area.cw-hero .content .cw-hero-text {
+.cw-hero .content .cw-hero-text {
 	font-size: 18px;
 	line-height: 1.7;
 	margin: 25px 0 0;
@@ -121,31 +72,24 @@ nav.navbar.validnavs ul.nav li a.cw-active {
 }
 
 @media (max-width: 1199px) {
-	.banner-area.cw-hero h1 {
-		font-size: 46px;
-	}
 }
 
 @media (max-width: 1023px) {
-	.banner-area.cw-hero .content {
+	.cw-hero .content {
 		padding: 170px 0 110px;
 	}
 }
 
 @media (max-width: 767px) {
-	.banner-area.cw-hero .content {
+	.cw-hero .content {
 		padding: 130px 0 70px;
 	}
 
-	.banner-area.cw-hero h1 {
-		font-size: 32px;
-	}
-
-	.banner-area.cw-hero .content .cw-hero-text {
+	.cw-hero .content .cw-hero-text {
 		font-size: 16px;
 	}
 
-	.banner-area.cw-hero .banner-shape-bg {
+	.cw-hero .banner-shape-bg {
 		display: none;
 	}
 }
@@ -157,26 +101,8 @@ nav.navbar.validnavs ul.nav li a.cw-active {
 	}
 }
 
-.banner-area.cw-hero .banner-thumb.cw-hero-gradient {
+.cw-hero .banner-thumb.cw-hero-gradient {
 	background: linear-gradient(120deg, var(--dark) 0%, var(--dark-secondary) 45%, var(--color-primary) 100%);
-}
-
-/* Français : pas de majuscule à chaque mot (le thème applique capitalize) */
-.btn,
-nav.navbar .attr-right .attr-nav li.button a {
-	text-transform: none;
-}
-
-/* En-tête : le haut du panneau mobile n'existe que sur mobile */
-@media (min-width: 992px) {
-	nav.navbar.validnavs .collapse-header {
-		display: none;
-	}
-
-	/* Liens clairs tant que l'en-tête est transparent au-dessus du hero sombre */
-	nav.navbar.validnavs.dark.no-background ul.nav > li > a {
-		color: var(--white);
-	}
 }
 
 /* Section « L'agence » de l'accueil (base AboutV1, image à droite) */
@@ -216,19 +142,12 @@ nav.navbar .attr-right .attr-nav li.button a {
 	letter-spacing: 0.5px;
 }
 
-.banner-area.cw-hero h1 {
-	font-size: 48px;
-}
-
 @media (max-width: 1199px) {
 	.title,
 	.site-heading .title {
 		font-size: 36px;
 	}
 
-	.banner-area.cw-hero h1 {
-		font-size: 42px;
-	}
 }
 
 @media (max-width: 991px) {
@@ -244,9 +163,6 @@ nav.navbar .attr-right .attr-nav li.button a {
 		font-size: 28px;
 	}
 
-	.banner-area.cw-hero h1 {
-		font-size: 30px;
-	}
 }
 
 /* Section Méthode de l'accueil (base WhyChooseV3) : étapes numérotées */
@@ -398,31 +314,6 @@ nav.navbar .attr-right .attr-nav li.button a {
 }
 
 /* Prestations : liste à puces, une par ligne (demande d'Amadou, 08/11/2026) */
-.cw-expertises .cw-expertise-services {
-	list-style: disc;
-	margin: 0 0 26px;
-	padding: 0 0 0 20px;
-}
-
-.cw-expertises .cw-expertise-services li {
-	list-style: disc;
-	margin-top: 8px;
-	padding: 0;
-	border: none;
-	font-size: 17px;
-	font-weight: 600;
-	line-height: 1.5;
-	color: #666666;
-}
-
-.cw-expertises .cw-expertise-services li:first-child {
-	margin-top: 0;
-}
-
-.cw-expertises .cw-expertise-services li::marker {
-	color: #666666;
-}
-
 .cw-expertises .cw-expertise-link {
 	margin-top: auto;
 	display: inline-flex;
@@ -444,40 +335,6 @@ nav.navbar .attr-right .attr-nav li.button a {
 .cw-expertises .cw-expertise-link:focus-visible {
 	outline: 2px solid currentColor;
 	outline-offset: 4px;
-}
-
-/* Menu Expertises ouvert au clic ou au clavier sur ordinateur (le thème ne l'ouvre qu'au survol) */
-@media (min-width: 992px) {
-	#navbar-menu ul li.dropdown.on > ul.dropdown-menu,
-	#navbar-menu ul li.dropdown:focus-within > ul.dropdown-menu {
-		opacity: 1;
-		visibility: visible;
-		top: 100%;
-	}
-}
-
-/* Menu : pas de majuscule à chaque mot (français), intitulés sur une ligne, étiquettes alignées */
-nav.navbar.validnavs ul.nav a,
-nav.navbar.validnavs .dropdown-menu a {
-	text-transform: none;
-}
-
-@media (min-width: 992px) {
-	nav.navbar.validnavs li.dropdown ul.dropdown-menu {
-		min-width: 390px;
-	}
-}
-/* Le thème impose « capitalize » avec des sélecteurs plus précis : !important nécessaire */
-nav.navbar.validnavs ul.nav a,
-nav.navbar.validnavs .dropdown-menu a,
-nav.navbar.validnavs .dropdown-menu li a {
-	text-transform: none !important;
-}
-
-@media (min-width: 992px) {
-	nav.navbar.validnavs .dropdown-menu li a {
-		white-space: nowrap;
-	}
 }
 
 /* Nos services : un service par carte (maquette de référence d'Amadou) */
@@ -918,47 +775,59 @@ nav.navbar.validnavs .dropdown-menu li a {
 	margin: 0 auto;
 }
 
-.cw-stats-grid {
-	list-style: none;
-	margin: 45px 0 0;
-	padding: 0;
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	gap: 24px;
+.cw-stats-row {
+	margin-top: 45px;
 }
 
-.cw-stats-grid[data-count="3"] {
-	grid-template-columns: repeat(3, 1fr);
-}
-
-.cw-stat {
-	background: var(--white);
-	border: 1px solid #e3eaf7;
-	border-top: 3px solid var(--color-primary);
-	border-radius: 8px;
-	padding: 28px 20px;
-	text-align: center;
-	box-shadow: var(--box-shadow-regular);
-}
-
-.cw-stat-icon {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	width: 52px;
-	height: 52px;
-	border-radius: 50%;
-	background: var(--bg-gray);
-	color: var(--color-primary);
-	margin-bottom: 14px;
-}
-
-.cw-stat-value {
-	font-size: 56px;
-	font-weight: 600;
-	line-height: 1;
-	color: var(--color-primary);
+.cw-stats-big {
+	font-size: 200px;
+	background-image: linear-gradient(135deg, var(--dark) 0%, var(--color-primary) 70%, #00a1ff 100%);
 	font-variant-numeric: tabular-nums;
+}
+
+.cw-stats-big .cw-stat-suffix {
+	position: static;
+	font-size: inherit;
+	-webkit-text-fill-color: var(--cw-accent-green);
+}
+
+.cw-stats-big-label {
+	margin: 10px 0 0;
+	font-size: 32px;
+	font-weight: 600;
+}
+
+.cw-stats-minimal {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px 40px;
+	margin: 28px 0 0;
+	padding-top: 20px;
+	border-top: 1px solid #e7e7e7;
+}
+
+.cw-stats-minimal dt {
+	order: 2;
+	font-size: 13px;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: var(--color-paragraph);
+}
+
+.cw-stats-minimal dd {
+	order: 1;
+	margin: 0;
+	font-size: 34px;
+	font-weight: 600;
+	line-height: 1.1;
+	color: var(--color-heading);
+	font-variant-numeric: tabular-nums;
+}
+
+.cw-stats-minimal > div {
+	display: flex;
+	flex-direction: column;
 }
 
 .cw-stat-suffix {
@@ -966,36 +835,1060 @@ nav.navbar.validnavs .dropdown-menu li a {
 	margin-left: 2px;
 }
 
-.cw-stat-label {
-	margin: 10px 0 0;
-	font-weight: 600;
-	text-transform: uppercase;
-	letter-spacing: 0.04em;
-	font-size: 14px;
-	color: var(--color-heading);
-}
-
 @media (max-width: 991px) {
-	.cw-stats-grid,
-	.cw-stats-grid[data-count="3"] {
-		grid-template-columns: repeat(2, 1fr);
+	.cw-stats-big {
+		font-size: 150px;
+	}
+
+	.cw-stats-big-label {
+		font-size: 26px;
+	}
+
+	.cw-stats-row .partner-map {
+		text-align: center;
+		margin-bottom: 40px;
 	}
 }
 
 @media (max-width: 575px) {
-	.cw-stats-grid {
-		gap: 14px;
+	.cw-stats-big {
+		font-size: 110px;
 	}
 
-	.cw-stat {
-		padding: 22px 12px;
+}
+
+/* ==========================================================================
+   En-tête (D42, 08/11/2026) : 4 menus déroulants, fond blanc, bordure subtile
+   ========================================================================== */
+.cw-header .cw-navbar {
+	background: var(--white) !important;
+	border-bottom: 1px solid #e8ebf3;
+	box-shadow: none !important;
+}
+
+.cw-header .cw-navbar .container {
+	min-height: 68px;
+}
+
+.cw-header .navbar-brand.cw-wordmark {
+	padding: 0;
+	height: auto;
+	display: inline-flex;
+	align-items: center;
+	font-size: 25px;
+}
+
+.cw-nav-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.cw-nav-item {
+	position: relative;
+}
+
+.cw-nav-trigger,
+.cw-nav-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	min-height: 44px;
+	padding: 0 12px;
+	border: 0;
+	border-radius: 7px;
+	background: transparent;
+	font-family: inherit;
+	font-size: 15.5px;
+	font-weight: 500;
+	line-height: 1.2;
+	color: var(--color-heading);
+	white-space: nowrap;
+	text-transform: none;
+	cursor: pointer;
+	transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.cw-nav-trigger:hover,
+.cw-nav-link:hover,
+.cw-nav-item.is-open > .cw-nav-trigger {
+	color: var(--color-primary);
+	background: #f1f5ff;
+}
+
+.cw-nav-link.cw-active {
+	color: var(--color-primary);
+}
+
+.cw-nav-trigger i {
+	font-size: 10px;
+	transition: transform 0.2s ease;
+}
+
+.cw-nav-item.is-open > .cw-nav-trigger i {
+	transform: rotate(180deg);
+}
+
+.cw-dropdown-inner > ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.cw-dropdown-inner a {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	min-height: 38px;
+	padding: 0 12px;
+	border-radius: 6px;
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 1.3;
+	color: var(--color-heading);
+	text-transform: none;
+	transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.cw-dropdown-inner a:hover {
+	color: var(--color-primary);
+	background: #f1f5ff;
+}
+
+.cw-dropdown-inner .cw-dropdown-all {
+	margin-top: 6px;
+	min-height: 44px;
+	border-top: 1px solid #eef0f6;
+	border-radius: 0 0 6px 6px;
+	font-weight: 600;
+	font-size: 14.5px;
+	color: var(--color-primary);
+}
+
+.cw-dropdown-inner .cw-dropdown-all i {
+	font-size: 12px;
+}
+
+.cw-nav-trigger:focus-visible,
+.cw-nav-link:focus-visible,
+.cw-dropdown-inner a:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+}
+
+/* Bureau */
+@media (min-width: 1024px) {
+	.cw-header .navbar-collapse {
+		display: flex !important;
+		flex: 1 1 auto;
+		align-items: center;
+		justify-content: center;
+		height: auto;
+		padding: 0 12px;
 	}
 
-	.cw-stat-value {
+	.cw-header .collapse-header,
+	.cw-header .cw-mobile-cta {
+		display: none !important;
+	}
+
+	.cw-nav-list {
+		display: flex;
+		align-items: center;
+		flex-wrap: nowrap;
+		gap: 2px;
+	}
+
+	.cw-header-cta {
+		flex: 0 0 auto;
+	}
+
+	.cw-dropdown {
+		position: absolute;
+		left: 0;
+		top: 100%;
+		min-width: 310px;
+		padding-top: 8px;
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(4px);
+		transition: opacity 0.16s ease, transform 0.16s ease, visibility 0s linear 0.16s;
+		z-index: 60;
+	}
+
+	.cw-nav-item.is-open > .cw-dropdown {
+		opacity: 1;
+		visibility: visible;
+		transform: none;
+		transition-delay: 0s;
+	}
+
+	.cw-dropdown-inner {
+		padding: 8px;
+		background: var(--white);
+		border: 1px solid #e8ebf3;
+		border-radius: 10px;
+		box-shadow: 0 12px 32px -14px rgba(14, 39, 105, 0.2);
+	}
+}
+
+/* Écrans de 992 à 1199 px : on resserre pour garder une seule ligne */
+@media (min-width: 1024px) and (max-width: 1199px) {
+	.cw-nav-trigger,
+	.cw-nav-link {
+		padding: 0 8px;
+		font-size: 14.5px;
+		gap: 4px;
+	}
+
+	.cw-header .navbar-brand.cw-wordmark {
+		font-size: 22px;
+	}
+
+	.cw-header-cta .btn {
+		padding: 0 12px;
+		font-size: 13.5px;
+	}
+}
+
+/* Tablette et mobile : panneau latéral avec accordéons */
+@media (max-width: 1023px) {
+	.cw-nav-list {
+		margin-top: 18px;
+	}
+
+	.cw-nav-item {
+		border-bottom: 1px solid #eef0f6;
+	}
+
+	.cw-nav-trigger,
+	.cw-nav-link {
+		width: 100%;
+		justify-content: space-between;
+		min-height: 48px;
+		padding: 0 4px;
+		border-radius: 0;
+		font-size: 17px;
+		font-weight: 600;
+		text-align: left;
+	}
+
+	.cw-nav-trigger:hover,
+	.cw-nav-link:hover,
+	.cw-nav-item.is-open > .cw-nav-trigger {
+		background: transparent;
+	}
+
+	.cw-nav-trigger i {
+		font-size: 12px;
+	}
+
+	.cw-dropdown {
+		display: grid;
+		grid-template-rows: 0fr;
+		visibility: hidden;
+		transition: grid-template-rows 0.22s ease, visibility 0s linear 0.22s;
+	}
+
+	.cw-nav-item.is-open > .cw-dropdown {
+		grid-template-rows: 1fr;
+		visibility: visible;
+		transition-delay: 0s;
+	}
+
+	.cw-dropdown-inner {
+		min-height: 0;
+		overflow: hidden;
+		padding: 0 0 8px 10px;
+	}
+
+	.cw-dropdown-inner a {
+		min-height: 44px;
+		padding: 0 6px;
+		font-size: 15.5px;
+		font-weight: 500;
+		color: #444;
+	}
+
+	.cw-dropdown-inner .cw-dropdown-all {
+		margin-top: 2px;
+		border-top: 0;
+		color: var(--color-primary);
+	}
+
+	.cw-mobile-cta {
+		margin-top: 24px;
+	}
+
+	.cw-mobile-cta .btn {
+		width: 100%;
+	}
+}
+
+/* ==========================================================================
+   Boutons : système commun à tout le site (D42, 08/11/2026)
+   Tailles : sm (par défaut) 38 px, md 44 px, lg 48 px ; mobile : cible tactile d'au moins 44 px.
+   Primaire : bleu Connect Web, texte blanc. Secondaires : bordure fine. Ni animation de fond, ni ombre.
+   Le thème impose majuscules, dégradé, pseudo-éléments animés et grands paddings : surchargés ici.
+   ========================================================================== */
+:root {
+	--cw-btn-radius: 7px;
+	--cw-btn-h-sm: 38px;
+	--cw-btn-h-md: 44px;
+	--cw-btn-h-lg: 48px;
+	--cw-btn-primary: #1351d8;
+	--cw-btn-primary-hover: #0f43b3;
+}
+
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	min-height: var(--cw-btn-h-sm);
+	padding: 0 16px;
+	border: 1.5px solid transparent;
+	border-radius: var(--cw-btn-radius);
+	font-family: inherit;
+	font-size: 14.5px;
+	font-weight: 600;
+	line-height: 1.2;
+	letter-spacing: 0;
+	text-transform: none !important;
+	box-shadow: none;
+	overflow: visible;
+	cursor: pointer;
+	transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn::before,
+.btn::after {
+	display: none !important;
+}
+
+.btn.btn-sm {
+	min-height: var(--cw-btn-h-sm);
+	padding: 0 16px;
+	font-size: 14px;
+}
+
+.btn.btn-md {
+	min-height: var(--cw-btn-h-md);
+	padding: 0 22px;
+	font-size: 15px;
+}
+
+.btn.btn-lg {
+	min-height: var(--cw-btn-h-lg);
+	padding: 0 26px;
+	font-size: 15.5px;
+}
+
+/* Primaire */
+.btn.btn-theme,
+.btn.btn-gradient,
+.btn.btn-dark {
+	background: var(--cw-btn-primary);
+	border-color: var(--cw-btn-primary);
+	color: var(--white);
+}
+
+.btn.btn-theme:hover,
+.btn.btn-gradient:hover,
+.btn.btn-dark:hover {
+	background: var(--cw-btn-primary-hover);
+	border-color: var(--cw-btn-primary-hover);
+	color: var(--white);
+}
+
+/* Secondaires : bordure fine */
+.btn.btn-border-theme {
+	background: transparent;
+	border-color: var(--cw-btn-primary);
+	color: var(--cw-btn-primary);
+}
+
+.btn.btn-border-theme:hover {
+	background: #eef3ff;
+	border-color: var(--cw-btn-primary);
+	color: var(--cw-btn-primary-hover);
+}
+
+.btn.btn-border-light {
+	background: transparent;
+	border-color: rgba(255, 255, 255, 0.75);
+	color: var(--white);
+}
+
+.btn.btn-border-light:hover {
+	background: rgba(255, 255, 255, 0.14);
+	border-color: var(--white);
+	color: var(--white);
+}
+
+/* Focus visible : double anneau, lisible sur fond clair comme sur fond sombre */
+.btn:focus-visible {
+	outline: none;
+	box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--cw-btn-primary);
+}
+
+.btn:disabled,
+.btn[aria-disabled="true"],
+.btn.disabled {
+	opacity: 0.55;
+	cursor: not-allowed;
+	pointer-events: none;
+}
+
+/* Mobile : cible tactile d'au moins 44 px, même pour les petits boutons */
+@media (max-width: 767px) {
+	.btn,
+	.btn.btn-sm {
+		min-height: 44px;
+	}
+
+	.btn.btn-lg {
+		min-height: 48px;
+	}
+}
+
+/* Le thème met en forme tout <button> du panneau comme le bouton de fermeture rond : on le neutralise pour les menus */
+nav.navbar.validnavs .navbar-collapse.collapse button.cw-nav-trigger {
+	position: static;
+	top: auto;
+	right: auto;
+	left: auto;
+	width: auto;
+	height: auto;
+	margin: 0;
+	padding: 0 12px;
+	border: 0;
+	border-radius: 7px;
+	text-align: left;
+	color: var(--color-heading);
+	background: transparent;
+}
+
+nav.navbar.validnavs .navbar-collapse.collapse button.cw-nav-trigger:hover,
+nav.navbar.validnavs .navbar-collapse.collapse .cw-nav-item.is-open > button.cw-nav-trigger {
+	color: var(--color-primary);
+	background: #f1f5ff;
+}
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+	nav.navbar.validnavs .navbar-collapse.collapse button.cw-nav-trigger {
+		padding: 0 8px;
+	}
+}
+
+@media (max-width: 1023px) {
+	nav.navbar.validnavs .navbar-collapse.collapse button.cw-nav-trigger {
+		width: 100%;
+		padding: 0 4px;
+		border-radius: 0;
+	}
+
+	nav.navbar.validnavs .navbar-collapse.collapse button.cw-nav-trigger:hover,
+	nav.navbar.validnavs .navbar-collapse.collapse .cw-nav-item.is-open > button.cw-nav-trigger {
+		background: transparent;
+	}
+}
+
+/* En-tête : hauteur maîtrisée (le thème ajoute des marges) et bouton visible seulement au-dessus de 1024 px */
+nav.navbar.validnavs.cw-navbar {
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+.cw-header-cta {
+	display: none;
+}
+
+@media (min-width: 1024px) {
+	.cw-header-cta {
+		display: block;
+	}
+
+	.cw-header .navbar-toggle {
+		display: none;
+	}
+}
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+	.cw-nav-trigger,
+	.cw-nav-link {
+		padding: 0 7px;
+		font-size: 14px;
+		gap: 4px;
+	}
+
+	nav.navbar.validnavs .navbar-collapse.collapse button.cw-nav-trigger {
+		padding: 0 7px;
+	}
+
+	.cw-header .navbar-collapse {
+		padding: 0 4px;
+	}
+}
+
+/* 1024–1199 px : l'en-tête prend toute la largeur pour garder les 4 pôles sur une seule ligne */
+@media (min-width: 1024px) and (max-width: 1199px) {
+	.cw-header .cw-navbar .container {
+		max-width: none;
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+
+	.cw-header .navbar-brand.cw-wordmark {
+		font-size: 21px;
+	}
+
+	.cw-header-cta .btn.btn-sm {
+		padding: 0 12px;
+		font-size: 13.5px;
+	}
+}
+
+@media (min-width: 1024px) {
+	.cw-dropdown {
+		min-width: 340px;
+	}
+}
+
+/* Mobile : l'espacement vit dans la liste (et non dans le conteneur replié), pour que l'accordéon fermé fasse 0 px */
+@media (max-width: 1023px) {
+	.cw-dropdown-inner {
+		padding: 0;
+	}
+
+	.cw-dropdown-inner > ul {
+		padding: 0 0 8px 10px;
+	}
+
+	.cw-dropdown-inner .cw-dropdown-all {
+		margin: 0 0 8px 10px;
+	}
+
+	/* Boutons d'ouverture et de fermeture du panneau : cible tactile de 44 px */
+	.cw-header .navbar-toggle,
+	nav.navbar.validnavs .navbar-collapse.collapse .collapse-header button.navbar-toggle {
+		min-width: 44px;
+		min-height: 44px;
+		width: 44px;
+		height: 44px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+
+/* Panneau mobile : glissement court. Fermé, il est inerte (retiré du clavier et des lecteurs d'écran) : pas de visibility. */
+@media (max-width: 1023px) {
+	nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse.collapse-mobile {
+		transition: left 0.3s ease;
+	}
+}
+
+/* Accordéon de la section agence : cible tactile d'au moins 44 px sur mobile et tablette */
+@media (max-width: 1023px) {
+	.cw-agency .accordion-single .accordion-button {
+		min-height: 44px;
+		display: flex;
+		align-items: center;
+	}
+}
+
+/* Bouton de retour en haut : cible tactile de 44 px et focus visible */
+@media (max-width: 1023px) {
+	.customScrollUp {
+		width: 44px;
+		height: 44px;
+		line-height: 44px;
+	}
+}
+
+.customScrollUp:focus-visible {
+	outline: none;
+	box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--cw-btn-primary);
+}
+
+/* Ancres de l'accueil : marge sous l'en-tête fixe */
+section[id],
+h2[id] {
+	scroll-margin-top: 90px;
+}
+
+/* Le thème retire le fond de tout lien de l'en-tête au survol et au focus (« .validnavs a:hover { background: none !important } ») :
+   on rétablit les fonds des boutons et des entrées de menu. */
+nav.navbar.validnavs a.btn.btn-theme,
+nav.navbar.validnavs a.btn.btn-theme:focus {
+	background: var(--cw-btn-primary) !important;
+	color: var(--white) !important;
+}
+
+nav.navbar.validnavs a.btn.btn-theme:hover {
+	background: var(--cw-btn-primary-hover) !important;
+	color: var(--white) !important;
+}
+
+nav.navbar.validnavs a.cw-nav-link:hover,
+nav.navbar.validnavs .cw-dropdown-inner a:hover,
+nav.navbar.validnavs .cw-dropdown-inner a:focus-visible {
+	background: #f1f5ff !important;
+	color: var(--color-primary) !important;
+}
+
+@media (max-width: 1023px) {
+	nav.navbar.validnavs a.cw-nav-link:hover,
+	nav.navbar.validnavs .cw-dropdown-inner a:hover,
+	nav.navbar.validnavs .cw-dropdown-inner a:focus-visible {
+		background: transparent !important;
+	}
+}
+
+/* Le :focus du thème impose 2 px de bordure transparente et un rayon de 5 px : on garde la forme au clic */
+.btn:focus,
+.btn.active {
+	border-width: 1.5px;
+	border-radius: var(--cw-btn-radius);
+}
+
+/* Bordure homogène (1,5 px) pour toutes les variantes : le thème force 0 px (primaire) ou 2 px (secondaires) */
+.btn.btn-theme,
+.btn.btn-gradient,
+.btn.btn-dark,
+.btn.btn-border-theme,
+.btn.btn-border-light {
+	border-width: 1.5px;
+	border-style: solid;
+}
+
+/* Le thème assombrit le texte du bouton primaire survolé dans les zones « .shadow » et « .bg-dark » (hero, panneaux sombres) */
+.shadow .btn.btn-theme,
+.bg-dark .btn.btn-theme,
+.shadow .btn.btn-theme:hover,
+.bg-dark .btn.btn-theme:hover,
+.shadow .btn.btn-gradient:hover,
+.bg-dark .btn.btn-gradient:hover {
+	color: var(--white);
+}
+
+/* ===== Lot de refinement accueil (08/11/2026) ===== */
+
+/* Liste à flèches fines (expertises, services, agence) : aucune puce native, flèches alignées en colonne */
+.cw-arrow-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.cw-arrow-list li {
+	position: relative;
+	padding-left: 24px;
+	margin-top: 8px;
+	color: var(--color-heading);
+	line-height: 1.45;
+}
+
+.cw-arrow-list li:first-child {
+	margin-top: 0;
+}
+
+.cw-arrow-list li::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0.72em;
+	width: 12px;
+	height: 1.5px;
+	background: var(--color-primary);
+}
+
+.cw-arrow-list li::after {
+	content: "";
+	position: absolute;
+	left: 5px;
+	top: calc(0.72em - 3.5px);
+	width: 6px;
+	height: 6px;
+	border-top: 1.5px solid var(--color-primary);
+	border-right: 1.5px solid var(--color-primary);
+	transform: rotate(45deg);
+}
+
+/* Hero : contenu aligné à gauche, slider en fondu */
+.cw-hero {
+	position: relative;
+}
+
+.cw-hero .banner-thumb {
+	position: absolute;
+	inset: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.cw-hero .banner-shape-bg {
+	z-index: 0;
+	pointer-events: none;
+}
+
+.cw-hero .cw-hero-slider {
+	position: relative;
+	z-index: 1;
+}
+
+.cw-hero .cw-hero-slider .swiper-slide {
+	height: auto;
+}
+
+.cw-hero .cw-hero-content {
+	max-width: 660px;
+	text-align: left;
+	padding: 190px 0 170px;
+}
+
+.cw-hero .cw-hero-title {
+	font-size: 46px;
+	font-weight: 500;
+	line-height: 1.15;
+	margin: 0;
+	color: var(--white);
+}
+
+.cw-hero .cw-hero-text {
+	font-size: 17px;
+	line-height: 1.7;
+	margin: 22px 0 0;
+}
+
+.cw-hero .cw-hero-buttons {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 14px;
+	margin-top: 32px;
+}
+
+.cw-hero .cw-hero-controls {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 48px;
+	z-index: 2;
+	display: flex;
+	align-items: center;
+	gap: 18px;
+}
+
+.cw-hero .cw-hero-controls button {
+	width: 42px;
+	height: 42px;
+	border-radius: 50%;
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	background: transparent;
+	color: var(--white);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	transition: background 0.25s ease, color 0.25s ease;
+}
+
+.cw-hero .cw-hero-controls button:hover {
+	background: var(--white);
+	color: var(--dark);
+}
+
+.cw-hero .cw-hero-controls button:focus-visible {
+	outline: 2px solid var(--white);
+	outline-offset: 3px;
+}
+
+.cw-hero .cw-hero-pagination {
+	display: flex;
+	gap: 8px;
+}
+
+.cw-hero .cw-hero-pagination .swiper-pagination-bullet {
+	width: 28px;
+	height: 3px;
+	border-radius: 2px;
+	background: rgba(255, 255, 255, 0.45);
+	opacity: 1;
+	margin: 0;
+}
+
+.cw-hero .cw-hero-pagination .swiper-pagination-bullet-active {
+	background: var(--white);
+}
+
+@media (max-width: 1199px) {
+	.cw-hero .cw-hero-title {
 		font-size: 40px;
 	}
+}
 
-	.cw-stat-label {
-		font-size: 12px;
+@media (max-width: 767px) {
+	.cw-hero .cw-hero-content {
+		padding: 120px 0 130px;
+	}
+
+	.cw-hero .cw-hero-title {
+		font-size: 30px;
+	}
+
+	.cw-hero .cw-hero-text {
+		font-size: 16px;
+	}
+
+	.cw-hero .cw-hero-controls {
+		bottom: 32px;
+	}
+}
+
+@media (max-width: 575px) {
+	.cw-hero .cw-hero-buttons .btn {
+		width: 100%;
+		text-align: center;
+	}
+}
+
+/* L'agence : liste légère */
+.cw-agency p {
+	margin-bottom: 16px;
+}
+
+.cw-agency .cw-agency-list-title {
+	font-size: 19px;
+	font-weight: 600;
+	margin: 26px 0 14px;
+}
+
+.cw-agency .cw-agency-list li strong {
+	font-weight: 600;
+}
+
+/* Nos expertises : titres plus grands sur une ligne, descriptions justifiées, flèches */
+.cw-expertises .cw-expertise-title {
+	font-size: clamp(22px, 1.9vw, 28px);
+	font-weight: 700;
+	line-height: 1.2;
+	white-space: nowrap;
+	margin-bottom: 12px;
+}
+
+.cw-expertises .cw-expertise-desc {
+	color: #1a1a1a;
+	font-size: 16px;
+	line-height: 1.7;
+}
+
+@media (min-width: 992px) {
+	.cw-expertises .cw-expertise-desc {
+		text-align: justify;
+		text-justify: inter-word;
+		hyphens: manual;
+		text-wrap: pretty;
+	}
+}
+
+.cw-expertises .cw-expertise-services {
+	padding-left: 0;
+	margin-bottom: 24px;
+}
+
+.cw-expertises .cw-expertise-services li {
+	margin-top: 9px;
+	font-size: 16px;
+	color: #1a1a1a;
+}
+
+.cw-expertises .cw-expertises-slider .feature-style-two .info {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+}
+
+.cw-expertises .cw-expertise-link {
+	margin-top: auto;
+}
+
+@media (max-width: 767px) {
+	.cw-expertises .cw-expertise-title {
+		white-space: normal;
+	}
+}
+
+/* Nos services : sous-services dans la carte */
+.cw-services .cw-service-card {
+	padding: 32px 32px 30px;
+}
+
+.cw-services .cw-service-card .cw-service-text {
+	font-size: 15px;
+	line-height: 1.65;
+	margin-bottom: 18px;
+}
+
+.cw-services .cw-service-items {
+	margin-bottom: 24px;
+}
+
+.cw-services .cw-service-items li {
+	font-size: 15px;
+}
+
+/* Comment nous travaillons : image + accordéon, colonnes de même hauteur sur ordinateur */
+.cw-method .cw-method-thumb {
+	position: relative;
+	height: 320px;
+	border-radius: 14px;
+	overflow: hidden;
+	background: var(--bg-gray);
+}
+
+.cw-method .cw-method-thumb img {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.cw-method .cw-method-intro {
+	margin: 18px 0 26px;
+}
+
+.cw-step {
+	border-bottom: 1px solid #e3e7f0;
+}
+
+.cw-step:first-child {
+	border-top: 1px solid #e3e7f0;
+}
+
+.cw-step-header {
+	margin: 0;
+}
+
+.cw-step-header button {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	padding: 18px 4px;
+	background: none;
+	border: 0;
+	text-align: left;
+	color: var(--color-heading);
+	font-size: 19px;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.cw-step-header button:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+}
+
+.cw-step-number {
+	font-size: 15px;
+	font-weight: 600;
+	color: var(--color-paragraph);
+	min-width: 26px;
+}
+
+.cw-step-title {
+	flex: 1 1 auto;
+}
+
+.cw-step-chevron {
+	width: 9px;
+	height: 9px;
+	border-right: 2px solid currentColor;
+	border-bottom: 2px solid currentColor;
+	transform: rotate(45deg);
+	transition: transform 0.25s ease;
+	margin-right: 6px;
+}
+
+.cw-step.is-open .cw-step-header button,
+.cw-step.is-open .cw-step-number {
+	color: var(--color-primary);
+}
+
+.cw-step.is-open .cw-step-chevron {
+	transform: rotate(-135deg);
+}
+
+.cw-step-panel {
+	display: grid;
+	grid-template-rows: 0fr;
+	transition: grid-template-rows 0.28s ease;
+}
+
+.cw-step.is-open .cw-step-panel {
+	grid-template-rows: 1fr;
+}
+
+.cw-step-panel-inner {
+	overflow: hidden;
+	padding: 0 4px 0 46px;
+}
+
+.cw-step.is-open .cw-step-panel-inner {
+	padding-bottom: 20px;
+}
+
+.cw-step-panel-inner p {
+	margin-bottom: 10px;
+}
+
+@media (min-width: 992px) {
+	.cw-method .cw-method-row {
+		align-items: stretch;
+	}
+
+	.cw-method .cw-method-row > [class*="col-"] {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.cw-method .cw-method-thumb {
+		height: auto;
+		flex: 1 1 auto;
+		min-height: 420px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.cw-step-panel,
+	.cw-step-chevron {
+		transition: none;
+	}
+}
+
+.cw-hero .cw-hero-eyebrow {
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 14px;
+	letter-spacing: 1.2px;
+	margin: 0 0 18px;
+	color: rgba(255, 255, 255, 0.85);
+}
+
+.cw-hero .banner-shape-bg {
+	right: 0;
+}
+
+.cw-hero .cw-hero-pagination {
+	position: static;
+	width: auto;
+	flex: 0 0 auto;
+}
+
+@media (max-width: 991px) {
+	.cw-method .cw-method-thumb {
+		margin-bottom: 30px;
 	}
 }
