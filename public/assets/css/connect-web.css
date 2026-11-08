@@ -30,8 +30,10 @@
 	white-space: nowrap;
 }
 
-nav.navbar.validnavs.dark.no-background .navbar-header .cw-wordmark {
-	color: var(--white);
+@media (min-width: 992px) {
+	nav.navbar.validnavs.dark.no-background .navbar-header .cw-wordmark {
+		color: var(--white);
+	}
 }
 
 nav.navbar.validnavs .navbar-brand.cw-wordmark {
@@ -78,5 +80,101 @@ nav.navbar.validnavs ul.nav li a.cw-active {
 		animation-iteration-count: 1 !important;
 		transition-duration: 0.01ms !important;
 		scroll-behavior: auto !important;
+	}
+}
+
+/* Hero d'accueil (base BannerV1, diapositive unique statique) */
+.banner-area.cw-hero .content {
+	padding: 210px 0 150px;
+}
+
+.banner-area.cw-hero .content .cw-hero-eyebrow {
+	text-transform: uppercase;
+	font-weight: 600;
+	letter-spacing: 1px;
+	margin-bottom: 20px;
+}
+
+.banner-area.cw-hero h1 {
+	font-size: 56px;
+	font-weight: 500;
+	line-height: 1.15;
+	margin: 0;
+	color: var(--white);
+}
+
+.banner-area.cw-hero .content .cw-hero-text {
+	font-size: 18px;
+	line-height: 1.7;
+	margin: 25px 0 0;
+	max-width: 720px;
+}
+
+.cw-hero-buttons {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
+}
+
+.cw-hero-buttons .btn {
+	margin: 0;
+}
+
+@media (max-width: 1199px) {
+	.banner-area.cw-hero h1 {
+		font-size: 46px;
+	}
+}
+
+@media (max-width: 1023px) {
+	.banner-area.cw-hero .content {
+		padding: 170px 0 110px;
+	}
+}
+
+@media (max-width: 767px) {
+	.banner-area.cw-hero .content {
+		padding: 130px 0 70px;
+	}
+
+	.banner-area.cw-hero h1 {
+		font-size: 32px;
+	}
+
+	.banner-area.cw-hero .content .cw-hero-text {
+		font-size: 16px;
+	}
+
+	.banner-area.cw-hero .banner-shape-bg {
+		display: none;
+	}
+}
+
+@media (max-width: 575px) {
+	.cw-hero-buttons .btn {
+		width: 100%;
+		text-align: center;
+	}
+}
+
+.banner-area.cw-hero .banner-thumb.cw-hero-gradient {
+	background: linear-gradient(120deg, var(--dark) 0%, var(--dark-secondary) 45%, var(--color-primary) 100%);
+}
+
+/* Français : pas de majuscule à chaque mot (le thème applique capitalize) */
+.btn,
+nav.navbar .attr-right .attr-nav li.button a {
+	text-transform: none;
+}
+
+/* En-tête : le haut du panneau mobile n'existe que sur mobile */
+@media (min-width: 992px) {
+	nav.navbar.validnavs .collapse-header {
+		display: none;
+	}
+
+	/* Liens clairs tant que l'en-tête est transparent au-dessus du hero sombre */
+	nav.navbar.validnavs.dark.no-background ul.nav > li > a {
+		color: var(--white);
 	}
 }
