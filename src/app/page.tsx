@@ -4,6 +4,7 @@ import HomeAgency from "@/components/about/HomeAgency";
 import HomeHero from "@/components/banner/HomeHero";
 import HomeMethod from "@/components/choose/HomeMethod";
 import HomeExpertises from "@/components/feature/HomeExpertises";
+import HomeRealisations from "@/components/project/HomeRealisations";
 import HomeServices from "@/components/services/HomeServices";
 import HomeSituations from "@/components/services/HomeSituations";
 import SiteLayout from "@/components/layouts/SiteLayout";
@@ -21,6 +22,7 @@ export default function HomePage() {
             <HomeServices />
             <HomeSituations />
             <HomeMethod />
+            <HomeRealisations />
         </SiteLayout>
     );
 }
