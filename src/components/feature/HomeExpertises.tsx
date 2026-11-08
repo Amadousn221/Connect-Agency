@@ -13,7 +13,7 @@ const HomeExpertises = () => {
     const { eyebrow, title, intro, linkLabel, subServicesLabel } = expertisesSection;
 
     return (
-        <section className="feature-style-two-area default-padding cw-expertises" aria-labelledby="expertises-titre">
+        <section id="nos-expertises" className="feature-style-two-area default-padding cw-expertises" aria-labelledby="expertises-titre">
             <div className="container">
                 <div className="row">
                     <div className="col-lg-10 offset-lg-1">

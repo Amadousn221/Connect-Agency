@@ -43,135 +43,58 @@ export const homeAgency = {
     image: { src: "/assets/img/about/1.jpg", alt: "", width: 783, height: 900 },
 };
 
-// « Nos services » : un service par carte, comme la maquette de référence d'Amadou (capture du 08/11/2026).
-// Descriptions rédigées à partir de docs/04 (problème traité et prestation). Liens vers la page du pôle, à l'ancre
-// du service. Les outils cités (Shopify, Klaviyo) restent à confirmer (Q21).
+// « Ce que nous réalisons pour vous » : 6 services, un par carte, comme la maquette de référence d'Amadou
+// (capture du 08/11/2026). Sélection faite pour couvrir les 4 pôles de D40 (docs/12) ; à ajuster par Amadou.
+// Descriptions rédigées à partir de docs/04 (problème traité et prestation). Chaque carte renvoie à la page de son
+// pôle (ancre du sous-service) quand elle existe (pageReady dans expertises.ts), sinon à la section « Nos expertises »
+// de l'accueil : jamais à une page inexistante.
 export const homeServices = {
     eyebrow: "Nos services",
     title: "Ce que nous réalisons pour vous",
-    intro: "Du site à la caméra : chaque service est détaillé sur la page de son pôle, avec ce que vous recevez, ce qui n'est pas inclus et la façon de démarrer.",
+    intro: "Une sélection de nos services, du site internet au réseau de vos locaux. Chacun est détaillé sur la page de son pôle : ce que vous recevez, ce qui n'est pas inclus et la façon de démarrer.",
     linkLabel: "En savoir plus",
-    // Les services marqués featured s'affichent d'abord ; les autres apparaissent avec le bouton ci-dessous.
-    // Choix initial : sites, boutique, application sur mesure, CRM/ERP, email marketing (pages prioritaires de docs/05).
-    moreLabel: "Voir plus de services",
-    lessLabel: "Voir moins",
     cards: [
         {
-            title: "Création et refonte de sites",
+            title: "Création de sites internet",
             text: "Un site clair, facile à mettre à jour, qui se trouve sur internet et vous apporte des contacts.",
-            href: "/expertises/web-ecommerce#sites",
-            featured: true,
+            pole: "developpement-web",
+            anchor: "sites",
             icon: "fal fa-globe",
         },
         {
-            title: "Boutique en ligne",
+            title: "Création de sites e-commerce",
             text: "Catalogue, paiements, livraisons et commandes réunis au même endroit, avec migration depuis votre plateforme actuelle si besoin.",
-            href: "/expertises/web-ecommerce#ecommerce",
-            featured: true,
+            pole: "developpement-web",
+            anchor: "ecommerce",
             icon: "fal fa-shopping-cart",
         },
         {
-            title: "Application métier sur mesure",
+            title: "Applications métiers sur mesure",
             text: "Un outil conçu pour votre façon de travailler : fini les ressaisies entre tableurs et messageries.",
-            href: "/expertises/applications-crm-erp#applications-metier",
-            featured: true,
+            pole: "digitalisation",
+            anchor: "applications-metiers",
             icon: "fal fa-database",
         },
         {
-            title: "Application web et PWA",
-            text: "Un outil accessible depuis tous vos appareils, que l'on peut installer sur l'écran d'accueil du téléphone.",
-            href: "/expertises/applications-crm-erp#pwa",
-            icon: "fal fa-mobile",
-        },
-        {
-            title: "CRM, ERP et intégrations",
+            title: "CRM & ERP",
             text: "Clients, stock, ventes et facturation dans un logiciel adapté, relié à votre site ou à votre boutique.",
-            href: "/expertises/applications-crm-erp#crm-erp",
-            featured: true,
+            pole: "digitalisation",
+            anchor: "crm-erp",
             icon: "fal fa-users-cog",
         },
         {
-            title: "Email marketing et fidélisation",
-            text: "Campagnes et relances au bon moment, à partir d'une base de contacts propre et consentie.",
-            href: "/expertises/marketing-digital#email-fidelisation",
-            featured: true,
+            title: "Email marketing & automatisation",
+            text: "Campagnes et relances au bon moment, avec des envois qui se déclenchent seuls dans vos outils.",
+            pole: "marketing-digital",
+            anchor: "email-automatisation",
             icon: "fal fa-envelope-open-text",
         },
         {
-            title: "Automatisation",
-            text: "Des envois et des tâches qui se déclenchent seuls, dans vos outils, par exemple Shopify et Klaviyo.",
-            href: "/expertises/marketing-digital#automatisation",
-            icon: "fal fa-sync-alt",
-        },
-        {
-            title: "Réseaux informatiques et câblage",
+            title: "Réseaux informatiques & câblage",
             text: "Un Wi-Fi qui couvre tous vos espaces et un câblage propre, documenté, à partir d'une visite de vos locaux.",
-            href: "/expertises/reseaux-cablage",
+            pole: "infrastructure-it",
+            anchor: "reseaux-cablage",
             icon: "fal fa-network-wired",
-        },
-        {
-            title: "Vidéosurveillance",
-            text: "Des caméras bien placées, des images consultables à distance et un accès sécurisé remis à votre nom.",
-            href: "/expertises/telephonie-videosurveillance#videosurveillance",
-            icon: "fal fa-video",
-        },
-        {
-            title: "Téléphonie VoIP",
-            text: "Un standard téléphonique sur internet, des transferts d'appels et des postes utilisables à distance.",
-            href: "/expertises/telephonie-videosurveillance#voip",
-            icon: "fal fa-phone-office",
-        },
-    ],
-};
-
-export const homeSituations = {
-    // Surtitre et phrase d'intro ajoutés pour reprendre la structure de la maquette choisie par Amadou
-    // (absents de docs/07, rédaction originale) — à valider.
-    eyebrow: "Vos situations",
-    // [07-ACC-4]
-    title: "Votre situation ressemble-t-elle à l'une de celles-ci ?",
-    intro: "Décrivez ce qui vous gêne au quotidien : nous vous orientons vers le pôle qui y répond.",
-    linkLabel: "Voir le pôle",
-    cards: [
-        {
-            title: "Vendre",
-            problem: "Vos commandes arrivent par messages, appels et réseaux sociaux.",
-            text: "Une boutique en ligne centralise le catalogue, les paiements et les livraisons, et vous laisse plus de temps pour vendre.",
-            pole: "Sites web & e-commerce",
-            href: "/expertises/web-ecommerce",
-            icon: "fal fa-shopping-bag",
-        },
-        {
-            title: "Organiser",
-            problem: "Le stock, les réservations ou les devis vivent dans plusieurs fichiers.",
-            text: "Un logiciel bien configuré ou une application conçue pour vous évite les ressaisies et donne une vue claire de l'activité.",
-            pole: "Applications & gestion d'entreprise",
-            href: "/expertises/applications-crm-erp",
-            icon: "fal fa-tasks",
-        },
-        {
-            title: "Fidéliser",
-            problem: "Vos clients achètent une fois, puis vous n'avez plus de nouvelles.",
-            text: "Des emails utiles, envoyés au bon moment et en partie automatisés, entretiennent la relation sans y passer vos journées.",
-            pole: "Marketing digital",
-            href: "/expertises/marketing-digital",
-            icon: "fal fa-heart",
-        },
-        {
-            title: "Connecter",
-            problem: "Le Wi-Fi décroche et plus personne ne sait ce qui est branché où.",
-            text: "Un réseau étudié pour vos locaux, câblé proprement et documenté, règle le problème à la source.",
-            pole: "Réseaux informatiques & câblage",
-            href: "/expertises/reseaux-cablage",
-            icon: "fal fa-wifi",
-        },
-        {
-            title: "Sécuriser et joindre",
-            problem: "Des appels se perdent et vos locaux ne sont pas surveillés.",
-            text: "Un standard téléphonique sur internet et des caméras consultables à distance vous rendent joignable et rassuré.",
-            pole: "Téléphonie VoIP & vidéosurveillance",
-            href: "/expertises/telephonie-videosurveillance",
-            icon: "fal fa-shield-check",
         },
     ],
 };
