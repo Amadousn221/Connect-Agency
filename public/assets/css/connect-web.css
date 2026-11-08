@@ -529,3 +529,70 @@ nav.navbar .attr-right .attr-nav li.button a {
 	outline: 2px solid currentColor;
 	outline-offset: 4px;
 }
+
+/* Nos expertises en slider : cartes de même hauteur, commandes */
+.cw-expertises .cw-expertises-slider {
+	padding: 6px 4px 20px;
+}
+
+.cw-expertises .cw-expertises-slider .swiper-slide {
+	height: auto;
+	display: flex;
+}
+
+.cw-expertises .cw-expertises-controls {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	margin-top: 20px;
+}
+
+.cw-expertises .cw-expertises-controls button {
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	border: 1px solid #d5dbe8;
+	background: var(--white);
+	color: var(--dark);
+	font-size: 18px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.25s ease-in-out;
+}
+
+.cw-expertises .cw-expertises-controls button:hover:not(:disabled) {
+	background: var(--color-primary);
+	border-color: var(--color-primary);
+	color: var(--white);
+}
+
+.cw-expertises .cw-expertises-controls button:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 3px;
+}
+
+.cw-expertises .cw-expertises-controls button.swiper-button-disabled {
+	opacity: 0.4;
+	cursor: default;
+}
+
+.cw-expertises .cw-expertises-pagination {
+	display: flex;
+	gap: 8px;
+	width: auto !important;
+}
+
+.cw-expertises .cw-expertises-pagination .swiper-pagination-bullet {
+	width: 10px;
+	height: 10px;
+	margin: 0 !important;
+	background: var(--dark);
+	opacity: 0.25;
+}
+
+.cw-expertises .cw-expertises-pagination .swiper-pagination-bullet-active {
+	background: var(--color-primary);
+	opacity: 1;
+}
