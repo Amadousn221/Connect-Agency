@@ -43,52 +43,112 @@ export const homeAgency = {
     image: { src: "/assets/img/about/1.jpg", alt: "", width: 783, height: 900 },
 };
 
-export const homePoles = {
-    // En-tête réécrit le 08/11/2026 à la demande d'Amadou (structure surtitre / titre sur 2 lignes / une phrase),
-    // formulation originale — remplace l'en-tête initial de [07-ACC-3] ; docs/07 mis à jour.
+// « Nos expertises » : trois familles regroupant les 5 pôles (décision D39 d'Amadou, 08/11/2026).
+// Les services détaillés sont dans homeServices : pas de doublon entre les deux sections.
+export const homeFamilies = {
+    // Surtitre ajouté pour reprendre la structure de la maquette (absent de docs/07) — à valider.
     eyebrow: "Nos expertises",
     titleLines: ["Vos outils, en ligne", "et dans vos locaux."],
-    intro: "Trois familles, cinq pôles qui se complètent : vendre en ligne, organiser vos opérations, fidéliser vos clients, connecter et équiper vos locaux. Commencez par celui qui répond à votre besoin du moment.",
-    linkLabel: "Voir le pôle",
+    intro: "Trois familles d'expertise pour vendre, vous organiser, rester en contact avec vos clients et équiper vos locaux. Chacune regroupe des pôles détaillés.",
+    linkLabel: "Voir les pôles",
     cards: [
         {
-            title: "Sites web & e-commerce",
-            need: "Être trouvé, inspirer confiance et vendre en ligne.",
-            services: ["Création et refonte de sites", "Boutiques en ligne", "Migration de plateforme"],
-            href: "/expertises/web-ecommerce",
-            family: "Digitalisation",
-            icon: "fal fa-store",
+            title: "Digitalisation",
+            need: "Être trouvé, vendre en ligne et organiser vos opérations : sites, boutiques, applications, CRM et ERP.",
+            poles: [
+                { label: "Sites web & e-commerce", href: "/expertises/web-ecommerce" },
+                { label: "Applications & gestion d'entreprise", href: "/expertises/applications-crm-erp" },
+            ],
+            href: "/expertises#digitalisation",
+            icon: "fal fa-laptop-code",
         },
         {
-            title: "Applications & gestion d'entreprise",
-            need: "Organiser vos opérations sans tableurs éparpillés.",
-            services: ["Applications métier", "Applications web et PWA", "CRM, ERP et intégrations"],
-            href: "/expertises/applications-crm-erp",
-            family: "Digitalisation",
-            icon: "fal fa-cogs",
-        },
-        {
-            title: "Marketing digital",
-            need: "Attirer, garder le contact avec vos clients et automatiser ce qui se répète.",
-            services: ["Email marketing", "Fidélisation", "Segmentation et mesure", "Automatisation Shopify, Klaviyo…"],
-            href: "/expertises/marketing-digital",
-            family: "Marketing",
+            title: "Marketing",
+            need: "Garder le contact avec vos clients et automatiser ce qui se répète : emails, fidélisation, automatisations.",
+            poles: [{ label: "Marketing digital", href: "/expertises/marketing-digital" }],
+            href: "/expertises#marketing",
             icon: "fal fa-bullhorn",
         },
         {
-            title: "Réseaux informatiques & câblage",
-            need: "Une connexion fiable dans tous vos locaux.",
-            services: ["Câblage", "Wi-Fi", "Équipements réseau"],
+            title: "Infrastructure",
+            need: "Équiper vos locaux : une connexion fiable, des appels qui aboutissent, des espaces surveillés.",
+            poles: [
+                { label: "Réseaux informatiques & câblage", href: "/expertises/reseaux-cablage" },
+                { label: "Téléphonie VoIP & vidéosurveillance", href: "/expertises/telephonie-videosurveillance" },
+            ],
+            href: "/expertises#infrastructure",
+            icon: "fal fa-server",
+        },
+    ],
+};
+
+// « Nos services » : un service par carte, comme la maquette de référence d'Amadou (capture du 08/11/2026).
+// Descriptions rédigées à partir de docs/04 (problème traité et prestation). Liens vers la page du pôle, à l'ancre
+// du service. Les outils cités (Shopify, Klaviyo) restent à confirmer (Q21).
+export const homeServices = {
+    eyebrow: "Nos services",
+    title: "Ce que nous réalisons pour vous",
+    intro: "Du site à la caméra : chaque service est détaillé sur la page de son pôle, avec ce que vous recevez, ce qui n'est pas inclus et la façon de démarrer.",
+    linkLabel: "En savoir plus",
+    cards: [
+        {
+            title: "Création et refonte de sites",
+            text: "Un site clair, facile à mettre à jour, qui se trouve sur internet et vous apporte des contacts.",
+            href: "/expertises/web-ecommerce#sites",
+            icon: "fal fa-globe",
+        },
+        {
+            title: "Boutique en ligne",
+            text: "Catalogue, paiements, livraisons et commandes réunis au même endroit, avec migration depuis votre plateforme actuelle si besoin.",
+            href: "/expertises/web-ecommerce#ecommerce",
+            icon: "fal fa-shopping-cart",
+        },
+        {
+            title: "Application métier sur mesure",
+            text: "Un outil conçu pour votre façon de travailler : fini les ressaisies entre tableurs et messageries.",
+            href: "/expertises/applications-crm-erp#applications-metier",
+            icon: "fal fa-database",
+        },
+        {
+            title: "Application web et PWA",
+            text: "Un outil accessible depuis tous vos appareils, que l'on peut installer sur l'écran d'accueil du téléphone.",
+            href: "/expertises/applications-crm-erp#pwa",
+            icon: "fal fa-mobile",
+        },
+        {
+            title: "CRM, ERP et intégrations",
+            text: "Clients, stock, ventes et facturation dans un logiciel adapté, relié à votre site ou à votre boutique.",
+            href: "/expertises/applications-crm-erp#crm-erp",
+            icon: "fal fa-users-cog",
+        },
+        {
+            title: "Email marketing et fidélisation",
+            text: "Campagnes et relances au bon moment, à partir d'une base de contacts propre et consentie.",
+            href: "/expertises/marketing-digital#email-fidelisation",
+            icon: "fal fa-envelope-open-text",
+        },
+        {
+            title: "Automatisation",
+            text: "Des envois et des tâches qui se déclenchent seuls, dans vos outils, par exemple Shopify et Klaviyo.",
+            href: "/expertises/marketing-digital#automatisation",
+            icon: "fal fa-sync-alt",
+        },
+        {
+            title: "Réseaux informatiques et câblage",
+            text: "Un Wi-Fi qui couvre tous vos espaces et un câblage propre, documenté, à partir d'une visite de vos locaux.",
             href: "/expertises/reseaux-cablage",
-            family: "Infrastructure",
             icon: "fal fa-network-wired",
         },
         {
-            title: "Téléphonie VoIP & vidéosurveillance",
-            need: "Être joignable et garder un œil sur vos locaux.",
-            services: ["Standard téléphonique sur IP", "Caméras", "Accès à distance"],
-            href: "/expertises/telephonie-videosurveillance",
-            family: "Infrastructure",
+            title: "Vidéosurveillance",
+            text: "Des caméras bien placées, des images consultables à distance et un accès sécurisé remis à votre nom.",
+            href: "/expertises/telephonie-videosurveillance#videosurveillance",
+            icon: "fal fa-video",
+        },
+        {
+            title: "Téléphonie VoIP",
+            text: "Un standard téléphonique sur internet, des transferts d'appels et des postes utilisables à distance.",
+            href: "/expertises/telephonie-videosurveillance#voip",
             icon: "fal fa-phone-office",
         },
     ],

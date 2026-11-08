@@ -536,90 +536,9 @@ nav.navbar .attr-right .attr-nav li.button a {
 	outline-offset: 4px;
 }
 
-/* Nos expertises en slider : cartes de même hauteur, commandes */
-.cw-expertises .cw-expertises-slider {
-	padding: 6px 4px 20px;
-}
-
-.cw-expertises .cw-expertises-slider .swiper-slide {
-	height: auto;
-	display: flex;
-}
-
-.cw-expertises .cw-expertises-controls {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 20px;
-	margin-top: 20px;
-}
-
-.cw-expertises .cw-expertises-controls button {
-	width: 48px;
-	height: 48px;
-	border-radius: 50%;
-	border: 1px solid #d5dbe8;
-	background: var(--white);
-	color: var(--dark);
-	font-size: 18px;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	transition: all 0.25s ease-in-out;
-}
-
-.cw-expertises .cw-expertises-controls button:hover:not(:disabled) {
-	background: var(--color-primary);
-	border-color: var(--color-primary);
-	color: var(--white);
-}
-
-.cw-expertises .cw-expertises-controls button:focus-visible {
-	outline: 2px solid var(--color-primary);
-	outline-offset: 3px;
-}
-
-.cw-expertises .cw-expertises-controls button.swiper-button-disabled {
-	opacity: 0.4;
-	cursor: default;
-}
-
-.cw-expertises .cw-expertises-pagination {
-	display: flex;
-	gap: 8px;
-	width: auto !important;
-}
-
-.cw-expertises .cw-expertises-pagination .swiper-pagination-bullet {
-	width: 10px;
-	height: 10px;
-	margin: 0 !important;
-	background: var(--dark);
-	opacity: 0.25;
-}
-
-.cw-expertises .cw-expertises-pagination .swiper-pagination-bullet-active {
-	background: var(--color-primary);
-	opacity: 1;
-}
-
-/* Familles (Digitalisation, Marketing, Infrastructure) : étiquette sur les cartes et groupes du menu */
+/* Familles (Digitalisation, Marketing, Infrastructure) : groupes du menu */
 .cw-expertises .cw-expertise-visual {
 	position: relative;
-}
-
-.cw-expertises .cw-expertise-family {
-	position: absolute;
-	left: 28px;
-	top: 22px;
-	padding: 4px 14px;
-	border: 1px solid rgba(255, 255, 255, 0.5);
-	border-radius: 30px;
-	color: var(--white);
-	font-size: 13px;
-	font-weight: 600;
-	letter-spacing: 0.6px;
-	text-transform: uppercase;
 }
 
 nav.navbar.validnavs .dropdown-menu .cw-family-label {
@@ -681,4 +600,95 @@ nav.navbar.validnavs .dropdown-menu li a {
 	nav.navbar.validnavs .dropdown-menu li a {
 		white-space: nowrap;
 	}
+}
+
+/* Nos expertises = 3 familles : pôles listés en liens */
+.cw-expertises .cw-expertise-services li a {
+	color: inherit;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.cw-expertises .cw-expertise-services li a:hover {
+	color: var(--color-primary);
+	text-decoration: underline;
+}
+
+.cw-expertises .cw-expertise-services li a:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+}
+
+/* Nos services : un service par carte (maquette de référence d'Amadou) */
+.cw-services .cw-services-intro {
+	margin-top: 25px;
+	margin-bottom: 0;
+}
+
+.cw-services .cw-service-card {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	padding: 36px 40px 34px;
+	background: var(--white);
+	border: 1px solid #e8ebf3;
+	border-radius: 20px;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cw-services .cw-service-card:hover,
+.cw-services .cw-service-card:focus-within {
+	transform: translateY(-4px);
+	box-shadow: 0 15px 40px -12px rgba(14, 39, 105, 0.22);
+}
+
+.cw-services .cw-service-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 60px;
+	height: 60px;
+	margin-bottom: 26px;
+	border-radius: 50%;
+	background: #eef1f9;
+}
+
+.cw-services .cw-service-icon i {
+	font-size: 22px;
+	line-height: 1;
+	color: var(--dark-secondary);
+}
+
+.cw-services .cw-service-title {
+	font-size: 21px;
+	font-weight: 600;
+	line-height: 1.35;
+	margin-bottom: 12px;
+}
+
+.cw-services .cw-service-card p {
+	margin-bottom: 24px;
+}
+
+.cw-services .cw-service-link {
+	margin-top: auto;
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	font-weight: 600;
+	color: var(--color-primary);
+}
+
+.cw-services .cw-service-link::after {
+	content: "\2192";
+	transition: transform 0.25s ease;
+}
+
+.cw-services .cw-service-link:hover::after {
+	transform: translateX(4px);
+}
+
+.cw-services .cw-service-link:focus-visible {
+	outline: 2px solid currentColor;
+	outline-offset: 4px;
 }
