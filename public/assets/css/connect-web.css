@@ -487,24 +487,30 @@ nav.navbar .attr-right .attr-nav li.button a {
 	margin: 0 0 20px;
 }
 
-/* Badges de prestations : en ligne, à leur largeur naturelle (demande d'Amadou, 08/11/2026) */
+/* Prestations : liste à puces, une par ligne (demande d'Amadou, 08/11/2026) */
 .cw-expertises .cw-expertise-services {
-	list-style: none;
+	list-style: disc;
 	margin: 0 0 26px;
-	padding: 0;
-	display: flex;
-	flex-wrap: wrap;
-	gap: 8px;
+	padding: 0 0 0 20px;
 }
 
 .cw-expertises .cw-expertise-services li {
-	display: inline-block;
-	padding: 4px 16px;
-	border: 1px solid #c8d0f8;
-	border-radius: 30px;
-	font-size: 14px;
+	list-style: disc;
+	margin-top: 8px;
+	padding: 0;
+	border: none;
+	font-size: 17px;
+	font-weight: 600;
 	line-height: 1.5;
-	white-space: nowrap;
+	color: #666666;
+}
+
+.cw-expertises .cw-expertise-services li:first-child {
+	margin-top: 0;
+}
+
+.cw-expertises .cw-expertise-services li::marker {
+	color: #666666;
 }
 
 .cw-expertises .cw-expertise-link {
