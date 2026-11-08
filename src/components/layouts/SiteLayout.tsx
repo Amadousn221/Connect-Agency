@@ -1,6 +1,5 @@
-// Gabarit Connect Web. En-tête : SiteHeader (base HeaderV2).
-// Pied de page : FooterV2 de démo en attendant le choix d'Amadou (étape suivante de l'assemblage).
-import FooterV2 from "../footer/FooterV2";
+// Gabarit Connect Web : en-tête SiteHeader (base HeaderV2), contenu, pied de page minimal SiteFooter.
+import SiteFooter from "../footer/SiteFooter";
 import SiteHeader from "../header/SiteHeader";
 
 interface LayoutProps {
@@ -14,7 +13,7 @@ const SiteLayout = ({ children }: LayoutProps) => {
             <main id="contenu" tabIndex={-1}>
                 {children}
             </main>
-            <FooterV2 />
+            <SiteFooter />
         </>
     );
 };

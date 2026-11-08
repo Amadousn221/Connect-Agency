@@ -27,7 +27,7 @@ const HomeAgency = () => {
                                 </li>
                             ))}
                         </ul>
-                        <Link className="btn btn-theme btn-md mt-30" href={link.href}>
+                        <Link className="btn btn-theme mt-30" href={link.href}>
                             {link.label}
                         </Link>
                     </div>

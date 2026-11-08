@@ -64,10 +64,10 @@ const HomeHero = () => {
                                     <Title className="cw-hero-title">{slide.title}</Title>
                                     <p className="cw-hero-text">{slide.text}</p>
                                     <div className="cw-hero-buttons">
-                                        <Link className="btn btn-theme btn-md" href={href}>
+                                        <Link className="btn btn-theme" href={href}>
                                             {slide.cta}
                                         </Link>
-                                        <Link className="btn btn-border-light btn-md" href={secondaryCta.href}>
+                                        <Link className="btn btn-border-light" href={secondaryCta.href}>
                                             {secondaryCta.label}
                                         </Link>
                                     </div>
