@@ -48,7 +48,7 @@ export const homePoles = {
     // formulation originale — remplace l'en-tête initial de [07-ACC-3] ; docs/07 mis à jour.
     eyebrow: "Nos expertises",
     titleLines: ["Vos outils, en ligne", "et dans vos locaux."],
-    intro: "Cinq pôles qui se complètent : vendre en ligne, organiser vos opérations, fidéliser vos clients, connecter et équiper vos locaux. Commencez par celui qui répond à votre besoin du moment.",
+    intro: "Trois familles, cinq pôles qui se complètent : vendre en ligne, organiser vos opérations, fidéliser vos clients, connecter et équiper vos locaux. Commencez par celui qui répond à votre besoin du moment.",
     linkLabel: "Voir le pôle",
     cards: [
         {
@@ -56,6 +56,7 @@ export const homePoles = {
             need: "Être trouvé, inspirer confiance et vendre en ligne.",
             services: ["Création et refonte de sites", "Boutiques en ligne", "Migration de plateforme"],
             href: "/expertises/web-ecommerce",
+            family: "Digitalisation",
             icon: "fal fa-store",
         },
         {
@@ -63,6 +64,7 @@ export const homePoles = {
             need: "Organiser vos opérations sans tableurs éparpillés.",
             services: ["Applications métier", "Applications web et PWA", "CRM, ERP et intégrations"],
             href: "/expertises/applications-crm-erp",
+            family: "Digitalisation",
             icon: "fal fa-cogs",
         },
         {
@@ -70,6 +72,7 @@ export const homePoles = {
             need: "Attirer, garder le contact avec vos clients et automatiser ce qui se répète.",
             services: ["Email marketing", "Fidélisation", "Segmentation et mesure", "Automatisation Shopify, Klaviyo…"],
             href: "/expertises/marketing-digital",
+            family: "Marketing",
             icon: "fal fa-bullhorn",
         },
         {
@@ -77,6 +80,7 @@ export const homePoles = {
             need: "Une connexion fiable dans tous vos locaux.",
             services: ["Câblage", "Wi-Fi", "Équipements réseau"],
             href: "/expertises/reseaux-cablage",
+            family: "Infrastructure",
             icon: "fal fa-network-wired",
         },
         {
@@ -84,6 +88,7 @@ export const homePoles = {
             need: "Être joignable et garder un œil sur vos locaux.",
             services: ["Standard téléphonique sur IP", "Caméras", "Accès à distance"],
             href: "/expertises/telephonie-videosurveillance",
+            family: "Infrastructure",
             icon: "fal fa-phone-office",
         },
     ],

@@ -56,6 +56,7 @@ const HomeExpertises = () => {
                             <article className="feature-style-two">
                                 <div className="thumb">
                                     <div className="cw-expertise-visual" aria-hidden="true">
+                                        <span className="cw-expertise-family">{card.family}</span>
                                         <span className={`cw-expertise-bigicon ${card.icon}`} />
                                     </div>
                                 </div>

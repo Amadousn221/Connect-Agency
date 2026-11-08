@@ -602,3 +602,83 @@ nav.navbar .attr-right .attr-nav li.button a {
 	background: var(--color-primary);
 	opacity: 1;
 }
+
+/* Familles (Digitalisation, Marketing, Infrastructure) : étiquette sur les cartes et groupes du menu */
+.cw-expertises .cw-expertise-visual {
+	position: relative;
+}
+
+.cw-expertises .cw-expertise-family {
+	position: absolute;
+	left: 28px;
+	top: 22px;
+	padding: 4px 14px;
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	border-radius: 30px;
+	color: var(--white);
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: 0.6px;
+	text-transform: uppercase;
+}
+
+nav.navbar.validnavs .dropdown-menu .cw-family-label {
+	display: block;
+	padding: 10px 25px 4px;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 0.8px;
+	text-transform: uppercase;
+	color: var(--color-primary);
+}
+
+nav.navbar.validnavs .dropdown-menu .cw-family-poles {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+nav.navbar.validnavs .dropdown-menu .cw-family + .cw-family {
+	border-top: 1px solid #eef0f6;
+	margin-top: 6px;
+	padding-top: 4px;
+}
+
+/* Menu Expertises ouvert au clic ou au clavier sur ordinateur (le thème ne l'ouvre qu'au survol) */
+@media (min-width: 992px) {
+	#navbar-menu ul li.dropdown.on > ul.dropdown-menu,
+	#navbar-menu ul li.dropdown:focus-within > ul.dropdown-menu {
+		opacity: 1;
+		visibility: visible;
+		top: 100%;
+	}
+}
+
+/* Menu : pas de majuscule à chaque mot (français), intitulés sur une ligne, étiquettes alignées */
+nav.navbar.validnavs ul.nav a,
+nav.navbar.validnavs .dropdown-menu a {
+	text-transform: none;
+}
+
+@media (min-width: 992px) {
+	nav.navbar.validnavs li.dropdown ul.dropdown-menu {
+		min-width: 390px;
+	}
+}
+
+nav.navbar.validnavs .dropdown-menu .cw-family-label {
+	padding-left: 15px;
+}
+
+/* Le thème impose « capitalize » avec des sélecteurs plus précis : !important nécessaire */
+nav.navbar.validnavs ul.nav a,
+nav.navbar.validnavs .dropdown-menu a,
+nav.navbar.validnavs .dropdown-menu li a {
+	text-transform: none !important;
+}
+
+@media (min-width: 992px) {
+	nav.navbar.validnavs .dropdown-menu li a {
+		white-space: nowrap;
+	}
+}
