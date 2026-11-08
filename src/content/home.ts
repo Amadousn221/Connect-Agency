@@ -43,45 +43,6 @@ export const homeAgency = {
     image: { src: "/assets/img/about/1.jpg", alt: "", width: 783, height: 900 },
 };
 
-// « Nos expertises » : trois familles regroupant les 5 pôles (décision D39 d'Amadou, 08/11/2026).
-// Les services détaillés sont dans homeServices : pas de doublon entre les deux sections.
-export const homeFamilies = {
-    // Surtitre ajouté pour reprendre la structure de la maquette (absent de docs/07) — à valider.
-    eyebrow: "Nos expertises",
-    titleLines: ["Vos outils, en ligne", "et dans vos locaux."],
-    intro: "Trois familles d'expertise pour vendre, vous organiser, rester en contact avec vos clients et équiper vos locaux. Chacune regroupe des pôles détaillés.",
-    linkLabel: "Voir les pôles",
-    cards: [
-        {
-            title: "Digitalisation",
-            need: "Être trouvé, vendre en ligne et organiser vos opérations : sites, boutiques, applications, CRM et ERP.",
-            poles: [
-                { label: "Sites web & e-commerce", href: "/expertises/web-ecommerce" },
-                { label: "Applications & gestion d'entreprise", href: "/expertises/applications-crm-erp" },
-            ],
-            href: "/expertises#digitalisation",
-            icon: "fal fa-laptop-code",
-        },
-        {
-            title: "Marketing",
-            need: "Garder le contact avec vos clients et automatiser ce qui se répète : emails, fidélisation, automatisations.",
-            poles: [{ label: "Marketing digital", href: "/expertises/marketing-digital" }],
-            href: "/expertises#marketing",
-            icon: "fal fa-bullhorn",
-        },
-        {
-            title: "Infrastructure",
-            need: "Équiper vos locaux : une connexion fiable, des appels qui aboutissent, des espaces surveillés.",
-            poles: [
-                { label: "Réseaux informatiques & câblage", href: "/expertises/reseaux-cablage" },
-                { label: "Téléphonie VoIP & vidéosurveillance", href: "/expertises/telephonie-videosurveillance" },
-            ],
-            href: "/expertises#infrastructure",
-            icon: "fal fa-server",
-        },
-    ],
-};
-
 // « Nos services » : un service par carte, comme la maquette de référence d'Amadou (capture du 08/11/2026).
 // Descriptions rédigées à partir de docs/04 (problème traité et prestation). Liens vers la page du pôle, à l'ancre
 // du service. Les outils cités (Shopify, Klaviyo) restent à confirmer (Q21).

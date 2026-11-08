@@ -6,7 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import useStickyMenu from "@/hooks/useStickyMenu";
-import { allExpertises, families, mainLinks, primaryCta } from "@/content/navigation";
+import { allExpertises, mainLinks, poles, primaryCta } from "@/content/navigation";
 
 const MOBILE_QUERY = "(max-width: 991px)";
 
@@ -177,18 +177,11 @@ const SiteHeader = () => {
                                     className="dropdown-menu"
                                     style={isMobile ? { maxHeight: expertisesOpen ? "1000px" : "0" } : undefined}
                                 >
-                                    {families.map((family) => (
-                                        <li key={family.id} role="presentation" className="cw-family">
-                                            <span className="cw-family-label">{family.label}</span>
-                                            <ul className="cw-family-poles">
-                                                {family.poles.map((pole) => (
-                                                    <li key={pole.href}>
-                                                        <Link href={pole.href} aria-current={current(pole.href)} className={isActive(pole.href) ? "cw-active" : ""}>
-                                                            {pole.label}
-                                                        </Link>
-                                                    </li>
-                                                ))}
-                                            </ul>
+                                    {poles.map((pole) => (
+                                        <li key={pole.href}>
+                                            <Link href={pole.href} aria-current={current(pole.href)} className={isActive(pole.href) ? "cw-active" : ""}>
+                                                {pole.label}
+                                            </Link>
                                         </li>
                                     ))}
                                     <li>

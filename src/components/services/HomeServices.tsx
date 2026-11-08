@@ -30,7 +30,7 @@ const HomeServices = () => {
     };
 
     return (
-        <section className="default-padding bottom-less bg-gray cw-services" aria-labelledby="services-titre">
+        <section id="nos-services" className="default-padding bottom-less bg-gray cw-services" aria-labelledby="services-titre">
             <div className="container">
                 <div className="row">
                     <div className="col-lg-8 offset-lg-2">

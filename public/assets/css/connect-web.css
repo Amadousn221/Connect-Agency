@@ -536,33 +536,6 @@ nav.navbar .attr-right .attr-nav li.button a {
 	outline-offset: 4px;
 }
 
-/* Familles (Digitalisation, Marketing, Infrastructure) : groupes du menu */
-.cw-expertises .cw-expertise-visual {
-	position: relative;
-}
-
-nav.navbar.validnavs .dropdown-menu .cw-family-label {
-	display: block;
-	padding: 10px 25px 4px;
-	font-size: 12px;
-	font-weight: 700;
-	letter-spacing: 0.8px;
-	text-transform: uppercase;
-	color: var(--color-primary);
-}
-
-nav.navbar.validnavs .dropdown-menu .cw-family-poles {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-nav.navbar.validnavs .dropdown-menu .cw-family + .cw-family {
-	border-top: 1px solid #eef0f6;
-	margin-top: 6px;
-	padding-top: 4px;
-}
-
 /* Menu Expertises ouvert au clic ou au clavier sur ordinateur (le thème ne l'ouvre qu'au survol) */
 @media (min-width: 992px) {
 	#navbar-menu ul li.dropdown.on > ul.dropdown-menu,
@@ -584,11 +557,6 @@ nav.navbar.validnavs .dropdown-menu a {
 		min-width: 390px;
 	}
 }
-
-nav.navbar.validnavs .dropdown-menu .cw-family-label {
-	padding-left: 15px;
-}
-
 /* Le thème impose « capitalize » avec des sélecteurs plus précis : !important nécessaire */
 nav.navbar.validnavs ul.nav a,
 nav.navbar.validnavs .dropdown-menu a,
@@ -600,23 +568,6 @@ nav.navbar.validnavs .dropdown-menu li a {
 	nav.navbar.validnavs .dropdown-menu li a {
 		white-space: nowrap;
 	}
-}
-
-/* Nos expertises = 3 familles : pôles listés en liens */
-.cw-expertises .cw-expertise-services li a {
-	color: inherit;
-	font-weight: 600;
-	text-decoration: none;
-}
-
-.cw-expertises .cw-expertise-services li a:hover {
-	color: var(--color-primary);
-	text-decoration: underline;
-}
-
-.cw-expertises .cw-expertise-services li a:focus-visible {
-	outline: 2px solid var(--color-primary);
-	outline-offset: 2px;
 }
 
 /* Nos services : un service par carte (maquette de référence d'Amadou) */
@@ -720,4 +671,166 @@ nav.navbar.validnavs .dropdown-menu li a {
 .cw-services .cw-services-more .btn.btn-border-theme:focus-visible {
 	color: var(--white);
 	background: var(--color-primary);
+}
+
+/* Nos expertises : 4 pôles (décision D40) */
+.cw-expertises .cw-expertise-visual {
+	position: relative;
+	height: 150px;
+}
+
+.cw-expertises .cw-expertise-number {
+	position: absolute;
+	left: 24px;
+	top: 18px;
+	padding: 3px 12px;
+	border: 1px solid rgba(255, 255, 255, 0.45);
+	border-radius: 30px;
+	color: var(--white);
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 0.6px;
+	text-transform: uppercase;
+}
+
+.cw-expertises .cw-expertise-visual .cw-expertise-bigicon {
+	font-size: 64px;
+}
+
+.cw-expertises .feature-style-two .info {
+	padding: 0 24px 28px;
+	top: -36px;
+	margin-bottom: -36px;
+}
+
+.cw-expertises .feature-style-two .icon {
+	height: 64px;
+	width: 64px;
+	font-size: 26px;
+	line-height: 64px;
+	margin-bottom: 18px;
+}
+
+.cw-expertises .cw-expertise-title {
+	font-size: 20px;
+	min-height: 0;
+}
+
+.cw-expertises .cw-expertise-desc {
+	font-size: 15px;
+	line-height: 1.65;
+	margin-bottom: 18px;
+}
+
+.cw-expertises .cw-expertise-services {
+	margin: 0 0 24px;
+	padding-left: 18px;
+}
+
+.cw-expertises .cw-expertise-services li {
+	margin-top: 7px;
+	font-size: 15px;
+	line-height: 1.4;
+}
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+	.cw-expertises .feature-style-two .info {
+		padding: 0 20px 24px;
+	}
+
+	.cw-expertises .cw-expertise-title {
+		font-size: 18px;
+	}
+}
+
+@media (max-width: 767px) {
+	.cw-expertises .cw-expertise-title {
+		min-height: 0;
+	}
+}
+
+/* Ancre « Nos services » (cible des boutons des pôles tant que leurs pages n'existent pas) */
+#nos-services {
+	scroll-margin-top: 90px;
+}
+
+/* Nos expertises en slider : 3 cartes visibles, cartes de même hauteur, commandes */
+.cw-expertises .cw-expertises-slider {
+	padding: 6px 4px 20px;
+}
+
+.cw-expertises .cw-expertises-slider .swiper-slide {
+	height: auto;
+	display: flex;
+}
+
+.cw-expertises .cw-expertises-slider .feature-style-two {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid #e8ebf3;
+	border-radius: 14px;
+	transition: box-shadow 0.3s ease;
+}
+
+.cw-expertises .cw-expertises-slider .feature-style-two:hover,
+.cw-expertises .cw-expertises-slider .feature-style-two:focus-within {
+	box-shadow: 0 15px 40px -12px rgba(14, 39, 105, 0.25);
+}
+
+.cw-expertises .cw-expertises-controls {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	margin-top: 20px;
+}
+
+.cw-expertises .cw-expertises-controls button {
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	border: 1px solid #d5dbe8;
+	background: var(--white);
+	color: var(--dark);
+	font-size: 18px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.25s ease-in-out;
+}
+
+.cw-expertises .cw-expertises-controls button:hover:not(:disabled) {
+	background: var(--color-primary);
+	border-color: var(--color-primary);
+	color: var(--white);
+}
+
+.cw-expertises .cw-expertises-controls button:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 3px;
+}
+
+.cw-expertises .cw-expertises-controls button.swiper-button-disabled {
+	opacity: 0.4;
+	cursor: default;
+}
+
+.cw-expertises .cw-expertises-pagination {
+	display: flex;
+	gap: 8px;
+	width: auto !important;
+}
+
+.cw-expertises .cw-expertises-pagination .swiper-pagination-bullet {
+	width: 10px;
+	height: 10px;
+	margin: 0 !important;
+	background: var(--dark);
+	opacity: 0.25;
+}
+
+.cw-expertises .cw-expertises-pagination .swiper-pagination-bullet-active {
+	background: var(--color-primary);
+	opacity: 1;
 }

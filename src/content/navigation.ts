@@ -1,43 +1,14 @@
 // Référentiel de navigation Connect Web — source : docs/05 §3, docs/07 §1 (en-tête), CLAUDE.md.
 // Toute modification des pôles ou des routes doit être répercutée dans docs/03–07, 10, 11, 12 et TASKS.md.
+import { expertises } from "./expertises";
 
 export interface NavLink {
     label: string;
     href: string;
 }
 
-export interface NavFamily {
-    id: string;
-    label: string;
-    poles: NavLink[];
-}
-
-// Trois familles regroupant les 5 pôles (décision D38 bis / D39 d'Amadou, 08/11/2026). Chaque pôle garde sa page.
-export const families: NavFamily[] = [
-    {
-        id: "digitalisation",
-        label: "Digitalisation",
-        poles: [
-            { label: "Sites web & e-commerce", href: "/expertises/web-ecommerce" },
-            { label: "Applications & gestion d'entreprise", href: "/expertises/applications-crm-erp" },
-        ],
-    },
-    {
-        id: "marketing",
-        label: "Marketing",
-        poles: [{ label: "Marketing digital", href: "/expertises/marketing-digital" }],
-    },
-    {
-        id: "infrastructure",
-        label: "Infrastructure",
-        poles: [
-            { label: "Réseaux informatiques & câblage", href: "/expertises/reseaux-cablage" },
-            { label: "Téléphonie VoIP & vidéosurveillance", href: "/expertises/telephonie-videosurveillance" },
-        ],
-    },
-];
-
-export const poles: NavLink[] = families.flatMap((family) => family.poles);
+// Les 4 pôles viennent de expertises.ts (source unique, décision D40).
+export const poles: NavLink[] = expertises.map((expertise) => ({ label: expertise.shortTitle, href: expertise.href }));
 
 export const allExpertises: NavLink = { label: "Toutes nos expertises", href: "/expertises" };
 
