@@ -1658,6 +1658,15 @@ nav.navbar.validnavs .cw-dropdown-inner a:focus-visible {
 	margin-bottom: 16px;
 }
 
+.cw-agency .cw-agency-accent {
+	display: block;
+	background: linear-gradient(90deg, var(--color-primary) 0%, #00a1ff 100%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: var(--color-primary);
+}
+
 .cw-agency .cw-agency-list-title {
 	font-size: 19px;
 	font-weight: 600;
@@ -1977,4 +1986,19 @@ nav.navbar.validnavs .cw-dropdown-inner a:focus-visible {
 	justify-content: center;
 	gap: 12px;
 	margin-top: 28px;
+}
+
+/* « Nos chiffres » : la template met tout <span> du grand chiffre en position absolue, à 40 px, avec le texte
+   transparent (« .partner-map h2 span ») ; le compteur de react-countup est un <span> : le nombre disparaissait
+   et seul le suffixe restait visible. On rétablit un affichage normal pour le compteur. */
+.cw-stats .cw-stats-big > span {
+	position: static;
+	font-size: inherit;
+	line-height: inherit;
+	color: inherit;
+}
+
+.cw-stats .cw-stats-big > span.cw-stat-suffix {
+	-webkit-text-fill-color: var(--cw-accent-green);
+	color: var(--cw-accent-green);
 }
