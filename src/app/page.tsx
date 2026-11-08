@@ -2,7 +2,9 @@
 // Non indexé tant que l'accueil n'est pas validé et publiable.
 import HomeAgency from "@/components/about/HomeAgency";
 import HomeHero from "@/components/banner/HomeHero";
+import HomeMethod from "@/components/choose/HomeMethod";
 import HomePoles from "@/components/services/HomePoles";
+import HomeSituations from "@/components/services/HomeSituations";
 import SiteLayout from "@/components/layouts/SiteLayout";
 
 export const metadata = {
@@ -15,6 +17,8 @@ export default function HomePage() {
             <HomeHero />
             <HomeAgency />
             <HomePoles />
+            <HomeSituations />
+            <HomeMethod />
         </SiteLayout>
     );
 }

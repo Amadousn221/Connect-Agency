@@ -412,3 +412,146 @@ nav.navbar .attr-right .attr-nav li.button a {
 	text-align: center;
 	border-radius: 22px;
 }
+
+/* Section Situations clients de l'accueil (base ServiceV5, mise en page de la maquette d'Amadou) */
+.cw-situations .cw-situations-intro {
+	margin-top: 25px;
+	margin-bottom: 0;
+}
+
+.cw-situations .services-style-five {
+	display: flex;
+}
+
+.cw-situations .services-style-five .item {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	padding: 40px 36px;
+	border-radius: 20px;
+	border: 1px solid #e8ebf3;
+	box-shadow: none;
+}
+
+.cw-situations .services-style-five.active .item {
+	border-color: transparent;
+	box-shadow: 0 15px 40px -10px rgba(19, 81, 216, 0.4);
+}
+
+.cw-situations .cw-situation-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 60px;
+	height: 60px;
+	margin-bottom: 28px;
+	border-radius: 50%;
+	background: #f4f6fb;
+	transition: all 0.35s ease-in-out;
+}
+
+.cw-situations .cw-situation-icon i {
+	font-size: 24px;
+	line-height: 1;
+	color: var(--color-primary);
+	transition: color 0.35s ease-in-out;
+}
+
+.cw-situations .services-style-five.active .cw-situation-icon {
+	background: rgba(255, 255, 255, 0.18);
+}
+
+.cw-situations .services-style-five.active .cw-situation-icon i {
+	color: var(--white);
+}
+
+.cw-situations .cw-situation-title {
+	font-size: 22px;
+	font-weight: 600;
+	margin-bottom: 12px;
+	transition: color 0.35s ease-in-out;
+}
+
+.cw-situations .services-style-five.active .cw-situation-title {
+	color: var(--white);
+}
+
+.cw-situations .cw-situation-problem {
+	font-style: italic;
+	color: var(--color-heading);
+	margin-bottom: 12px;
+}
+
+.cw-situations .cw-situation-link {
+	margin-top: auto;
+	padding-top: 15px;
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	font-weight: 600;
+	color: var(--color-primary);
+	transition: color 0.35s ease-in-out;
+}
+
+.cw-situations .cw-situation-link:focus-visible {
+	outline: 2px solid currentColor;
+	outline-offset: 4px;
+}
+
+.cw-situations .services-style-five.active .cw-situation-problem,
+.cw-situations .services-style-five.active .cw-situation-link {
+	color: var(--white);
+}
+
+/* Section Méthode de l'accueil (base WhyChooseV3) : étapes numérotées */
+.cw-method .cw-method-steps {
+	list-style: none;
+	counter-reset: etape;
+	margin: 35px 0 0;
+	padding: 0;
+}
+
+.cw-method .cw-method-steps li {
+	counter-increment: etape;
+	position: relative;
+	padding-left: 56px;
+	margin-top: 26px;
+}
+
+.cw-method .cw-method-steps li:first-child {
+	margin-top: 0;
+}
+
+.cw-method .cw-method-steps li::before {
+	content: counter(etape);
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	background: var(--color-primary);
+	color: var(--white);
+	font-weight: 600;
+	line-height: 38px;
+	text-align: center;
+}
+
+.cw-method .cw-method-steps h3 {
+	font-size: 21px;
+	font-weight: 600;
+	margin-bottom: 6px;
+}
+
+.cw-method .cw-method-steps p {
+	margin-bottom: 6px;
+}
+
+.cw-method .cw-method-role {
+	color: var(--color-heading);
+}
+
+.cw-method .cw-method-role strong {
+	color: var(--color-primary);
+	font-weight: 600;
+}

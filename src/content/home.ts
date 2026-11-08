@@ -88,3 +88,88 @@ export const homePoles = {
         },
     ],
 };
+
+export const homeSituations = {
+    // Surtitre et phrase d'intro ajoutés pour reprendre la structure de la maquette choisie par Amadou
+    // (absents de docs/07, rédaction originale) — à valider.
+    eyebrow: "Vos situations",
+    // [07-ACC-4]
+    title: "Votre situation ressemble-t-elle à l'une de celles-ci ?",
+    intro: "Décrivez ce qui vous gêne au quotidien : nous vous orientons vers le pôle qui y répond.",
+    linkLabel: "Voir le pôle",
+    cards: [
+        {
+            title: "Vendre",
+            problem: "Vos commandes arrivent par messages, appels et réseaux sociaux.",
+            text: "Une boutique en ligne centralise le catalogue, les paiements et les livraisons, et vous laisse plus de temps pour vendre.",
+            pole: "Sites web & e-commerce",
+            href: "/expertises/web-ecommerce",
+            icon: "fal fa-shopping-bag",
+        },
+        {
+            title: "Organiser",
+            problem: "Le stock, les réservations ou les devis vivent dans plusieurs fichiers.",
+            text: "Un logiciel bien configuré ou une application conçue pour vous évite les ressaisies et donne une vue claire de l'activité.",
+            pole: "Applications & gestion d'entreprise",
+            href: "/expertises/applications-crm-erp",
+            icon: "fal fa-tasks",
+        },
+        {
+            title: "Fidéliser",
+            problem: "Vos clients achètent une fois, puis vous n'avez plus de nouvelles.",
+            text: "Des emails utiles, envoyés au bon moment, entretiennent la relation sans y passer vos journées.",
+            pole: "Email marketing & fidélisation",
+            href: "/expertises/email-marketing",
+            icon: "fal fa-heart",
+        },
+        {
+            title: "Connecter",
+            problem: "Le Wi-Fi décroche et plus personne ne sait ce qui est branché où.",
+            text: "Un réseau étudié pour vos locaux, câblé proprement et documenté, règle le problème à la source.",
+            pole: "Réseaux informatiques & câblage",
+            href: "/expertises/reseaux-cablage",
+            icon: "fal fa-wifi",
+        },
+        {
+            title: "Sécuriser et joindre",
+            problem: "Des appels se perdent et vos locaux ne sont pas surveillés.",
+            text: "Un standard téléphonique sur internet et des caméras consultables à distance vous rendent joignable et rassuré.",
+            pole: "Téléphonie VoIP & vidéosurveillance",
+            href: "/expertises/telephonie-videosurveillance",
+            icon: "fal fa-shield-check",
+        },
+    ],
+};
+
+export const homeMethod = {
+    // [07-ACC-6]
+    title: "Comment nous travaillons",
+    // Phrase d'intro ajoutée pour reprendre la structure de la maquette choisie (absente de docs/07,
+    // rédaction originale) — à valider.
+    intro: "Chaque projet suit les mêmes quatre étapes, avec à chaque fois ce que nous attendons de vous : vous savez où vous en êtes et ce qui reste à faire.",
+    rolePrefix: "Votre rôle :",
+    steps: [
+        {
+            title: "Échange et cadrage",
+            text: "Vous nous présentez votre activité et ce qui bloque. Nous posons les questions qui permettent de cerner le vrai besoin.",
+            role: "partager l'existant (outils, documents, exemples).",
+        },
+        {
+            title: "Proposition",
+            text: "Vous recevez une proposition écrite : périmètre, livrables, étapes, conditions et devis. Rien ne démarre sans votre accord.",
+            role: "valider ou ajuster.",
+        },
+        {
+            title: "Réalisation et recette",
+            text: "Nous avançons par étapes et vous montrons le travail en cours. Avant la livraison, vous testez sur des cas réels.",
+            role: "tester et faire vos retours.",
+        },
+        {
+            title: "Prise en main et suivi",
+            text: "Formation, documentation et accès à votre nom. Le suivi après livraison est défini dès la proposition.",
+            role: "désigner les personnes à former.",
+        },
+    ],
+    // Gabarit gris de la template (800×1038) en attendant un visuel Connect Web.
+    image: { src: "/assets/img/illustration/10.png", alt: "", width: 800, height: 1038 },
+};
