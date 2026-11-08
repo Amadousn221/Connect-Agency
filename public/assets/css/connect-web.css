@@ -178,3 +178,28 @@ nav.navbar .attr-right .attr-nav li.button a {
 		color: var(--white);
 	}
 }
+
+/* Section « L'agence » de l'accueil (base AboutV1, image à droite) */
+.cw-agency .accordion-header {
+	margin: 0;
+}
+
+.cw-agency .accordion-single .accordion-button {
+	font-weight: 600;
+	color: var(--color-heading);
+}
+
+.cw-agency .accordion-single .accordion-button:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+}
+
+.cw-agency .accordion-single + .accordion-single {
+	margin-top: 10px;
+}
+
+@media (max-width: 991px) {
+	.cw-agency .cw-agency-thumb {
+		margin-top: 50px;
+	}
+}

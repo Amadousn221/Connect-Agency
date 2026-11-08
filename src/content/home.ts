@@ -11,3 +11,34 @@ export const homeHero = {
     // tant qu'aucun visuel Connect Web n'est fourni. Renseigner un chemin pour afficher une image.
     backgroundImage: null as string | null,
 };
+
+export const homeAgency = {
+    // Surtitre ajouté pour reprendre la structure de AboutV1 (non présent dans docs/07) — à valider.
+    eyebrow: "L'agence",
+    // [07-ACC-7] — bloc [VALIDATION] dans docs/07.
+    title: "Une agence qui connaît le quotidien de ses clients",
+    // [07-ACC-7] sans « basé à {{VILLE_ADRESSE}} » tant que Q07 n'est pas réglée.
+    text: "Connect Web est dirigée par Amadou Diallo, développeur web. Avant de concevoir des outils pour d'autres, il a géré l'activité en ligne d'une marque : migration de la boutique, catalogue, réassorts, service client, campagnes email. Cette expérience guide chaque projet : un outil n'est utile que s'il simplifie le travail de ceux qui l'utilisent.",
+    // [07-ACC-2] Repères, présentés dans l'accordéon de AboutV1.
+    points: [
+        {
+            title: "Expérience terrain du e-commerce",
+            text: "Catalogue, commandes, service client et emailing gérés au quotidien.",
+        },
+        {
+            title: "Un interlocuteur, du cadrage à la prise en main",
+            text: "La personne qui comprend votre besoin suit votre projet.",
+        },
+        {
+            title: "Des outils que vous savez utiliser",
+            text: "Chaque livraison comprend une prise en main et une documentation.",
+        },
+        {
+            title: "Le bon outil, pas le plus complexe",
+            text: "Nous vérifions si un logiciel existant suffit avant de proposer du sur mesure.",
+        },
+    ],
+    link: { label: "Découvrir l'agence", href: "/agence" },
+    // Gabarit gris de la template (783×900) en attendant la photo d'Amadou (docs/06 §1 section 7).
+    image: { src: "/assets/img/about/1.jpg", alt: "", width: 783, height: 900 },
+};
