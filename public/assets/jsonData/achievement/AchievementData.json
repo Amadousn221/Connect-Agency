@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "count": 638,
+        "operator": "+",
+        "textFirst": "Business advices",
+        "textLast": "given over 30 years"
+    },
+    {
+        "id": 2,
+        "count": 95,
+        "operator": "%",
+        "textFirst": "Business Excellence",
+        "textLast": "awards achieved"
+    }
+]

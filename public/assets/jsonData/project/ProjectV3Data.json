@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "thumb": "3.jpg",
+    "number": "01",
+    "title": "Cyber Security & Protect",
+    "description": "If you've built your IT systems over a period of time, you probably have a mix of different hardware and software.",
+    "tags": ["Technology", "Software"],
+    "clientName": "Aleesha Brown"
+  },
+  {
+    "id": 2,
+    "thumb": "4.jpg",
+    "number": "02",
+    "title": "Digital Marketing Agency",
+    "description": "If you've built your IT systems over a period of time, you probably have a mix of different hardware and software.",
+    "tags": ["Technology", "Software"],
+    "clientName": "Sarah Albert"
+  },
+  {
+    "id": 3,
+    "thumb": "5.jpg",
+    "number": "03",
+    "title": "Web Design & Development",
+    "description": "If you've built your IT systems over a period of time, you probably have a mix of different hardware and software.",
+    "tags": ["Technology", "Software"],
+    "clientName": "Kevin Martin"
+  }
+]

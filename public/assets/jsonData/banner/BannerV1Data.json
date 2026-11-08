@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "bgImage": "1.jpg",
+        "subTitle": "Smart Technology",
+        "title": "Transforming Ideas Tech Solutions",
+        "buttonText": "Discover More",
+        "shapeImage": "1.png"
+    },
+    {
+        "id": 2,
+        "bgImage": "2.jpg",
+        "subTitle": "Best Value Solutions",
+        "title": "Seamless Technology for IT business",
+        "buttonText": "Discover More",
+        "shapeImage": "1.png"
+    }
+]

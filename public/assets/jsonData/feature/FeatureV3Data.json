@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "shape": "23.png",
+        "icon": "17.png",
+        "title": "Best UI/UX",
+        "titleLast": "Design Services",
+        "description": "Prevailed mr tolerably are discourse assurance estimable every melancholy uncommonly solicitude at perfection."
+    },
+    {
+        "id": 2,
+        "shape": "23.png",
+        "icon": "18.png",
+        "title": "Business planner",
+        "titleLast": "for tech clients",
+        "description": "Prevailed mr tolerably are discourse assurance estimable every melancholy uncommonly solicitude at perfection."
+    },
+    {
+        "id": 3,
+        "shape": "23.png",
+        "icon": "19.png",
+        "title": "Security provider",
+        "titleLast": "for Business",
+        "description": "Prevailed mr tolerably are discourse assurance estimable every melancholy uncommonly solicitude at perfection."
+    },
+    {
+        "id": 4,
+        "shape": "23.png",
+        "icon": "20.png",
+        "title": "Technical regular",
+        "titleLast": "service provider",
+        "description": "Prevailed mr tolerably are discourse assurance estimable every melancholy uncommonly solicitude at perfection."
+    }
+]

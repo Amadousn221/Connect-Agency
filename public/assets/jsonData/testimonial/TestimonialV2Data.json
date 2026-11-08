@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "title": "Great Service",
+        "ratings": 4.5,
+        "text": "Contrasted dissimilar get joy you instrument out reasonably. Again keeps at no meant stuff. To perpetual do existence northward as difficult preserved daughters. Continued at up to zealously necessary breakfast. Surrounded sir motionless she end literature. Gay direction neglected but supported yet her.",
+        "name": "Aleesha Brown",
+        "location": "United States",
+        "logo": "01.png",
+        "quoteImg": "quote.png"
+    },
+    {
+        "id": 2,
+        "title": "Best Always",
+        "ratings": 4.5,
+        "text": "Contrasted dissimilar get joy you instrument out reasonably. Again keeps at no meant stuff. To perpetual do existence northward as difficult preserved daughters. Continued at up to zealously necessary breakfast. Surrounded sir motionless she end literature. Gay direction neglected but supported yet her.",
+        "name": "Kevin Martin",
+        "location": "Australia",
+        "logo": "04.png",
+        "quoteImg": "quote.png"
+    },
+    {
+        "id": 3,
+        "title": "Highly Recommended",
+        "ratings": 4.5,
+        "text": "Contrasted dissimilar get joy you instrument out reasonably. Again keeps at no meant stuff. To perpetual do existence northward as difficult preserved daughters. Continued at up to zealously necessary breakfast. Surrounded sir motionless she end literature. Gay direction neglected but supported yet her.",
+        "name": "Sarah Albert",
+        "location": "Germany",
+        "logo": "05.png",
+        "quoteImg": "quote.png"
+    }
+]

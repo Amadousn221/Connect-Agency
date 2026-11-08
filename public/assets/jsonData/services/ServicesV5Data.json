@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "shape": "25.png",
+        "icon": "34.png",
+        "title": "Data Science",
+        "description": "Any right to find fault with a man who chooses too enjoy With over a decade of experience, we’ve established ourselves as one of the..",
+        "features": [
+            "Support Vector Machines",
+            "The Data Engineer",
+            "Ensemble Methods"
+        ]
+    },
+    {
+        "id": 2,
+        "shape": "25.png",
+        "icon": "35.png",
+        "title": "Machine Learning",
+        "description": "Any right to find fault with a man who chooses too enjoy With over a decade of experience, we’ve established ourselves as one of the..",
+        "features": [
+            "Support Vector Machines",
+            "The Data Engineer",
+            "Ensemble Methods"
+        ]
+    },
+    {
+        "id": 3,
+        "shape": "25.png",
+        "icon": "36.png",
+        "title": "Data Analytics",
+        "description": "Any right to find fault with a man who chooses too enjoy With over a decade of experience, we’ve established ourselves as one of the..",
+        "features": [
+            "Support Vector Machines",
+            "The Data Engineer",
+            "Ensemble Methods"
+        ]
+    }
+]

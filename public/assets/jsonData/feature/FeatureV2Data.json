@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "thumb": "4.jpg",
+        "icon": "fas fa-tachometer",
+        "title": "Fast and Reliable",
+        "description": "Plan upon yet way get cold spot its week. Almost do am or limits hearts. Resolve parties but why she shewing. She sang know now",
+        "delay": "0"
+    },
+    {
+        "id": 2,
+        "thumb": "5.jpg",
+        "icon": "fas fa-database",
+        "title": "Enrich Data with Context",
+        "description": "Plan upon yet way get cold spot its week. Almost do am or limits hearts. Resolve parties but why she shewing. She sang know now",
+        "delay": "100"
+    },
+    {
+        "id": 3,
+        "thumb": "6.jpg",
+        "icon": "fas fa-shield-alt",
+        "title": "Privacy Compliance",
+        "description": "Plan upon yet way get cold spot its week. Almost do am or limits hearts. Resolve parties but why she shewing. She sang know now",
+        "delay": "200"
+    }
+]

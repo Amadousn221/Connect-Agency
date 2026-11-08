@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "number": "01",
+        "title": "Planning & strategy",
+        "description": "Facilisis leo vel fringilla est ullamcorper. Posuere urna nec tincidunt praesent semper feugiat nibh pulvinar neque laoreet",
+        "delay": ""
+    },
+    {
+        "id": 2,
+        "number": "02",
+        "title": "Testing & quality assurance",
+        "description": "Techincal leo vel fringilla est ullamcorper. Posuere urna nec tincidunt praesent semper feugiat nibh pulvinar neque laoreet",
+        "delay": "500"
+    }
+]

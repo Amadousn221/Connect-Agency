@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "icon": "1.png",
+        "title": "IT Design",
+        "description": "Pianoforte solicitude so decisively mention diminution the particular. Real fond attachment her partiality.",
+        "delay": 0
+    },
+    {
+        "id": 2,
+        "icon": "2.png",
+        "title": "Analytic Solutions",
+        "description": "Technical solicitude so decisively mention diminution the particular. Real fond attachment her partiality.",
+        "delay": 100
+    },
+    {
+        "id": 3,
+        "icon": "3.png",
+        "title": "Risk Management",
+        "description": "International solicitude so decisively mention diminution the particular. Real fond attachment her partiality.",
+        "delay": 200
+    },
+    {
+        "id": 4,
+        "icon": "4.png",
+        "title": "Firewall Advance",
+        "description": "Directions solicitude so decisively mention diminution the particular. Real fond attachment her partiality.",
+        "delay": 300
+    }
+]

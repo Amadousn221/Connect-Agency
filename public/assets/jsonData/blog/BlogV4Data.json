@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "thumb": "12.jpg",
+        "authorName": "John Baus",
+        "authorImage": "6.jpg",
+        "date": "12 August, 2025",
+        "title": "Discovery incommode earnestly commanded if.",
+        "delay": "100"
+    },
+    {
+        "id": 2,
+        "thumb": "13.jpg",
+        "authorName": "Kevin Martin",
+        "authorImage": "5.jpg",
+        "date": "12 July, 2025",
+        "title": "Expression acceptance imprudence particular",
+        "delay": "300"
+    },
+    {
+        "id": 3,
+        "thumb": "14.jpg",
+        "authorName": "Sarah Albert",
+        "authorImage": "7.jpg",
+        "date": "06 December, 2025",
+        "title": "Considered imprudence of technical friendship.",
+        "delay": "500"
+    }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "icon": "fas fa-check",
+    "title": "Planning & strategy",
+    "description": "Facilisis leo vel fringilla est ullamcorper. Posuere urna nec tincidunt praesent semper feugiat nibh sed. Non pulvinar neque laoreet suspendisse interdum consectetur but man.",
+    "delay": "0"
+  },
+  {
+    "id": 2,
+    "icon": "fas fa-check",
+    "title": "Worldwide Coverage",
+    "description": "Technical leo vel fringilla est ullamcorper. Posuere urna nec tincidunt praesent semper feugiat nibh sed. Non pulvinar neque laoreet suspendisse interdum consectetur..",
+    "delay": "500"
+  }
+]

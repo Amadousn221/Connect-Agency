@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "titleFirst": "Software Development",
+        "titleLast": "& Customization",
+        "icon": "27.png",
+        "thumb": "7.jpg"
+    },
+    {
+        "id": 2,
+        "titleFirst": "Data Analytics & IT ",
+        "titleLast": "Consulting Services",
+        "icon": "28.png",
+        "thumb": "8.jpg"
+    },
+    {
+        "id": 3,
+        "titleFirst": "Professional Cyber",
+        "titleLast": "Security Services",
+        "icon": "29.png",
+        "thumb": "9.jpg"
+    },
+    {
+        "id": 4,
+        "titleFirst": "IT Consultation &",
+        "titleLast": "Developments",
+        "icon": "30.png",
+        "thumb": "10.jpg"
+    }
+]

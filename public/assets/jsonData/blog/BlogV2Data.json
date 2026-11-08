@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "thumb": "1.jpg",
+        "sectionClass": "",
+        "tag": "Finance",
+        "author": "Md Sohag",
+        "date": "24 August, 2025",
+        "title": "Considered imprudence of he friendship many variations boisterous.",
+        "description": "Easy mind life fact with see has bore ten. Parish any chatty can elinor direct for former. Up as meant widow equal.",
+        "delay": ""
+    },
+    {
+        "id": 2,
+        "thumb": "2.jpg",
+        "sectionClass": "mb-30",
+        "tag": "Success",
+        "author": "Md Sohag",
+        "date": "16 August, 2025",
+        "title": "Perceived determine departure explained no forfeited he something an.",
+        "description": "",
+        "delay": "150"
+    },
+    {
+        "id": 3,
+        "thumb": "3.jpg",
+        "sectionClass": "",
+        "tag": "Analysis",
+        "author": "Md Sohag",
+        "date": "18 August, 2025",
+        "title": "Discovery incommode earnestly commanded if.",
+        "description": "",
+        "delay": "200"
+    }
+]

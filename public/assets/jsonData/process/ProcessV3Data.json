@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "title": "Frame The Problem",
+        "icon": "38.png",
+        "description": "Our process applies techniques from a variety of disciplines distinct in detail and gives."
+    },
+    {
+        "id": 2,
+        "title": "Collect The Data",
+        "icon": "39.png",
+        "description": "Our process applies techniques from a variety of disciplines distinct in detail and gives."
+    },
+    {
+        "id": 3,
+        "title": "Process The Data",
+        "icon": "40.png",
+        "description": "Our process applies techniques from a variety of disciplines distinct in detail and gives."
+    },
+    {
+        "id": 4,
+        "title": "Generate Report",
+        "icon": "41.png",
+        "description": "Our process applies techniques from a variety of disciplines distinct in detail and gives."
+    }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "MAILCHIMP",
+    "icon": "mailchimp.png",
+    "iconLight": "mailchimp-light.png"
+  },
+  {
+    "id": 2,
+    "title": "PHP",
+    "icon": "php.png",
+    "iconLight": "php-light.png"
+  },
+  {
+    "id": 3,
+    "title": "POSTGRESQL",
+    "icon": "postgesql.png",
+    "iconLight": "postgesql-light.png"
+  },
+  {
+    "id": 4,
+    "title": "JAVASCRIPT",
+    "icon": "java.png",
+    "iconLight": "java-light.png"
+  },
+  {
+    "id": 5,
+    "title": "SWIFT",
+    "icon": "swift.png",
+    "iconLight": "swift-light.png"
+  },
+  {
+    "id": 6,
+    "title": "PYTHON",
+    "icon": "paython.png",
+    "iconLight": "paython-light.png"
+  }
+]

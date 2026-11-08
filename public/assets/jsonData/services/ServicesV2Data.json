@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "thumb": "1.jpg",
+        "icon": "7.png",
+        "title": "Analytic Solutions",
+        "description": "Continue indulged speaking the was out horrible for domestic position. Seeing rather her you not esteem men settle genius excuse.",
+        "delay": "100"
+    },
+    {
+        "id": 2,
+        "thumb": "3.jpg",
+        "icon": "9.png",
+        "title": "Firewall Advance",
+        "description": "Librarian indulged speaking the was out horrible for domestic position. Seeing rather her you not esteem men settle genius excuse.",
+        "delay": "200"
+    },
+    {
+        "id": 3,
+        "thumb": "2.jpg",
+        "icon": "8.png",
+        "title": "Risk Management",
+        "description": "Technic indulged speaking the was out horrible for domestic position. Seeing rather her you not esteem men settle genius excuse.",
+        "delay": "300"
+    }
+]

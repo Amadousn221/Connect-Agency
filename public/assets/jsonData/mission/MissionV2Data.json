@@ -1,0 +1,69 @@
+{
+    "tabNav": [
+        {
+            "id": 1,
+            "buttonId": "tab_1",
+            "target": "tabs_1",
+            "activeClass": "",
+            "ariaSelected": true,
+            "label": "Our Mission"
+        },
+        {
+            "id": 2,
+            "buttonId": "tab_2",
+            "target": "tabs_2",
+            "activeClass": "active",
+            "ariaSelected": false,
+            "label": "Our Vision"
+        },
+        {
+            "id": 3,
+            "buttonId": "tab_3",
+            "target": "tabs_3",
+            "activeClass": "",
+            "ariaSelected": false,
+            "label": "Core Values"
+        }
+    ],
+    "tabContent": [
+        {
+            "id": 1,
+            "tab": "tabs_1",
+            "activeClass": "",
+            "title": "Mission is to bring the power of AI to every business",
+            "description": "As a solution providing company we offer a wide range of consulting, development & quality services with 100% satisfaction. Much nor game son say feel. Fat make met can must form into gate.",
+            "features": [
+                "Idea of denouncing pleasure & praising",
+                "Avoids a pain that produces no resultant",
+                "Ever undertakes laborious physical"
+            ],
+            "thumb": "8.png"
+        },
+        {
+            "id": 2,
+            "tab": "tabs_2",
+            "activeClass": "show active",
+            "title": "Vison is to bring the power of AI to every business",
+            "description": "Because a solution providing company we offer a wide range of consulting, development & quality services with 100% satisfaction. Much nor game son say feel. Fat make met can must form into gate.",
+            "features": [
+                "Denouncing pleasure & praising",
+                "Pain that produces no resultant",
+                "Undertakes laborious physical"
+            ],
+            "thumb": "12.png"
+        },
+        {
+            "id": 3,
+            "tab": "tabs_3",
+            "activeClass": "",
+            "title": "Our values to bring the power of AI to every business",
+            "description": "We a solution providing company we offer a wide range of consulting, development & quality services with 100% satisfaction. Much nor game son say feel. Fat make met can must form into gate.",
+            "features": [
+                "Regular of denouncing pleasure & praising",
+                "Percent a pain that produces no resultant",
+                "Tech undertakes laborious physical"
+            ],
+            "thumb": "13.png"
+        }
+    ]
+}

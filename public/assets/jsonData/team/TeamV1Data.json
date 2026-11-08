@@ -1,0 +1,514 @@
+[
+    {
+        "id": 1,
+        "activeClass": "active",
+        "thumb": "1.jpg",
+        "bgThumb": "32.jpg",
+        "name": "Aleesha Brown",
+        "designation": "CEO & Founder",
+        "delay": "100",
+        "memberData": [
+            {
+                "id": 1,
+                "listTitle": "Education",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Residential College",
+                        "subtitle": "BA Honours - Biology",
+                        "year": "2004 - 2008"
+                    },
+                    {
+                        "id": 2,
+                        "title": "University of Iowa",
+                        "subtitle": "Masters degree - Macroeconomics",
+                        "year": "2009 - 2012"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "listTitle": "Experience",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Product Manager",
+                        "subtitle": "Pran RFL Company",
+                        "year": "31 Aug, 2013"
+                    },
+                    {
+                        "id": 2,
+                        "title": "Senior Marketing",
+                        "subtitle": "Masuring Technology Company",
+                        "year": "12 Dec 2018"
+                    }
+                ]
+            }
+        ],
+        "skillProgress": [
+            {
+                "id": 1,
+                "title": "Programming Language",
+                "end": 88
+            },
+            {
+                "id": 2,
+                "title": "Backend Development",
+                "end": 95
+            },
+            {
+                "id": 3,
+                "title": "Product Design",
+                "end": 80
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "activeClass": "",
+        "thumb": "2.jpg",
+        "bgThumb": "33.jpg",
+        "name": "Kevin Martin",
+        "designation": "Product Manager",
+        "delay": "200",
+        "memberData": [
+            {
+                "id": 1,
+                "listTitle": "Education",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Residential College",
+                        "subtitle": "BA Honours - Biology",
+                        "year": "2004 - 2008"
+                    },
+                    {
+                        "id": 2,
+                        "title": "University of Iowa",
+                        "subtitle": "Masters degree - Macroeconomics",
+                        "year": "2009 - 2012"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "listTitle": "Experience",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Product Manager",
+                        "subtitle": "Pran RFL Company",
+                        "year": "31 Aug, 2013"
+                    },
+                    {
+                        "id": 2,
+                        "title": "Senior Marketing",
+                        "subtitle": "Masuring Technology Company",
+                        "year": "12 Dec 2018"
+                    }
+                ]
+            }
+        ],
+        "skillProgress": [
+            {
+                "id": 1,
+                "title": "Programming Language",
+                "end": 88
+            },
+            {
+                "id": 2,
+                "title": "Backend Development",
+                "end": 95
+            },
+            {
+                "id": 3,
+                "title": "Product Design",
+                "end": 80
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "activeClass": "",
+        "thumb": "3.jpg",
+        "bgThumb": "32.jpg",
+        "name": "Sarah Albert",
+        "designation": "Finfancial Consultant",
+        "delay": "300",
+        "memberData": [
+            {
+                "id": 1,
+                "listTitle": "Education",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Residential College",
+                        "subtitle": "BA Honours - Biology",
+                        "year": "2004 - 2008"
+                    },
+                    {
+                        "id": 2,
+                        "title": "University of Iowa",
+                        "subtitle": "Masters degree - Macroeconomics",
+                        "year": "2009 - 2012"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "listTitle": "Experience",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Product Manager",
+                        "subtitle": "Pran RFL Company",
+                        "year": "31 Aug, 2013"
+                    },
+                    {
+                        "id": 2,
+                        "title": "Senior Marketing",
+                        "subtitle": "Masuring Technology Company",
+                        "year": "12 Dec 2018"
+                    }
+                ]
+            }
+        ],
+        "skillProgress": [
+            {
+                "id": 1,
+                "title": "Programming Language",
+                "end": 88
+            },
+            {
+                "id": 2,
+                "title": "Backend Development",
+                "end": 95
+            },
+            {
+                "id": 3,
+                "title": "Product Design",
+                "end": 80
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "activeClass": "",
+        "thumb": "4.jpg",
+        "bgThumb": "33.jpg",
+        "name": "Aleesha Brown",
+        "designation": "Developer",
+        "delay": "400",
+        "memberData": [
+            {
+                "id": 1,
+                "listTitle": "Education",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Residential College",
+                        "subtitle": "BA Honours - Biology",
+                        "year": "2004 - 2008"
+                    },
+                    {
+                        "id": 2,
+                        "title": "University of Iowa",
+                        "subtitle": "Masters degree - Macroeconomics",
+                        "year": "2009 - 2012"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "listTitle": "Experience",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Product Manager",
+                        "subtitle": "Pran RFL Company",
+                        "year": "31 Aug, 2013"
+                    },
+                    {
+                        "id": 2,
+                        "title": "Senior Marketing",
+                        "subtitle": "Masuring Technology Company",
+                        "year": "12 Dec 2018"
+                    }
+                ]
+            }
+        ],
+        "skillProgress": [
+            {
+                "id": 1,
+                "title": "Programming Language",
+                "end": 88
+            },
+            {
+                "id": 2,
+                "title": "Backend Development",
+                "end": 95
+            },
+            {
+                "id": 3,
+                "title": "Product Design",
+                "end": 80
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "activeClass": "",
+        "thumb": "6.jpg",
+        "bgThumb": "32.jpg",
+        "name": "Sporia Deko",
+        "designation": "Marketing",
+        "delay": "100",
+        "memberData": [
+            {
+                "id": 1,
+                "listTitle": "Education",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Residential College",
+                        "subtitle": "BA Honours - Biology",
+                        "year": "2004 - 2008"
+                    },
+                    {
+                        "id": 2,
+                        "title": "University of Iowa",
+                        "subtitle": "Masters degree - Macroeconomics",
+                        "year": "2009 - 2012"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "listTitle": "Experience",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Product Manager",
+                        "subtitle": "Pran RFL Company",
+                        "year": "31 Aug, 2013"
+                    },
+                    {
+                        "id": 2,
+                        "title": "Senior Marketing",
+                        "subtitle": "Masuring Technology Company",
+                        "year": "12 Dec 2018"
+                    }
+                ]
+            }
+        ],
+        "skillProgress": [
+            {
+                "id": 1,
+                "title": "Programming Language",
+                "end": 88
+            },
+            {
+                "id": 2,
+                "title": "Backend Development",
+                "end": 95
+            },
+            {
+                "id": 3,
+                "title": "Product Design",
+                "end": 80
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "activeClass": "",
+        "thumb": "7.jpg",
+        "bgThumb": "32.jpg",
+        "name": "Kevin Martin",
+        "designation": "Product Manager",
+        "delay": "200",
+        "memberData": [
+            {
+                "id": 1,
+                "listTitle": "Education",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Residential College",
+                        "subtitle": "BA Honours - Biology",
+                        "year": "2004 - 2008"
+                    },
+                    {
+                        "id": 2,
+                        "title": "University of Iowa",
+                        "subtitle": "Masters degree - Macroeconomics",
+                        "year": "2009 - 2012"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "listTitle": "Experience",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Product Manager",
+                        "subtitle": "Pran RFL Company",
+                        "year": "31 Aug, 2013"
+                    },
+                    {
+                        "id": 2,
+                        "title": "Senior Marketing",
+                        "subtitle": "Masuring Technology Company",
+                        "year": "12 Dec 2018"
+                    }
+                ]
+            }
+        ],
+        "skillProgress": [
+            {
+                "id": 1,
+                "title": "Programming Language",
+                "end": 88
+            },
+            {
+                "id": 2,
+                "title": "Backend Development",
+                "end": 95
+            },
+            {
+                "id": 3,
+                "title": "Product Design",
+                "end": 80
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "activeClass": "",
+        "thumb": "5.jpg",
+        "bgThumb": "32.jpg",
+        "name": "Sarah Albert",
+        "designation": "Financial Consultant",
+        "delay": "300",
+        "memberData": [
+            {
+                "id": 1,
+                "listTitle": "Education",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Residential College",
+                        "subtitle": "BA Honours - Biology",
+                        "year": "2004 - 2008"
+                    },
+                    {
+                        "id": 2,
+                        "title": "University of Iowa",
+                        "subtitle": "Masters degree - Macroeconomics",
+                        "year": "2009 - 2012"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "listTitle": "Experience",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Product Manager",
+                        "subtitle": "Pran RFL Company",
+                        "year": "31 Aug, 2013"
+                    },
+                    {
+                        "id": 2,
+                        "title": "Senior Marketing",
+                        "subtitle": "Masuring Technology Company",
+                        "year": "12 Dec 2018"
+                    }
+                ]
+            }
+        ],
+        "skillProgress": [
+            {
+                "id": 1,
+                "title": "Programming Language",
+                "end": 88
+            },
+            {
+                "id": 2,
+                "title": "Backend Development",
+                "end": 95
+            },
+            {
+                "id": 3,
+                "title": "Product Design",
+                "end": 80
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "activeClass": "",
+        "thumb": "4.jpg",
+        "bgThumb": "32.jpg",
+        "name": "Aleesha Brown",
+        "designation": "Developer",
+        "delay": "400",
+        "memberData": [
+            {
+                "id": 1,
+                "listTitle": "Education",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Residential College",
+                        "subtitle": "BA Honours - Biology",
+                        "year": "2004 - 2008"
+                    },
+                    {
+                        "id": 2,
+                        "title": "University of Iowa",
+                        "subtitle": "Masters degree - Macroeconomics",
+                        "year": "2009 - 2012"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "listTitle": "Experience",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Product Manager",
+                        "subtitle": "Pran RFL Company",
+                        "year": "31 Aug, 2013"
+                    },
+                    {
+                        "id": 2,
+                        "title": "Senior Marketing",
+                        "subtitle": "Masuring Technology Company",
+                        "year": "12 Dec 2018"
+                    }
+                ]
+            }
+        ],
+        "skillProgress": [
+            {
+                "id": 1,
+                "title": "Programming Language",
+                "end": 88
+            },
+            {
+                "id": 2,
+                "title": "Backend Development",
+                "end": 95
+            },
+            {
+                "id": 3,
+                "title": "Product Design",
+                "end": 80
+            }
+        ]
+    }
+]

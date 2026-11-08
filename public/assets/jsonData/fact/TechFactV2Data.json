@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "value": 288,
+        "suffix": "K",
+        "label": "Active clients in the world"
+    },
+    {
+        "id": 2,
+        "value": 100,
+        "suffix": "%",
+        "label": "Satisfaction guarantee"
+    }
+]

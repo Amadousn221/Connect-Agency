@@ -1,0 +1,498 @@
+[
+    {
+        "id": 1,
+        "thumb": "5.jpg",
+        "role": "Web Developer",
+        "name": "Aleesha Brown",
+        "delay": "100",
+        "memberData": [
+            {
+                "id": 1,
+                "listTitle": "Education",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Residential College",
+                        "subtitle": "BA Honours - Biology",
+                        "year": "2004 - 2008"
+                    },
+                    {
+                        "id": 2,
+                        "title": "University of Iowa",
+                        "subtitle": "Masters degree - Macroeconomics",
+                        "year": "2009 - 2012"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "listTitle": "Experience",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Product Manager",
+                        "subtitle": "ValidThemes",
+                        "year": "31 Aug, 2013"
+                    },
+                    {
+                        "id": 2,
+                        "title": "Senior Marketing",
+                        "subtitle": "Masuring Technology Company",
+                        "year": "12 Dec 2018"
+                    }
+                ]
+            }
+        ],
+        "skillProgress": [
+            {
+                "id": 1,
+                "title": "Programming Language",
+                "end": 88
+            },
+            {
+                "id": 2,
+                "title": "Backend Development",
+                "end": 95
+            },
+            {
+                "id": 3,
+                "title": "Product Design",
+                "end": 80
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "thumb": "6.jpg",
+        "role": "UI Designer",
+        "name": "Kevin Martin",
+        "delay": "250",
+        "memberData": [
+            {
+                "id": 1,
+                "listTitle": "Education",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Residential College",
+                        "subtitle": "BA Honours - Biology",
+                        "year": "2004 - 2008"
+                    },
+                    {
+                        "id": 2,
+                        "title": "University of Iowa",
+                        "subtitle": "Masters degree - Macroeconomics",
+                        "year": "2009 - 2012"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "listTitle": "Experience",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Product Manager",
+                        "subtitle": "ValidThemes",
+                        "year": "31 Aug, 2013"
+                    },
+                    {
+                        "id": 2,
+                        "title": "Senior Marketing",
+                        "subtitle": "Masuring Technology Company",
+                        "year": "12 Dec 2018"
+                    }
+                ]
+            }
+        ],
+        "skillProgress": [
+            {
+                "id": 1,
+                "title": "Programming Language",
+                "end": 88
+            },
+            {
+                "id": 2,
+                "title": "Backend Development",
+                "end": 95
+            },
+            {
+                "id": 3,
+                "title": "Product Design",
+                "end": 80
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "thumb": "7.jpg",
+        "role": "Product Marketing",
+        "name": "Sarah Albert",
+        "delay": "400",
+        "memberData": [
+            {
+                "id": 1,
+                "listTitle": "Education",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Residential College",
+                        "subtitle": "BA Honours - Biology",
+                        "year": "2004 - 2008"
+                    },
+                    {
+                        "id": 2,
+                        "title": "University of Iowa",
+                        "subtitle": "Masters degree - Macroeconomics",
+                        "year": "2009 - 2012"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "listTitle": "Experience",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Product Manager",
+                        "subtitle": "ValidThemes",
+                        "year": "31 Aug, 2013"
+                    },
+                    {
+                        "id": 2,
+                        "title": "Senior Marketing",
+                        "subtitle": "Masuring Technology Company",
+                        "year": "12 Dec 2018"
+                    }
+                ]
+            }
+        ],
+        "skillProgress": [
+            {
+                "id": 1,
+                "title": "Programming Language",
+                "end": 88
+            },
+            {
+                "id": 2,
+                "title": "Backend Development",
+                "end": 95
+            },
+            {
+                "id": 3,
+                "title": "Product Design",
+                "end": 80
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "thumb": "1.jpg",
+        "role": "Marketing",
+        "name": "Aleesha Brown",
+        "delay": "550",
+        "memberData": [
+            {
+                "id": 1,
+                "listTitle": "Education",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Residential College",
+                        "subtitle": "BA Honours - Biology",
+                        "year": "2004 - 2008"
+                    },
+                    {
+                        "id": 2,
+                        "title": "University of Iowa",
+                        "subtitle": "Masters degree - Macroeconomics",
+                        "year": "2009 - 2012"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "listTitle": "Experience",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Product Manager",
+                        "subtitle": "ValidThemes",
+                        "year": "31 Aug, 2013"
+                    },
+                    {
+                        "id": 2,
+                        "title": "Senior Marketing",
+                        "subtitle": "Masuring Technology Company",
+                        "year": "12 Dec 2018"
+                    }
+                ]
+            }
+        ],
+        "skillProgress": [
+            {
+                "id": 1,
+                "title": "Programming Language",
+                "end": 88
+            },
+            {
+                "id": 2,
+                "title": "Backend Development",
+                "end": 95
+            },
+            {
+                "id": 3,
+                "title": "Product Design",
+                "end": 80
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "thumb": "2.jpg",
+        "role": "Web Developer",
+        "name": "Aleesha Brown",
+        "delay": "",
+        "memberData": [
+            {
+                "id": 1,
+                "listTitle": "Education",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Residential College",
+                        "subtitle": "BA Honours - Biology",
+                        "year": "2004 - 2008"
+                    },
+                    {
+                        "id": 2,
+                        "title": "University of Iowa",
+                        "subtitle": "Masters degree - Macroeconomics",
+                        "year": "2009 - 2012"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "listTitle": "Experience",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Product Manager",
+                        "subtitle": "ValidThemes",
+                        "year": "31 Aug, 2013"
+                    },
+                    {
+                        "id": 2,
+                        "title": "Senior Marketing",
+                        "subtitle": "Masuring Technology Company",
+                        "year": "12 Dec 2018"
+                    }
+                ]
+            }
+        ],
+        "skillProgress": [
+            {
+                "id": 1,
+                "title": "Programming Language",
+                "end": 88
+            },
+            {
+                "id": 2,
+                "title": "Backend Development",
+                "end": 95
+            },
+            {
+                "id": 3,
+                "title": "Product Design",
+                "end": 80
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "thumb": "3.jpg",
+        "role": "UI Designer",
+        "name": "Kevin Martin",
+        "delay": "",
+        "memberData": [
+            {
+                "id": 1,
+                "listTitle": "Education",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Residential College",
+                        "subtitle": "BA Honours - Biology",
+                        "year": "2004 - 2008"
+                    },
+                    {
+                        "id": 2,
+                        "title": "University of Iowa",
+                        "subtitle": "Masters degree - Macroeconomics",
+                        "year": "2009 - 2012"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "listTitle": "Experience",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Product Manager",
+                        "subtitle": "ValidThemes",
+                        "year": "31 Aug, 2013"
+                    },
+                    {
+                        "id": 2,
+                        "title": "Senior Marketing",
+                        "subtitle": "Masuring Technology Company",
+                        "year": "12 Dec 2018"
+                    }
+                ]
+            }
+        ],
+        "skillProgress": [
+            {
+                "id": 1,
+                "title": "Programming Language",
+                "end": 88
+            },
+            {
+                "id": 2,
+                "title": "Backend Development",
+                "end": 95
+            },
+            {
+                "id": 3,
+                "title": "Product Design",
+                "end": 80
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "thumb": "4.jpg",
+        "role": "Product Marketing",
+        "name": "Sarah Albert",
+        "delay": "",
+        "memberData": [
+            {
+                "id": 1,
+                "listTitle": "Education",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Residential College",
+                        "subtitle": "BA Honours - Biology",
+                        "year": "2004 - 2008"
+                    },
+                    {
+                        "id": 2,
+                        "title": "University of Iowa",
+                        "subtitle": "Masters degree - Macroeconomics",
+                        "year": "2009 - 2012"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "listTitle": "Experience",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Product Manager",
+                        "subtitle": "ValidThemes",
+                        "year": "31 Aug, 2013"
+                    },
+                    {
+                        "id": 2,
+                        "title": "Senior Marketing",
+                        "subtitle": "Masuring Technology Company",
+                        "year": "12 Dec 2018"
+                    }
+                ]
+            }
+        ],
+        "skillProgress": [
+            {
+                "id": 1,
+                "title": "Programming Language",
+                "end": 88
+            },
+            {
+                "id": 2,
+                "title": "Backend Development",
+                "end": 95
+            },
+            {
+                "id": 3,
+                "title": "Product Design",
+                "end": 80
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "thumb": "8.jpg",
+        "role": "Marketing",
+        "name": "Jacob Martin",
+        "delay": "",
+        "memberData": [
+            {
+                "id": 1,
+                "listTitle": "Education",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Residential College",
+                        "subtitle": "BA Honours - Biology",
+                        "year": "2004 - 2008"
+                    },
+                    {
+                        "id": 2,
+                        "title": "University of Iowa",
+                        "subtitle": "Masters degree - Macroeconomics",
+                        "year": "2009 - 2012"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "listTitle": "Experience",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Product Manager",
+                        "subtitle": "ValidThemes",
+                        "year": "31 Aug, 2013"
+                    },
+                    {
+                        "id": 2,
+                        "title": "Senior Marketing",
+                        "subtitle": "Masuring Technology Company",
+                        "year": "12 Dec 2018"
+                    }
+                ]
+            }
+        ],
+        "skillProgress": [
+            {
+                "id": 1,
+                "title": "Programming Language",
+                "end": 88
+            },
+            {
+                "id": 2,
+                "title": "Backend Development",
+                "end": 95
+            },
+            {
+                "id": 3,
+                "title": "Product Design",
+                "end": 80
+            }
+        ]
+    }
+]

@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "titleFirst": "Best IT Solution",
+        "titleLast": "Service Company",
+        "description": "Values-driven company that provides affordable, marketing tools for ambitious people and teams.",
+        "buttonText": "Get Consultant",
+        "thumb": "2.png",
+        "shape": "2.png"
+    },
+    {
+        "id": 2,
+        "titleFirst": "Strategies for",
+        "titleLast": "Enduring Success",
+        "description": "Values-driven company that provides affordable, marketing tools for ambitious people and teams.",
+        "buttonText": "Get Consultant",
+        "thumb": "3.png",
+        "shape": "2.png"
+    }
+]

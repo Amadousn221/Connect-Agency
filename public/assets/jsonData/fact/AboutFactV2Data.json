@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "value": 56,
+        "suffix": "K",
+        "label": "Active Clients"
+    },
+    {
+        "id": 2,
+        "value": 865,
+        "suffix": "M",
+        "label": "Data Source"
+    }
+]

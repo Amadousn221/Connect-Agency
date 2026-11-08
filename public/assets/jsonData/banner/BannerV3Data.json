@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "bannerImage": "5.jpg",
+        "shapeImage": "43.png",
+        "subtitle": "Smart Technology",
+        "title": "Transforming Ideas into IT Solutions",
+        "ratings": 4.5,
+        "ratingText": "Rating Star by Clients",
+        "buttonText": "Get Started"
+    },
+    {
+        "id": 2,
+        "bannerImage": "4.jpg",
+        "shapeImage": "43.png",
+        "subtitle": "Best Value Solutions",
+        "title": "Seamless Solution tech business",
+        "ratings": 4.5,
+        "ratingText": "Rating Star by Clients",
+        "buttonText": "Get Started"
+    }
+]

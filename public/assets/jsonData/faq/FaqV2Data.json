@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "headingId": "headingOne",
+        "collapseId": "collapseOne",
+        "title": "Security System",
+        "description": "Bennings appetite disposed me subjects an. To no indulgence diminution so discovered mr apartments. Are off under folly death wrote cause.",
+        "show": true
+    },
+    {
+        "id": 2,
+        "headingId": "headingTwo",
+        "collapseId": "collapseTwo",
+        "title": "Risk Management",
+        "description": "Cennings appetite disposed me subjects an. To no indulgence diminution so discovered mr apartments. Are off under folly death wrote cause.",
+        "show": false
+    },
+    {
+        "id": 3,
+        "headingId": "headingThree",
+        "collapseId": "collapseThree",
+        "title": "Cloud Migration",
+        "description": "Tennings appetite disposed me subjects an. To no indulgence diminution so discovered mr apartments. Are off under folly death wrote cause.",
+        "show": false
+    }
+]

@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "number": "01",
+        "title": "Choose A Service",
+        "description": "Join us in a replay of this webinar to see how to go from the first line of code to the first message.",
+        "icon": "24.png"
+    },
+    {
+        "id": 2,
+        "number": "02",
+        "title": "Project Analysis",
+        "description": "Join us in a replay of this webinar to see how to go from the first line of code to the first message.",
+        "icon": "25.png"
+    },
+    {
+        "id": 3,
+        "number": "03",
+        "title": "Deliver Result",
+        "description": "Join us in a replay of this webinar to see how to go from the first line of code to the first message.",
+        "icon": "26.png"
+    }
+]

@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "icon": "44.png",
+        "title": "Software Development & Customization",
+        "description": "Plan upon yet way get cold spot its week. Almost do am or limits hearts. Resolve parties but why she shewing. She sang know.",
+        "list": [
+            "Software Design",
+            "Consultancy",
+            "Management",
+            "Bakcup & Recovery"
+        ]
+    },
+    {
+        "id": 2,
+        "icon": "45.png",
+        "title": "Professional Cyber Security Services",
+        "description": "Offers upon yet way get cold spot its week. Almost do am or limits hearts. Resolve parties but why she shewing. She sang know.",
+        "list": [
+            "Security Maintain",
+            "Cyber Attack",
+            "Management",
+            "Bakcup & Recovery"
+        ]
+    },
+    {
+        "id": 3,
+        "icon": "46.png",
+        "title": "Data Analytics & IT Consulting Services",
+        "description": "Regular upon yet way get cold spot its week. Almost do am or limits hearts. Resolve parties but why she shewing. She sang know.",
+        "list": [
+            "Artificial Intelligence",
+            "Human AI",
+            "Management",
+            "Design Recovery"
+        ]
+    }
+]

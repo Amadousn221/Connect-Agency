@@ -1,0 +1,66 @@
+{
+    "testimonialData": [
+        {
+            "id": 1,
+            "text": "Placed my first mobile app development order to IT Soft Solutions. I was an inexperienced contractor but they listened carefully to my request and tried to provide the best quality service. All phone calls and emails are answered very professionally."
+        },
+        {
+            "id": 2,
+            "text": "Maximum consultation discover apartments. Indulgence off under folly death wrote cause her way spite. Plan upon yet way get cold spot its week. Almost do am or limits hearts. Resolve parties practising why she shewing now remembering."
+        },
+        {
+            "id": 3,
+            "text": "Alternate consultation discover apartments. Indulgence off under folly death wrote cause her way spite. Plan upon yet way get cold spot its week. Almost do am or limits hearts. Resolve parties practising why she shewing now remembering."
+        },
+        {
+            "id": 4,
+            "text": "Placed my first mobile app development order to IT Soft Solutions. I was an inexperienced contractor but they listened carefully to my request and tried to provide the best quality service. All phone calls and emails are answered very professionally."
+        },
+        {
+            "id": 5,
+            "text": "Maximum consultation discover apartments. Indulgence off under folly death wrote cause her way spite. Plan upon yet way get cold spot its week. Almost do am or limits hearts. Resolve parties practising why she shewing now remembering."
+        },
+        {
+            "id": 6,
+            "text": "Alternate consultation discover apartments. Indulgence off under folly death wrote cause her way spite. Plan upon yet way get cold spot its week. Almost do am or limits hearts. Resolve parties practising why she shewing now remembering."
+        }
+    ],
+    "authorData": [
+        {
+            "id": 1,
+            "avatar": "3.jpg",
+            "name": "Aleesha Brown",
+            "role": "Envato Client"
+        },
+        {
+            "id": 2,
+            "avatar": "4.jpg",
+            "name": "Kevin Martin",
+            "role": "Envato Client"
+        },
+        {
+            "id": 3,
+            "avatar": "5.jpg",
+            "name": "Sarah Albert",
+            "role": "Envato Client"
+        },
+        {
+            "id": 4,
+            "avatar": "3.jpg",
+            "name": "Aleesha Brown",
+            "role": "Envato Client"
+        },
+        {
+            "id": 5,
+            "avatar": "4.jpg",
+            "name": "Kevin Martin",
+            "role": "Envato Client"
+        },
+        {
+            "id": 6,
+            "avatar": "5.jpg",
+            "name": "Sarah Albert",
+            "role": "Envato Client"
+        }
+    ]
+}

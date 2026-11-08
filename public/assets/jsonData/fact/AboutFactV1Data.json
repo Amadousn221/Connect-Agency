@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "icon": "flaticon-license",
+        "count": 36,
+        "operator": "+",
+        "label": "Years of experience"
+    },
+    {
+        "id": 2,
+        "icon": "flaticon-global",
+        "count": 120,
+        "operator": "K",
+        "label": "Worldwide Clients"
+    }
+]

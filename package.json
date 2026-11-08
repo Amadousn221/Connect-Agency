@@ -1,0 +1,45 @@
+{
+  "name": "tekni-nextjs",
+  "version": "1.2",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@react-spring/web": "^10.0.3",
+    "@types/aos": "^3.0.7",
+    "aos": "^2.3.4",
+    "bootstrap": "^5.3.8",
+    "imagesloaded": "^5.0.0",
+    "isotope-layout": "^3.0.6",
+    "next": "16.1.6",
+    "react": "19.2.4",
+    "react-circular-progressbar": "^2.2.0",
+    "react-countup": "^6.5.3",
+    "react-dom": "19.2.4",
+    "react-modal-video": "^2.0.2",
+    "react-paginate": "^8.3.0",
+    "react-photo-view": "^1.2.7",
+    "react-toastify": "^11.0.5",
+    "swiper": "^12.1.0"
+  },
+  "devDependencies": {
+    "@types/isotope-layout": "^3.0.15",
+    "@types/node": "^25.2.1",
+    "@types/react": "^19.2.13",
+    "@types/react-dom": "^19.2.3",
+    "babel-plugin-react-compiler": "1.0.0",
+    "eslint": "^9.39.2",
+    "eslint-config-next": "16.1.6",
+    "typescript": "^5"
+  },
+  "overrides": {
+    "react-modal-video": {
+      "react": "^19.2.3",
+      "react-dom": "^19.2.3"
+    }
+  }
+}

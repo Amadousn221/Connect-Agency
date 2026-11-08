@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "thumb": "1.jpg",
+        "shapeImage": "35.png",
+        "category": [ "Consulting, Recruitment"],
+        "title": "Coping Under the Current Climate",
+        "activeClass": "active",
+        "delay": ""
+    },
+    {
+        "id": 2,
+        "thumb": "3.jpg",
+        "shapeImage": "35.png",
+        "category": ["Consulting, Recruitment"],
+        "title": "Purpose-Driven Employers Succeed",
+        "activeClass": "",
+        "delay": "10"
+    },
+    {
+        "id": 3,
+        "thumb": "2.jpg",
+        "shapeImage": "35.png",
+        "category": ["Consulting, Recruitment"],
+        "title": "Nifty Teams Respond After Crisis",
+        "activeClass": "",
+        "delay": "150"
+    },
+    {
+        "id": 4,
+        "thumb": "4.jpg",
+        "shapeImage": "35.png",
+        "category": ["Consulting, Recruitment"],
+        "title": "Share Statistics With Team Leader",
+        "activeClass": "",
+        "delay": "100"
+    }
+]

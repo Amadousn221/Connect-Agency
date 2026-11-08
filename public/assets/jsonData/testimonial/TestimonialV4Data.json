@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "quoteIcon": "quote.png",
+        "thumb": "team/10.jpg",
+        "name": "Nicholas Natteau",
+        "position": "CEO & Founder",
+        "reviewText": "Placed my first mobile app development order to IT Soft Solutions. I was an inexperienced contractor but they listened carefully to my request and tried to provide the best quality service. All phone calls and emails are answered very professionally.",
+        "brandIcon": "42.png",
+        "reviews": 85,
+        "ratings": 5,
+        "delay": "0"
+    },
+    {
+        "id": 2,
+        "quoteIcon": "quote.png",
+        "thumb": "team/11.jpg",
+        "name": "Kevin Martin",
+        "position": "Product Manager",
+        "reviewText": "Always my first mobile app development order to IT Soft Solutions. I was an inexperienced contractor but they listened carefully to my request and tried to provide the best quality service. All phone calls and emails are answered very professionally.",
+        "brandIcon": "43.png",
+        "reviews": 108,
+        "ratings": 4.5,
+        "delay": "200"
+    },
+    {
+        "id": 3,
+        "quoteIcon": "quote.png",
+        "thumb": "team/10.jpg",
+        "name": "Nicholas Natteau",
+        "position": "CEO & Founder",
+        "reviewText": "Placed my first mobile app development order to IT Soft Solutions. I was an inexperienced contractor but they listened carefully to my request and tried to provide the best quality service. All phone calls and emails are answered very professionally.",
+        "brandIcon": "42.png",
+        "reviews": 85,
+        "ratings": 4,
+        "delay": "0"
+    },
+    {
+        "id": 4,
+        "quoteIcon": "quote.png",
+        "thumb": "team/11.jpg",
+        "name": "Kevin Martin",
+        "position": "Product Manager",
+        "reviewText": "Always my first mobile app development order to IT Soft Solutions. I was an inexperienced contractor but they listened carefully to my request and tried to provide the best quality service. All phone calls and emails are answered very professionally.",
+        "brandIcon": "43.png",
+        "reviews": 108,
+        "ratings": 4.7,
+        "delay": "200"
+    }
+]

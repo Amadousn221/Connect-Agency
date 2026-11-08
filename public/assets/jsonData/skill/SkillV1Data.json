@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "end": 78,
+        "title": "Data Consulting"
+    },
+    {
+        "id": 2,
+        "end": 84,
+        "title": "Big Data & AI"
+    },
+    {
+        "id": 3,
+        "end": 88,
+        "title": "Predictive Analysis"
+    }
+]

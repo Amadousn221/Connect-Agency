@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "thumb": "3.jpg",
+        "step": "01",
+        "title": "Differentiate from the competition",
+        "description": "Capitalize on low hanging fruit to identify a ballpark value added.",
+        "delay": 0,
+        "animation": "fadeInUp"
+    },
+    {
+        "id": 2,
+        "thumb": "6.jpg",
+        "step": "02",
+        "title": "Target the right people effectively",
+        "description": "Override the digital divide with additional clickthroughs from DevOps.",
+        "delay": 150,
+        "animation": "fadeInUp"
+    },
+    {
+        "id": 3,
+        "thumb": "5.jpg",
+        "step": "03",
+        "title": "Communicate your story consistently",
+        "description": "Nanotechnology immersion along the information highway will close loop.",
+        "delay": 300,
+        "animation": "fadeInUp"
+    }
+]
