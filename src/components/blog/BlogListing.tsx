@@ -1,4 +1,5 @@
-// Page de liste du blog (tous les articles ou une catégorie) : bandeau, filtre, grille ou message de catégorie vide.
+// Page de liste du blog (tous les articles ou une catégorie) : bandeau, filtre, grille de 3 colonnes (mise en page de la
+// template blog-3-column) ou message de catégorie vide. Pas de pagination tant qu'il y a moins de 7 articles.
 import Link from "next/link";
 import { getBlogPosts } from "@/content/blog";
 import SiteLayout from "../layouts/SiteLayout";
@@ -35,7 +36,7 @@ const BlogListing = ({ title, activeSlug, categoryName }: Props) => {
                     <h1>{title}</h1>
                 </div>
             </section>
-            <section className="default-padding cw-blog-page">
+            <section className="blog-area blog-grid default-padding cw-blog-page">
                 <div className="container">
                     {isPreview && (
                         <p className="cw-preview-banner" role="note">
@@ -44,12 +45,14 @@ const BlogListing = ({ title, activeSlug, categoryName }: Props) => {
                     )}
                     <BlogFilter active={activeSlug} />
                     {list.length > 0 ? (
-                        <div className="row">
-                            {list.map((post) => (
-                                <div className="col-xl-4 col-md-6 mb-30" key={post.slug}>
-                                    <BlogCard post={post} />
-                                </div>
-                            ))}
+                        <div className="blog-item-box">
+                            <div className="row">
+                                {list.map((post) => (
+                                    <div className="col-xl-4 col-md-6 single-item" key={post.slug}>
+                                        <BlogCard post={post} />
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     ) : (
                         <div className="cw-blog-empty" role="status">

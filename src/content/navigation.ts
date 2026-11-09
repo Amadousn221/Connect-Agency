@@ -40,12 +40,13 @@ export const SHOW_REALISATIONS = true;
 
 // Pages qui n'existent pas encore : leurs entrées pointent vers une section de l'accueil (liens valides).
 // Passer à true pour chaque page au fur et à mesure de sa création (CW-043, CW-044).
-const pageReady = { agence: false, contact: false };
+const pageReady = { agence: true, contact: false };
 const overview = "/#nos-expertises";
 
 export const mainLinks: NavLink[] = [
     ...(SHOW_REALISATIONS ? [{ label: "Réalisations", href: "/realisations" }] : []),
     { label: "L'agence", href: pageReady.agence ? "/agence" : "/#agence" },
+    { label: "Blog", href: "/blog" },
     { label: "Contact", href: pageReady.contact ? "/contact" : overview },
 ];
 
@@ -59,4 +60,22 @@ export const contactCta = {
     label: "Contact",
     href: `https://wa.me/${whatsapp.number}`,
     ariaLabel: `Contact par WhatsApp au ${whatsapp.display} (nouvel onglet)`,
+};
+
+// En-tête : « L'agence » est un menu déroulant (demande d'Amadou du 09/11/2026) qui regroupe « Qui sommes-nous »
+// et Contact ; « Blog » est une entrée de menu à part. Le bouton Contact à côté du bouton principal a été
+// retiré. Contact ouvre WhatsApp (nouvel onglet), seul canal fourni. Le pied de page continue d'utiliser mainLinks.
+export interface AgenceItem extends NavLink {
+    external?: boolean;
+    ariaLabel?: string;
+}
+
+export const agenceMenu = {
+    id: "agence",
+    label: "L'agence",
+    items: [
+        { label: "Qui sommes-nous", href: pageReady.agence ? "/agence" : "/#agence" },
+        { label: "Notre équipe", href: "/equipe" },
+        { label: contactCta.label, href: contactCta.href, external: true, ariaLabel: contactCta.ariaLabel },
+    ] as AgenceItem[],
 };

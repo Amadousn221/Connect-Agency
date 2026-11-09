@@ -9,7 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { contactCta, headerLinks, navPoles, primaryCta, SHOW_SUBMENUS } from "@/content/navigation";
+import { agenceMenu, headerLinks, navPoles, primaryCta, SHOW_SUBMENUS } from "@/content/navigation";
 
 const MOBILE_QUERY = "(max-width: 1023px)"; // seuil du thème pour le panneau latéral
 const CLOSE_DELAY_MS = 220;
@@ -208,6 +208,54 @@ const SiteHeader = () => {
         if (link) closePanel(false);
     };
 
+    // « L'agence » : menu déroulant (présentation, Contact), même mécanique que les menus de pôle.
+    const renderAgence = () => {
+        const open = openId === agenceMenu.id;
+        const menuId = `menu-${agenceMenu.id}`;
+        const active = agenceMenu.items.some((item) => !item.external && isActive(item.href));
+        return (
+            <li
+                key={agenceMenu.id}
+                data-pole={agenceMenu.id}
+                className={`cw-nav-item ${open ? "is-open" : ""}`}
+                onMouseEnter={() => onEnter(agenceMenu.id)}
+                onMouseLeave={onLeave}
+                onBlur={onItemBlur}
+            >
+                <button
+                    type="button"
+                    className={`cw-nav-trigger ${active ? "cw-active" : ""}`}
+                    aria-expanded={open}
+                    aria-controls={menuId}
+                    onClick={() => onTriggerClick(agenceMenu.id)}
+                    onKeyDown={(e) => onTriggerKeyDown(e, agenceMenu.id)}
+                >
+                    {agenceMenu.label}
+                    <i className="fal fa-chevron-down" aria-hidden="true" />
+                </button>
+                <div id={menuId} className="cw-dropdown" onKeyDown={(e) => onDropdownKeyDown(e, agenceMenu.id)}>
+                    <div className="cw-dropdown-inner">
+                        <ul>
+                            {agenceMenu.items.map((item) => (
+                                <li key={item.label}>
+                                    {item.external ? (
+                                        <a href={item.href} target="_blank" rel="noopener noreferrer" aria-label={item.ariaLabel}>
+                                            {item.label}
+                                        </a>
+                                    ) : (
+                                        <Link href={item.href} aria-current={current(item.href)}>
+                                            {item.label}
+                                        </Link>
+                                    )}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        );
+    };
+
     return (
         <header className="cw-header">
             <nav
@@ -251,6 +299,7 @@ const SiteHeader = () => {
                         </div>
 
                         <ul ref={listRef} className="cw-nav-list">
+                            {renderAgence()}
                             {!SHOW_SUBMENUS && navPoles.map((pole) => (
                                 // Menu simple (demande d'Amadou du 08/11/2026) : un lien par pôle, sans sous-menu.
                                 <li key={pole.id} className="cw-nav-item cw-nav-plain">
@@ -304,7 +353,7 @@ const SiteHeader = () => {
                                     </li>
                                 );
                             })}
-                            {headerLinks.map((link) => (
+                            {headerLinks.filter((link) => link.label !== agenceMenu.label).map((link) => (
                                 <li key={link.label} className="cw-nav-item cw-nav-plain">
                                     <Link
                                         href={link.href}
@@ -322,16 +371,10 @@ const SiteHeader = () => {
                             <Link className="btn btn-theme btn-md" href={primaryCta.href}>
                                 {primaryCta.label}
                             </Link>
-                            <a className="btn btn-md cw-btn-outline" href={contactCta.href} target="_blank" rel="noopener noreferrer" aria-label={contactCta.ariaLabel}>
-                                {contactCta.label}
-                            </a>
                         </div>
                     </div>
 
                     <div className="cw-header-cta">
-                        <a className="btn btn-sm cw-btn-outline" href={contactCta.href} target="_blank" rel="noopener noreferrer" aria-label={contactCta.ariaLabel}>
-                            {contactCta.label}
-                        </a>
                         <Link className="btn btn-theme btn-sm" href={primaryCta.href}>
                             {primaryCta.label}
                         </Link>

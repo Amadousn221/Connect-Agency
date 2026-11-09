@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import BlogListing from "@/components/blog/BlogListing";
-import { blogCategories, getBlogPosts, getCategory } from "@/content/blog";
+import { BLOG_INDEXABLE, blogCategories, getBlogPosts, getCategory } from "@/content/blog";
 
 export function generateStaticParams() {
     return blogCategories.map((category) => ({ slug: category.slug }));
@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {
         title: `${category.name} : blog`,
         description: `Les articles du blog Connect Web dans la catégorie ${category.name}.`,
-        robots: { index: hasPublished, follow: hasPublished },
+        robots: { index: BLOG_INDEXABLE && hasPublished, follow: BLOG_INDEXABLE && hasPublished },
     };
 }
 

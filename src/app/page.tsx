@@ -8,6 +8,7 @@ import HomeStats from "@/components/fact/HomeStats";
 import HomeExpertises from "@/components/feature/HomeExpertises";
 import HomeRealisations from "@/components/project/HomeRealisations";
 import HomeServices from "@/components/services/HomeServices";
+import HomeTechnologies from "@/components/technology/HomeTechnologies";
 import HomeBlog from "@/components/blog/HomeBlog";
 import SiteLayout from "@/components/layouts/SiteLayout";
 
@@ -22,6 +23,7 @@ export default function HomePage() {
             <HomeAgency />
             <HomeExpertises />
             <HomeServices />
+            <HomeTechnologies />
             <HomeWhy />
             <HomeMethod />
             <HomeStats />

@@ -23,8 +23,10 @@ export const members: TeamMember[] = [
     {
         id: "amadou-diallo",
         name: "Amadou Diallo",
-        // Fonction : « fondée par Amadou Diallo » (docs/07, meta description de l'agence) ; titre exact à confirmer.
-        role: "Fondateur de Connect Web",
+        // Fonction indiquée par Amadou le 09/11/2026 : « Digital Project Manager ».
+        role: "Digital Project Manager",
+        // Photo fournie par Amadou le 09/11/2026 (carré 900 x 900).
+        photo: "/assets/img/cw/equipe-amadou-diallo.jpg",
         published: true,
     },
 ];
@@ -51,3 +53,22 @@ export const previewMembers: TeamMember[] = [
     { id: "apercu-3", name: "Prénom Nom (exemple)", role: "Fonction (exemple)", published: false },
     { id: "apercu-4", name: "Prénom Nom (exemple)", role: "Fonction (exemple)", published: false },
 ];
+
+// Page « Notre équipe » (/equipe) — disposition de la référence d'Amadou (09/11/2026) : bandeau, titre + sous-titre,
+// cartes à photo (composant Team One de la template), puis siège social + carte. Un seul membre publié : aucune
+// formulation du type « équipe de spécialistes ».
+export const teamPage = {
+    meta: {
+        title: "Notre équipe | Connect Web",
+        description: "Rencontrez la personne qui suit vos projets chez Connect Web, agence de solutions digitales à Dakar.",
+    },
+    head: {
+        eyebrow: "L'agence",
+        title: "Notre équipe",
+        subtitle: "Un interlocuteur identifié suit votre projet, du premier échange à la prise en main.",
+    },
+    section: {
+        title: "Connect Web",
+        subtitle: "Les personnes qui conduisent vos projets de digitalisation.",
+    },
+};

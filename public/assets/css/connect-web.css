@@ -4310,3 +4310,1587 @@ nav.navbar.validnavs a.btn.cw-btn-outline:hover {
 		height: auto;
 	}
 }
+
+/* En-tête fixe : reste visible en haut de l'écran au défilement (demande d'Amadou du 09/11/2026).
+   Le conteneur est « sticky » ; la barre garde son positionnement d'origine à l'intérieur. */
+.cw-header {
+	position: sticky;
+	top: 0;
+	z-index: 1030;
+}
+
+/* ==========================================================================
+   Section « Technologies » de l'accueil (09/11/2026) : deux lignes de logos en défilement lent, sens opposés,
+   fondu sur les bords, fond blanc, sans carte ni bordure ni ombre. Voir components/technology/HomeTechnologies.tsx.
+   ========================================================================== */
+.cw-tech {
+	--cw-tech-scale: 1;
+	--cw-tech-gap: 72px;
+	background: var(--white, #fff);
+	overflow: hidden;
+}
+
+.cw-tech-head {
+	max-width: 760px;
+	margin: 0 auto 48px;
+	text-align: center;
+}
+
+.cw-tech-title {
+	margin: 0 0 16px;
+}
+
+.cw-tech-title .cw-tech-accent {
+	display: block;
+	color: var(--cw-btn-primary);
+}
+
+.cw-tech-head p {
+	margin: 0;
+	max-width: 620px;
+	margin-inline: auto;
+}
+
+.cw-tech-rows {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.cw-tech-row {
+	overflow: hidden;
+	-webkit-mask-image: linear-gradient(90deg, transparent 0, #000 12%, #000 88%, transparent 100%);
+	mask-image: linear-gradient(90deg, transparent 0, #000 12%, #000 88%, transparent 100%);
+}
+
+.cw-tech-track {
+	display: flex;
+	width: max-content;
+	animation: cw-tech-scroll var(--cw-tech-duration, 90s) linear infinite;
+	will-change: transform;
+}
+
+.cw-tech-track.cw-tech-reverse {
+	animation-direction: reverse;
+}
+
+.cw-tech:hover .cw-tech-track {
+	animation-play-state: paused;
+}
+
+.cw-tech-set {
+	display: flex;
+	flex: 0 0 auto;
+	align-items: center;
+	gap: var(--cw-tech-gap);
+	margin: 0;
+	padding: 0 var(--cw-tech-gap) 0 0;
+	list-style: none;
+}
+
+.cw-tech-set li {
+	display: flex;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+}
+
+.cw-tech-set img {
+	display: block;
+	width: auto;
+	max-width: none;
+	height: calc(var(--cw-h) * var(--cw-tech-scale) * 1px);
+	user-select: none;
+	pointer-events: none;
+}
+
+@keyframes cw-tech-scroll {
+	from {
+		transform: translate3d(0, 0, 0);
+	}
+
+	to {
+		transform: translate3d(-50%, 0, 0);
+	}
+}
+
+@media (max-width: 767px) {
+	.cw-tech {
+		--cw-tech-scale: 0.85;
+		--cw-tech-gap: 52px;
+	}
+
+	.cw-tech-head {
+		margin-bottom: 36px;
+	}
+
+	.cw-tech-row {
+		-webkit-mask-image: linear-gradient(90deg, transparent 0, #000 9%, #000 91%, transparent 100%);
+		mask-image: linear-gradient(90deg, transparent 0, #000 9%, #000 91%, transparent 100%);
+	}
+}
+
+@media (max-width: 575px) {
+	.cw-tech {
+		--cw-tech-scale: 0.8;
+		--cw-tech-gap: 44px;
+	}
+
+	.cw-tech-rows {
+		gap: 24px;
+	}
+}
+
+/* Mouvement réduit : aucune animation, les logos de la première série sont affichés centrés, sur plusieurs lignes si besoin. */
+@media (prefers-reduced-motion: reduce) {
+	.cw-tech-row {
+		-webkit-mask-image: none;
+		mask-image: none;
+	}
+
+	.cw-tech-track {
+		width: auto;
+		justify-content: center;
+		animation: none;
+	}
+
+	.cw-tech-set:not(:first-child) {
+		display: none;
+	}
+
+	.cw-tech-set {
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 28px 48px;
+		padding: 0 24px;
+	}
+}
+
+/* ==========================================================================
+   Blog (09/11/2026) : page d'article (template blog-single-with-sidebar) et liste (template blog-3-column)
+   ========================================================================== */
+.cw-article .blog-item-box .thumb img {
+	width: 100%;
+	height: auto;
+	border-radius: 12px;
+}
+
+.cw-article-body h2 {
+	margin: 44px 0 14px;
+	font-size: 24px;
+	line-height: 1.3;
+	scroll-margin-top: 110px;
+}
+
+.cw-article-body h3 {
+	margin: 30px 0 10px;
+	font-size: 22px;
+	line-height: 1.35;
+}
+
+.cw-article-body p,
+.cw-article-body li {
+	font-size: 17px;
+	line-height: 1.8;
+}
+
+.cw-article-body p {
+	margin-bottom: 18px;
+}
+
+.cw-article-body ul {
+	margin: 0 0 20px;
+	padding-left: 22px;
+	list-style: disc;
+}
+
+.cw-article-body li + li {
+	margin-top: 6px;
+}
+
+.cw-article-body a,
+.cw-article-source a {
+	color: var(--cw-btn-primary);
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+.cw-toc {
+	margin: 0 0 28px;
+	padding: 16px 20px;
+	border: 1px solid #e8ebf3;
+	border-radius: 12px;
+	background: var(--bg-gray);
+}
+
+.cw-toc summary {
+	cursor: pointer;
+	font-weight: 600;
+	color: var(--color-heading);
+}
+
+.cw-toc ul {
+	margin: 14px 0 0;
+	padding: 0;
+	list-style: none;
+}
+
+.cw-toc li {
+	margin: 0;
+}
+
+.cw-toc li + li {
+	margin-top: 8px;
+}
+
+.cw-toc a {
+	font-size: 15.5px;
+	line-height: 1.5;
+	color: var(--color-heading);
+}
+
+.cw-toc a:hover {
+	color: var(--cw-btn-primary);
+}
+
+.cw-article-cta {
+	margin: 38px 0 22px;
+}
+
+.cw-article-source {
+	margin: 0;
+	padding-top: 20px;
+	border-top: 1px solid #e8ebf3;
+	font-size: 15px;
+	line-height: 1.6;
+}
+
+.cw-article-back {
+	margin: 28px 0 0;
+}
+
+.cw-sidebar-cta p {
+	margin: 0 0 18px;
+}
+
+@media (max-width: 575px) {
+	.cw-article-body h2 {
+		font-size: 20px;
+	}
+
+	.cw-article-body p,
+	.cw-article-body li {
+		font-size: 16.5px;
+	}
+}
+
+/* Menu « L'agence » : panneau resserré (deux entrées seulement), ancré sous son libellé. */
+@media (min-width: 1024px) {
+	.cw-nav-item[data-pole="agence"] > .cw-dropdown {
+		min-width: 0;
+		width: max-content;
+	}
+
+	.cw-nav-item[data-pole="agence"] .cw-dropdown-inner {
+		padding: 6px;
+	}
+
+	.cw-nav-item[data-pole="agence"] .cw-dropdown-inner a {
+		min-height: 34px;
+		padding: 0 16px 0 12px;
+		white-space: nowrap;
+	}
+}
+
+/* Cartes du blog : métadonnées sous l'image, sur une seule ligne, petites et discrètes (catégorie · durée). */
+.cw-blog-page .blog-style-one .info .blog-meta {
+	margin: 0 0 8px;
+}
+
+.cw-blog-page .blog-style-one .info .cw-card-meta {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	gap: 0 10px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.cw-blog-page .blog-style-one .info .cw-card-meta li {
+	display: inline-flex;
+	align-items: center;
+	flex: 0 1 auto;
+	gap: 4px;
+	min-width: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	font-weight: 500;
+	line-height: 1.4;
+	letter-spacing: 0;
+	text-transform: none;
+	color: #6b7385;
+}
+
+.cw-blog-page .blog-style-one .info .cw-card-meta li::before {
+	display: none;
+}
+
+/* Séparateur : petit point à la place du trait du thème */
+.cw-blog-page .blog-style-one .info .cw-card-meta li::after {
+	position: static;
+	display: inline-block;
+	flex: 0 0 auto;
+	width: 3px;
+	height: 3px;
+	margin: 0 0 0 10px;
+	border-radius: 50%;
+	background: #b8bfcf;
+	transform: none;
+}
+
+.cw-blog-page .blog-style-one .info .cw-card-meta li:last-child::after {
+	display: none;
+}
+
+.cw-blog-page .blog-style-one .info .cw-card-meta i {
+	font-size: 11px;
+	margin: 0;
+}
+
+.cw-blog-page .blog-style-one .info .cw-card-meta .cw-card-cat {
+	flex-shrink: 1;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.cw-blog-page .blog-style-one .info .cw-card-meta .cw-card-cat a {
+	margin: 0;
+	color: var(--color-primary);
+	font-weight: 600;
+}
+
+.cw-blog-page .blog-style-one .info .cw-card-meta .cw-card-cat a:hover {
+	text-decoration: underline;
+}
+
+.cw-blog-page .blog-style-one .info h3 {
+	font-size: 24px;
+	line-height: 1.3;
+}
+
+/* Filtres : version minimaliste, texte seul, sans bordure ni fond. */
+.cw-blog-filter {
+	margin-bottom: 28px;
+}
+
+.cw-blog-filter ul {
+	gap: 4px 18px;
+}
+
+.cw-blog-filter a {
+	padding: 4px 0;
+	border: 0;
+	border-bottom: 2px solid transparent;
+	border-radius: 0;
+	background: transparent;
+	color: #6b7385;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.cw-blog-filter a:hover {
+	background: transparent;
+	border-color: transparent;
+	color: var(--color-heading);
+}
+
+.cw-blog-filter a.is-active {
+	background: transparent;
+	border-color: var(--color-primary);
+	color: var(--color-primary);
+}
+
+/* Réalisations (accueil) : fond bleu du logo (#185271) au lieu du dégradé violet du thème. */
+.cw-realisations.bg-gradient {
+	background: #185271;
+	background-image: none;
+}
+
+/* Le surtitre utilisait -webkit-text-fill-color (bleu du logo), qui l'emportait sur la couleur blanche : invisible sur fond bleu. */
+.cw-realisations .heading-left .cw-sub {
+	color: #fff;
+	-webkit-text-fill-color: #fff;
+}
+
+.cw-realisations .heading-left .title {
+	-webkit-text-fill-color: #fff;
+}
+
+/* Pourquoi Connect Web : le mot en filigrane est retiré ; la liste devient une feuille de route cliquable.
+   Même apparence qu'avant (filet bleu à gauche, titres de 22 px, texte clair) ; l'étape active est mise en avant. */
+.cw-roadmap {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.cw-roadmap-step {
+	position: relative;
+	margin: 0;
+	padding: 0 0 36px 35px;
+}
+
+.cw-roadmap-step:last-child {
+	padding-bottom: 0;
+}
+
+/* Filet : piste atténuée + remplissage bleu qui descend jusqu'à l'étape active */
+.cw-roadmap-step::before,
+.cw-roadmap-step::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 4px;
+}
+
+.cw-roadmap-step::before {
+	background: rgba(19, 81, 216, 0.28);
+}
+
+.cw-roadmap-step::after {
+	background: var(--color-primary);
+	transform: scaleY(0);
+	transform-origin: top;
+	transition: transform 0.6s ease;
+}
+
+.cw-roadmap-step.is-active::after,
+.cw-roadmap-step.is-done::after {
+	transform: scaleY(1);
+}
+
+.cw-roadmap-dot {
+	position: absolute;
+	left: -5px;
+	top: 6px;
+	z-index: 2;
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	border: 2px solid var(--color-primary);
+	background: var(--dark-secondary, #0e2769);
+	transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cw-roadmap-step.is-done .cw-roadmap-dot,
+.cw-roadmap-step.is-active .cw-roadmap-dot {
+	background: var(--color-primary);
+}
+
+.cw-roadmap-step.is-active .cw-roadmap-dot {
+	transform: scale(1.25);
+	box-shadow: 0 0 0 5px rgba(19, 81, 216, 0.35);
+	animation: cw-roadmap-pulse 2.4s ease-out infinite;
+}
+
+@keyframes cw-roadmap-pulse {
+	0% {
+		box-shadow: 0 0 0 0 rgba(19, 81, 216, 0.55);
+	}
+	70% {
+		box-shadow: 0 0 0 10px rgba(19, 81, 216, 0);
+	}
+	100% {
+		box-shadow: 0 0 0 0 rgba(19, 81, 216, 0);
+	}
+}
+
+.cw-roadmap-step h3 {
+	margin: 0 0 8px;
+	font-size: 22px;
+	font-weight: 600;
+	line-height: 1.3;
+}
+
+.cw-roadmap-step h3 button {
+	display: inline;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: none;
+	color: var(--white);
+	font: inherit;
+	text-align: left;
+	cursor: pointer;
+	opacity: 0.72;
+	transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.cw-roadmap-step h3 button:hover,
+.cw-roadmap-step.is-active h3 button {
+	opacity: 1;
+}
+
+.cw-roadmap-step h3 button:focus-visible {
+	outline: 2px solid #fff;
+	outline-offset: 4px;
+	border-radius: 4px;
+}
+
+.cw-roadmap-step p {
+	margin: 0;
+	color: rgba(255, 255, 255, 0.92);
+	opacity: 0.6;
+	transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.cw-roadmap-step.is-active p {
+	opacity: 1;
+	transform: translateX(4px);
+}
+
+/* Entrée progressive (uniquement si JavaScript actif et animations autorisées) */
+.cw-roadmap.is-armed .cw-roadmap-step {
+	opacity: 0;
+	transform: translateY(14px);
+}
+
+.cw-roadmap.is-armed.is-in .cw-roadmap-step {
+	opacity: 1;
+	transform: none;
+	transition: opacity 0.6s ease, transform 0.6s ease;
+	transition-delay: calc(var(--i, 0) * 0.12s);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.cw-roadmap-step::after,
+	.cw-roadmap-dot,
+	.cw-roadmap-step h3 button,
+	.cw-roadmap-step p {
+		transition: none;
+	}
+
+	.cw-roadmap-step.is-active .cw-roadmap-dot {
+		animation: none;
+	}
+
+	.cw-roadmap-step.is-active p {
+		transform: none;
+	}
+}
+
+@media (max-width: 767px) {
+	.cw-roadmap-step {
+		padding-bottom: 28px;
+	}
+
+	.cw-roadmap-step h3 {
+		font-size: 19px;
+	}
+}
+
+/* ============================================================
+   Page « Qui sommes-nous » (/agence)
+   ============================================================ */
+.cw-about-head {
+	padding: 150px 0 64px;
+	background: linear-gradient(120deg, var(--dark) 0%, var(--dark-secondary) 50%, #185271 100%);
+}
+
+.cw-about-head-eyebrow {
+	display: inline-flex;
+	align-items: center;
+	gap: 12px;
+	margin: 0 0 10px;
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.cw-about-head-eyebrow::before {
+	content: "";
+	width: 28px;
+	height: 2px;
+	background: #dd5922;
+}
+
+.cw-about-head h1 {
+	max-width: 820px;
+	margin: 0;
+	color: #fff;
+	font-size: 42px;
+	font-weight: 600;
+	line-height: 1.2;
+}
+
+.cw-about-head-sub {
+	max-width: 720px;
+	margin: 14px 0 0;
+	color: rgba(255, 255, 255, 0.85);
+	font-size: 18px;
+}
+
+.cw-about-title {
+	font-size: 36px;
+	line-height: 1.25;
+	margin-bottom: 20px;
+}
+
+/* Bouton contour (repris pour toutes les cartes de la page) */
+.cw-about-btn {
+	display: inline-flex;
+	align-items: center;
+	min-height: 42px;
+	margin-top: 10px;
+	padding: 0 22px;
+	border: 1.5px solid var(--color-primary);
+	border-radius: 4px;
+	background: transparent;
+	color: var(--color-primary);
+	font-size: 15px;
+	font-weight: 600;
+	line-height: 1.2;
+	transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.cw-about-btn:hover {
+	background: var(--color-primary);
+	color: #fff;
+}
+
+.cw-about-btn:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 3px;
+}
+
+/* Présentation */
+.cw-about-intro {
+	background: #f7f9fc;
+}
+
+.cw-about-intro p {
+	margin-bottom: 16px;
+}
+
+.cw-about-intro-thumb img {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+}
+
+.cw-about-pillars {
+	margin-top: 70px;
+	row-gap: 30px;
+}
+
+.cw-about-pillar {
+	height: 100%;
+	padding: 34px 32px;
+	border-radius: 8px;
+	background: #fff;
+	border: 1px solid #e8ebf3;
+	scroll-margin-top: 110px;
+}
+
+.cw-about-pillar h3 {
+	margin: 0 0 12px;
+	font-size: 22px;
+	font-weight: 600;
+}
+
+.cw-about-pillar p {
+	margin-bottom: 8px;
+}
+
+.cw-about-reach {
+	margin-top: 50px;
+}
+
+.cw-about-reach h3 {
+	margin: 0 0 4px;
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.cw-about-reach p {
+	margin: 0;
+	font-size: 17px;
+}
+
+.cw-about-reach a {
+	color: var(--color-primary);
+	font-weight: 600;
+}
+
+/* Huit questions : fond sombre, grille 3 colonnes avec un visuel */
+.cw-about-qa {
+	background: #0f1d33;
+}
+
+.cw-about-qa-head {
+	margin-bottom: 40px;
+}
+
+.cw-about-qa-head h2 {
+	margin: 0 0 6px;
+	color: #fff;
+	font-size: 32px;
+}
+
+.cw-about-qa-head p {
+	margin: 0;
+	color: rgba(255, 255, 255, 0.82);
+	font-size: 17px;
+}
+
+.cw-about-qa-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 20px;
+}
+
+.cw-about-qa-card {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 30px 28px;
+	border-radius: 6px;
+	background: #fff;
+	color: var(--color-paragraph);
+	scroll-margin-top: 110px;
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cw-about-qa-card:hover,
+.cw-about-qa-card:focus-within {
+	transform: translateY(-4px);
+	box-shadow: 0 16px 32px -18px rgba(0, 0, 0, 0.55);
+}
+
+.cw-about-qa-card:target {
+	box-shadow: 0 0 0 3px var(--color-primary);
+}
+
+.cw-about-qa-card h3 {
+	margin: 0 0 10px;
+	color: var(--color-heading);
+	font-size: 19px;
+	font-weight: 700;
+	line-height: 1.35;
+}
+
+.cw-about-qa-card p {
+	margin: 0 0 8px;
+	font-size: 15.5px;
+	line-height: 1.6;
+}
+
+.cw-about-qa-card .cw-about-btn {
+	margin-top: auto;
+}
+
+.cw-about-qa-visual {
+	overflow: hidden;
+	border-radius: 6px;
+	min-height: 220px;
+}
+
+.cw-about-qa-visual img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* Foire aux questions */
+.cw-about-faq-list {
+	margin: 0;
+	padding-left: 20px;
+	list-style: disc;
+}
+
+.cw-about-faq-list li {
+	margin: 0 0 8px;
+	color: var(--color-primary);
+}
+
+.cw-about-faq-list a {
+	color: var(--color-paragraph);
+	font-size: 16px;
+}
+
+.cw-about-faq-list a:hover {
+	color: var(--color-primary);
+	text-decoration: underline;
+}
+
+/* Contact + visuel */
+.cw-about-contact {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	min-height: 420px;
+}
+
+.cw-about-contact-panel {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 60px 30px;
+	background: linear-gradient(135deg, #0f1d33 0%, #185271 100%);
+	text-align: center;
+}
+
+.cw-about-contact-inner {
+	max-width: 420px;
+}
+
+.cw-about-contact-inner h2 {
+	margin: 0 0 12px;
+	color: #fff;
+	font-size: 30px;
+}
+
+.cw-about-contact-inner p {
+	color: rgba(255, 255, 255, 0.85);
+}
+
+.cw-about-contact-inner .cw-about-contact-label {
+	margin: 22px 0 2px;
+	color: #f08a5d;
+	font-weight: 700;
+	font-size: 18px;
+}
+
+.cw-about-contact-inner .cw-about-contact-value {
+	margin: 0 0 22px;
+	font-size: 22px;
+}
+
+.cw-about-contact-value a {
+	color: #fff;
+}
+
+.cw-about-contact-visual img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+@media (max-width: 991px) {
+	.cw-about-qa-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.cw-about-intro-thumb {
+		margin-top: 40px;
+	}
+
+	.cw-about-contact {
+		grid-template-columns: 1fr;
+	}
+
+	.cw-about-contact-visual {
+		max-height: 320px;
+		overflow: hidden;
+	}
+}
+
+@media (max-width: 767px) {
+	.cw-about-head {
+		padding: 120px 0 44px;
+	}
+
+	.cw-about-head h1 {
+		font-size: 30px;
+	}
+
+	.cw-about-title {
+		font-size: 28px;
+	}
+
+	.cw-about-qa-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.cw-about-qa-visual {
+		display: none;
+	}
+
+	.cw-about-pillars {
+		margin-top: 44px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.cw-about-qa-card {
+		transition: none;
+	}
+
+	.cw-about-qa-card:hover,
+	.cw-about-qa-card:focus-within {
+		transform: none;
+	}
+}
+
+/* ============================================================
+   Bloc « Nous contacter » avant le pied de page (base ContactV1, version compacte)
+   ============================================================ */
+.cw-contact-band {
+	padding: 70px 0;
+	background: #f7f9fc;
+	scroll-margin-top: 90px;
+}
+
+.cw-contact-band .contact-style-one-info h2 {
+	font-size: 28px;
+	line-height: 1.2;
+	margin-bottom: 10px;
+}
+
+.cw-contact-band .contact-style-one-info > p {
+	margin: 0;
+	font-size: 15.5px;
+}
+
+.cw-contact-band .contact-style-one-info ul {
+	margin-top: 24px;
+}
+
+.cw-contact-band .contact-style-one-info li {
+	align-items: flex-start;
+	margin-top: 18px;
+}
+
+.cw-contact-band .contact-style-one-info li i {
+	flex: 0 0 auto;
+	width: 44px;
+	height: 44px;
+	line-height: 44px;
+	margin-right: 14px;
+	font-size: 18px;
+}
+
+.cw-contact-band .contact-style-one-info li:nth-child(1) i {
+	background: #25d366;
+}
+
+.cw-contact-band .contact-style-one-info li:nth-child(2) i {
+	background: #185271;
+}
+
+.cw-contact-band .contact-style-one-info li h3 {
+	margin: 0 0 2px;
+	font-size: 17px;
+	font-weight: 600;
+}
+
+.cw-contact-band .contact-style-one-info li a,
+.cw-contact-band .contact-style-one-info li p {
+	font-size: 15px;
+	color: var(--color-paragraph);
+}
+
+.cw-contact-band .contact-style-one-info li a:hover {
+	color: var(--color-primary);
+}
+
+.cw-contact-band .contact-form-style-one {
+	padding: 34px 38px;
+	box-shadow: 0 12px 40px -14px rgba(109, 117, 143, 0.35);
+}
+
+.cw-contact-band .contact-form-style-one .sub-title {
+	display: inline-block;
+	margin: 0 0 10px;
+	padding: 4px 12px;
+	border: 1px solid #d5dbe8;
+	border-radius: 4px;
+	color: var(--color-primary);
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+.cw-contact-band .contact-form-style-one .title {
+	margin: 0 0 18px;
+	font-size: 26px;
+	line-height: 1.2;
+}
+
+/* Champs : soulignés comme le modèle, avec des libellés visibles (accessibilité) */
+.cw-contact-band .cw-contact-form .form-group {
+	margin-bottom: 14px;
+}
+
+.cw-contact-band .cw-contact-form label {
+	display: block;
+	margin: 0 0 2px;
+	font-size: 13px;
+	font-weight: 600;
+	color: var(--color-heading);
+}
+
+.cw-contact-band .cw-contact-form .form-control,
+.cw-contact-band .contact-form-style-one input.form-control,
+.cw-contact-band .contact-form-style-one textarea.form-control {
+	width: 100%;
+	min-height: 40px;
+	margin: 0;
+	padding: 6px 0;
+	border: 0;
+	border-bottom: 2px solid #d6d6d6;
+	border-radius: 0;
+	background: transparent;
+	color: var(--color-heading);
+	font-size: 15px;
+	box-shadow: none;
+}
+
+.cw-contact-band .contact-form-style-one textarea.form-control {
+	min-height: 90px;
+}
+
+.cw-contact-band .cw-contact-form .form-control:focus {
+	outline: none;
+	border-bottom-color: var(--color-primary);
+}
+
+.cw-contact-band .cw-contact-form .form-control:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+}
+
+.cw-contact-band .cw-contact-form .form-control[aria-invalid="true"] {
+	border-bottom-color: #c62828;
+}
+
+.cw-contact-band .cw-contact-form .cw-select {
+	appearance: auto;
+	cursor: pointer;
+}
+
+.cw-contact-band .cw-optional {
+	font-weight: 400;
+	color: #6b7385;
+}
+
+.cw-contact-band .cw-field-error {
+	display: block;
+	margin-top: 4px;
+	font-size: 13px;
+	color: #b71c1c;
+}
+
+.cw-contact-band .cw-form-alert {
+	margin: 0 0 14px;
+	padding: 10px 14px;
+	border-left: 4px solid #c62828;
+	background: #fdecea;
+	color: #7f1d1d;
+	font-size: 14px;
+}
+
+.cw-contact-band .cw-form-summary:focus {
+	outline: none;
+}
+
+.cw-contact-band .cw-form-note {
+	margin: 4px 0 14px;
+	font-size: 13px;
+	color: #6b7385;
+}
+
+.cw-contact-band .cw-form-success {
+	display: flex;
+	align-items: flex-start;
+	gap: 12px;
+	padding: 18px;
+	border-radius: 8px;
+	background: #e8f5ee;
+	color: #14532d;
+}
+
+.cw-contact-band .cw-form-success i {
+	font-size: 22px;
+	color: #1f8f55;
+}
+
+.cw-contact-band .cw-hp {
+	position: absolute;
+	left: -10000px;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+.cw-contact-band .contact-form-style-one button {
+	padding: 12px 30px;
+	font-size: 15px;
+}
+
+@media (max-width: 991px) {
+	.cw-contact-band .contact-form-style-one {
+		margin-top: 36px;
+	}
+}
+
+@media (max-width: 575px) {
+	.cw-contact-band {
+		padding: 50px 0;
+	}
+
+	.cw-contact-band .contact-form-style-one {
+		padding: 24px 18px;
+	}
+}
+
+/* /agence : bloc Siège social + carte, disposition de la référence (photo assombrie | carte) */
+.cw-about-contact .cw-about-contact-panel {
+	position: relative;
+	overflow: hidden;
+	background: #0f1d33;
+}
+
+.cw-about-contact .cw-about-contact-bg {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	opacity: 0.28;
+}
+
+.cw-about-contact .cw-about-contact-inner {
+	position: relative;
+	z-index: 1;
+}
+
+.cw-about-contact .cw-about-contact-inner .cw-about-contact-label {
+	margin: 0 0 6px;
+	color: #f08a5d;
+	font-size: 32px;
+	font-weight: 700;
+	line-height: 1.2;
+}
+
+.cw-about-contact .cw-about-contact-inner h3.cw-about-contact-label {
+	margin-top: 26px;
+}
+
+.cw-about-contact .cw-about-contact-inner .cw-about-contact-value {
+	margin: 0;
+	color: #fff;
+	font-size: 26px;
+	font-style: normal;
+	line-height: 1.35;
+}
+
+.cw-about-contact .cw-about-contact-value span {
+	display: block;
+}
+
+.cw-about-contact .cw-about-contact-value a {
+	color: #fff;
+}
+
+.cw-about-contact .cw-about-contact-value a:hover {
+	color: #f08a5d;
+}
+
+.cw-about-contact-map {
+	position: relative;
+	min-height: 420px;
+	background: #e9ecef;
+}
+
+.cw-about-contact-map iframe {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
+	filter: grayscale(1) contrast(0.95);
+}
+
+.cw-about-map-link {
+	position: absolute;
+	right: 12px;
+	bottom: 12px;
+	z-index: 1;
+	padding: 6px 12px;
+	border-radius: 4px;
+	background: #fff;
+	color: var(--color-heading);
+	font-size: 15px;
+	font-weight: 600;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.cw-about-map-link:hover {
+	color: var(--color-primary);
+}
+
+@media (max-width: 991px) {
+	.cw-about-contact-map {
+		min-height: 320px;
+	}
+}
+
+@media (max-width: 575px) {
+	.cw-about-contact .cw-about-contact-inner .cw-about-contact-label {
+		font-size: 26px;
+	}
+
+	.cw-about-contact .cw-about-contact-inner .cw-about-contact-value {
+		font-size: 21px;
+	}
+}
+
+/* /agence : « Questions fréquentes » inspirée de la référence — fond gris clair à facettes, titre compact et gras,
+   liste à puces, liens en texte gris léger. */
+.cw-about-faq {
+	position: relative;
+	overflow: hidden;
+	padding: 90px 0;
+	background-color: #f1f2f4;
+	background-image:
+		linear-gradient(115deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0) 38%),
+		linear-gradient(62deg, rgba(0, 0, 0, 0.035) 0%, rgba(0, 0, 0, 0) 30%),
+		linear-gradient(160deg, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0.9) 56%, rgba(255, 255, 255, 0.4) 100%),
+		linear-gradient(28deg, rgba(0, 0, 0, 0) 62%, rgba(0, 0, 0, 0.04) 63%, rgba(0, 0, 0, 0) 85%),
+		linear-gradient(200deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.7) 31%, rgba(255, 255, 255, 0) 60%);
+}
+
+.cw-about-faq .cw-about-title {
+	margin: 0 0 12px;
+	font-size: 32px;
+	font-weight: 700;
+	line-height: 1.2;
+	color: var(--color-heading);
+}
+
+.cw-about-faq .cw-about-faq-list {
+	margin: 0;
+	padding-left: 46px;
+	list-style: disc outside;
+}
+
+.cw-about-faq .cw-about-faq-list li {
+	display: list-item;
+	margin: 0 0 6px;
+	padding-left: 4px;
+	list-style: disc outside;
+	color: var(--color-heading);
+}
+
+.cw-about-faq .cw-about-faq-list li::marker {
+	color: var(--color-heading);
+	font-size: 0.8em;
+}
+
+.cw-about-faq .cw-about-faq-list a {
+	font-size: 17px;
+	font-weight: 400;
+	letter-spacing: 0.01em;
+	line-height: 1.6;
+	color: #5f6470;
+	transition: color 0.2s ease;
+}
+
+.cw-about-faq .cw-about-faq-list a:hover,
+.cw-about-faq .cw-about-faq-list a:focus-visible {
+	color: var(--color-primary);
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+@media (max-width: 767px) {
+	.cw-about-faq {
+		padding: 60px 0;
+	}
+
+	.cw-about-faq .cw-about-title {
+		font-size: 26px;
+	}
+
+	.cw-about-faq .cw-about-faq-list {
+		padding-left: 22px;
+	}
+
+	.cw-about-faq .cw-about-faq-list a {
+		font-size: 15.5px;
+	}
+}
+
+/* /agence : les cartes blanches sont dans une section .text-light (texte blanc forcé par le thème) :
+   on rétablit les couleurs sombres du texte et du bouton à l'intérieur des cartes. */
+.cw-about-qa.text-light .cw-about-qa-card,
+.cw-about-qa.text-light .cw-about-qa-card p {
+	color: var(--color-paragraph);
+	-webkit-text-fill-color: currentColor;
+}
+
+.cw-about-qa.text-light .cw-about-qa-card h3 {
+	color: var(--color-heading);
+	-webkit-text-fill-color: currentColor;
+}
+
+.cw-about-qa.text-light .cw-about-qa-card a.cw-about-btn {
+	color: var(--color-primary);
+	-webkit-text-fill-color: currentColor;
+}
+
+.cw-about-qa.text-light .cw-about-qa-card a.cw-about-btn:hover,
+.cw-about-qa.text-light .cw-about-qa-card a.cw-about-btn:focus-visible {
+	color: #fff;
+	background: var(--color-primary);
+}
+
+/* /agence : bloc Siège social + carte plus haut, comme la référence */
+.cw-about-contact {
+	min-height: 680px;
+}
+
+.cw-about-contact-map {
+	min-height: 680px;
+}
+
+@media (max-width: 991px) {
+	.cw-about-contact {
+		min-height: 0;
+	}
+
+	.cw-about-contact .cw-about-contact-panel {
+		min-height: 420px;
+	}
+
+	.cw-about-contact-map {
+		min-height: 420px;
+	}
+}
+
+/* /agence : l'image de présentation prend toute la hauteur du texte (du surtitre au bouton) */
+@media (min-width: 992px) {
+	.cw-about-intro > .container > .row.align-center {
+		align-items: stretch;
+	}
+
+	.cw-about-intro .cw-about-intro-thumb {
+		height: 100%;
+	}
+
+	.cw-about-intro .cw-about-intro-thumb img {
+		height: 100%;
+		min-height: 420px;
+		object-fit: cover;
+		object-position: center;
+	}
+}
+
+/* /agence : textes +2 px (titres et paragraphes) — présentation, mission/vision, huit questions, FAQ, technologies */
+.cw-about-intro p,
+.cw-about-pillar p,
+.cw-about-reach p {
+	font-size: 19px;
+}
+
+.cw-about-intro .cw-about-title {
+	font-size: 38px;
+}
+
+.cw-about-pillar h3 {
+	font-size: 24px;
+}
+
+.cw-about-reach h3 {
+	font-size: 22px;
+}
+
+.cw-about-qa-head h2 {
+	font-size: 36px;
+}
+
+.cw-about-qa-head p {
+	font-size: 19px;
+}
+
+.cw-about-qa-card h3 {
+	font-size: 21px;
+}
+
+.cw-about-qa-card p {
+	font-size: 17.5px;
+}
+
+.cw-about-faq .cw-about-title {
+	font-size: 36px;
+}
+
+.cw-about-faq .cw-about-faq-list a {
+	font-size: 19px;
+}
+
+.cw-about-btn {
+	font-size: 16px;
+}
+
+.cw-tech-title {
+	font-size: 38px;
+}
+
+.cw-tech-head p {
+	font-size: 19px;
+	max-width: 680px;
+}
+
+@media (max-width: 767px) {
+	.cw-about-intro .cw-about-title,
+	.cw-about-qa-head h2,
+	.cw-about-faq .cw-about-title {
+		font-size: 28px;
+	}
+
+	.cw-about-pillar h3 {
+		font-size: 22px;
+	}
+
+	.cw-about-intro p,
+	.cw-about-pillar p,
+	.cw-about-reach p,
+	.cw-about-qa-head p,
+	.cw-tech-head p {
+		font-size: 18px;
+	}
+}
+
+/* /agence : paragraphes des cartes « huit questions » justifiés (césure automatique pour éviter les grands blancs) */
+.cw-about-qa .cw-about-qa-card p {
+	text-align: justify;
+	text-justify: inter-word;
+	hyphens: auto;
+	-webkit-hyphens: auto;
+}
+
+/* /agence : boutons minimalistes — texte + flèche, sans contour ni fond */
+.cw-about-btn,
+.cw-about-qa.text-light .cw-about-qa-card a.cw-about-btn {
+	min-height: 0;
+	margin-top: 14px;
+	padding: 4px 0;
+	border: 0;
+	border-radius: 0;
+	background: transparent;
+	color: var(--color-primary);
+	font-size: 17px;
+	font-weight: 600;
+	gap: 8px;
+}
+
+.cw-about-btn::after {
+	content: "\2192";
+	display: inline-block;
+	font-weight: 400;
+	transition: transform 0.2s ease;
+}
+
+.cw-about-btn:hover,
+.cw-about-btn:focus-visible,
+.cw-about-qa.text-light .cw-about-qa-card a.cw-about-btn:hover,
+.cw-about-qa.text-light .cw-about-qa-card a.cw-about-btn:focus-visible {
+	background: transparent;
+	color: var(--color-heading);
+}
+
+.cw-about-btn:hover::after,
+.cw-about-btn:focus-visible::after {
+	transform: translateX(5px);
+}
+
+.cw-about-btn:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 4px;
+	border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.cw-about-btn::after {
+		transition: none;
+	}
+
+	.cw-about-btn:hover::after,
+	.cw-about-btn:focus-visible::after {
+		transform: none;
+	}
+}
+
+/* /equipe : cartes à photo (Team One) sur fond clair à facettes (même fond que la FAQ de /agence) */
+.cw-team-page {
+	padding-bottom: 70px;
+}
+
+.cw-team-page .cw-team-page-sub {
+	margin: 0 0 40px;
+	font-size: 19px;
+	color: var(--color-paragraph);
+}
+
+.cw-team-page .cw-team-page-grid {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.cw-team-page .team-style-one {
+	margin-bottom: 30px;
+}
+
+.cw-team-page .team-style-one .info {
+	padding-top: 20px;
+}
+
+.cw-team-page .team-style-one .info span {
+	display: block;
+	margin-bottom: 4px;
+	font-size: 17px;
+	color: var(--color-paragraph);
+}
+
+.cw-team-page .cw-team-name {
+	margin: 0;
+	font-size: 24px;
+	font-weight: 600;
+	color: var(--color-heading);
+}
+
+.cw-team-page .cw-team-avatar {
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(120deg, var(--dark) 0%, var(--dark-secondary) 45%, var(--color-primary) 100%);
+}
+
+.cw-team-page .cw-team-avatar span {
+	font-size: 72px;
+	font-weight: 600;
+	color: rgba(255, 255, 255, 0.85);
+}
+
+.cw-team-page .team-style-one .thumb img {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
+}
