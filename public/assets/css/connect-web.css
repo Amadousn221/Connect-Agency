@@ -303,8 +303,8 @@
 .cw-expertises .cw-tone-5 { --tone: #dccdf6; }
 
 .cw-expertises .cw-expertise-title {
-	font-size: 21px;
-	font-weight: 600;
+	font-size: 24px !important;
+	font-weight: 500 !important;
 	line-height: 1.35;
 	margin-bottom: 12px;
 }
@@ -771,7 +771,8 @@
 }
 
 .cw-stats .cw-stats-text {
-	max-width: 720px;
+	max-width: 1040px;
+	padding: 0;
 	margin: 0 auto;
 }
 
@@ -780,7 +781,7 @@
 }
 
 .cw-stats-big {
-	font-size: 200px;
+	font-size: 175px;
 	background-image: linear-gradient(135deg, var(--dark) 0%, var(--color-primary) 70%, #00a1ff 100%);
 	font-variant-numeric: tabular-nums;
 }
@@ -837,7 +838,7 @@
 
 @media (max-width: 991px) {
 	.cw-stats-big {
-		font-size: 150px;
+		font-size: 130px;
 	}
 
 	.cw-stats-big-label {
@@ -852,7 +853,7 @@
 
 @media (max-width: 575px) {
 	.cw-stats-big {
-		font-size: 110px;
+		font-size: 95px;
 	}
 
 }
@@ -1679,10 +1680,11 @@ nav.navbar.validnavs .cw-dropdown-inner a:focus-visible {
 
 /* Nos expertises : titres plus grands sur une ligne, descriptions justifiées, flèches */
 .cw-expertises .cw-expertise-title {
-	font-size: clamp(22px, 1.9vw, 28px);
-	font-weight: 700;
+	font-size: 24px !important;
+	font-weight: 500 !important;
 	line-height: 1.2;
-	white-space: nowrap;
+	white-space: normal;
+	overflow-wrap: break-word;
 	margin-bottom: 12px;
 }
 
@@ -1878,12 +1880,25 @@ nav.navbar.validnavs .cw-dropdown-inner a:focus-visible {
 }
 
 .cw-hero .cw-hero-eyebrow {
+	display: inline-flex;
+	align-items: center;
+	gap: 12px;
 	text-transform: uppercase;
 	font-weight: 600;
 	font-size: 14px;
-	letter-spacing: 1.2px;
+	line-height: 1.4;
+	letter-spacing: 0.14em;
 	margin: 0 0 18px;
-	color: rgba(255, 255, 255, 0.85);
+	color: rgba(255, 255, 255, 0.92);
+}
+
+/* Même filet orange que les surtitres .cw-sub ; le texte reste blanc car le hero est sur fond sombre */
+.cw-hero .cw-hero-eyebrow::before {
+	content: "";
+	flex: 0 0 auto;
+	width: 28px;
+	height: 2px;
+	background: #dd5922;
 }
 
 .cw-hero .banner-shape-bg {
@@ -2225,21 +2240,15 @@ label,
 	}
 }
 
-/* Hero : hauteur réduite de 5 % (demande d'Amadou, 08/11/2026) — ordinateur 686 → ~652 px, tablette 568 → ~540 px,
-   mobile 687 → ~653 px. La hauteur vient des marges verticales du contenu. */
+/* Hero : hauteur augmentée de 5 % (demande d'Amadou, 09/11/2026), ce qui revient à la hauteur d'origine avant la
+   réduction du 08/11 — ordinateur ~652 → ~686 px, mobile ~653 → ~687 px. La hauteur vient des marges verticales. */
 .cw-hero .cw-hero-content {
-	padding: 172px 0 154px;
+	padding: 190px 0 170px;
 }
 
 @media (max-width: 767px) {
 	.cw-hero .cw-hero-content {
-		padding: 106px 0 116px;
-	}
-}
-
-@media (max-width: 575px) {
-	.cw-hero .cw-hero-content {
-		padding: 103px 0 113px;
+		padding: 120px 0 130px;
 	}
 }
 
@@ -2433,5 +2442,1871 @@ label,
 @media (min-width: 992px) and (max-width: 1199px) {
 	.cw-expertises .site-heading .title {
 		font-size: 34px;
+	}
+}
+
+/* ===== Page Digitalisation (/expertises/digitalisation) ===== */
+.cw-dg [id] {
+	scroll-margin-top: 110px;
+}
+
+.cw-dg .cw-dg-anchor {
+	display: block;
+	height: 0;
+}
+
+.cw-dg section {
+	padding: 90px 0;
+}
+
+.cw-dg .cw-dg-narrow {
+	max-width: 760px;
+}
+
+
+.cw-dg .cw-dg-h1 {
+	font-size: 48px;
+	font-weight: 600;
+	line-height: 1.15;
+	margin: 0 0 22px;
+}
+
+.cw-dg .cw-dg-lead {
+	font-size: 18px;
+	line-height: 1.7;
+	margin: 0;
+}
+
+.cw-dg .cw-dg-actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 14px 28px;
+	margin-top: 32px;
+}
+
+
+
+.cw-dg .cw-dg-h2 {
+	font-size: 34px;
+	font-weight: 600;
+	line-height: 1.25;
+	margin: 0 0 18px;
+}
+
+
+
+
+
+
+
+
+/* Services : 2 colonnes, blocs sobres */
+.cw-dg .cw-dg-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 24px;
+	margin-top: 40px;
+}
+
+
+
+
+.cw-dg .cw-dg-icon {
+	flex: 0 0 auto;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	background: #eef1f9;
+	color: var(--color-primary);
+	font-size: 19px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FAQ : accordéon .cw-step sans numéro */
+.cw-dg .cw-faq .cw-step-panel-inner {
+	padding-left: 4px;
+}
+
+/* Contact */
+.cw-dg .cw-contact-form label {
+	display: block;
+	font-weight: 600;
+	margin-bottom: 6px;
+	color: var(--color-heading);
+}
+
+.cw-dg .cw-contact-form .form-group {
+	margin-bottom: 20px;
+}
+
+.cw-dg .cw-contact-form .form-control {
+	width: 100%;
+	min-height: 50px;
+	padding: 10px 16px;
+	border: 1px solid #d5dbe8;
+	border-radius: 8px;
+	background: var(--white);
+	color: var(--color-heading);
+}
+
+.cw-dg .cw-contact-form textarea.form-control {
+	min-height: 140px;
+}
+
+.cw-dg .cw-contact-form .form-control:focus {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 1px;
+	border-color: var(--color-primary);
+	box-shadow: none;
+}
+
+.cw-dg .cw-contact-form .form-control[aria-invalid="true"] {
+	border-color: #c62828;
+}
+
+.cw-dg .cw-optional {
+	font-weight: 400;
+	color: #444444;
+}
+
+.cw-dg .cw-field-error {
+	display: block;
+	margin-top: 6px;
+	font-size: 14px;
+	color: #b71c1c;
+}
+
+.cw-dg .cw-form-alert {
+	margin: 0 0 20px;
+	padding: 12px 16px;
+	border-left: 4px solid #c62828;
+	background: #fdecea;
+	color: #7f1d1d;
+}
+
+.cw-dg .cw-form-summary:focus {
+	outline: none;
+}
+
+.cw-dg .cw-form-note {
+	font-size: 14px;
+	margin-bottom: 20px;
+}
+
+.cw-dg .cw-form-success {
+	display: flex;
+	align-items: flex-start;
+	gap: 14px;
+	padding: 24px;
+	border-radius: 12px;
+	background: #e8f5ee;
+	color: #14532d;
+	font-size: 18px;
+}
+
+.cw-dg .cw-form-success i {
+	font-size: 26px;
+	color: #1f8f55;
+}
+
+.cw-dg .cw-hp {
+	position: absolute;
+	left: -10000px;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+@media (max-width: 991px) {
+	.cw-dg section {
+		padding: 70px 0;
+	}
+
+
+	.cw-dg .cw-dg-h1 {
+		font-size: 38px;
+	}
+
+
+	.cw-dg .cw-dg-faq .cw-dg-h2,
+	.cw-dg .cw-dg-contact .cw-dg-h2 {
+		margin-bottom: 24px;
+	}
+}
+
+@media (max-width: 767px) {
+	.cw-dg .cw-dg-h1 {
+		font-size: 30px;
+	}
+
+	.cw-dg .cw-dg-h2 {
+		font-size: 26px;
+	}
+
+
+
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+}
+
+.cw-dg .cw-contact-form button.btn {
+	width: auto;
+	height: var(--cw-btn-h-md, 44px);
+	min-height: 44px;
+	/* unit-test.css impose « padding: 17px 50px !important » à tout bouton submit : on le neutralise ici. */
+	padding: 0 24px !important;
+	line-height: 1;
+	font-size: 15px;
+}
+
+.cw-dg .cw-contact-form .cw-select {
+	appearance: none;
+	padding-right: 44px;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%231351d8' stroke-width='1.8'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: right 16px center;
+}
+
+/* Menu simple (sans sous-menus) : plus d'espace entre les liens sur ordinateur */
+@media (min-width: 1200px) {
+	.cw-nav-list {
+		gap: 18px;
+	}
+}
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+	.cw-nav-list {
+		gap: 8px;
+	}
+}
+
+/* ===== Page Digitalisation, 2e version (hero photo, texte + schéma, grille de 3, onglets, feuille de route) ===== */
+.cw-dg .cw-dg-sub {
+	margin-bottom: 16px;
+}
+
+/* 1. Hero photographique pleine largeur */
+.cw-dg .cw-dg-hero {
+	position: relative;
+	overflow: hidden;
+	padding: 200px 0 120px;
+}
+
+.cw-dg .cw-dg-hero-photo {
+	object-fit: cover;
+	object-position: 60% center;
+}
+
+.cw-dg .cw-dg-hero-veil {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(90deg, rgba(8, 24, 70, 0.9) 0%, rgba(8, 24, 70, 0.74) 50%, rgba(8, 24, 70, 0.5) 100%);
+}
+
+.cw-dg .cw-dg-hero .container {
+	position: relative;
+	z-index: 1;
+}
+
+.cw-dg .cw-dg-hero-content {
+	max-width: 680px;
+}
+
+.cw-dg .cw-dg-eyebrow {
+	margin: 0 0 18px;
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: 1.2px;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.88);
+}
+
+.cw-dg .cw-dg-hero .cw-dg-h1 {
+	color: var(--white);
+	text-shadow: 0 1px 14px rgba(8, 24, 70, 0.5);
+}
+
+.cw-dg .cw-dg-hero .cw-dg-lead {
+	text-shadow: 0 1px 12px rgba(8, 24, 70, 0.5);
+}
+
+.cw-dg .cw-dg-textlink-light {
+	font-weight: 600;
+	color: var(--white);
+}
+
+.cw-dg .cw-dg-textlink-light:hover,
+.cw-dg .cw-dg-textlink-light:focus-visible {
+	text-decoration: underline;
+	text-underline-offset: 4px;
+}
+
+.cw-dg .cw-dg-textlink-light:focus-visible,
+.cw-dg .cw-dg-textlink:focus-visible {
+	outline: 2px solid currentColor;
+	outline-offset: 4px;
+	border-radius: 3px;
+}
+
+/* 2. Texte + schéma */
+.cw-dg .cw-dg-benefits {
+	list-style: none;
+	margin: 26px 0 28px;
+	padding: 0;
+	display: grid;
+	gap: 14px;
+}
+
+.cw-dg .cw-dg-benefits li {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	font-weight: 500;
+	color: var(--color-heading);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 3. Services : grille de 3, une action par carte */
+.cw-dg ul.cw-dg-grid {
+	list-style: none;
+	padding: 0;
+	margin: 44px 0 0;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 24px;
+}
+
+.cw-dg .cw-dg-card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	padding: 30px;
+	background: var(--white);
+	border: 1px solid #e3e7f0;
+	border-radius: 14px;
+	transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cw-dg .cw-dg-card:hover,
+.cw-dg .cw-dg-card:focus-within {
+	border-color: var(--color-primary);
+	transform: translateY(-3px);
+	box-shadow: 0 12px 28px -14px rgba(14, 39, 105, 0.3);
+}
+
+.cw-dg .cw-dg-card:has(.cw-dg-card-link:focus-visible) {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 3px;
+}
+
+.cw-dg .cw-dg-card-head {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	margin-bottom: 16px;
+}
+
+.cw-dg .cw-dg-card h3 {
+	font-size: 21px;
+	font-weight: 600;
+	line-height: 1.3;
+	margin: 0;
+}
+
+.cw-dg .cw-dg-card p {
+	margin-bottom: 18px;
+}
+
+.cw-dg .cw-dg-card .cw-arrow-list {
+	margin-bottom: 24px;
+}
+
+.cw-dg .cw-dg-card-link {
+	margin-top: auto;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	font-weight: 600;
+	color: var(--color-primary);
+}
+
+.cw-dg .cw-dg-card-link::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	border-radius: 14px;
+}
+
+.cw-dg .cw-dg-card-link:focus-visible {
+	outline: none;
+}
+
+.cw-dg .cw-dg-card-arrow {
+	display: inline-block;
+	transition: transform 0.2s ease;
+}
+
+.cw-dg .cw-dg-card:hover .cw-dg-card-arrow,
+.cw-dg .cw-dg-card:focus-within .cw-dg-card-arrow {
+	transform: translateX(5px);
+}
+
+/* 4. En pratique : onglets */
+.cw-dg .cw-tablist {
+	display: flex;
+	gap: 6px;
+	margin-top: 36px;
+	border-bottom: 1px solid #e3e7f0;
+	overflow-x: auto;
+	scrollbar-width: thin;
+}
+
+.cw-dg .cw-tablist button {
+	flex: 0 0 auto;
+	padding: 14px 22px;
+	margin-bottom: -1px;
+	background: none;
+	border: 0;
+	border-bottom: 3px solid transparent;
+	font-size: 17px;
+	font-weight: 600;
+	color: var(--color-heading);
+	cursor: pointer;
+	white-space: nowrap;
+	transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.cw-dg .cw-tablist button:hover {
+	color: var(--color-primary);
+	background: #f1f5ff;
+}
+
+.cw-dg .cw-tablist button.is-active {
+	color: var(--color-primary);
+	border-bottom-color: var(--color-primary);
+}
+
+.cw-dg .cw-tablist button:focus-visible,
+.cw-dg .cw-tabpanel:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: -2px;
+}
+
+.cw-dg .cw-tabpanel {
+	padding: 36px 0 0;
+}
+
+.cw-dg .cw-tabpanel-text {
+	max-width: 720px;
+	font-size: 18px;
+	line-height: 1.7;
+	margin-bottom: 30px;
+}
+
+.cw-dg .cw-flow {
+	list-style: none;
+	margin: 0 0 22px;
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 40px;
+}
+
+.cw-dg .cw-flow li {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	padding: 18px;
+	border: 1px solid #e3e7f0;
+	border-radius: 12px;
+	background: var(--white);
+	font-weight: 600;
+	color: var(--color-heading);
+}
+
+.cw-dg .cw-flow li + li::before {
+	content: "\2192";
+	position: absolute;
+	left: -30px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: var(--color-primary);
+	font-size: 20px;
+	font-weight: 400;
+}
+
+.cw-dg .cw-flow-icon,
+.cw-dg .cw-dg-icon,
+.cw-dg .cw-road-icon {
+	flex: 0 0 auto;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+	background: #eef1f9;
+	color: var(--color-primary);
+	font-size: 18px;
+}
+
+.cw-dg .cw-tabpanel-note {
+	font-size: 14px;
+	margin-bottom: 22px;
+	font-style: italic;
+}
+
+/* 6. Feuille de route : étapes empilées */
+.cw-dg .cw-roadmap {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border-top: 1px solid #d5dbe8;
+}
+
+.cw-dg .cw-road-step {
+	border-bottom: 1px solid #d5dbe8;
+}
+
+.cw-dg .cw-road-head {
+	margin: 0;
+}
+
+.cw-dg .cw-road-head button {
+	width: 100%;
+	display: flex;
+	align-items: flex-start;
+	gap: 14px;
+	padding: 20px 4px;
+	background: none;
+	border: 0;
+	text-align: left;
+	color: var(--color-heading);
+	cursor: pointer;
+}
+
+.cw-dg .cw-road-head button:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+}
+
+.cw-dg .cw-road-num {
+	min-width: 26px;
+	padding-top: 10px;
+	font-size: 15px;
+	font-weight: 600;
+	color: var(--color-primary);
+}
+
+.cw-dg .cw-road-text {
+	flex: 1 1 auto;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	padding-top: 2px;
+}
+
+.cw-dg .cw-road-title {
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 1.3;
+}
+
+.cw-dg .cw-road-short {
+	font-size: 16px;
+	line-height: 1.55;
+	font-weight: 400;
+}
+
+.cw-dg .cw-road-head .cw-step-chevron {
+	margin-top: 16px;
+}
+
+.cw-dg .cw-road-step.is-open .cw-road-title,
+.cw-dg .cw-road-step.is-open .cw-road-head button {
+	color: var(--color-primary);
+}
+
+.cw-dg .cw-road-step.is-open .cw-road-short {
+	color: #111111;
+}
+
+.cw-dg .cw-road-step.is-open .cw-road-icon {
+	background: var(--color-primary);
+	color: var(--white);
+}
+
+.cw-dg .cw-road-step .cw-step-panel {
+	display: grid;
+	grid-template-rows: 0fr;
+	transition: grid-template-rows 0.28s ease;
+}
+
+.cw-dg .cw-road-step.is-open .cw-step-panel {
+	grid-template-rows: 1fr;
+}
+
+.cw-dg .cw-road-step.is-open .cw-step-chevron {
+	transform: rotate(-135deg);
+}
+
+.cw-dg .cw-road-step .cw-step-panel-inner {
+	padding: 0 4px 0 84px;
+}
+
+.cw-dg .cw-road-step.is-open .cw-step-panel-inner {
+	padding-bottom: 22px;
+}
+
+.cw-dg .cw-road-detail {
+	margin: 0;
+	display: grid;
+	gap: 14px;
+}
+
+.cw-dg .cw-road-detail dt {
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	color: var(--color-primary);
+	margin-bottom: 2px;
+}
+
+.cw-dg .cw-road-detail dd {
+	margin: 0;
+	line-height: 1.6;
+}
+
+/* Section Contact : fond teinté, le formulaire reste sur fond clair */
+.cw-dg .cw-dg-contact .cw-contact-form .form-control {
+	background: var(--white);
+}
+
+/* Apparition légère à l'entrée dans l'écran : CSS seul, uniquement si le navigateur gère les animations pilotées par
+   le défilement ET si l'utilisateur n'a pas demandé moins d'animations. Sinon tout est affiché normalement. */
+@keyframes cw-rise {
+	from {
+		opacity: 0;
+		transform: translateY(18px);
+	}
+
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	@supports (animation-timeline: view()) {
+		.cw-dg .cw-reveal {
+			animation: cw-rise linear both;
+			animation-timeline: view();
+			animation-range: entry 0% entry 22%;
+		}
+
+		.cw-dg ul.cw-dg-grid .cw-reveal:nth-child(3n + 2) {
+			animation-range: entry 6% entry 28%;
+		}
+
+		.cw-dg ul.cw-dg-grid .cw-reveal:nth-child(3n + 3) {
+			animation-range: entry 12% entry 34%;
+		}
+	}
+}
+
+@media (max-width: 1199px) {
+	.cw-dg .cw-flow {
+		gap: 36px;
+	}
+}
+
+@media (max-width: 991px) {
+	.cw-dg .cw-dg-hero {
+		padding: 150px 0 80px;
+	}
+
+	.cw-dg ul.cw-dg-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.cw-dg .cw-flow {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 28px 40px;
+	}
+
+	.cw-dg .cw-flow li:nth-child(odd)::before {
+		display: none;
+	}
+
+
+	.cw-dg .cw-dg-method .col-lg-6 {
+		margin-top: 28px;
+	}
+}
+
+@media (max-width: 767px) {
+	.cw-dg .cw-dg-hero {
+		padding: 120px 0 64px;
+	}
+
+	.cw-dg ul.cw-dg-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.cw-dg .cw-flow {
+		grid-template-columns: 1fr;
+		gap: 30px;
+	}
+
+	.cw-dg .cw-flow li:nth-child(odd)::before {
+		display: block;
+	}
+
+	.cw-dg .cw-flow li + li::before {
+		content: "\2193";
+		left: 30px;
+		top: -26px;
+		transform: none;
+	}
+
+	.cw-dg .cw-tablist button {
+		padding: 12px 16px;
+		font-size: 16px;
+	}
+
+	.cw-dg .cw-road-step .cw-step-panel-inner {
+		padding-left: 4px;
+	}
+
+	.cw-dg .cw-road-num {
+		min-width: 22px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.cw-dg .cw-dg-card,
+	.cw-dg .cw-dg-card-arrow,
+	.cw-dg .cw-road-step .cw-step-panel {
+		transition: none;
+	}
+
+	.cw-dg .cw-dg-card:hover,
+	.cw-dg .cw-dg-card:focus-within {
+		transform: none;
+	}
+}
+
+/* Page Digitalisation : hero moins haut */
+.cw-dg .cw-dg-hero {
+	padding: 130px 0 70px;
+}
+
+@media (max-width: 991px) {
+	.cw-dg .cw-dg-hero {
+		padding: 110px 0 56px;
+	}
+}
+
+@media (max-width: 767px) {
+	.cw-dg .cw-dg-hero {
+		padding: 96px 0 48px;
+	}
+}
+
+/* Photo de la section « Votre activité, vos outils » (à droite du texte) */
+.cw-dg .cw-dg-photo img {
+	display: block;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 4 / 3;
+	object-fit: cover;
+	border-radius: 16px;
+}
+
+@media (max-width: 991px) {
+	.cw-dg .cw-dg-photo {
+		margin-top: 36px;
+	}
+}
+
+/* Page Digitalisation : surtitres minimalistes (sans contour) aux couleurs du logo : bleu du logo, filet orange */
+.cw-dg .cw-dg-sub {
+	display: inline-flex;
+	align-items: center;
+	gap: 12px;
+	margin: 0 0 14px;
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	background: none;
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: #185271;
+	-webkit-text-fill-color: #185271;
+}
+
+.cw-dg .cw-dg-sub::before {
+	content: "";
+	flex: 0 0 auto;
+	width: 28px;
+	height: 2px;
+	background: #dd5922;
+}
+
+/* Section « Votre activité, vos outils » : la photo prend toute la hauteur du texte */
+@media (min-width: 992px) {
+	.cw-dg .cw-dg-about .row {
+		align-items: stretch;
+	}
+
+	.cw-dg .cw-dg-about .row > .col-lg-5 {
+		display: flex;
+	}
+
+	.cw-dg .cw-dg-about .cw-dg-photo {
+		position: relative;
+		flex: 1 1 auto;
+		min-height: 360px;
+	}
+
+	.cw-dg .cw-dg-about .cw-dg-photo img {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		aspect-ratio: auto;
+		object-fit: cover;
+	}
+}
+
+/* Surtitre de section (classe commune) : filet orange, puis texte en majuscules bleu espacé.
+   Même rendu que la section « Votre activité, vos outils » (page Digitalisation). */
+.cw-sub {
+	display: inline-flex;
+	align-items: center;
+	gap: 12px;
+	margin: 0 0 14px;
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	background: none;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 1.4;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: #185271;
+	-webkit-text-fill-color: #185271;
+}
+
+.cw-sub::before {
+	content: "";
+	flex: 0 0 auto;
+	width: 28px;
+	height: 2px;
+	background: #dd5922;
+}
+
+@media (max-width: 575px) {
+	.cw-sub {
+		font-size: 12px;
+		letter-spacing: 0.1em;
+		gap: 10px;
+	}
+
+	.cw-sub::before {
+		width: 22px;
+	}
+}
+
+/* Agence : photo plus large (colonne de moitié, sans décalage) et de la hauteur du texte, sans vide à côté */
+@media (min-width: 992px) {
+	.cw-agency .row {
+		align-items: stretch;
+	}
+
+	.cw-agency .cw-agency-photo-col {
+		display: flex;
+	}
+
+	.cw-agency .cw-agency-photo-col .cw-agency-thumb {
+		position: relative;
+		flex: 1 1 auto;
+		min-height: 420px;
+		margin: 0;
+	}
+
+	.cw-agency .cw-agency-photo-col .cw-agency-thumb > img {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		aspect-ratio: auto;
+		object-fit: cover;
+	}
+}
+
+/* Lien d'appel à l'action minimaliste (texte bleu souligné + flèche) */
+.cw-link-cta {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	margin-top: 24px;
+	padding: 4px 0;
+	font-size: 16px;
+	font-weight: 600;
+	color: #185271;
+	text-decoration: none;
+	border-bottom: 2px solid #dd5922;
+	transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.cw-link-cta::after {
+	content: "\2192";
+	font-weight: 400;
+}
+
+.cw-link-cta:hover,
+.cw-link-cta:focus-visible {
+	gap: 14px;
+	color: #dd5922;
+}
+
+.cw-link-cta:focus-visible {
+	outline: 2px solid #185271;
+	outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.cw-link-cta {
+		transition: none;
+	}
+}
+
+/* Hero : texte sous le titre agrandi de 2 px (17 → 19 px ; mobile 16 → 18 px) */
+.cw-hero .cw-hero-text {
+	font-size: 19px;
+}
+
+@media (max-width: 767px) {
+	.cw-hero .cw-hero-text {
+		font-size: 18px;
+	}
+}
+
+@media (max-width: 575px) {
+	.cw-hero .cw-hero-eyebrow {
+		font-size: 12px;
+		letter-spacing: 0.1em;
+		gap: 10px;
+	}
+
+	.cw-hero .cw-hero-eyebrow::before {
+		width: 22px;
+	}
+}
+
+/* Hero : les diapositives ont toutes la hauteur de la plus haute ; le contenu est centré verticalement
+   pour ne plus laisser de vide sous les boutons quand le texte est plus court. */
+.cw-hero .cw-hero-slider .swiper-slide {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.cw-hero .cw-hero-slider .swiper-slide > .container {
+	width: 100%;
+}
+
+/* Nos expertises sur mobile (< 768 px) : grille au lieu du slider, sans commandes de défilement.
+   Les !important neutralisent les styles en ligne posés par Swiper (largeur, marges, translation). */
+@media (max-width: 767px) {
+	.cw-expertises .cw-expertises-slider {
+		overflow: visible;
+		padding: 0;
+	}
+
+	.cw-expertises .cw-expertises-slider .swiper-wrapper {
+		display: grid !important;
+		grid-template-columns: 1fr;
+		gap: 24px;
+		transform: none !important;
+		transition: none !important;
+		width: 100% !important;
+	}
+
+	.cw-expertises .cw-expertises-slider .swiper-slide {
+		width: auto !important;
+		margin: 0 !important;
+		height: auto;
+	}
+
+	.cw-expertises .cw-expertises-controls {
+		display: none;
+	}
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+	.cw-expertises .cw-expertises-slider .swiper-wrapper {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/* ===== Page Digitalisation, section « En pratique » : module interactif compact (09/11/2026) =====
+   Fond blanc, bordures fines, bleu Connect Web (var(--color-primary)) pour les éléments actifs, boutons et flèches.
+   Aucune ombre forte, aucun défilement interne, transitions de 150 à 250 ms, animations coupées si
+   prefers-reduced-motion. Ancienne mise en forme en onglets (.cw-tablist, .cw-flow...) : plus utilisée. */
+.cw-dg .cw-dg-practice {
+	padding: 64px 0;
+	background: var(--white);
+}
+
+.cw-dg .cw-pr-head {
+	display: grid;
+	grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+	align-items: end;
+	gap: 16px 48px;
+	margin-bottom: 28px;
+}
+
+.cw-dg .cw-pr-head .cw-dg-sub {
+	margin-bottom: 12px;
+}
+
+.cw-dg .cw-pr-title {
+	font-size: 36px;
+	font-weight: 600;
+	line-height: 1.15;
+	margin: 0;
+	color: var(--color-heading);
+}
+
+.cw-dg .cw-pr-title-accent {
+	display: block;
+	color: var(--color-primary);
+}
+
+.cw-dg .cw-pr-intro {
+	margin: 0;
+	max-width: 380px;
+	font-size: 17px;
+	line-height: 1.6;
+	color: #4b5563;
+}
+
+/* Sélecteur de scénarios */
+.cw-dg .cw-pr-scenarios {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	border-bottom: 1px solid #e3e7f0;
+	margin-bottom: 24px;
+}
+
+.cw-dg .cw-pr-scenario {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	margin-bottom: -1px;
+	padding: 14px 12px;
+	background: var(--white);
+	border: 0;
+	border-bottom: 3px solid transparent;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 1.3;
+	color: var(--color-heading);
+	cursor: pointer;
+	transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.cw-dg .cw-pr-scenario i {
+	font-size: 18px;
+	color: #6b7280;
+	transition: color 0.2s ease;
+}
+
+.cw-dg .cw-pr-scenario:hover,
+.cw-dg .cw-pr-scenario:focus-visible {
+	background: #f6f8fd;
+	color: var(--color-primary);
+}
+
+.cw-dg .cw-pr-scenario[aria-pressed="true"] {
+	color: var(--color-primary);
+	border-bottom-color: var(--color-primary);
+}
+
+.cw-dg .cw-pr-scenario[aria-pressed="true"] i,
+.cw-dg .cw-pr-scenario:hover i,
+.cw-dg .cw-pr-scenario:focus-visible i {
+	color: var(--color-primary);
+}
+
+.cw-dg .cw-pr-scenario:focus-visible,
+.cw-dg .cw-pr-step:focus-visible,
+.cw-dg .cw-pr-next:focus-visible,
+.cw-dg .cw-pr-cta-btn:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+}
+
+/* Module : étapes (un tiers) et détail (deux tiers) */
+.cw-dg .cw-pr-module {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+	align-items: stretch;
+	gap: 24px;
+}
+
+.cw-dg .cw-pr-steps {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	grid-template-rows: repeat(4, minmax(56px, 1fr));
+	gap: 8px;
+}
+
+.cw-dg .cw-pr-steps li {
+	display: flex;
+	margin: 0;
+	padding: 0;
+}
+
+.cw-dg .cw-pr-step {
+	flex: 1 1 auto;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	min-width: 0;
+	padding: 12px 16px;
+	background: var(--white);
+	border: 1px solid #e3e7f0;
+	border-radius: 10px;
+	text-align: left;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 1.3;
+	color: var(--color-heading);
+	cursor: pointer;
+	transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.cw-dg .cw-pr-step-num {
+	flex: 0 0 auto;
+	min-width: 20px;
+	font-size: 12px;
+	font-weight: 500;
+	letter-spacing: 0.04em;
+	color: #9aa3b5;
+}
+
+.cw-dg .cw-pr-step i {
+	flex: 0 0 auto;
+	width: 22px;
+	text-align: center;
+	font-size: 17px;
+	color: #6b7280;
+}
+
+.cw-dg .cw-pr-step-title {
+	flex: 1 1 auto;
+	min-width: 0;
+}
+
+.cw-dg .cw-pr-step-arrow {
+	flex: 0 0 auto;
+	margin-left: auto;
+	color: var(--color-primary);
+	opacity: 0;
+	transform: translateX(-4px);
+	transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.cw-dg .cw-pr-step:hover,
+.cw-dg .cw-pr-step:focus-visible {
+	background: #f8faff;
+	border-color: #cbd8fb;
+}
+
+.cw-dg .cw-pr-step[aria-pressed="true"] {
+	background: #f1f5ff;
+	border-color: #cbd8fb;
+	color: var(--color-primary);
+}
+
+.cw-dg .cw-pr-step[aria-pressed="true"] i,
+.cw-dg .cw-pr-step[aria-pressed="true"] .cw-pr-step-num {
+	color: var(--color-primary);
+}
+
+.cw-dg .cw-pr-step[aria-pressed="true"] .cw-pr-step-arrow {
+	opacity: 1;
+	transform: none;
+}
+
+/* Panneau de détail */
+.cw-dg .cw-pr-panel {
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	min-height: 380px;
+	padding: 22px 28px 20px;
+	background: var(--white);
+	border: 1px solid #e3e7f0;
+	border-radius: 12px;
+}
+
+.cw-dg .cw-pr-panel-top {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 6px 16px;
+	padding-bottom: 14px;
+	border-bottom: 1px solid #eef0f6;
+}
+
+.cw-dg .cw-pr-context {
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: #4b5563;
+}
+
+.cw-dg .cw-pr-note {
+	font-size: 13px;
+	font-style: italic;
+	color: #6b7280;
+}
+
+.cw-dg .cw-pr-body {
+	flex: 1 1 auto;
+	padding: 24px 0 18px;
+}
+
+.cw-dg .cw-pr-body-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	background: #eef1f9;
+	color: var(--color-primary);
+	font-size: 20px;
+}
+
+.cw-dg .cw-pr-body-title {
+	margin: 16px 0 8px;
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 1.25;
+	color: var(--color-heading);
+}
+
+.cw-dg .cw-pr-body-text {
+	max-width: 580px;
+	margin: 0 0 20px;
+	font-size: 17px;
+	line-height: 1.65;
+	color: #4b5563;
+}
+
+.cw-dg .cw-pr-facts {
+	display: grid;
+	gap: 10px;
+	max-width: 580px;
+	margin: 0;
+}
+
+.cw-dg .cw-pr-facts > div {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 2px 16px;
+	padding: 6px 0 6px 14px;
+	border-left: 3px solid var(--color-primary);
+}
+
+.cw-dg .cw-pr-facts dt {
+	font-size: 14px;
+	font-weight: 400;
+	color: #6b7280;
+}
+
+.cw-dg .cw-pr-facts dd {
+	margin: 0;
+	font-size: 15px;
+	font-weight: 600;
+	color: var(--color-heading);
+	text-align: right;
+}
+
+.cw-dg .cw-pr-panel-foot {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px 16px;
+	padding-top: 16px;
+	border-top: 1px solid #eef0f6;
+}
+
+.cw-dg .cw-pr-counter {
+	font-size: 14px;
+	letter-spacing: 0.04em;
+	font-variant-numeric: tabular-nums;
+	color: #6b7280;
+}
+
+.cw-dg .cw-pr-next,
+.cw-dg .cw-pr-cta-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 10px 18px;
+	background: var(--color-primary);
+	border: 0;
+	border-radius: 8px;
+	font-size: 15px;
+	font-weight: 600;
+	line-height: 1.3;
+	color: var(--white);
+	text-decoration: none;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+}
+
+.cw-dg .cw-pr-next:hover,
+.cw-dg .cw-pr-cta-btn:hover,
+.cw-dg .cw-pr-next:focus-visible,
+.cw-dg .cw-pr-cta-btn:focus-visible {
+	background: var(--cw-btn-primary-hover, #0d3ea8);
+	color: var(--white);
+}
+
+/* Appel à l'action */
+.cw-dg .cw-pr-cta {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px 24px;
+	margin-top: 32px;
+	padding-top: 24px;
+	border-top: 1px solid #e3e7f0;
+}
+
+.cw-dg .cw-pr-cta-title {
+	margin: 0 0 4px;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 1.3;
+	color: var(--color-heading);
+}
+
+.cw-dg .cw-pr-cta-text {
+	margin: 0;
+	font-size: 16px;
+	color: #4b5563;
+}
+
+.cw-dg .cw-pr-cta-btn {
+	padding: 12px 22px;
+}
+
+/* Apparition légère du contenu à chaque changement d'étape (désactivée si prefers-reduced-motion) */
+@keyframes cw-pr-in {
+	from {
+		opacity: 0;
+		transform: translateY(6px);
+	}
+
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.cw-dg .cw-pr-body {
+		animation: cw-pr-in 0.22s ease both;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.cw-dg .cw-pr-scenario,
+	.cw-dg .cw-pr-scenario i,
+	.cw-dg .cw-pr-step,
+	.cw-dg .cw-pr-step-arrow,
+	.cw-dg .cw-pr-next,
+	.cw-dg .cw-pr-cta-btn {
+		transition: none;
+	}
+}
+
+@media (max-width: 991px) {
+	.cw-dg .cw-pr-module {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.cw-dg .cw-pr-steps {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-template-rows: none;
+	}
+
+	.cw-dg .cw-pr-step-arrow {
+		display: none;
+	}
+
+	.cw-dg .cw-pr-panel {
+		min-height: 0;
+	}
+}
+
+@media (max-width: 767px) {
+	.cw-dg .cw-dg-practice {
+		padding: 48px 0;
+	}
+
+	.cw-dg .cw-pr-head {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 12px;
+	}
+
+	.cw-dg .cw-pr-title {
+		font-size: 30px;
+	}
+
+	.cw-dg .cw-pr-intro {
+		max-width: none;
+	}
+
+	.cw-dg .cw-pr-panel {
+		padding: 18px 18px 16px;
+	}
+
+	.cw-dg .cw-pr-body-title {
+		font-size: 21px;
+	}
+
+	.cw-dg .cw-pr-facts dd {
+		text-align: left;
+	}
+
+	.cw-dg .cw-pr-cta {
+		align-items: flex-start;
+	}
+}
+
+@media (max-width: 575px) {
+	.cw-dg .cw-pr-scenario {
+		flex-direction: column;
+		gap: 6px;
+		padding: 12px 6px;
+		font-size: 14px;
+		text-align: center;
+	}
+
+	.cw-dg .cw-pr-step {
+		padding: 10px 12px;
+		gap: 8px;
+		font-size: 15px;
+	}
+
+	.cw-dg .cw-pr-cta-btn {
+		width: 100%;
+		justify-content: center;
+	}
+}
+
+@media (max-width: 359px) {
+	.cw-dg .cw-pr-steps {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+/* « Projets réalisés » : grille de logos clients (ClientLogoGrid). On garde la grille à filets du thème
+   (.partner-items ul, 3×2) ; chaque cellule a une boîte de hauteur fixe pour que le changement de logo ne déplace rien. */
+.cw-logo-grid ul li {
+	padding: 40px 20px;
+}
+
+.cw-logo-box {
+	position: relative;
+	width: 100%;
+	height: 80px;
+}
+
+.cw-logo-layer {
+	position: absolute;
+	inset: 0;
+}
+
+.cw-logo-grid .cw-logo-layer img {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	object-fit: contain;
+	object-position: center;
+}
+
+.cw-logo-layer.is-entering {
+	animation: cw-logo-in 700ms ease-in-out both;
+}
+
+.cw-logo-layer.is-leaving {
+	animation: cw-logo-out 700ms ease-in-out both;
+}
+
+@keyframes cw-logo-in {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+@keyframes cw-logo-out {
+	from { opacity: 1; }
+	to { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.cw-logo-layer.is-entering,
+	.cw-logo-layer.is-leaving {
+		animation: none;
+	}
+}
+
+@media (max-width: 575px) {
+	.cw-logo-grid ul li {
+		padding: 28px 14px;
+	}
+
+	.cw-logo-box {
+		height: 64px;
+	}
+}
+
+/* « Projets réalisés » : titre de section sur une seule ligne sur grand écran (≥1200 px), même taille que les autres titres ; en dessous il revient à la ligne. */
+@media (min-width: 992px) {
+	.cw-stats .cw-stats-head {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+}
+
+@media (min-width: 1200px) {
+	.cw-stats .cw-stats-head {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+
+	.cw-stats .cw-stats-head .title {
+		white-space: nowrap;
+		font-size: 40px;
+		line-height: 1.25;
+	}
+}
+
+/* Pied de page : icône de réseau sans adresse fournie (même rendu que les liens de la template, sans être cliquable). */
+.footer-social li .cw-social-soon {
+	display: inline-block;
+	height: 45px;
+	width: 45px;
+	line-height: 47px;
+	text-align: center;
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 50%;
+	color: var(--white);
+	cursor: default;
+}
+
+/* Réalisations : capture du haut de site (cadrée sur le coin supérieur gauche) et nom du client. */
+.cw-realisations .project-style-two .thumb img {
+	object-position: left top;
+}
+
+.cw-realisations .cw-realisation-client {
+	margin: -6px 0 8px;
+	font-size: 14px;
+	font-weight: 500;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	color: var(--color-primary);
+}
+
+/* Réalisations (base ProjectV1) : texte clair sur le bandeau dégradé, carte d'information plus compacte. */
+.cw-realisations .heading-left .cw-sub {
+	color: #fff;
+}
+
+.cw-realisations .heading-left .title {
+	color: #fff;
+}
+
+.cw-realisations .heading-left .cw-realisations-intro {
+	margin-top: 18px;
+	color: rgba(255, 255, 255, 0.88);
+}
+
+.cw-realisations .project-style-one .thumb img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.cw-realisations .project-style-one .info {
+	padding: 48px 44px;
+}
+
+.cw-realisations .project-style-one .info .cw-realisation-title {
+	font-size: 26px;
+	line-height: 1.3;
+	margin-bottom: 16px;
+}
+
+.cw-realisations .project-style-one .info > p:not(.cw-realisation-client) {
+	margin-bottom: 18px;
+}
+
+@media (max-width: 991px) {
+	.cw-realisations .project-style-one .info {
+		padding: 32px 24px;
+	}
+
+	.cw-realisations .project-style-one .info .cw-realisation-title {
+		font-size: 22px;
+	}
+}
+
+/* En-tête : bouton « Contact » secondaire (contour) à côté du bouton principal. */
+.cw-header-cta {
+	gap: 10px;
+}
+
+@media (min-width: 1024px) {
+	.cw-header-cta {
+		display: flex;
+		align-items: center;
+	}
+}
+
+.cw-mobile-cta {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+nav.navbar.validnavs a.btn.cw-btn-outline,
+nav.navbar.validnavs a.btn.cw-btn-outline:focus {
+	background: transparent !important;
+	color: var(--cw-btn-primary) !important;
+	border: 1px solid var(--cw-btn-primary) !important;
+}
+
+nav.navbar.validnavs a.btn.cw-btn-outline:hover {
+	background: var(--cw-btn-primary) !important;
+	color: var(--white) !important;
+}
+
+.cw-header-cta .btn.cw-btn-outline.btn-sm {
+	display: inline-flex;
+	align-items: center;
+}
+
+/* ==========================================================================
+   Survol des boutons : couleurs du logo (09/11/2026)
+   Bleu du logo #185271, orange du logo #dd5922. Le survol des boutons pleins utilise un orange légèrement assombri
+   (#c24b17) pour que le texte blanc garde un contraste d'au moins 4,5:1 (l'orange exact donne 3,8:1).
+   Boutons pleins : bleu Connect Web -> orange au survol. Boutons à contour : remplissage bleu du logo.
+   ========================================================================== */
+:root {
+	--cw-brand-blue: #185271;
+	--cw-brand-orange: #dd5922;
+	--cw-brand-orange-hover: #c24b17;
+	--cw-btn-primary-hover: #c24b17;
+}
+
+/* Boutons à contour (clairs) : remplissage bleu du logo */
+.btn.btn-border-theme:hover,
+.btn.btn-border-theme:focus-visible {
+	background: var(--cw-brand-blue);
+	border-color: var(--cw-brand-blue);
+	color: var(--white);
+}
+
+nav.navbar.validnavs a.btn.cw-btn-outline {
+	border-color: var(--cw-brand-blue) !important;
+	color: var(--cw-brand-blue) !important;
+}
+
+nav.navbar.validnavs a.btn.cw-btn-outline:hover {
+	background: var(--cw-brand-blue) !important;
+	border-color: var(--cw-brand-blue) !important;
+	color: var(--white) !important;
+}
+
+/* Bouton clair sur fond sombre (pied de page) : orange au survol */
+.btn.btn-light:hover,
+.btn.btn-light:focus-visible {
+	background: var(--cw-brand-orange-hover);
+	border-color: var(--cw-brand-orange-hover);
+	color: var(--white);
+}
+
+/* Bandeau d'accueil : bouton plein -> orange, bouton blanc -> bleu du logo */
+.cw-hero .cw-hero-buttons .btn-theme:hover,
+.cw-hero .cw-hero-buttons .btn-theme:focus-visible {
+	background: var(--cw-brand-orange-hover);
+	border-color: var(--cw-brand-orange-hover);
+	color: var(--white);
+}
+
+.cw-hero .cw-hero-buttons .btn-border-light:hover,
+.cw-hero .cw-hero-buttons .btn-border-light:focus-visible {
+	background: var(--cw-brand-blue);
+	border-color: var(--cw-brand-blue);
+	color: var(--white);
+}
+
+/* Liens fléchés des cartes et menus */
+.cw-expertises .cw-expertise-link:hover,
+.cw-services .cw-service-link:hover,
+.cw-dropdown-inner .cw-dropdown-all:hover {
+	color: var(--cw-brand-orange-hover);
+}
+
+/* Boutons de la page Digitalisation (parcours « En pratique ») */
+.cw-dg .cw-pr-next:hover,
+.cw-dg .cw-pr-cta-btn:hover,
+.cw-dg .cw-pr-next:focus-visible,
+.cw-dg .cw-pr-cta-btn:focus-visible {
+	background: var(--cw-brand-orange-hover);
+	color: var(--white);
+}
+
+/* Réalisations : bouton « Voir le site » (système de boutons du site, flèche à droite). */
+.cw-realisations .project-style-one .info .cw-realisation-btn {
+	margin-top: 8px;
+}
+
+.cw-realisations .project-style-one .info .cw-realisation-btn > span:not(.visually-hidden) {
+	display: inline;
+	margin: 0;
+	padding: 0;
+	background: none;
+	color: inherit;
+	text-transform: none;
+	font-size: inherit;
+	font-weight: inherit;
+	letter-spacing: 0;
+}
+
+.cw-realisations .project-style-one .info .cw-realisation-btn i {
+	font-size: 13px;
+	transition: transform 0.2s ease;
+}
+
+.cw-realisations .project-style-one .info .cw-realisation-btn:hover i {
+	transform: translateX(3px);
+}
+
+/* Page Réalisations (base /project-3) : nom du client et titre dans le bandeau de la carte ; bandeau toujours visible
+   sur tablette et mobile (pas de survol au toucher) et au focus clavier. */
+.cw-realisations-grid .gallery-style-one .overlay {
+	left: 30px;
+	right: 30px;
+	justify-content: flex-start;
+}
+
+.cw-realisations-grid .gallery-style-one .overlay h4 a {
+	color: inherit;
+}
+
+.cw-realisations-grid .gallery-style-one .overlay h4 a:hover {
+	color: var(--cw-brand-orange-hover);
+}
+
+.cw-realisations-grid .cw-realisation-card-title {
+	margin: 6px 0 0;
+	font-size: 14px;
+	line-height: 1.4;
+}
+
+.cw-realisations-grid .gallery-item:focus-within .overlay {
+	opacity: 1;
+	visibility: visible;
+	transform: translateX(0);
+}
+
+.cw-realisations-more {
+	margin-bottom: 18px;
+}
+
+.cw-realisations .cw-realisations-all {
+	margin-top: 40px;
+}
+
+@media (max-width: 1199px) {
+	.cw-realisations-grid .gallery-item .overlay,
+	.cw-realisations-grid .gallery-item.active .overlay {
+		position: static;
+		opacity: 1;
+		visibility: visible;
+		transform: none;
+		margin: -40px 16px 0;
+		position: relative;
+	}
+
+	.cw-realisations-grid .gallery-item .shape,
+	.cw-realisations-grid .gallery-item.active .shape {
+		display: none;
+	}
+
+	.cw-realisations-grid .gallery-style-one {
+		display: block;
+		overflow: visible;
+	}
+
+	.cw-realisations-grid .gallery-style-one > img {
+		border-radius: 10px;
+		width: 100%;
+		height: auto;
 	}
 }

@@ -200,15 +200,16 @@ export const homeWhy = {
     watermark: "Connect Web",
 };
 
-// Section « Nos chiffres » — chiffres fournis par Amadou le 08/11/2026 (30+ projets, 18+ clients) : à justifier
-// dans docs/08 avant publication. L'expérience n'est pas confirmée : `value: null` masque l'indicateur.
-// Le nombre de pôles est calculé depuis expertises.ts pour rester cohérent avec « Nos expertises ».
+// Section « Projets réalisés » — chiffres fournis par Amadou le 09/11/2026 (19+ projets, 18+ clients accompagnés) : à
+// justifier dans docs/08 avant publication. Le nombre de clients est saisi ici et ne dépend PAS du nombre de logos
+// affichés (content/clients.ts). L'expérience n'est pas confirmée : `value: null` masque l'indicateur.
+// Le nombre de pôles est calculé depuis expertises.ts (4 aujourd'hui) pour rester cohérent avec « Nos expertises ».
 export const homeStats = {
     eyebrow: "Nos chiffres",
-    title: "Des réalisations concrètes, une expertise au service de vos projets",
+    title: "Des réalisations concrètes pour vos projets",
     text: "Derrière chaque projet, il y a un besoin, un objectif et une solution adaptée. Découvrez quelques chiffres qui illustrent notre expérience et les collaborations que nous avons développées auprès des entreprises et organisations.",
     items: [
-        { id: "projets", icon: "briefcase", value: 30 as number | null, suffix: "+", label: "Projets réalisés" },
+        { id: "projets", icon: "briefcase", value: 19 as number | null, suffix: "+", label: "Projets réalisés" },
         { id: "clients", icon: "users", value: 18 as number | null, suffix: "+", label: "Clients accompagnés" },
         { id: "poles", icon: "layers", value: expertises.length as number | null, suffix: "", label: "Pôles d'expertise" },
         // À CONFIRMER : renseigner le nombre d'années (ex. 5) pour afficher « N+ années d'expérience ».
@@ -218,26 +219,30 @@ export const homeStats = {
 
 // Cartes de « Nos expertises » (accueil) : titre court et sous-services affichés sur la carte, fournis par Amadou le
 // 08/11/2026. Les libellés du menu (expertises.ts) ne changent pas ; les noms complets des pôles restent dans
-// expertises.ts. Clé = id du pôle.
-export const expertiseCards: Record<string, { cardTitle: string; photo: string; items: string[] }> = {
+// expertises.ts. Clé = id du pôle. `cta` : libellé propre au bouton de chaque carte (09/11/2026).
+export const expertiseCards: Record<string, { cardTitle: string; cta: string; photo: string; items: string[] }> = {
     "developpement-web": {
-        cardTitle: "Développement web",
+        cardTitle: "Développement web & mobile",
+        cta: "Lancer mon projet web",
         photo: "/assets/img/cw/hero-developpement-web.jpg",
-        items: ["Sites internet professionnels", "Sites e-commerce", "Shopify & WooCommerce", "Applications web & PWA", "Refonte & maintenance"],
+        items: ["Sites internet professionnels", "Sites e-commerce", "Shopify & WooCommerce", "Applications web, mobile & PWA", "Refonte & maintenance"],
     },
     digitalisation: {
         cardTitle: "Digitalisation",
+        cta: "Simplifier ma gestion",
         photo: "/assets/img/cw/hero-digitalisation.jpg",
-        items: ["CRM & gestion client", "ERP & gestion d'entreprise", "Applications métiers", "Automatisation des processus", "Intégration de solutions digitales"],
+        items: ["CRM & gestion client", "ERP & gestion d'entreprise", "Applications métiers", "Automatisation des processus", "Tableaux de bord personnalisés", "Intégration de solutions digitales"],
     },
     "marketing-digital": {
         cardTitle: "Marketing digital",
+        cta: "Attirer plus de clients",
         photo: "/assets/img/cw/hero-marketing-digital.jpg",
-        items: ["Stratégie marketing digital", "Référencement naturel SEO", "Email marketing & CRM", "Marketing automation", "Publicité digitale & acquisition"],
+        items: ["Stratégie marketing digital", "Référencement naturel SEO", "Email marketing & CRM", "Marketing automation", "Publicité digitale & acquisition", "Réseaux sociaux & communication digitale"],
     },
     "infrastructure-it": {
         cardTitle: "Infrastructure IT",
+        cta: "Équiper mon entreprise",
         photo: "/assets/img/cw/hero-infrastructure-it.jpg",
-        items: ["Réseaux & câblage", "Installation d'équipements IT", "Hébergement & serveurs", "Téléphonie IP", "Vidéosurveillance & contrôle d'accès"],
+        items: ["Réseaux & câblage", "Installation d'équipements IT", "Hébergement & serveurs", "Solutions cloud", "Téléphonie IP", "Vidéosurveillance & contrôle d'accès"],
     },
 };

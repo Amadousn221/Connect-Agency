@@ -120,7 +120,8 @@ export const expertises: Expertise[] = [
         targets: "Entreprises, PME, structures avec des équipes et des opérations à organiser.",
         icon: "fal fa-project-diagram",
         href: "/expertises/digitalisation",
-        pageReady: false,
+        // Page créée le 08/11/2026 (app/expertises/digitalisation) : ancres des sous-services présentes sur la page.
+        pageReady: true,
     },
     {
         id: "infrastructure-it",

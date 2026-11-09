@@ -13,7 +13,7 @@ const HomeServices = () => {
                 <div className="row">
                     <div className="col-lg-8 offset-lg-2">
                         <div className="site-heading text-center">
-                            <h4 className="sub-title">{eyebrow}</h4>
+                            <h4 className="cw-sub">{eyebrow}</h4>
                             <h2 id="services-titre" className="title">{title}</h2>
                             <div className="devider" />
                             <p className="cw-services-intro">{intro}</p>

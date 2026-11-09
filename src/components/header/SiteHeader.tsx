@@ -9,7 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { mainLinks, navPoles, primaryCta } from "@/content/navigation";
+import { contactCta, headerLinks, navPoles, primaryCta, SHOW_SUBMENUS } from "@/content/navigation";
 
 const MOBILE_QUERY = "(max-width: 1023px)"; // seuil du thème pour le panneau latéral
 const CLOSE_DELAY_MS = 220;
@@ -251,7 +251,19 @@ const SiteHeader = () => {
                         </div>
 
                         <ul ref={listRef} className="cw-nav-list">
-                            {navPoles.map((pole) => {
+                            {!SHOW_SUBMENUS && navPoles.map((pole) => (
+                                // Menu simple (demande d'Amadou du 08/11/2026) : un lien par pôle, sans sous-menu.
+                                <li key={pole.id} className="cw-nav-item cw-nav-plain">
+                                    <Link
+                                        href={pole.all.href}
+                                        aria-current={current(pole.all.href)}
+                                        className={`cw-nav-link ${isActive(pole.all.href) ? "cw-active" : ""}`}
+                                    >
+                                        {pole.label}
+                                    </Link>
+                                </li>
+                            ))}
+                            {SHOW_SUBMENUS && navPoles.map((pole) => {
                                 const open = openId === pole.id;
                                 const menuId = `menu-${pole.id}`;
                                 return (
@@ -292,7 +304,7 @@ const SiteHeader = () => {
                                     </li>
                                 );
                             })}
-                            {mainLinks.map((link) => (
+                            {headerLinks.map((link) => (
                                 <li key={link.label} className="cw-nav-item cw-nav-plain">
                                     <Link
                                         href={link.href}
@@ -310,10 +322,16 @@ const SiteHeader = () => {
                             <Link className="btn btn-theme btn-md" href={primaryCta.href}>
                                 {primaryCta.label}
                             </Link>
+                            <a className="btn btn-md cw-btn-outline" href={contactCta.href} target="_blank" rel="noopener noreferrer" aria-label={contactCta.ariaLabel}>
+                                {contactCta.label}
+                            </a>
                         </div>
                     </div>
 
                     <div className="cw-header-cta">
+                        <a className="btn btn-sm cw-btn-outline" href={contactCta.href} target="_blank" rel="noopener noreferrer" aria-label={contactCta.ariaLabel}>
+                            {contactCta.label}
+                        </a>
                         <Link className="btn btn-theme btn-sm" href={primaryCta.href}>
                             {primaryCta.label}
                         </Link>

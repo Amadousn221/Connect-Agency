@@ -1,18 +1,29 @@
 "use client";
 // Section « Nos expertises » de l'accueil — base visuelle : FeatureV2 (démo home-3), choisie par Amadou le
 // 08/11/2026. Quatre pôles (décision D40) en slider Swiper : 3 cartes visibles à la fois sur ordinateur (le 4e pôle
-// s'atteint avec les flèches, les puces ou le clavier), 2 sur tablette, 1 sur mobile. Défilement manuel uniquement
-// (docs/09 §4). Données : src/content/expertises.ts (source unique).
+// s'atteint par défilement automatique ou au clavier), 2 sur tablette ; sur mobile (< 768 px) le slider est désactivé
+// et les cartes s'affichent en grille (CSS). Défilement automatique toutes les 6 s, sans flèches ni puces
+// (modifie docs/09 §4 : à répercuter). Données : src/content/expertises.ts (source unique).
 // Les photos de la démo sont des gabarits gris : le bandeau est un dégradé du thème.
 import Image from "next/image";
 import Link from "next/link";
+import { useSyncExternalStore } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { A11y, Keyboard, Navigation, Pagination } from "swiper/modules";
+import { A11y, Autoplay, Keyboard } from "swiper/modules";
 import { expertiseHref, expertises, expertisesSection } from "@/content/expertises";
 import { expertiseCards } from "@/content/home";
 
 const HomeExpertises = () => {
-    const { eyebrow, title, intro, linkLabel, subServicesLabel } = expertisesSection;
+    const { eyebrow, title, intro, subServicesLabel } = expertisesSection;
+    const reduceMotion = useSyncExternalStore(
+        (notify) => {
+            const query = window.matchMedia("(prefers-reduced-motion: reduce)");
+            query.addEventListener("change", notify);
+            return () => query.removeEventListener("change", notify);
+        },
+        () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+        () => false,
+    );
 
     return (
         <section id="nos-expertises" className="feature-style-two-area default-padding cw-expertises" aria-labelledby="expertises-titre">
@@ -20,7 +31,7 @@ const HomeExpertises = () => {
                 <div className="row">
                     <div className="col-lg-10 offset-lg-1">
                         <div className="site-heading text-center">
-                            <h4 className="sub-title">{eyebrow}</h4>
+                            <h4 className="cw-sub">{eyebrow}</h4>
                             <h2 id="expertises-titre" className="title">{title}</h2>
                             <div className="devider" />
                             <p className="cw-expertises-intro">{intro}</p>
@@ -30,21 +41,21 @@ const HomeExpertises = () => {
             </div>
             <div className="container">
                 <Swiper
+                    key={reduceMotion ? "static" : "animated"}
                     className="cw-expertises-slider"
-                    modules={[Navigation, Pagination, Keyboard, A11y]}
+                    modules={[Autoplay, Keyboard, A11y]}
+                    // Défilement automatique toutes les 6 s ; retour à la première carte après la dernière (sans boucle).
+                    autoplay={reduceMotion ? false : { delay: 6000, pauseOnMouseEnter: true, disableOnInteraction: false }}
+                    rewind
                     slidesPerView={1}
                     spaceBetween={24}
                     breakpoints={{
-                        768: { slidesPerView: 2, spaceBetween: 24 },
+                        0: { enabled: false },
+                        768: { enabled: true, slidesPerView: 2, spaceBetween: 24 },
                         1200: { slidesPerView: 3, spaceBetween: 30 },
                     }}
                     keyboard={{ enabled: true, onlyInViewport: true }}
-                    navigation={{ prevEl: ".cw-expertises-prev", nextEl: ".cw-expertises-next" }}
-                    pagination={{ el: ".cw-expertises-pagination", clickable: true }}
                     a11y={{
-                        prevSlideMessage: "Pôle précédent",
-                        nextSlideMessage: "Pôle suivant",
-                        paginationBulletMessage: "Aller au pôle {{index}}",
                         slideLabelMessage: "{{index}} sur {{slidesLength}}",
                     }}
                 >
@@ -73,7 +84,7 @@ const HomeExpertises = () => {
                                         ))}
                                     </ul>
                                     <Link className="cw-expertise-link" href={expertiseHref(expertise)}>
-                                        {linkLabel}
+                                        {card.cta}
                                         <span className="visually-hidden"> : {expertise.shortTitle}</span>
                                     </Link>
                                 </div>
@@ -82,15 +93,6 @@ const HomeExpertises = () => {
                         );
                     })}
                 </Swiper>
-                <div className="cw-expertises-controls">
-                    <button type="button" className="cw-expertises-prev" aria-label="Pôle précédent">
-                        <i className="fal fa-arrow-left" aria-hidden="true" />
-                    </button>
-                    <div className="cw-expertises-pagination" />
-                    <button type="button" className="cw-expertises-next" aria-label="Pôle suivant">
-                        <i className="fal fa-arrow-right" aria-hidden="true" />
-                    </button>
-                </div>
             </div>
         </section>
     );
