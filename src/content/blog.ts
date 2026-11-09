@@ -118,7 +118,7 @@ export const previewPosts: BlogPost[] = [1, 2, 3].map((n) => ({
     author: "Auteur (exemple)",
     date: "2026-01-01",
     image: `/assets/img/blog/${n}.jpg`,
-    category: (["creation-de-sites-web", "e-commerce", "crm"] as const)[n - 1],
+    category: (["site-internet", "e-commerce", "crm"] as const)[n - 1],
     published: false,
     pageReady: false,
 }));
