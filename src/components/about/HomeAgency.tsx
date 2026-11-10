@@ -15,31 +15,30 @@ const HomeAgency = () => {
             <div className="container">
                 <div className="row align-center">
                     <div className="about-style-one col-xl-6 col-lg-6">
-                        <h4 className="cw-sub">{eyebrow}</h4>
-                        <h2 id="agence-titre" className="title mb-25">
-                            {titleLines[0]}
-                            <span className="cw-agency-accent">{titleLines[1]}</span>
-                        </h2>
-                        {paragraphs.map((paragraph) => (
-                            <p key={paragraph.slice(0, 24)}>{paragraph}</p>
-                        ))}
-                        <ul className="cw-arrow-list cw-agency-list">
-                            {points.map((point) => (
-                                <li key={point.title}>
-                                    <strong>{point.title}</strong> : {point.text}
-                                </li>
+                        <div className="cw-agency-text">
+                            <h4 className="cw-sub">{eyebrow}</h4>
+                            <h2 id="agence-titre" className="title mb-25">
+                                {titleLines[0]}
+                                <span className="cw-agency-accent">{titleLines[1]}</span>
+                            </h2>
+                            {paragraphs.map((paragraph) => (
+                                <p key={paragraph.slice(0, 24)}>{paragraph}</p>
                             ))}
-                        </ul>
-                        <Link className="cw-link-cta" href={secondaryCta.href}>
-                            {secondaryCta.label}
-                        </Link>
+                            <ul className="cw-arrow-list cw-agency-list">
+                                {points.map((point) => (
+                                    <li key={point.title}>
+                                        <strong>{point.title}</strong> : {point.text}
+                                    </li>
+                                ))}
+                            </ul>
+                            <Link className="cw-link-cta" href={secondaryCta.href}>
+                                {secondaryCta.label}
+                            </Link>
+                        </div>
                     </div>
                     <div className="about-style-one col-xl-6 col-lg-6 cw-agency-photo-col">
                         <div className="about-thumb cw-agency-thumb">
                             <Image src={image.src} alt={image.alt} width={image.width} height={image.height} />
-                            <div className="thumb-shape-bottom" aria-hidden="true">
-                                <Image src="/assets/img/illustration/4.png" alt="" width={285} height={290} />
-                            </div>
                         </div>
                     </div>
                 </div>

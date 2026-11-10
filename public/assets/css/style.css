@@ -98,8 +98,8 @@ Sidebar heading:  20px 'Outfit', sans-serif
 	--dark-secondary: #1e3373;
 	--white: #ffffff;
 	--color-primary: #1351d8;
-	--color-secondary: #9c00ff;
-	--color-style-two: #B700C4;
+	--color-secondary: #0e2769;
+	--color-style-two: #0e2769;
 	--color-style-three: #FF9B0D;
 	--color-heading: #0e0e0e;
 	--color-paragraph: #666666;
@@ -107,9 +107,9 @@ Sidebar heading:  20px 'Outfit', sans-serif
 	--box-shadow-secondary: 0 10px 30px 0 rgba(44, 130, 237, 0.4);
 	--box-shadow-regular: 0px 2px 12px 0px #e7e7e7;
 	--bg-gray: #eff6fe;
-	--bg-gradient: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-	--bg-gradient-secondary: linear-gradient(0deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-	--bg-gradient-two: linear-gradient(90deg, var(--color-style-two) 0%, var(--color-style-three) 100%);
+	--bg-gradient: var(--color-primary);
+	--bg-gradient-secondary: var(--color-primary);
+	--bg-gradient-two: var(--color-style-three);
 }
 
 
@@ -2224,7 +2224,7 @@ p {
 
 .btn-simple {
 	line-height: 1;
-	text-transform: capitalize;
+	text-transform: none;
 	display: inline-block;
 	font-size: 17px;
 }

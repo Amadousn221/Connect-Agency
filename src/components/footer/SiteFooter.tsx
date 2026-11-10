@@ -1,5 +1,5 @@
-// Pied de page Connect Web — mise en page de la template Tekni (FooterV1 : fond bleu sombre, formes décoratives,
-// 4 colonnes, barre de bas de page), contenu Connect Web. Ne contient que des faits établis : nom, description du
+// Pied de page Connect Web — mise en page de la template Tekni (FooterV1 : fond bleu marine uni, formes décoratives
+// et image de fond du thème retirées le 10/11/2026, 4 colonnes, barre de bas de page), contenu Connect Web. Ne contient que des faits établis : nom, description du
 // dossier (docs/07 §1), liens vers les pôles et les sections de l'accueil, droits. Éléments de la démo volontairement
 // absents tant qu'ils ne sont pas fournis par Amadou (docs/12 Q07) : horaires d'ouverture,
 // mentions légales et confidentialité. Newsletter : interface présente mais sans service d'envoi (voir FooterNewsletter).
@@ -20,17 +20,9 @@ const footerServices = expertises.flatMap((expertise) =>
 
 const SiteFooter = () => {
     return (
-        <footer className="bg-dark text-light bg-cover" style={{ backgroundImage: "url(/assets/img/shape/banner-8.jpg)" }} aria-label="Pied de page">
-            <div className="footer-shape">
-                <div className="item">
-                    <Image src="/assets/img/shape/7.png" alt="" width={282} height={748} />
-                </div>
-                <div className="item">
-                    <Image src="/assets/img/shape/9.png" alt="" width={100} height={100} />
-                </div>
-            </div>
+        <footer className="bg-dark text-light cw-site-footer" aria-label="Pied de page">
             <div className="container">
-                <div className="f-items relative pt-70 pb-120 pt-xs-0 pb-xs-50">
+                <div className="f-items cw-footer-main">
                     <div className="row">
                         <div className="col-lg-3 col-md-6 footer-item pr-50 pr-xs-15">
                             <div className="f-item about">

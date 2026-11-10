@@ -10,7 +10,7 @@ import type { KeyboardEvent } from "react";
 import { homeMethod } from "@/content/home";
 
 const HomeMethod = () => {
-    const { title, intro, rolePrefix, steps, image } = homeMethod;
+    const { eyebrow, title, intro, rolePrefix, steps, image } = homeMethod;
     const [open, setOpen] = useState(0);
     const baseId = useId();
     const buttons = useRef<(HTMLButtonElement | null)[]>([]);
@@ -39,6 +39,7 @@ const HomeMethod = () => {
                     </div>
                     <div className="col-lg-6 offset-lg-1">
                         <div className="cw-method-info">
+                            <h4 className="cw-sub">{eyebrow}</h4>
                             <h2 id="methode-titre" className="title">{title}</h2>
                             <p className="cw-method-intro">{intro}</p>
                             <div className="cw-steps">

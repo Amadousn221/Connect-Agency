@@ -41,9 +41,6 @@ const HomeHero = () => {
                 style={backgroundImage ? { backgroundImage: `url(${backgroundImage})` } : undefined}
                 aria-hidden="true"
             />
-            <div className="banner-shape-bg" aria-hidden="true">
-                <Image src="/assets/img/shape/1.png" alt="" width={800} height={630} priority />
-            </div>
             <Swiper
                 key={reduceMotion ? "static" : "animated"}
                 className="cw-hero-slider"
@@ -81,14 +78,17 @@ const HomeHero = () => {
                             <div className="cw-hero-overlay" aria-hidden="true" />
                             <div className="container">
                                 <div className="cw-hero-content">
-                                    <p className="cw-hero-eyebrow">{slide.eyebrow}</p>
+                                    <p className="cw-hero-eyebrow">
+                                        {expertise && <span className="cw-hero-num">{expertise.number}</span>}
+                                        <span className="cw-hero-eyebrow-label">{slide.eyebrow}</span>
+                                    </p>
                                     <Title className="cw-hero-title">{slide.title}</Title>
                                     <p className="cw-hero-text">{slide.text}</p>
                                     <div className="cw-hero-buttons">
-                                        <Link className="btn btn-theme" href={href}>
+                                        <Link className="btn btn-md btn-theme" href={href}>
                                             {slide.cta}
                                         </Link>
-                                        <Link className="btn btn-border-light" href={secondaryCta.href}>
+                                        <Link className="btn btn-md btn-border-light" href={secondaryCta.href}>
                                             {secondaryCta.label}
                                         </Link>
                                     </div>

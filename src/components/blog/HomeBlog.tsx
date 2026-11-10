@@ -6,7 +6,7 @@ import BlogCard from "./BlogCard";
 import { blogSection, posts, previewPosts, SHOW_EXAMPLES_IN_PRODUCTION } from "@/content/blog";
 
 const HomeBlog = () => {
-    const { eyebrow, title, minPublished } = blogSection;
+    const { eyebrow, title, description, cta, minPublished } = blogSection;
     const published = posts.filter((post) => post.published);
     const showExamples = published.length < minPublished && (process.env.NODE_ENV === "development" || SHOW_EXAMPLES_IN_PRODUCTION);
     // Le bandeau explicatif n'existe qu'en développement local.
@@ -15,7 +15,7 @@ const HomeBlog = () => {
     if (items.length === 0) return null;
 
     return (
-        <section className="home-blog-area default-padding bottom-less cw-blog" aria-labelledby="blog-titre">
+        <section className="default-padding cw-blog" aria-labelledby="blog-titre">
             <div className="container">
                 {isPreview && (
                     <p className="cw-preview-banner" role="note">
@@ -23,24 +23,18 @@ const HomeBlog = () => {
                         tant qu&apos;aucun article n&apos;est publié.
                     </p>
                 )}
-                <div className="row">
-                    <div className="col-lg-8 offset-lg-2">
-                        <div className="site-heading text-center">
-                            <h4 className="cw-sub">{eyebrow}</h4>
-                            <h2 id="blog-titre" className="title">{title}</h2>
-                            <div className="devider" />
-                        </div>
-                    </div>
+                <div className="cw-blog-intro site-heading">
+                    <h4 className="cw-sub">{eyebrow}</h4>
+                    <h2 id="blog-titre" className="title">{title}</h2>
+                    <p>{description}</p>
                 </div>
-                <div className="row">
+                <div className="cw-blog-grid">
                     {items.map((post) => (
-                        <div className="col-xl-4 col-md-6 mb-30" key={post.slug}>
-                            <BlogCard post={post} />
-                        </div>
+                        <BlogCard key={post.slug} post={post} />
                     ))}
                 </div>
-                <p className="text-center mt-20">
-                    <Link className="btn btn-border-theme" href="/blog">Tous les articles</Link>
+                <p className="cw-blog-more">
+                    <Link className="btn btn-md btn-border-theme" href="/blog">{cta}</Link>
                 </p>
             </div>
         </section>

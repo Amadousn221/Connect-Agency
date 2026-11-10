@@ -21,7 +21,7 @@ export interface Technology {
 export const technologiesSection = {
     eyebrow: "Notre écosystème",
     titleLine: "Les technologies",
-    titleAccent: "derrière vos projets.",
+    titleAccent: "derrière vos projets",
     text: "Des outils choisis selon vos besoins, pour créer vos sites, développer vos applications et connecter vos services.",
     listLabels: ["Technologies, première ligne", "Technologies, deuxième ligne"],
 };

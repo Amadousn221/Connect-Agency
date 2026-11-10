@@ -47,8 +47,8 @@ export const homeHero = {
 export const homeAgency = {
     // Texte fourni par Amadou le 08/11/2026 (remplace la version précédente), repris tel quel.
     eyebrow: "L'agence",
-    // Titre en deux temps : la 2e ligne est en dégradé bleu.
-    titleLines: ["Une expertise digitale complète", "pour développer votre activité."],
+    // Titre en deux temps : la 2e ligne est en bleu de marque (sans point final).
+    titleLines: ["Une expertise digitale complète", "pour développer votre activité"],
     paragraphs: [
         "Connect Web accompagne les PME, entrepreneurs et organisations dans leurs projets numériques. Nous réunissons développement web et mobile, solutions métiers, marketing digital et infrastructure IT avec un seul interlocuteur pour coordonner l'ensemble.",
         "Nous partons de vos besoins pour concevoir des outils adaptés à votre activité, simplifier votre quotidien et vous aider à toucher de nouveaux clients.",
@@ -144,6 +144,7 @@ export const homeServices = {
 };
 
 export const homeMethod = {
+    eyebrow: "Notre méthode",
     title: "Comment nous travaillons",
     intro: "Chaque projet commence par une bonne compréhension de vos besoins. Nous avançons étape par étape, avec des échanges clairs, des livrables définis et un accompagnement adapté à votre organisation.",
     rolePrefix: "Votre rôle :",

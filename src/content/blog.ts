@@ -105,9 +105,11 @@ export const articleCtaHref = (post: BlogPost) =>
     `https://wa.me/${whatsapp.number}?text=${encodeURIComponent(`Bonjour, j'ai lu votre article « ${post.title} » et je souhaite en discuter.`)}`;
 
 export const blogSection = {
-    eyebrow: "Blog",
-    // Titre demandé par Amadou le 08/11/2026 (reprend celui de la section équipe retirée) — à valider.
-    title: "Les personnes qui travaillent sur vos projets",
+    // Textes validés par Amadou le 10/11/2026 (remplacent le titre « Les personnes qui travaillent sur vos projets »).
+    eyebrow: "Le blog Connect Web",
+    title: "Conseils, idées et actualités du digital",
+    description: "Retrouvez nos analyses, conseils pratiques et retours d'expérience pour mieux comprendre les technologies, faire évoluer vos outils numériques et accompagner le développement de votre activité.",
+    cta: "Découvrir nos articles",
     minPublished: 1,
 };
 

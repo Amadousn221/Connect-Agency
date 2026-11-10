@@ -1,6 +1,6 @@
 "use client";
-// Section « Projets réalisés » de l'accueil — base visuelle : PartnerV1 (démo home-1) : grand chiffre sur carte du monde à
-// gauche, grille à filets de logos clients à droite (ClientLogoGrid, données : content/clients.ts). Chiffres :
+// Section « Projets réalisés » de l'accueil — base visuelle : PartnerV1 (démo home-1) : grand chiffre à gauche (la carte
+// du monde du thème est retirée, 10/11/2026), grille à filets de logos clients à droite (ClientLogoGrid, données : content/clients.ts). Chiffres :
 // content/home.ts (homeStats), indépendants du nombre de logos. Compteurs : react-countup du template.
 // Les indicateurs sans valeur confirmée (value: null) ne sont pas affichés.
 import CountUp from "react-countup";
@@ -29,23 +29,21 @@ const HomeStats = () => {
     );
 
     return (
-        <section className="partner-style-one-area default-padding-bottom cw-stats" aria-labelledby="chiffres-titre">
+        <section className="default-padding cw-stats" aria-labelledby="chiffres-titre">
             <div className="container">
-                <div className="row justify-content-center">
-                    <div className="site-heading col-xl-8 col-lg-9 text-center cw-stats-head">
-                        <h4 className="cw-sub">{eyebrow}</h4>
-                        <h2 id="chiffres-titre" className="title mb-20">{title}</h2>
-                        <p className="cw-stats-text">{text}</p>
-                    </div>
+                <div className="cw-stats-head site-heading">
+                    <h4 className="cw-sub">{eyebrow}</h4>
+                    <h2 id="chiffres-titre" className="title">{title}</h2>
+                    <p className="cw-stats-text">{text}</p>
                 </div>
-                <div className="row align-center cw-stats-row">
+                <div className="row align-items-center">
                     <div className="col-lg-5">
-                        <div className="partner-map" style={{ backgroundImage: "url(/assets/img/shape/map.png)" }}>
-                            <h2 className="mask-text cw-stats-big">
+                        <div className="cw-stats-figure">
+                            <p className="cw-stats-big">
                                 {counter(main)}
                                 {main.suffix && <span className="cw-stat-suffix">{main.suffix}</span>}
-                            </h2>
-                            <h3 className="cw-stats-big-label">{main.label}</h3>
+                            </p>
+                            <p className="cw-stats-big-label">{main.label}</p>
                         </div>
                         {others.length > 0 && (
                             <dl className="cw-stats-minimal">

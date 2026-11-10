@@ -1,13 +1,12 @@
 "use client";
 
-// Section « Pourquoi Connect Web ? » de l'accueil — base visuelle : WhyChooseV1 (panneau bleu foncé incliné à gauche,
-// liste à filet bleu, photo à droite). Demande d'Amadou du 09/11/2026 : retirer le mot en filigrane « CONNECT WEB »,
+// Section « Pourquoi Connect Web ? » de l'accueil — base visuelle : WhyChooseV1 (fond bleu marine à gauche, liste à
+// filet bleu, photo à droite ; le panneau incliné et les triangles du thème sont retirés, 10/11/2026). Demande d'Amadou du 09/11/2026 : retirer le mot en filigrane « CONNECT WEB »,
 // rendre la liste interactive et animée, avec un comportement de feuille de route cliquable : chaque raison est une
 // étape ; le filet bleu se remplit jusqu'à l'étape active, les autres étapes sont atténuées mais restent lisibles.
 // Lecture automatique lente, arrêtée au survol, au focus clavier, après un clic, et si l'utilisateur réduit les
 // animations (prefers-reduced-motion). Tout le texte reste dans le DOM (aucun contenu masqué).
-import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { homeWhy } from "@/content/home";
 
 const AUTOPLAY_MS = 6000;
@@ -17,20 +16,19 @@ const HomeWhy = () => {
     const [active, setActive] = useState(0);
     const [paused, setPaused] = useState(false);
     const [touched, setTouched] = useState(false);
-    const [reduced, setReduced] = useState(false);
+    const reduced = useSyncExternalStore(
+        (notify) => {
+            const query = window.matchMedia("(prefers-reduced-motion: reduce)");
+            query.addEventListener("change", notify);
+            return () => query.removeEventListener("change", notify);
+        },
+        () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+        () => false,
+    );
     const [armed, setArmed] = useState(false);
     const [visible, setVisible] = useState(false);
     const listRef = useRef<HTMLOListElement>(null);
     const buttons = useRef<(HTMLButtonElement | null)[]>([]);
-
-    // Préférence « animations réduites » : pas de lecture automatique ni d'entrée animée.
-    useEffect(() => {
-        const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-        setReduced(mq.matches);
-        const onChange = () => setReduced(mq.matches);
-        mq.addEventListener("change", onChange);
-        return () => mq.removeEventListener("change", onChange);
-    }, []);
 
     // Entrée progressive au défilement (le texte reste visible si JavaScript n'est pas disponible).
     useEffect(() => {
@@ -75,16 +73,13 @@ const HomeWhy = () => {
     };
 
     return (
-        <section className="choose-us-style-one-area default-padding text-light cw-why" aria-labelledby="pourquoi-titre">
-            <div className="cover-bg cw-why-cover" aria-hidden="true" />
-            <div className="shape-left-top" aria-hidden="true">
-                <Image src="/assets/img/shape/17.png" alt="" width={335} height={245} />
-            </div>
+        <section className="default-padding text-light cw-why" aria-labelledby="pourquoi-titre">
+            <div className="cw-why-cover" aria-hidden="true" />
             <div className="container">
                 <div className="row">
-                    <div className="col-lg-6 pr-80">
-                        <div className="choose-us-style-one">
-                            <h2 id="pourquoi-titre" className="title mb-35">{title}</h2>
+                    <div className="col-lg-6">
+                        <div className="cw-why-content">
+                            <h2 id="pourquoi-titre" className="title">{title}</h2>
                             <ol
                                 ref={listRef}
                                 className={`cw-roadmap ${armed ? "is-armed" : ""} ${visible ? "is-in" : ""}`}
