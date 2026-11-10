@@ -3833,9 +3833,9 @@ nav.navbar.validnavs a.btn.cw-btn-outline:hover {
 	text-align: center;
 }
 
+/* Même échelle de titre que les autres sections (.title : 40 / 36 / 32 / 28 px) */
 .cw-tech-title {
 	margin: 0 0 16px;
-	font-size: clamp(26px, 5vw, 38px);
 }
 
 .cw-tech-title .cw-tech-accent {
