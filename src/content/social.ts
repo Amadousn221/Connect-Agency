@@ -10,8 +10,7 @@ export interface SocialLink {
 
 export const socialLinks: SocialLink[] = [
     { id: "facebook", label: "Facebook", icon: "fab fa-facebook-f", href: "" },
-    { id: "x", label: "X (Twitter)", icon: "fab fa-twitter", href: "" },
-    { id: "youtube", label: "YouTube", icon: "fab fa-youtube", href: "" },
+    { id: "instagram", label: "Instagram", icon: "fab fa-instagram", href: "" },
     { id: "linkedin", label: "LinkedIn", icon: "fab fa-linkedin-in", href: "" },
 ];
 

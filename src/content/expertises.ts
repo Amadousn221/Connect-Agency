@@ -79,7 +79,8 @@ export const expertises: Expertise[] = [
         targets: "Entreprises, PME, entrepreneurs, commerces, agences de voyages, acteurs du tourisme, hôtels, restaurants, ONG et associations.",
         icon: "fal fa-code",
         href: "/expertises/developpement-web",
-        pageReady: false,
+        // Page créée le 09/11/2026 (gabarit ServicePage, content/services-pages.ts) : ancres des sous-services présentes.
+        pageReady: true,
     },
     {
         id: "digitalisation",
@@ -162,7 +163,8 @@ export const expertises: Expertise[] = [
         targets: "Entreprises disposant de locaux professionnels : bureaux, commerces, hôtels, restaurants.",
         icon: "fal fa-server",
         href: "/expertises/infrastructure-it",
-        pageReady: false,
+        // Page créée le 09/11/2026 (gabarit ServicePage) : ancres des sous-services présentes.
+        pageReady: true,
     },
     {
         id: "marketing-digital",
@@ -203,7 +205,8 @@ export const expertises: Expertise[] = [
         targets: "Marques, commerces en ligne, entreprises, associations.",
         icon: "fal fa-bullhorn",
         href: "/expertises/marketing-digital",
-        pageReady: false,
+        // Page créée le 09/11/2026 (gabarit ServicePage) : ancres des sous-services présentes.
+        pageReady: true,
     },
 ];
 
@@ -225,5 +228,16 @@ export const expertiseHref = (expertise: Expertise): string => (expertise.pageRe
 // Destination d'un lien de menu : la page du pôle (ou de son sous-service) si elle existe, sinon la section
 // « Nos expertises » de l'accueil. Jamais une page inexistante.
 export const poleMenuHref = (expertise: Expertise): string => (expertise.pageReady ? expertise.href : expertisesOverviewAnchor);
+// Sous-services qui ont leur propre page (créées le 09/11/2026). Les autres restent des ancres de la page du pôle.
+export const subServicePages: Record<string, string> = {
+    "developpement-web/sites-internet": "/expertises/developpement-web/sites-internet",
+    "developpement-web/sites-ecommerce": "/expertises/developpement-web/sites-ecommerce",
+    "developpement-web/shopify-woocommerce": "/expertises/developpement-web/shopify-woocommerce",
+    "developpement-web/applications-web-pwa": "/expertises/developpement-web/applications-web-pwa",
+    "developpement-web/refonte-maintenance": "/expertises/developpement-web/refonte-maintenance",
+    "marketing-digital/seo": "/expertises/marketing-digital/seo",
+};
+
 export const subServiceHref = (expertise: Expertise, subService: SubService): string =>
-    expertise.pageReady ? `${expertise.href}#${subService.slug}` : expertisesOverviewAnchor;
+    subServicePages[`${expertise.id}/${subService.slug}`] ??
+    (expertise.pageReady ? `${expertise.href}#${subService.slug}` : expertisesOverviewAnchor);

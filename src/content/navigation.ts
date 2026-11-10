@@ -28,9 +28,9 @@ export const navPoles: NavPole[] = expertises.map((expertise) => ({
     all: { label: expertise.menuAllLabel, href: poleMenuHref(expertise) },
 }));
 
-// Sous-menus des pôles désactivés (demande d'Amadou du 08/11/2026) : chaque pôle est un lien simple vers sa page
-// (ou la section « Nos expertises » si la page n'existe pas). Passer à true pour rétablir les menus déroulants.
-export const SHOW_SUBMENUS = false;
+// Sous-menus des pôles rétablis le 09/11/2026 (pages de services créées) : chaque pôle ouvre la liste de ses services,
+// avec un lien direct vers la page du service quand elle existe. Passer à false pour revenir à de simples liens.
+export const SHOW_SUBMENUS = true;
 
 // docs/05 §2 : le lien Réalisations n'apparaît dans le menu qu'avec au moins 2 cas publiés (published: true dans
 // realisations.ts) ; 10 le sont depuis le 09/11/2026. Le lien mène à la page /realisations (créée le 09/11/2026,
@@ -40,13 +40,15 @@ export const SHOW_REALISATIONS = true;
 
 // Pages qui n'existent pas encore : leurs entrées pointent vers une section de l'accueil (liens valides).
 // Passer à true pour chaque page au fur et à mesure de sa création (CW-043, CW-044).
-const pageReady = { agence: true, contact: false };
+const pageReady = { agence: true, contact: true };
 const overview = "/#nos-expertises";
+
+export const blogLink: NavLink = { label: "Blog", href: "/blog" };
 
 export const mainLinks: NavLink[] = [
     ...(SHOW_REALISATIONS ? [{ label: "Réalisations", href: "/realisations" }] : []),
     { label: "L'agence", href: pageReady.agence ? "/agence" : "/#agence" },
-    { label: "Blog", href: "/blog" },
+    blogLink,
     { label: "Contact", href: pageReady.contact ? "/contact" : overview },
 ];
 
@@ -76,6 +78,6 @@ export const agenceMenu = {
     items: [
         { label: "Qui sommes-nous", href: pageReady.agence ? "/agence" : "/#agence" },
         { label: "Notre équipe", href: "/equipe" },
-        { label: contactCta.label, href: contactCta.href, external: true, ariaLabel: contactCta.ariaLabel },
+        { label: "Contact", href: pageReady.contact ? "/contact" : contactCta.href, external: !pageReady.contact, ariaLabel: pageReady.contact ? undefined : contactCta.ariaLabel },
     ] as AgenceItem[],
 };

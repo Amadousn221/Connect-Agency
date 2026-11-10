@@ -59,7 +59,7 @@ const HomeTeam = () => {
                             <article className="team-style-one">
                                 <div className="thumb">
                                     {member.photo ? (
-                                        <Image src={member.photo} alt={`Portrait de ${member.name}`} width={800} height={900} />
+                                        <Image src={member.photo} alt={member.photoPlaceholder ? `Avatar provisoire de ${member.name}` : `Portrait de ${member.name}`} width={800} height={900} />
                                     ) : (
                                         <div className="cw-team-avatar" role="img" aria-label={`Portrait de ${member.name} : photo à venir`}>
                                             <span aria-hidden="true">{isPreview ? "?" : initials(member.name)}</span>
@@ -70,9 +70,15 @@ const HomeTeam = () => {
                                             <ul>
                                                 {member.links.map((link) => (
                                                     <li key={link.network} className={link.network}>
-                                                        <a href={link.url} target="_blank" rel="noopener noreferrer" aria-label={`${socialIcon[link.network].label} de ${member.name} (nouvel onglet)`}>
-                                                            <i className={socialIcon[link.network].icon} aria-hidden="true" />
-                                                        </a>
+                                                        {link.url ? (
+                                                            <a href={link.url} target="_blank" rel="noopener noreferrer" aria-label={`${socialIcon[link.network].label} de ${member.name} (nouvel onglet)`}>
+                                                                <i className={socialIcon[link.network].icon} aria-hidden="true" />
+                                                            </a>
+                                                        ) : (
+                                                            <span className="cw-team-social-off" role="img" aria-label={`${socialIcon[link.network].label} : lien bientôt disponible`}>
+                                                                <i className={socialIcon[link.network].icon} aria-hidden="true" />
+                                                            </span>
+                                                        )}
                                                     </li>
                                                 ))}
                                             </ul>

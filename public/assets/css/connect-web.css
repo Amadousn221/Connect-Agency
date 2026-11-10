@@ -5894,3 +5894,932 @@ nav.navbar.validnavs a.btn.cw-btn-outline:hover {
 	aspect-ratio: 1 / 1;
 	object-fit: cover;
 }
+
+/* Réseaux sociaux de l'équipe : icône sans lien tant que l'adresse du profil n'est pas fournie */
+.team-style-one .thumb .social ul li .cw-team-social-off {
+	display: inline-block;
+	color: var(--white);
+	cursor: default;
+}
+
+/* ============================================================
+   Pages de services (gabarit ServicePage) — /expertises/...
+   ============================================================ */
+.cw-svc-eyebrow {
+	display: inline-flex;
+	align-items: center;
+	gap: 12px;
+	margin: 0 0 10px;
+	font-size: 15px;
+	font-weight: 600;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--color-primary);
+}
+
+.cw-svc-eyebrow::before {
+	content: "";
+	width: 28px;
+	height: 2px;
+	background: #dd5922;
+}
+
+.cw-svc-h2 {
+	margin: 0 0 18px;
+	font-size: 36px;
+	font-weight: 700;
+	line-height: 1.25;
+}
+
+.cw-svc-narrow {
+	max-width: 760px;
+	margin: 0 auto 44px;
+	text-align: center;
+}
+
+.cw-svc-narrow .cw-svc-eyebrow {
+	justify-content: center;
+}
+
+.cw-svc-narrow p {
+	font-size: 19px;
+}
+
+.cw-svc-center {
+	margin-top: 10px;
+	text-align: center;
+}
+
+.cw-svc-photo img {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+}
+
+.cw-svc-bullets {
+	margin: 0 0 14px;
+	padding-left: 20px;
+	list-style: disc;
+}
+
+.cw-svc-bullets li {
+	margin: 0 0 6px;
+	font-size: 19px;
+	color: var(--color-paragraph);
+}
+
+/* Repères sous l'introduction */
+.cw-svc-points {
+	list-style: none;
+	margin-top: 60px;
+	padding: 0;
+	row-gap: 30px;
+}
+
+.cw-svc-points li {
+	padding: 6px 12px;
+}
+
+.cw-svc-points h3 {
+	margin: 14px 0 8px;
+	font-size: 24px;
+	font-weight: 600;
+}
+
+.cw-svc-points p {
+	margin: 0;
+	font-size: 18px;
+}
+
+.cw-svc-point-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	background: rgba(24, 82, 113, 0.1);
+	color: #185271;
+	font-size: 24px;
+}
+
+/* Ce que comprend le projet (à la place des forfaits) */
+.cw-svc-approach {
+	background: #fff;
+}
+
+.cw-svc-columns {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	row-gap: 30px;
+}
+
+.cw-svc-column {
+	height: 100%;
+	padding: 34px 30px 30px;
+	border-top: 6px solid #dd5922;
+	background: #fff;
+	box-shadow: 0 18px 40px -26px rgba(15, 29, 51, 0.35);
+}
+
+.cw-svc-column-2 {
+	border-top-color: #0f1d33;
+}
+
+.cw-svc-column-3 {
+	border-top-color: #185271;
+}
+
+.cw-svc-column h3 {
+	margin: 0 0 18px;
+	font-size: 26px;
+	font-weight: 700;
+}
+
+.cw-svc-column ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.cw-svc-column li {
+	position: relative;
+	margin: 0 0 10px;
+	padding-left: 26px;
+	font-size: 18px;
+	color: var(--color-paragraph);
+}
+
+.cw-svc-column li::before {
+	content: "\2713";
+	position: absolute;
+	left: 0;
+	top: 0;
+	font-weight: 700;
+	color: #185271;
+}
+
+.cw-svc-note {
+	margin: 36px 0 6px;
+	text-align: center;
+	font-size: 19px;
+	font-weight: 600;
+	color: var(--color-heading);
+}
+
+/* Services du pôle */
+.cw-svc-services {
+	background: #f7f9fc;
+}
+
+.cw-svc-service-grid {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	row-gap: 24px;
+}
+
+.cw-svc-service {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	height: 100%;
+	padding: 30px 28px;
+	border: 1px solid #e8ebf3;
+	border-radius: 6px;
+	background: #fff;
+	scroll-margin-top: 110px;
+}
+
+.cw-svc-service:target {
+	box-shadow: 0 0 0 3px var(--color-primary);
+}
+
+.cw-svc-service h3 {
+	margin: 0 0 10px;
+	font-size: 22px;
+	font-weight: 700;
+	line-height: 1.35;
+}
+
+.cw-svc-service p {
+	margin: 0 0 8px;
+	font-size: 18px;
+	line-height: 1.6;
+}
+
+.cw-svc-service .cw-about-btn {
+	margin-top: auto;
+}
+
+/* Bandeaux sombres / clairs */
+.cw-svc-band {
+	padding: 90px 0;
+}
+
+.cw-svc-band-dark {
+	background:
+		linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0) 40%),
+		linear-gradient(200deg, rgba(0, 0, 0, 0) 55%, rgba(255, 255, 255, 0.05) 56%, rgba(0, 0, 0, 0) 80%),
+		#0f1d33;
+}
+
+.cw-svc-band-light {
+	background:
+		linear-gradient(115deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0) 38%),
+		linear-gradient(160deg, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0.9) 56%, rgba(255, 255, 255, 0.4) 100%),
+		#f1f2f4;
+}
+
+.cw-svc-band .cw-svc-h2 {
+	font-size: 34px;
+}
+
+.cw-svc-band p {
+	font-size: 19px;
+	line-height: 1.7;
+}
+
+.cw-svc-band-dark .cw-svc-h2,
+.cw-svc-band-dark p,
+.cw-svc-band-dark .cw-svc-eyebrow {
+	color: #fff;
+	-webkit-text-fill-color: currentColor;
+}
+
+.cw-svc-band-dark p {
+	color: rgba(255, 255, 255, 0.88);
+}
+
+.cw-svc-band-dark a.cw-about-btn {
+	color: #fff;
+	-webkit-text-fill-color: currentColor;
+}
+
+.cw-svc-band-dark a.cw-about-btn:hover,
+.cw-svc-band-dark a.cw-about-btn:focus-visible {
+	color: #f08a5d;
+	background: transparent;
+}
+
+.cw-svc-band-dark a.cw-about-btn:focus-visible {
+	outline-color: #fff;
+}
+
+/* Réalisations */
+.cw-svc-projects {
+	background: #fff;
+}
+
+.cw-svc-project-grid {
+	list-style: none;
+	margin: 0 0 20px;
+	padding: 0;
+	row-gap: 28px;
+}
+
+.cw-svc-project {
+	height: 100%;
+	padding: 14px 14px 22px;
+	border: 1px solid #e8ebf3;
+	border-radius: 6px;
+	background: #fff;
+}
+
+.cw-svc-project img {
+	display: block;
+	width: 100%;
+	height: auto;
+	margin-bottom: 14px;
+	border-radius: 4px;
+}
+
+.cw-svc-project-cat {
+	margin: 0 0 4px;
+	font-size: 15px;
+	color: var(--color-paragraph);
+}
+
+.cw-svc-project h3 {
+	margin: 0;
+	font-size: 22px;
+	font-weight: 700;
+}
+
+@media (max-width: 767px) {
+	.cw-svc-h2,
+	.cw-svc-band .cw-svc-h2 {
+		font-size: 28px;
+	}
+
+	.cw-svc-band {
+		padding: 60px 0;
+	}
+
+	.cw-svc-band .row > div + div {
+		margin-top: 28px;
+	}
+}
+
+/* En-tête (09/11/2026) : six entrées de menu + bouton. Le conteneur du thème est trop étroit : le bouton passait sous le logo.
+   On élargit l'en-tête dès 1024 px, on garde tout sur une ligne et on resserre légèrement les entrées. */
+@media (min-width: 1024px) {
+	.cw-header .cw-navbar .container {
+		max-width: none;
+		width: 100%;
+		padding-left: clamp(20px, 3vw, 56px);
+		padding-right: clamp(20px, 3vw, 56px);
+		flex-wrap: nowrap;
+		gap: 16px;
+	}
+
+	.cw-header .navbar-header {
+		flex: 0 0 auto;
+	}
+
+	.cw-header .navbar-collapse {
+		flex: 1 1 auto;
+		min-width: 0;
+		display: flex;
+		justify-content: center;
+	}
+
+	.cw-header-cta {
+		flex: 0 0 auto;
+		white-space: nowrap;
+	}
+
+	.cw-header-cta .btn {
+		white-space: nowrap;
+	}
+}
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+	.cw-nav-trigger,
+	.cw-nav-link {
+		padding: 0 8px;
+		font-size: 15px;
+		gap: 5px;
+	}
+
+	nav.navbar.validnavs .navbar-collapse.collapse button.cw-nav-trigger {
+		padding: 0 8px;
+	}
+}
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+	.cw-nav-trigger,
+	.cw-nav-link {
+		padding: 0 5px;
+		font-size: 13.5px;
+		gap: 3px;
+	}
+
+	nav.navbar.validnavs .navbar-collapse.collapse button.cw-nav-trigger {
+		padding: 0 5px;
+	}
+
+	.cw-header-cta .btn.btn-sm {
+		padding: 0 10px;
+		font-size: 13px;
+	}
+}
+
+/* Titres de section des pages de services (10/11/2026) : sur une seule ligne sur ordinateur ; le texte d'introduction
+   reste dans une colonne étroite. Sur tablette et mobile, le retour à la ligne reste permis. */
+@media (min-width: 992px) {
+	.cw-svc-narrow {
+		max-width: 1140px;
+	}
+
+	.cw-svc-narrow .cw-svc-h2 {
+		white-space: nowrap;
+	}
+
+	.cw-svc-narrow p {
+		max-width: 760px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	.cw-svc-narrow .cw-svc-h2 {
+		font-size: 32px;
+	}
+}
+
+/* Titre « Les technologies derrière vos projets. » sur une seule ligne sur ordinateur (10/11/2026) */
+@media (min-width: 768px) {
+	.cw-tech-head {
+		max-width: 1140px;
+	}
+
+	.cw-tech-title {
+		white-space: nowrap;
+	}
+
+	.cw-tech-title .cw-tech-accent {
+		display: inline;
+	}
+
+	.cw-tech-head p {
+		max-width: 620px;
+	}
+}
+
+/* En-tête (10/11/2026) : hamburger à droite du bouton principal (bureau) qui ouvre le menu complet dans un tiroir.
+   Le menu principal ne garde que les quatre pôles et Réalisations ; L'agence et Blog sont dans le tiroir. */
+.cw-burger,
+.cw-drawer,
+.cw-drawer-overlay {
+	display: none;
+}
+
+@media (min-width: 1024px) {
+	.cw-burger {
+		display: inline-flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 5px;
+		flex: 0 0 auto;
+		width: 44px;
+		height: 44px;
+		padding: 0;
+		border: 0;
+		border-radius: 8px;
+		background: transparent;
+		cursor: pointer;
+	}
+
+	.cw-burger span {
+		display: block;
+		width: 24px;
+		height: 2px;
+		border-radius: 2px;
+		background: var(--color-heading);
+		transition: background-color 0.15s ease;
+	}
+
+	.cw-burger:hover span {
+		background: var(--color-primary);
+	}
+
+	.cw-burger:focus-visible,
+	.cw-drawer-close:focus-visible,
+	.cw-drawer-trigger:focus-visible,
+	.cw-drawer a:focus-visible {
+		outline: 2px solid var(--color-primary);
+		outline-offset: 2px;
+	}
+
+	.cw-drawer {
+		display: flex;
+		flex-direction: column;
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		width: min(420px, 92vw);
+		padding: 22px 28px 32px;
+		background: #fff;
+		box-shadow: -18px 0 40px -20px rgba(14, 39, 105, 0.3);
+		overflow-y: auto;
+		transform: translateX(105%);
+		visibility: hidden;
+		transition: transform 0.25s ease, visibility 0s linear 0.25s;
+		z-index: 1100;
+	}
+
+	.cw-drawer.is-open {
+		transform: none;
+		visibility: visible;
+		transition-delay: 0s;
+	}
+
+	.cw-drawer-overlay {
+		display: block;
+		position: fixed;
+		inset: 0;
+		background: rgba(10, 20, 40, 0.45);
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.2s ease, visibility 0s linear 0.2s;
+		z-index: 1090;
+	}
+
+	.cw-drawer-overlay.is-open {
+		opacity: 1;
+		visibility: visible;
+		transition-delay: 0s;
+	}
+
+	.cw-drawer-head {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 18px;
+	}
+
+	.cw-drawer-head .cw-logo-img {
+		width: 150px;
+		height: auto;
+	}
+
+	.cw-drawer-close {
+		width: 44px;
+		height: 44px;
+		border: 0;
+		border-radius: 8px;
+		background: transparent;
+		font-size: 20px;
+		color: var(--color-heading);
+		cursor: pointer;
+	}
+
+	.cw-drawer-list,
+	.cw-drawer-sub {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.cw-drawer-item {
+		border-bottom: 1px solid #e8ebf3;
+	}
+
+	.cw-drawer-trigger,
+	.cw-drawer-link {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		min-height: 52px;
+		padding: 0;
+		border: 0;
+		background: transparent;
+		font-family: inherit;
+		font-size: 17px;
+		font-weight: 600;
+		color: var(--color-heading);
+		text-align: left;
+		cursor: pointer;
+	}
+
+	.cw-drawer-trigger i {
+		font-size: 12px;
+		transition: transform 0.2s ease;
+	}
+
+	.cw-drawer-item.is-open > .cw-drawer-trigger,
+	.cw-drawer-trigger:hover,
+	.cw-drawer-link:hover {
+		color: var(--color-primary);
+	}
+
+	.cw-drawer-item.is-open > .cw-drawer-trigger i {
+		transform: rotate(180deg);
+	}
+
+	.cw-drawer-sub {
+		padding: 0 0 12px 14px;
+		border-left: 2px solid #e8ebf3;
+	}
+
+	.cw-drawer-sub[hidden] {
+		display: none;
+	}
+
+	.cw-drawer-sub a {
+		display: block;
+		padding: 9px 0;
+		font-size: 15.5px;
+		font-weight: 500;
+		color: var(--color-heading);
+	}
+
+	.cw-drawer-sub a:hover {
+		color: var(--color-primary);
+	}
+
+	.cw-drawer-sub .cw-drawer-all {
+		font-weight: 700;
+		color: var(--color-primary);
+	}
+}
+
+/* « Réalisations » (lien) : même taille, graisse et hauteur que les entrées à menu (boutons) ; le thème imposait sa propre police aux liens */
+@media (min-width: 1024px) {
+	nav.navbar.validnavs .navbar-collapse.collapse a.cw-nav-link {
+		display: inline-flex;
+		align-items: center;
+		min-height: 44px;
+		font-family: inherit;
+		font-size: 15.5px;
+		font-weight: 500;
+		line-height: 1.2;
+		letter-spacing: normal;
+		text-transform: none;
+	}
+}
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+	nav.navbar.validnavs .navbar-collapse.collapse a.cw-nav-link {
+		font-size: 15px;
+	}
+}
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+	nav.navbar.validnavs .navbar-collapse.collapse a.cw-nav-link {
+		font-size: 13.5px;
+	}
+}
+
+/* Listes à flèches (10/11/2026) : flèche orange de la charte du logo à la place des puces et des coches */
+.cw-svc-bullets,
+.cw-svc-column ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+.cw-svc-bullets li,
+.cw-svc-column li {
+	position: relative;
+	padding-left: 32px;
+}
+
+.cw-svc-bullets li::before,
+.cw-svc-column li::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0.5em;
+	width: 20px;
+	height: 14px;
+	background: #dd5922;
+	-webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 14'%3E%3Cpath d='M0 7h17M11 1l6 6-6 6' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center / contain;
+	mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 14'%3E%3Cpath d='M0 7h17M11 1l6 6-6 6' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center / contain;
+	font-size: 0;
+}
+
+/* Image à droite ou à gauche : elle occupe toute la hauteur du bloc de texte (ordinateur), recadrée sans déformation */
+@media (min-width: 992px) {
+	.cw-svc-intro > .container > .row.align-center,
+	.cw-svc-band > .container > .row.align-center {
+		align-items: stretch;
+	}
+
+	.cw-svc-intro > .container > .row.align-center > [class*="col-"],
+	.cw-svc-band > .container > .row.align-center > [class*="col-"] {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.cw-svc-intro > .container > .row.align-center > [class*="col-"]:has(.cw-svc-photo),
+	.cw-svc-band > .container > .row.align-center > [class*="col-"]:has(.cw-svc-photo) {
+		justify-content: stretch;
+	}
+
+	.cw-svc-photo {
+		flex: 1 1 auto;
+		position: relative;
+		min-height: 340px;
+		height: 100%;
+		border-radius: 8px;
+		overflow: hidden;
+	}
+
+	.cw-svc-photo img {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+/* Flèches de la charte du logo sur tout le site (10/11/2026) : orange, comme les listes des pages de services */
+.cw-arrow-list li::before {
+	background: #dd5922;
+}
+
+.cw-arrow-list li::after {
+	border-top-color: #dd5922;
+	border-right-color: #dd5922;
+}
+
+.cw-about-faq .cw-about-faq-list,
+.cw-about-faq-list {
+	list-style: none;
+	padding-left: 0;
+}
+
+.cw-about-faq .cw-about-faq-list li,
+.cw-about-faq-list li {
+	position: relative;
+	display: block;
+	padding-left: 32px;
+	list-style: none;
+}
+
+.cw-about-faq .cw-about-faq-list li::before,
+.cw-about-faq-list li::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0.5em;
+	width: 20px;
+	height: 14px;
+	background: #dd5922;
+	-webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 14'%3E%3Cpath d='M0 7h17M11 1l6 6-6 6' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center / contain;
+	mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 14'%3E%3Cpath d='M0 7h17M11 1l6 6-6 6' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+
+/* Alignement des flèches : hauteur de ligne fixe, flèche centrée sur la première ligne du texte */
+.cw-svc-bullets li,
+.cw-svc-column li,
+.cw-about-faq .cw-about-faq-list li,
+.cw-about-faq-list li {
+	line-height: 1.5;
+}
+
+.cw-svc-bullets li::before,
+.cw-svc-column li::before,
+.cw-about-faq .cw-about-faq-list li::before,
+.cw-about-faq-list li::before {
+	top: calc((1.5em - 14px) / 2);
+}
+
+/* Cartes d'articles (accueil et blog), 10/11/2026 : titres, métadonnées et lien plus petits et moins gras */
+.cw-blog .blog-style-one .info,
+.cw-blog-page .blog-style-one .info {
+	padding-top: 22px;
+}
+
+.cw-blog .blog-style-one .info h3,
+.cw-blog-page .blog-style-one .info h3 {
+	font-size: 19px;
+	font-weight: 600;
+	line-height: 1.38;
+}
+
+.cw-blog .blog-style-one .info .blog-meta ul li,
+.cw-blog .blog-style-one .info .cw-card-meta li,
+.cw-blog-page .blog-style-one .info .blog-meta ul li {
+	font-size: 12.5px;
+	font-weight: 500;
+	letter-spacing: 0.02em;
+	text-transform: none;
+}
+
+.cw-blog .blog-style-one .info .cw-card-meta .cw-card-cat a,
+.cw-blog-page .blog-style-one .info .cw-card-meta .cw-card-cat a {
+	font-weight: 600;
+}
+
+.cw-blog .blog-style-one .btn-animate .button-text,
+.cw-blog-page .blog-style-one .btn-animate .button-text {
+	font-size: 14.5px;
+	font-weight: 600;
+	text-transform: none;
+}
+
+.cw-blog .blog-style-one .btn-animate .circle,
+.cw-blog-page .blog-style-one .btn-animate .circle {
+	width: 40px;
+	height: 40px;
+}
+
+/* Accueil, cartes d'articles (mêmes métadonnées que la page Blog) : métadonnées sous l'image, sur une seule ligne, petites et discrètes (catégorie · durée). */
+.cw-blog .blog-style-one .info .blog-meta {
+	margin: 0 0 8px;
+}
+
+.cw-blog .blog-style-one .info .cw-card-meta {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	gap: 0 10px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.cw-blog .blog-style-one .info .cw-card-meta li {
+	display: inline-flex;
+	align-items: center;
+	flex: 0 1 auto;
+	gap: 4px;
+	min-width: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	font-weight: 500;
+	line-height: 1.4;
+	letter-spacing: 0;
+	text-transform: none;
+	color: #6b7385;
+}
+
+.cw-blog .blog-style-one .info .cw-card-meta li::before {
+	display: none;
+}
+
+/* Séparateur : petit point à la place du trait du thème */
+.cw-blog .blog-style-one .info .cw-card-meta li::after {
+	position: static;
+	display: inline-block;
+	flex: 0 0 auto;
+	width: 3px;
+	height: 3px;
+	margin: 0 0 0 10px;
+	border-radius: 50%;
+	background: #b8bfcf;
+	transform: none;
+}
+
+.cw-blog .blog-style-one .info .cw-card-meta li:last-child::after {
+	display: none;
+}
+
+.cw-blog .blog-style-one .info .cw-card-meta i {
+	font-size: 11px;
+	margin: 0;
+}
+
+.cw-blog .blog-style-one .info .cw-card-meta .cw-card-cat {
+	flex-shrink: 1;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.cw-blog .blog-style-one .info .cw-card-meta .cw-card-cat a {
+	margin: 0;
+	color: var(--color-primary);
+	font-weight: 600;
+}
+
+.cw-blog .blog-style-one .info .cw-card-meta .cw-card-cat a:hover {
+	text-decoration: underline;
+}
+
+
+/* Cartes d'articles : réglage final des tailles et graisses (accueil et blog) */
+.cw-blog .blog-style-one .info h3,
+.cw-blog-page .blog-style-one .info h3 {
+	font-size: 19px;
+	font-weight: 600;
+	line-height: 1.38;
+}
+
+.cw-blog .blog-style-one .info .cw-card-meta li,
+.cw-blog-page .blog-style-one .info .cw-card-meta li {
+	font-size: 12.5px;
+	font-weight: 500;
+}
+
+/* Page /contact (10/11/2026) : bloc contact + formulaire puis siège social et carte */
+.cw-contact-page .cw-contact-band {
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+
+.cw-contact-map {
+	padding-top: 20px;
+	background: #fff;
+}
+
+.cw-contact-map-title {
+	margin: 0 0 10px;
+	font-size: 28px;
+	font-weight: 600;
+	text-align: center;
+}
+
+.cw-contact-map-address {
+	margin: 0 0 28px;
+	text-align: center;
+	font-size: 19px;
+	font-style: normal;
+	color: var(--color-paragraph);
+}
+
+.cw-contact-map-address span {
+	display: block;
+}
+
+.cw-contact-map .cw-contact-map-frame {
+	min-height: 440px;
+}
+
+@media (max-width: 991px) {
+	.cw-contact-map .cw-contact-map-frame {
+		min-height: 340px;
+	}
+}

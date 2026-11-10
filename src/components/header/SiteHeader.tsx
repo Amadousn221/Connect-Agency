@@ -10,6 +10,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { agenceMenu, headerLinks, navPoles, primaryCta, SHOW_SUBMENUS } from "@/content/navigation";
+import { blogLink } from "@/content/navigation";
 
 const MOBILE_QUERY = "(max-width: 1023px)"; // seuil du thème pour le panneau latéral
 const CLOSE_DELAY_MS = 220;
@@ -20,6 +21,11 @@ const SiteHeader = () => {
     const [panelOpen, setPanelOpen] = useState(false);
     const [openId, setOpenId] = useState<string | null>(null);
     const [pinned, setPinned] = useState(false);
+    // Menu complet (hamburger à droite du bouton, bureau) : tiroir latéral avec accordéons.
+    const [drawerOpen, setDrawerOpen] = useState(false);
+    const [drawerSection, setDrawerSection] = useState<string | null>(null);
+    const drawerRef = useRef<HTMLDivElement>(null);
+    const burgerRef = useRef<HTMLButtonElement>(null);
 
     const panelRef = useRef<HTMLDivElement>(null);
     const listRef = useRef<HTMLUListElement>(null);
@@ -60,6 +66,47 @@ const SiteHeader = () => {
     );
 
     useEffect(() => () => clearCloseTimer(), []);
+
+    const closeDrawer = useCallback((restoreFocus = true) => {
+        setDrawerOpen(false);
+        setDrawerSection(null);
+        if (restoreFocus) burgerRef.current?.focus();
+    }, []);
+
+    // Tiroir : défilement bloqué, focus piégé, Échap.
+    useEffect(() => {
+        if (!drawerOpen) return;
+        document.body.style.overflow = "hidden";
+        const drawer = drawerRef.current;
+        const focusables = () =>
+            Array.from(drawer?.querySelectorAll<HTMLElement>("a[href], button:not([disabled])") ?? []).filter((el) => el.offsetParent !== null);
+        const frame = requestAnimationFrame(() => focusables()[0]?.focus());
+        const onKey = (e: KeyboardEvent) => {
+            if (e.key === "Escape") {
+                e.preventDefault();
+                closeDrawer();
+                return;
+            }
+            if (e.key !== "Tab") return;
+            const items = focusables();
+            if (items.length === 0) return;
+            const first = items[0];
+            const last = items[items.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+            }
+        };
+        document.addEventListener("keydown", onKey);
+        return () => {
+            cancelAnimationFrame(frame);
+            document.body.style.overflow = "";
+            document.removeEventListener("keydown", onKey);
+        };
+    }, [drawerOpen, closeDrawer]);
 
     // Panneau mobile : blocage du défilement, focus piégé, Échap.
     useEffect(() => {
@@ -299,7 +346,7 @@ const SiteHeader = () => {
                         </div>
 
                         <ul ref={listRef} className="cw-nav-list">
-                            {renderAgence()}
+                            {isMobile && renderAgence()}
                             {!SHOW_SUBMENUS && navPoles.map((pole) => (
                                 // Menu simple (demande d'Amadou du 08/11/2026) : un lien par pôle, sans sous-menu.
                                 <li key={pole.id} className="cw-nav-item cw-nav-plain">
@@ -353,7 +400,7 @@ const SiteHeader = () => {
                                     </li>
                                 );
                             })}
-                            {headerLinks.filter((link) => link.label !== agenceMenu.label).map((link) => (
+                            {headerLinks.filter((link) => link.label !== agenceMenu.label && (isMobile || link.label !== blogLink.label)).map((link) => (
                                 <li key={link.label} className="cw-nav-item cw-nav-plain">
                                     <Link
                                         href={link.href}
@@ -379,7 +426,106 @@ const SiteHeader = () => {
                             {primaryCta.label}
                         </Link>
                     </div>
+                    <button
+                        ref={burgerRef}
+                        type="button"
+                        className="cw-burger"
+                        aria-label="Ouvrir le menu complet"
+                        aria-expanded={drawerOpen}
+                        aria-controls="cw-drawer"
+                        onClick={() => setDrawerOpen(true)}
+                    >
+                        <span aria-hidden="true" />
+                        <span aria-hidden="true" />
+                        <span aria-hidden="true" />
+                    </button>
                 </div>
+                <div
+                    id="cw-drawer"
+                    ref={drawerRef}
+                    className={`cw-drawer ${drawerOpen ? "is-open" : ""}`}
+                    role="dialog"
+                    aria-modal={drawerOpen ? true : undefined}
+                    aria-label="Menu complet"
+                    aria-hidden={drawerOpen ? undefined : true}
+                    inert={!drawerOpen}
+                    onClick={(e) => {
+                        if ((e.target as HTMLElement).closest("a")) closeDrawer(false);
+                    }}
+                >
+                    <div className="cw-drawer-head">
+                        <Image className="cw-logo-img" src="/assets/img/cw/logo-connect-web.png" alt="Connect Web" width={688} height={185} />
+                        <button type="button" className="cw-drawer-close" aria-label="Fermer le menu" onClick={() => closeDrawer()}>
+                            <i className="fa fa-times" aria-hidden="true" />
+                        </button>
+                    </div>
+                    <ul className="cw-drawer-list">
+                        {[
+                            {
+                                id: agenceMenu.id,
+                                label: agenceMenu.label,
+                                items: agenceMenu.items.map((item) => ({ label: item.label, href: item.href, external: item.external, ariaLabel: item.ariaLabel })),
+                                all: null as { label: string; href: string } | null,
+                            },
+                            ...navPoles.map((pole) => ({
+                                id: pole.id,
+                                label: pole.label,
+                                items: pole.items.map((item) => ({ label: item.label, href: item.href, external: false, ariaLabel: undefined as string | undefined })),
+                                all: pole.all,
+                            })),
+                        ].map((section) => {
+                            const open = drawerSection === section.id;
+                            return (
+                                <li key={section.id} className={`cw-drawer-item ${open ? "is-open" : ""}`}>
+                                    <button
+                                        type="button"
+                                        className="cw-drawer-trigger"
+                                        aria-expanded={open}
+                                        aria-controls={`drawer-${section.id}`}
+                                        onClick={() => setDrawerSection(open ? null : section.id)}
+                                    >
+                                        {section.label}
+                                        <i className="fal fa-chevron-down" aria-hidden="true" />
+                                    </button>
+                                    <ul id={`drawer-${section.id}`} className="cw-drawer-sub" hidden={!open}>
+                                        {section.items.map((item) => (
+                                            <li key={item.label}>
+                                                {item.external ? (
+                                                    <a href={item.href} target="_blank" rel="noopener noreferrer" aria-label={item.ariaLabel}>
+                                                        {item.label}
+                                                    </a>
+                                                ) : (
+                                                    <Link href={item.href} aria-current={current(item.href)}>
+                                                        {item.label}
+                                                    </Link>
+                                                )}
+                                            </li>
+                                        ))}
+                                        {section.all && (
+                                            <li>
+                                                <Link className="cw-drawer-all" href={section.all.href}>
+                                                    {section.all.label}
+                                                </Link>
+                                            </li>
+                                        )}
+                                    </ul>
+                                </li>
+                            );
+                        })}
+                        {headerLinks
+                            .filter((link) => link.label !== agenceMenu.label)
+                            .concat(blogLink)
+                            .filter((link, i, all) => all.findIndex((l) => l.href === link.href) === i)
+                            .map((link) => (
+                                <li key={link.href} className="cw-drawer-item">
+                                    <Link className="cw-drawer-link" href={link.href} aria-current={current(link.href)}>
+                                        {link.label}
+                                    </Link>
+                                </li>
+                            ))}
+                    </ul>
+                </div>
+                <div className={`cw-drawer-overlay ${drawerOpen ? "is-open" : ""}`} onClick={() => closeDrawer()} aria-hidden="true" />
                 <div className={`overlay-screen ${panelOpen ? "opened" : ""}`} onClick={() => closePanel()} aria-hidden="true" />
             </nav>
         </header>

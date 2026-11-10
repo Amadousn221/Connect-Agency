@@ -7,7 +7,6 @@ import HomeWhy from "@/components/choose/HomeWhy";
 import HomeStats from "@/components/fact/HomeStats";
 import HomeExpertises from "@/components/feature/HomeExpertises";
 import HomeRealisations from "@/components/project/HomeRealisations";
-import HomeServices from "@/components/services/HomeServices";
 import HomeTechnologies from "@/components/technology/HomeTechnologies";
 import HomeBlog from "@/components/blog/HomeBlog";
 import SiteLayout from "@/components/layouts/SiteLayout";
@@ -22,7 +21,8 @@ export default function HomePage() {
             <HomeHero />
             <HomeAgency />
             <HomeExpertises />
-            <HomeServices />
+            {/* Section « Ce que nous réalisons pour vous » masquée le 10/11/2026 (demande d'Amadou). Pour la rétablir : importer HomeServices
+                (components/services/HomeServices.tsx, conservé) et l'afficher ici. */}
             <HomeTechnologies />
             <HomeWhy />
             <HomeMethod />

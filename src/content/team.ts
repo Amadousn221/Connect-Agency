@@ -5,6 +5,7 @@
 
 export interface TeamLink {
     network: "linkedin" | "facebook" | "x" | "instagram";
+    // Adresse du profil. Vide tant que le lien réel n'est pas fourni : l'icône s'affiche alors sans lien.
     url: string;
 }
 
@@ -14,10 +15,20 @@ export interface TeamMember {
     role: string;
     // Photo fournie et autorisée (chemin sous /public). Sans photo : initiales sur fond aux couleurs du thème.
     photo?: string;
+    // true tant que la photo est un avatar provisoire (texte alternatif adapté).
+    photoPlaceholder?: boolean;
     // Réseaux sociaux : uniquement des comptes réels fournis par la personne.
     links?: TeamLink[];
     published: boolean;
 }
+
+// Réseaux affichés sur chaque carte (barre au survol). Les adresses réelles seront renseignées par Amadou :
+// tant que `url` est vide, l'icône n'est pas cliquable (aucune adresse inventée).
+const pendingLinks: TeamLink[] = [
+    { network: "facebook", url: "" },
+    { network: "x", url: "" },
+    { network: "linkedin", url: "" },
+];
 
 export const members: TeamMember[] = [
     {
@@ -27,6 +38,30 @@ export const members: TeamMember[] = [
         role: "Digital Project Manager",
         // Photo fournie par Amadou le 09/11/2026 (carré 900 x 900).
         photo: "/assets/img/cw/equipe-amadou-diallo.jpg",
+        links: pendingLinks,
+        published: true,
+    },
+    {
+        id: "tamsir",
+        // Nom de famille non fourni (à confirmer). Fonctions indiquées par Amadou le 09/11/2026 : ingénieur réseaux,
+        // le plus expérimenté, responsable du secteur réseaux, pilote l'ensemble et joue le rôle de mentor.
+        name: "Tamsir",
+        role: "Ingénieur réseaux et mentor",
+        // Avatar provisoire (09/11/2026) : à remplacer par la photo fournie et autorisée.
+        photo: "/assets/img/cw/equipe-avatar-tamsir.jpg",
+        photoPlaceholder: true,
+        links: pendingLinks,
+        published: true,
+    },
+    {
+        id: "cheikh-diedhiou",
+        // Fonction indiquée par Amadou le 09/11/2026 : développeur full stack. Photo non fournie.
+        name: "Cheikh Diedhiou",
+        role: "Développeur full stack",
+        // Avatar provisoire (09/11/2026) : à remplacer par la photo fournie et autorisée.
+        photo: "/assets/img/cw/equipe-avatar-cheikh.jpg",
+        photoPlaceholder: true,
+        links: pendingLinks,
         published: true,
     },
 ];

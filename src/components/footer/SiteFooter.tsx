@@ -7,8 +7,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { mainLinks, navPoles, primaryCta } from "@/content/navigation";
+import { expertises, subServiceHref, subServicePages } from "@/content/expertises";
 import { socialLinks } from "@/content/social";
 import FooterNewsletter from "./FooterNewsletter";
+
+// Services qui ont leur propre page, repris de expertises.ts (même libellé que dans le menu).
+const footerServices = expertises.flatMap((expertise) =>
+    expertise.subServices
+        .filter((subService) => `${expertise.id}/${subService.slug}` in subServicePages)
+        .map((subService) => ({ label: subService.title, href: subServiceHref(expertise, subService) })),
+);
 
 const SiteFooter = () => {
     return (
@@ -24,7 +32,7 @@ const SiteFooter = () => {
             <div className="container">
                 <div className="f-items relative pt-70 pb-120 pt-xs-0 pb-xs-50">
                     <div className="row">
-                        <div className="col-lg-4 col-md-6 footer-item pr-50 pr-xs-15">
+                        <div className="col-lg-3 col-md-6 footer-item pr-50 pr-xs-15">
                             <div className="f-item about">
                                 <Image className="logo" src="/assets/img/cw/logo-connect-web-clair.png" alt="Connect Web" width={688} height={185} style={{ width: "auto" }} />
                                 <p>
@@ -50,9 +58,21 @@ const SiteFooter = () => {
                         </div>
                         <div className="col-lg-2 col-md-6 footer-item">
                             <div className="f-item link">
+                                <h2 className="widget-title">Nos services</h2>
+                                <ul>
+                                    {footerServices.map((service) => (
+                                        <li key={service.href}>
+                                            <Link href={service.href}>{service.label}</Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="col-lg-2 col-md-6 footer-item">
+                            <div className="f-item link">
                                 <h2 className="widget-title">Connect Web</h2>
                                 <ul>
-                                    {mainLinks.map((link) => (
+                                    {[...mainLinks, { label: "Notre équipe", href: "/equipe" }].map((link) => (
                                         <li key={link.label}>
                                             <Link href={link.href}>{link.label}</Link>
                                         </li>
@@ -60,7 +80,7 @@ const SiteFooter = () => {
                                 </ul>
                             </div>
                         </div>
-                        <div className="col-lg-4 col-md-6 footer-item">
+                        <div className="col-lg-3 col-md-6 footer-item">
                             <h2 className="widget-title">Newsletter</h2>
                             <p>Recevez nos actualités et conseils pour votre activité en ligne.</p>
                             <div className="f-item newsletter">
