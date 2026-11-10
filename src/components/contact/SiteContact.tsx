@@ -14,7 +14,7 @@ const SiteContact = () => {
                 <div className="row align-center">
                     <div className="contact-stye-one col-lg-5">
                         <div className="contact-style-one-info">
-                            <h2 id="contact-titre">{title}</h2>
+                            <h2 id="contact-titre" className="title">{title}</h2>
                             <p>{text}</p>
                             <ul>
                                 {items.map((item) => (
@@ -38,7 +38,7 @@ const SiteContact = () => {
                     <div className="contact-stye-one col-lg-7">
                         <div className="contact-form-style-one">
                             <p className="sub-title">{formEyebrow}</p>
-                            <h2 className="title">{formTitle}</h2>
+                            <h3 className="title">{formTitle}</h3>
                             <DigitalContactForm />
                         </div>
                     </div>

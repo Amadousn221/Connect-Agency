@@ -17,7 +17,7 @@ export interface ServiceImage {
 
 export interface ServiceBand {
     id?: string;
-    // dark : fond sombre ; light : fond clair à facettes (comme les bandeaux de la référence).
+    // dark : fond bleu marine ; light : fond gris bleuté très clair.
     tone: "dark" | "light";
     eyebrow: string;
     title: string;
@@ -84,8 +84,8 @@ export const developpementWebPage: ServicePageData = {
         ],
         cta: { label: "Nous joindre sur WhatsApp", href: waLink("Bonjour Connect Web, je souhaite parler de mon projet de site ou de boutique en ligne."), external: true },
         image: {
-            src: "/assets/img/cw/hero-developpement-web.jpg",
-            alt: "Une personne travaille sur un ordinateur portable devant une page web",
+            src: "/assets/img/cw/pourquoi-poste-de-travail.jpg",
+            alt: "Une développeuse travaille sur un ordinateur portable et une tablette",
             width: 1200,
             height: 800,
         },
@@ -138,7 +138,7 @@ export const developpementWebPage: ServicePageData = {
                 "Shopify et WooCommerce permettent tous deux de présenter un catalogue, d'encaisser des paiements et de suivre les commandes. Le meilleur choix dépend de votre volume de produits, de votre façon de livrer et de vos habitudes de travail.",
                 "Nous comparons les deux avec vous avant de décider, puis nous configurons la boutique et, si vous en avez déjà une, nous préparons la migration de vos produits.",
             ],
-            image: { src: "/assets/img/cw/hero-developpement-web.jpg", alt: "Boutique en ligne affichée sur un ordinateur portable", width: 1200, height: 800 },
+            image: { src: "/assets/img/cw/accueil-methode-collaboration.jpg", alt: "Une équipe examine du code sur plusieurs écrans", width: 1000, height: 563 },
             imageSide: "left",
             cta: { label: "Parler de ma boutique", href: waLink("Bonjour Connect Web, je veux lancer ou migrer une boutique en ligne."), external: true },
         },
@@ -151,6 +151,8 @@ export const developpementWebPage: ServicePageData = {
                 "Un site utile est un site à jour. À la livraison, nous vous montrons comment modifier un texte, ajouter une image ou suivre les demandes reçues, pour que vous ne dépendiez pas de nous pour les gestes simples du quotidien.",
                 "Pour les évolutions plus larges, nous restons disponibles : nouvelles pages, nouvelles fonctions, corrections et suivi.",
             ],
+            image: { src: "/assets/img/cw/digitalisation-activite-outils.jpg", alt: "Une personne consulte un tableau de bord sur son ordinateur", width: 1000, height: 668 },
+            imageSide: "right",
             cta: { label: "En discuter avec nous", href: waLink("Bonjour Connect Web, j'aimerais en savoir plus sur la prise en main d'un site."), external: true },
         },
         {

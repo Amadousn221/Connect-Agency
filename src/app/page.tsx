@@ -9,6 +9,7 @@ import HomeExpertises from "@/components/feature/HomeExpertises";
 import HomeRealisations from "@/components/project/HomeRealisations";
 import HomeTechnologies from "@/components/technology/HomeTechnologies";
 import HomeBlog from "@/components/blog/HomeBlog";
+import SiteContact from "@/components/contact/SiteContact";
 import SiteLayout from "@/components/layouts/SiteLayout";
 
 export const metadata = {
@@ -29,6 +30,7 @@ export default function HomePage() {
             <HomeStats />
             <HomeRealisations />
             <HomeBlog />
+            <SiteContact />
         </SiteLayout>
     );
 }
