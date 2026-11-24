@@ -108,7 +108,7 @@ export const blogSection = {
     // Textes validés par Amadou le 10/11/2026 (remplacent le titre « Les personnes qui travaillent sur vos projets »).
     eyebrow: "Le blog Connect Web",
     title: "Conseils, idées et actualités du digital",
-    description: "Retrouvez nos analyses, conseils pratiques et retours d'expérience pour mieux comprendre les technologies, faire évoluer vos outils numériques et accompagner le développement de votre activité.",
+    description: "Analyses, conseils pratiques et retours d’expérience pour comprendre les technologies et faire évoluer les outils numériques de votre activité.",
     cta: "Découvrir nos articles",
     minPublished: 1,
 };
