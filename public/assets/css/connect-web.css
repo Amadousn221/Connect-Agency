@@ -6677,3 +6677,21 @@ a.cw-svc-project:focus-visible {
 		min-height: 340px;
 	}
 }
+
+/* Accueil — alignement éditorial mobile/tablette : uniquement les paragraphes descriptifs.
+   Les titres, listes à flèches, menus et CTA conservent leur alignement d'origine. */
+@media (max-width: 1199px) {
+	.cw-agency .cw-agency-text > p,
+	.cw-expertises .cw-expertises-intro,
+	.cw-expertises .cw-expertise-desc,
+	.cw-roadmap-step > p,
+	.cw-method .cw-method-intro,
+	.cw-method .cw-step-panel-inner > p:not(.cw-method-role),
+	.cw-blog .cw-blog-intro > p {
+		text-align: justify;
+		text-align-last: left;
+		-webkit-hyphens: auto;
+		hyphens: auto;
+		overflow-wrap: break-word;
+	}
+}
