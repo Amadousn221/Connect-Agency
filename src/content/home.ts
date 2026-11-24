@@ -164,7 +164,7 @@ export const homeMethod = {
     eyebrow: "Notre méthode",
     title: "Comment nous travaillons",
     intro: "Chaque projet commence par une bonne compréhension de vos besoins. Nous avançons étape par étape, avec des échanges clairs, des livrables définis et un accompagnement adapté à votre organisation.",
-    shortIntro: "Nous commençons par comprendre vos besoins, puis avançons par étapes : cadrage, réalisation, tests et accompagnement, avec des échanges clairs.",
+    shortIntro: "De l’analyse de vos besoins au suivi, nous avançons par étapes avec des échanges clairs et réguliers.",
     rolePrefix: "Votre rôle :",
     steps: [
         {
@@ -235,6 +235,7 @@ export const homeStats = {
     eyebrow: "Nos chiffres",
     title: "Des réalisations concrètes pour vos projets",
     text: "Derrière chaque projet, il y a un besoin, un objectif et une solution adaptée. Découvrez quelques chiffres qui illustrent notre expérience et les collaborations que nous avons développées auprès des entreprises et organisations.",
+    shortText: "Chaque projet répond à un besoin concret. Nos chiffres reflètent le travail accompli avec les entreprises et organisations que nous accompagnons.",
     items: [
         { id: "projets", icon: "briefcase", value: 19 as number | null, suffix: "+", label: "Projets réalisés" },
         { id: "clients", icon: "users", value: 18 as number | null, suffix: "+", label: "Clients accompagnés" },
@@ -248,10 +249,10 @@ export const homeStats = {
 // 08/11/2026. Les libellés du menu (expertises.ts) ne changent pas ; les noms complets des pôles restent dans
 // expertises.ts. Clé = id du pôle. `cta` : libellé propre au bouton de chaque carte (09/11/2026).
 export const homeExpertisesFullIntro = "Du développement web à la digitalisation de vos opérations, en passant par le marketing digital et les infrastructures IT, Connect Web vous accompagne avec des solutions adaptées aux besoins de votre entreprise.";
-export const homeExpertisesShortIntro = "Développement web, solutions métiers, marketing et infrastructure IT : quatre expertises pour accompagner votre entreprise dans sa transformation digitale.";
+export const homeExpertisesShortIntro = "Du web aux infrastructures IT, nos quatre expertises accompagnent votre entreprise dans sa transformation digitale.";
 
 export const homeBlogFullDescription = "Retrouvez nos analyses, conseils pratiques et retours d'expérience pour mieux comprendre les technologies, faire évoluer vos outils numériques et accompagner le développement de votre activité.";
-export const homeBlogShortDescription = "Retrouvez nos analyses, conseils pratiques et retours d'expérience pour mieux comprendre les technologies et développer votre activité.";
+export const homeBlogShortDescription = "Analyses et conseils pratiques pour comprendre le digital, améliorer vos outils et faire évoluer votre activité.";
 
 export const expertiseCards: Record<string, { cardTitle: string; shortDescription: string; cta: string; photo: string; items: string[] }> = {
     "developpement-web": {

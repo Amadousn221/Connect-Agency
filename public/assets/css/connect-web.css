@@ -6709,3 +6709,32 @@ a.cw-svc-project:focus-visible {
 		overflow-wrap: break-word;
 	}
 }
+
+/* Accueil — introduire chaque section avec un texte centré, sans césures
+   automatiques. Les descriptions de cartes, listes et accordéons ne changent pas. */
+@media (max-width: 1199px) {
+	.cw-expertises .cw-expertises-intro,
+	.cw-method .cw-method-intro,
+	.cw-stats .cw-stats-text,
+	.cw-blog .cw-blog-intro > p {
+		max-width: 55ch;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		text-align-last: center;
+		-webkit-hyphens: none;
+		hyphens: none;
+		word-break: normal;
+		overflow-wrap: normal;
+	}
+}
+
+@media (max-width: 575px) {
+	.cw-expertises .cw-expertises-intro,
+	.cw-method .cw-method-intro,
+	.cw-stats .cw-stats-text,
+	.cw-blog .cw-blog-intro > p {
+		font-size: 16px;
+		line-height: 1.65;
+	}
+}

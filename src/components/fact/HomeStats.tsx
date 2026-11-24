@@ -6,11 +6,12 @@
 import CountUp from "react-countup";
 import { useSyncExternalStore } from "react";
 import { homeStats } from "@/content/home";
+import HomeResponsiveCopy from "@/components/utilities/HomeResponsiveCopy";
 import { clientLogos } from "@/content/clients";
 import ClientLogoGrid from "./ClientLogoGrid";
 
 const HomeStats = () => {
-    const { eyebrow, title, text, items } = homeStats;
+    const { eyebrow, title, text, shortText, items } = homeStats;
     const visible = items.filter((item) => item.value !== null);
     const reduceMotion = useSyncExternalStore(
         (notify) => {
@@ -34,7 +35,7 @@ const HomeStats = () => {
                 <div className="cw-stats-head site-heading">
                     <h4 className="cw-sub">{eyebrow}</h4>
                     <h2 id="chiffres-titre" className="title">{title}</h2>
-                    <p className="cw-stats-text">{text}</p>
+                    <p className="cw-stats-text cw-home-prose"><HomeResponsiveCopy full={text} short={shortText} /></p>
                 </div>
                 <div className="row align-items-center">
                     <div className="col-lg-5">
