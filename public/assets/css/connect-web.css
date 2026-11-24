@@ -6695,3 +6695,17 @@ a.cw-svc-project:focus-visible {
 		overflow-wrap: break-word;
 	}
 }
+
+/* Accueil : variantes éditoriales réservées au mobile et à la tablette. */
+.cw-home-copy-short { display: none; }
+@media (max-width: 1199px) {
+	.cw-home-copy-full { display: none; }
+	.cw-home-copy-short { display: inline; }
+	.cw-method .cw-method-role.cw-home-prose {
+		text-align: justify;
+		text-align-last: left;
+		-webkit-hyphens: auto;
+		hyphens: auto;
+		overflow-wrap: break-word;
+	}
+}
