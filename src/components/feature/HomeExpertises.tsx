@@ -38,7 +38,7 @@ const HomeExpertises = () => {
                                             {expertise.number}
                                         </p>
                                         <h3 id={`expertise-${expertise.id}`} className="cw-expertise-title">{card.cardTitle}</h3>
-                                        <p className="cw-expertise-desc">{expertise.description}</p>
+                                        <p className="cw-expertise-desc">{card.description}</p>
                                         <ul className="cw-arrow-list cw-expertise-services" aria-label={`${subServicesLabel} : ${expertise.shortTitle}`}>
                                             {card.items.map((item) => (
                                                 <li key={item}>{item}</li>
