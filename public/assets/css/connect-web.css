@@ -186,37 +186,115 @@
 	.cw-hero .cw-hero-slider .swiper-slide-active .cw-hero-content > :nth-child(4) { animation-delay: 240ms; }
 }
 
-@media (max-width: 1023px) {
+/* Variantes éditoriales : textes complets sur ordinateur, courts sur mobile et tablette. */
+.cw-hero .cw-hero-responsive-copy {
+	display: none;
+}
+
+@media (max-width: 1199px) {
+	.cw-hero .cw-hero-desktop-copy { display: none; }
+	.cw-hero .cw-hero-responsive-copy { display: inline; }
+
+	.cw-hero .cw-hero-slider .swiper-slide {
+		min-height: 560px;
+	}
+
 	.cw-hero .cw-hero-content {
-		padding: 120px 0;
+		max-width: 590px;
+		padding: 68px 0;
+	}
+
+	.cw-hero .cw-hero-title {
+		font-size: clamp(32px, 4vw, 44px);
+		line-height: 1.14;
+	}
+
+	.cw-hero .cw-hero-text {
+		font-size: 17px;
+		line-height: 1.55;
+		max-width: 480px;
+		margin-top: 18px;
+	}
+
+	.cw-hero .cw-hero-buttons {
+		margin-top: 26px;
+	}
+
+	.cw-hero .cw-hero-overlay {
+		background: linear-gradient(90deg, rgba(8, 22, 66, 0.92) 0%, rgba(8, 22, 66, 0.76) 51%, rgba(8, 22, 66, 0.26) 100%);
 	}
 }
 
 @media (max-width: 767px) {
 	.cw-hero .cw-hero-slider .swiper-slide {
-		min-height: 0;
+		min-height: 540px;
+	}
+
+	.cw-hero .cw-hero-photo {
+		object-position: 64% 50%;
+	}
+
+	/* Conserver le sujet de la photo IT dans le cadrage des écrans étroits. */
+	.cw-hero .swiper-slide.cw-hero-slide--infrastructure-it .cw-hero-photo {
+		object-position: 72% 50%;
 	}
 
 	.cw-hero .cw-hero-overlay {
-		background: linear-gradient(180deg, rgba(8, 22, 66, 0.82) 0%, rgba(8, 22, 66, 0.7) 100%);
+		background: linear-gradient(180deg, rgba(8, 22, 66, 0.84) 0%, rgba(8, 22, 66, 0.77) 60%, rgba(8, 22, 66, 0.72) 100%);
 	}
 
 	.cw-hero .cw-hero-content {
-		padding: 96px 0;
+		max-width: 100%;
+		padding: 44px 0 52px;
+	}
+
+	.cw-hero .cw-hero-title {
+		font-size: clamp(29px, 6.5vw, 36px);
+		line-height: 1.16;
 	}
 
 	.cw-hero .cw-hero-text {
-		font-size: 17px;
+		font-size: 15px;
+		line-height: 1.55;
+		max-width: 40ch;
+		margin-top: 16px;
+	}
+
+	.cw-hero .cw-hero-buttons {
+		gap: 10px;
+		margin-top: 24px;
+	}
+
+	.cw-hero .cw-hero-buttons .btn {
+		min-height: 46px;
+		font-size: 14px;
+		padding: 11px 18px;
 	}
 }
 
 @media (max-width: 575px) {
 	.cw-hero .cw-hero-eyebrow {
-		font-size: 14px;
+		font-size: 13px;
+		gap: 9px;
+		margin-bottom: 16px;
 	}
 
 	.cw-hero .cw-hero-buttons .btn {
 		width: 100%;
+	}
+
+	.cw-hero .cw-hero-slider .swiper-slide {
+		min-height: 520px;
+	}
+}
+
+@media (max-width: 360px) {
+	.cw-hero .cw-hero-title {
+		font-size: 28px;
+	}
+
+	.cw-hero .cw-hero-content {
+		padding: 36px 0 44px;
 	}
 }
 
