@@ -236,28 +236,28 @@ export const homeStats = {
 export const expertiseCards: Record<string, { cardTitle: string; description: string; cta: string; photo: string; items: string[] }> = {
     "developpement-web": {
         cardTitle: "Développement web & mobile",
-        description: "Nous créons des sites, boutiques en ligne et applications sur mesure pour développer votre présence digitale et vos opportunités commerciales."
+        description: "Nous créons des sites, boutiques en ligne et applications sur mesure pour développer votre présence digitale et vos opportunités commerciales.",
         cta: "Lancer mon projet web",
         photo: "/assets/img/cw/hero-developpement-web.jpg",
         items: ["Sites internet professionnels", "Sites e-commerce", "Shopify & WooCommerce", "Applications web, mobile & PWA", "Refonte & maintenance"],
     },
     digitalisation: {
         cardTitle: "Digitalisation",
-        description: "Nous centralisons vos informations et automatisons vos processus avec des outils adaptés à votre activité."
+        description: "Nous centralisons vos informations et automatisons vos processus avec des outils adaptés à votre activité.",
         cta: "Simplifier ma gestion",
         photo: "/assets/img/cw/hero-digitalisation.jpg",
         items: ["CRM & gestion client", "ERP & gestion d'entreprise", "Applications métiers", "Automatisation des processus", "Tableaux de bord personnalisés", "Intégration de solutions digitales"],
     },
     "marketing-digital": {
         cardTitle: "Marketing digital",
-        description: "Nous renforçons votre visibilité, l'acquisition et la fidélisation de clients grâce à des actions marketing mesurables."
+        description: "Nous renforçons votre visibilité, l'acquisition et la fidélisation de clients grâce à des actions marketing mesurables.",
         cta: "Attirer plus de clients",
         photo: "/assets/img/cw/hero-marketing-digital.jpg",
         items: ["Stratégie marketing digital", "Référencement naturel SEO", "Email marketing & CRM", "Marketing automation", "Publicité digitale & acquisition", "Réseaux sociaux & communication digitale"],
     },
     "infrastructure-it": {
         cardTitle: "Infrastructure IT",
-        description: "Nous mettons en place des infrastructures informatiques fiables et sécurisées, adaptées à vos espaces de travail."
+        description: "Nous mettons en place des infrastructures informatiques fiables et sécurisées, adaptées à vos espaces de travail.",
         cta: "Équiper mon entreprise",
         photo: "/assets/img/cw/hero-infrastructure-it.jpg",
         items: ["Réseaux & câblage", "Installation d'équipements IT", "Hébergement & serveurs", "Solutions cloud", "Téléphonie IP", "Vidéosurveillance & contrôle d'accès"],
