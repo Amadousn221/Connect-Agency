@@ -5,12 +5,13 @@
 // étirée à la hauteur du contenu (object-fit: cover), voir .cw-method dans connect-web.css.
 // Textes fournis par Amadou le 08/11/2026. Image : gabarit gris du template en attendant un visuel Connect Web.
 import Image from "next/image";
+import HomeResponsiveCopy from "@/components/utilities/HomeResponsiveCopy";
 import { useId, useRef, useState } from "react";
 import type { KeyboardEvent } from "react";
 import { homeMethod } from "@/content/home";
 
 const HomeMethod = () => {
-    const { eyebrow, title, intro, rolePrefix, steps, image } = homeMethod;
+    const { eyebrow, title, intro, shortIntro, rolePrefix, steps, image } = homeMethod;
     const [open, setOpen] = useState(0);
     const baseId = useId();
     const buttons = useRef<(HTMLButtonElement | null)[]>([]);
@@ -41,7 +42,7 @@ const HomeMethod = () => {
                         <div className="cw-method-info">
                             <h4 className="cw-sub">{eyebrow}</h4>
                             <h2 id="methode-titre" className="title">{title}</h2>
-                            <p className="cw-method-intro">{intro}</p>
+                            <p className="cw-method-intro cw-home-prose"><HomeResponsiveCopy full={intro} short={shortIntro} /></p>
                             <div className="cw-steps">
                                 {steps.map((step, index) => {
                                     const isOpen = open === index;
@@ -66,8 +67,8 @@ const HomeMethod = () => {
                                             </h3>
                                             <div id={panelId} role="region" aria-labelledby={buttonId} className="cw-step-panel">
                                                 <div className="cw-step-panel-inner">
-                                                    <p>{step.text}</p>
-                                                    <p className="cw-method-role">
+                                                    <p className="cw-home-prose"><HomeResponsiveCopy full={step.text} short={step.shortText} /></p>
+                                                    <p className="cw-method-role cw-home-prose">
                                                         <strong>{rolePrefix}</strong> {step.role}
                                                     </p>
                                                 </div>

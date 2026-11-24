@@ -2,7 +2,9 @@
 // publié ; en développement local uniquement, un aperçu fictif signalé par un bandeau la remplace.
 // Pas de lien vers une page d'article inexistante ; image absente = fond aux couleurs du thème.
 import Link from "next/link";
+import HomeResponsiveCopy from "@/components/utilities/HomeResponsiveCopy";
 import BlogCard from "./BlogCard";
+import { homeBlogShortDescription } from "@/content/home";
 import { blogSection, posts, previewPosts, SHOW_EXAMPLES_IN_PRODUCTION } from "@/content/blog";
 
 const HomeBlog = () => {
@@ -26,7 +28,7 @@ const HomeBlog = () => {
                 <div className="cw-blog-intro site-heading">
                     <h4 className="cw-sub">{eyebrow}</h4>
                     <h2 id="blog-titre" className="title">{title}</h2>
-                    <p>{description}</p>
+                    <p className="cw-home-prose"><HomeResponsiveCopy full={description} short={homeBlogShortDescription} /></p>
                 </div>
                 <div className="cw-blog-grid">
                     {items.map((post) => (

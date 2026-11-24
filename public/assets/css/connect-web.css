@@ -6677,3 +6677,25 @@ a.cw-svc-project:focus-visible {
 		min-height: 340px;
 	}
 }
+
+/* Accueil : textes allégés sur mobile/tablette, sans modifier les titres ni les listes de services. */
+.cw-home-copy-short {
+	display: none;
+}
+
+@media (max-width: 1199px) {
+	.cw-home-copy-full { display: none; }
+	.cw-home-copy-short { display: inline; }
+
+	.cw-agency .cw-home-prose,
+	.cw-expertises .cw-home-prose,
+	.cw-why .cw-home-prose,
+	.cw-method .cw-home-prose,
+	.cw-blog .cw-home-prose {
+		text-align: justify;
+		text-align-last: left;
+		-webkit-hyphens: auto;
+		hyphens: auto;
+		overflow-wrap: break-word;
+	}
+}
