@@ -213,7 +213,7 @@ export const expertises: Expertise[] = [
 export const expertisesSection = {
     eyebrow: "Nos expertises",
     title: "Quatre pôles pour votre transformation digitale",
-    intro: "Du développement web à la digitalisation de vos opérations, en passant par le marketing digital et les infrastructures IT, Connect Web vous accompagne avec des solutions adaptées aux besoins de votre entreprise.",
+    intro: "Développement web, solutions métiers, marketing et infrastructure IT : quatre expertises pour accompagner votre entreprise dans sa transformation digitale.",
     linkLabel: "Découvrir nos services",
     subServicesLabel: "Sous-services",
 };
