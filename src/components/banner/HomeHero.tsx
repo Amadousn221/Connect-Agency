@@ -66,7 +66,7 @@ const HomeHero = () => {
                     const href = expertise ? expertiseHref(expertise) : "/#nos-expertises";
                     const Title = index === 0 ? "h1" : "h2";
                     return (
-                        <SwiperSlide key={slide.pole}>
+                        <SwiperSlide key={slide.pole} className={`cw-hero-slide--${slide.pole}`}>
                             <Image
                                 className="cw-hero-photo"
                                 src={slide.image}
@@ -80,10 +80,19 @@ const HomeHero = () => {
                                 <div className="cw-hero-content">
                                     <p className="cw-hero-eyebrow">
                                         {expertise && <span className="cw-hero-num">{expertise.number}</span>}
-                                        <span className="cw-hero-eyebrow-label">{slide.eyebrow}</span>
+                                        <span className="cw-hero-eyebrow-label">
+                                            <span className="cw-hero-desktop-copy">{slide.eyebrow}</span>
+                                            <span className="cw-hero-responsive-copy">{slide.shortEyebrow}</span>
+                                        </span>
                                     </p>
-                                    <Title className="cw-hero-title">{slide.title}</Title>
-                                    <p className="cw-hero-text">{slide.text}</p>
+                                    <Title className="cw-hero-title">
+                                        <span className="cw-hero-desktop-copy">{slide.title}</span>
+                                        <span className="cw-hero-responsive-copy">{slide.shortTitle}</span>
+                                    </Title>
+                                    <p className="cw-hero-text">
+                                        <span className="cw-hero-desktop-copy">{slide.text}</span>
+                                        <span className="cw-hero-responsive-copy">{slide.shortText}</span>
+                                    </p>
                                     <div className="cw-hero-buttons">
                                         <Link className="btn btn-md btn-theme" href={href}>
                                             {slide.cta}
