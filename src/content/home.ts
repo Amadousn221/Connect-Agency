@@ -62,6 +62,11 @@ export const homeAgency = {
     // Titre en deux temps : la 2e ligne est en bleu de marque (sans point final).
     titleLines: ["Une expertise digitale complète", "pour développer votre activité"],
     paragraphs: [
+        "Connect Web accompagne les PME, entrepreneurs et organisations dans leurs projets numériques. Nous réunissons développement web et mobile, solutions métiers, marketing digital et infrastructure IT avec un seul interlocuteur pour coordonner l'ensemble.",
+        "Nous partons de vos besoins pour concevoir des outils adaptés à votre activité, simplifier votre quotidien et vous aider à toucher de nouveaux clients.",
+    ],
+    // Variantes courtes pour mobile et tablette ; les listes restent identiques.
+    shortParagraphs: [
         "Connect Web accompagne les PME, entrepreneurs et organisations dans leurs projets numériques. Nous réunissons développement web et mobile, solutions métiers, marketing digital et infrastructure IT autour d'un interlocuteur unique.",
         "Nous créons des outils adaptés à votre activité pour simplifier votre gestion et vous aider à toucher de nouveaux clients.",
     ],
@@ -158,27 +163,32 @@ export const homeServices = {
 export const homeMethod = {
     eyebrow: "Notre méthode",
     title: "Comment nous travaillons",
-    intro: "Nous commençons par comprendre vos besoins, puis avançons par étapes : cadrage, réalisation, tests et accompagnement, avec des échanges clairs.",
+    intro: "Chaque projet commence par une bonne compréhension de vos besoins. Nous avançons étape par étape, avec des échanges clairs, des livrables définis et un accompagnement adapté à votre organisation.",
+    shortIntro: "Nous commençons par comprendre vos besoins, puis avançons par étapes : cadrage, réalisation, tests et accompagnement, avec des échanges clairs.",
     rolePrefix: "Votre rôle :",
     steps: [
         {
             title: "Échange et cadrage",
-            text: "Nous échangeons sur votre activité, vos objectifs et vos difficultés pour définir les besoins réels et les priorités du projet.",
+            shortText: "Nous échangeons sur votre activité, vos objectifs et vos difficultés pour définir les besoins réels et les priorités du projet.",
+            text: "Nous prenons le temps de comprendre votre activité, vos objectifs et les difficultés que vous souhaitez résoudre. Cet échange nous permet de définir le besoin réel et les priorités du projet.",
             role: "partager vos attentes, vos outils existants et les informations utiles.",
         },
         {
             title: "Proposition",
-            text: "Nous préparons une proposition précisant le périmètre, les fonctionnalités, les étapes et les conditions de réalisation.",
+            shortText: "Nous préparons une proposition précisant le périmètre, les fonctionnalités, les étapes et les conditions de réalisation.",
+            text: "Nous préparons une proposition adaptée à vos besoins, avec un périmètre clair, les fonctionnalités prévues, les grandes étapes et les conditions de réalisation.",
             role: "examiner la proposition et valider les orientations du projet.",
         },
         {
             title: "Réalisation et recette",
-            text: "Nous réalisons votre solution par étapes, avec des points de suivi et des tests pour vérifier les besoins définis.",
+            shortText: "Nous réalisons votre solution par étapes, avec des points de suivi et des tests pour vérifier les besoins définis.",
+            text: "Nous concevons et développons votre solution progressivement. Des points de suivi et des tests permettent de vérifier que le résultat correspond aux besoins définis.",
             role: "tester les fonctionnalités, partager vos observations et valider les livrables.",
         },
         {
             title: "Prise en main et suivi",
-            text: "Nous vous accompagnons dans la mise en service et la prise en main, avec documentation, formation ou suivi selon le projet.",
+            shortText: "Nous vous accompagnons dans la mise en service et la prise en main, avec documentation, formation ou suivi selon le projet.",
+            text: "Nous vous accompagnons dans la mise en service et la prise en main de votre solution. Selon le projet, nous prévoyons une documentation, une formation et un suivi adapté.",
             role: "désigner les utilisateurs concernés et organiser la prise en main.",
         },
     ],
@@ -194,19 +204,23 @@ export const homeWhy = {
     points: [
         {
             title: "Comprendre avant de construire",
-            text: "Nous étudions vos besoins, vos clients et vos tâches récurrentes avant de choisir les outils adaptés.",
+            shortText: "Nous étudions vos besoins, vos clients et vos tâches récurrentes avant de choisir les outils adaptés.",
+            text: "Chaque projet commence par l'étude de vos commandes, de vos clients et des tâches que vous répétez, avant de choisir un outil.",
         },
         {
             title: "Des outils qui se parlent",
-            text: "Nous connectons sites, boutiques, CRM et outils internes pour éviter les ressaisies.",
+            shortText: "Nous connectons sites, boutiques, CRM et outils internes pour éviter les ressaisies.",
+            text: "Site, boutique, CRM, emailing et outils internes sont connectés plutôt qu'empilés, pour éviter les ressaisies.",
         },
         {
             title: "Autonomie après la livraison",
-            text: "Formation, documentation et outils administrables vous rendent autonomes après la livraison.",
+            shortText: "Formation, documentation et outils administrables vous rendent autonomes après la livraison.",
+            text: "Formation, documentation et interfaces administrables : vous savez utiliser ce que vous recevez.",
         },
         {
             title: "Un interlocuteur pour le digital et les locaux",
-            text: "Nous coordonnons vos outils numériques et installations IT, avec des partenaires si nécessaire.",
+            shortText: "Nous coordonnons vos outils numériques et installations IT, avec des partenaires si nécessaire.",
+            text: "Nous coordonnons le digital et les installations, réalisées seul ou avec des partenaires techniques.",
         },
     ],
     // Mot décoratif en filigrane du modèle de la template (« Technology »).
@@ -233,31 +247,37 @@ export const homeStats = {
 // Cartes de « Nos expertises » (accueil) : titre court et sous-services affichés sur la carte, fournis par Amadou le
 // 08/11/2026. Les libellés du menu (expertises.ts) ne changent pas ; les noms complets des pôles restent dans
 // expertises.ts. Clé = id du pôle. `cta` : libellé propre au bouton de chaque carte (09/11/2026).
-export const expertiseCards: Record<string, { cardTitle: string; description: string; cta: string; photo: string; items: string[] }> = {
+export const homeExpertisesFullIntro = "Du développement web à la digitalisation de vos opérations, en passant par le marketing digital et les infrastructures IT, Connect Web vous accompagne avec des solutions adaptées aux besoins de votre entreprise.";
+export const homeExpertisesShortIntro = "Développement web, solutions métiers, marketing et infrastructure IT : quatre expertises pour accompagner votre entreprise dans sa transformation digitale.";
+
+export const homeBlogFullDescription = "Retrouvez nos analyses, conseils pratiques et retours d'expérience pour mieux comprendre les technologies, faire évoluer vos outils numériques et accompagner le développement de votre activité.";
+export const homeBlogShortDescription = "Retrouvez nos analyses, conseils pratiques et retours d'expérience pour mieux comprendre les technologies et développer votre activité.";
+
+export const expertiseCards: Record<string, { cardTitle: string; shortDescription: string; cta: string; photo: string; items: string[] }> = {
     "developpement-web": {
         cardTitle: "Développement web & mobile",
-        description: "Nous créons des sites, boutiques en ligne et applications sur mesure pour développer votre présence digitale et vos opportunités commerciales.",
+        shortDescription: "Nous créons des sites, boutiques en ligne et applications sur mesure pour développer votre présence digitale et vos opportunités commerciales.",
         cta: "Lancer mon projet web",
         photo: "/assets/img/cw/hero-developpement-web.jpg",
         items: ["Sites internet professionnels", "Sites e-commerce", "Shopify & WooCommerce", "Applications web, mobile & PWA", "Refonte & maintenance"],
     },
     digitalisation: {
         cardTitle: "Digitalisation",
-        description: "Nous centralisons vos informations et automatisons vos processus avec des outils adaptés à votre activité.",
+        shortDescription: "Nous centralisons vos informations et automatisons vos processus avec des outils adaptés à votre activité.",
         cta: "Simplifier ma gestion",
         photo: "/assets/img/cw/hero-digitalisation.jpg",
         items: ["CRM & gestion client", "ERP & gestion d'entreprise", "Applications métiers", "Automatisation des processus", "Tableaux de bord personnalisés", "Intégration de solutions digitales"],
     },
     "marketing-digital": {
         cardTitle: "Marketing digital",
-        description: "Nous renforçons votre visibilité, l'acquisition et la fidélisation de clients grâce à des actions marketing mesurables.",
+        shortDescription: "Nous renforçons votre visibilité, l'acquisition et la fidélisation de clients grâce à des actions marketing mesurables.",
         cta: "Attirer plus de clients",
         photo: "/assets/img/cw/hero-marketing-digital.jpg",
         items: ["Stratégie marketing digital", "Référencement naturel SEO", "Email marketing & CRM", "Marketing automation", "Publicité digitale & acquisition", "Réseaux sociaux & communication digitale"],
     },
     "infrastructure-it": {
         cardTitle: "Infrastructure IT",
-        description: "Nous mettons en place des infrastructures informatiques fiables et sécurisées, adaptées à vos espaces de travail.",
+        shortDescription: "Nous mettons en place des infrastructures informatiques fiables et sécurisées, adaptées à vos espaces de travail.",
         cta: "Équiper mon entreprise",
         photo: "/assets/img/cw/hero-infrastructure-it.jpg",
         items: ["Réseaux & câblage", "Installation d'équipements IT", "Hébergement & serveurs", "Solutions cloud", "Téléphonie IP", "Vidéosurveillance & contrôle d'accès"],

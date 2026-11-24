@@ -3,12 +3,13 @@
 // les quatre pôles doivent être visibles et accessibles d'emblée). Données : src/content/expertises.ts (source
 // unique) et expertiseCards (src/content/home.ts). Le numéro du pôle est la signature graphique de la section.
 import Image from "next/image";
+import HomeResponsiveCopy from "@/components/utilities/HomeResponsiveCopy";
 import Link from "next/link";
 import { expertiseHref, expertises, expertisesSection } from "@/content/expertises";
-import { expertiseCards } from "@/content/home";
+import { expertiseCards, homeExpertisesFullIntro, homeExpertisesShortIntro } from "@/content/home";
 
 const HomeExpertises = () => {
-    const { eyebrow, title, intro, subServicesLabel } = expertisesSection;
+    const { eyebrow, title, subServicesLabel } = expertisesSection;
 
     return (
         <section id="nos-expertises" className="default-padding cw-expertises" aria-labelledby="expertises-titre">
@@ -16,7 +17,7 @@ const HomeExpertises = () => {
                 <div className="cw-expertises-head site-heading">
                     <h4 className="cw-sub">{eyebrow}</h4>
                     <h2 id="expertises-titre" className="title">{title}</h2>
-                    <p className="cw-expertises-intro">{intro}</p>
+                    <p className="cw-expertises-intro cw-home-prose"><HomeResponsiveCopy full={homeExpertisesFullIntro} short={homeExpertisesShortIntro} /></p>
                 </div>
                 <ul className="cw-expertises-grid">
                     {expertises.map((expertise) => {
@@ -38,7 +39,7 @@ const HomeExpertises = () => {
                                             {expertise.number}
                                         </p>
                                         <h3 id={`expertise-${expertise.id}`} className="cw-expertise-title">{card.cardTitle}</h3>
-                                        <p className="cw-expertise-desc">{card.description}</p>
+                                        <p className="cw-expertise-desc cw-home-prose"><HomeResponsiveCopy full={expertise.description} short={card.shortDescription} /></p>
                                         <ul className="cw-arrow-list cw-expertise-services" aria-label={`${subServicesLabel} : ${expertise.shortTitle}`}>
                                             {card.items.map((item) => (
                                                 <li key={item}>{item}</li>

@@ -8,6 +8,7 @@
 // animations (prefers-reduced-motion). Tout le texte reste dans le DOM (aucun contenu masqué).
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { homeWhy } from "@/content/home";
+import HomeResponsiveCopy from "@/components/utilities/HomeResponsiveCopy";
 
 const AUTOPLAY_MS = 6000;
 
@@ -112,7 +113,7 @@ const HomeWhy = () => {
                                                     {point.title}
                                                 </button>
                                             </h3>
-                                            <p id={`pourquoi-texte-${index}`}>{point.text}</p>
+                                            <p id={`pourquoi-texte-${index}`} className="cw-home-prose"><HomeResponsiveCopy full={point.text} short={point.shortText} /></p>
                                         </li>
                                     );
                                 })}
